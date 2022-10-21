@@ -1,0 +1,135 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "2m",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "index.html#section-1",
+    "href": "index.html#section-1",
+    "title": "2m",
+    "section": "Section 1",
+    "text": "Section 1\nLecture 1"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this site"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#big-research-families",
+    "href": "lecture1/ResearchDesigns.html#big-research-families",
+    "title": "Research Designs Review",
+    "section": "Big research families",
+    "text": "Big research families\n\nAlternative research designs (Creswell & Creswell, 2017)\n\n\n\n\n\n\n\nQuantitative\nQualitative\nMixed Methods\n\n\n\n\nExperimental designs\nNarrative Research\nConvergent\n\n\nNon-experimental\nPhenomenology\nExplanatory sequential\n\n\nLongitudinal Designs\nGrounded Theory\nExploratory sequential\n\n\n\nEthnographies\nComplex designs with embedded core designs\n\n\n\nCase Study"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#big-research-families-ii",
+    "href": "lecture1/ResearchDesigns.html#big-research-families-ii",
+    "title": "Research Designs Review",
+    "section": "Big research families II",
+    "text": "Big research families II\n\nSurvey research: provides a quantitative or numeric description of trends, attitudes, or opinions of a population by studying a sample of that population. It includes cross-sectional and longitudinal studies using questionnaires or structured interviews for data collection—with the intent of generalizing from a sample to a population.\nExperimental research: seeks to determine if a specific treatment influences an outcome. The researcher assesses this by providing a specific treatment to one group and withholding it from another and then determining how both groups scored on an outcome.\n\nTrue experiments\nQuasi-experiments\n\nSingle-subject designs"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#big-research-families-iii",
+    "href": "lecture1/ResearchDesigns.html#big-research-families-iii",
+    "title": "Research Designs Review",
+    "section": "Big research families III",
+    "text": "Big research families III\nQualitative designs\n\nNarrative research: The information retold or restoried by the researcher into a narrative chronology. Often, in the end, the narrative combines views from the participant’s life with those of the researcher’s life in a collaborative narrative\nPhenomenological research: the researcher describes the lived experiences of individuals about a phenomenon as described by participants.\nGrounded theory: is a design of inquiry from sociology in which the researcher derives a general, abstract theory of a process, action, or interaction grounded in the views of participants.\nEthnography: is a design of inquiry coming from anthropology and sociology in which the researcher studies the shared patterns of behaviors, language, and actions of an intact cultural group in a natural setting over a prolonged period of time.\nCase studies: in-depth analysis of a case, often a program, event, activity, process, or one or more individuals."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#what-is-first-a-or-b",
+    "href": "lecture1/ResearchDesigns.html#what-is-first-a-or-b",
+    "title": "Research Designs Review",
+    "section": "What is first A or B ?",
+    "text": "What is first A or B ?\n\nCausality means that we would expect variable X to cause variable Y.\n\nFor example: Does low self esteem cause depression? How do we know?\n\n\nLet’s take a look at some spurious correlations:"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#experiments-help-us",
+    "href": "lecture1/ResearchDesigns.html#experiments-help-us",
+    "title": "Research Designs Review",
+    "section": "Experiments help us!",
+    "text": "Experiments help us!\n\nCan we know if A causes B with a survey?\nCan we know if A causes B conducting an experiment?\nWe can manipulate a variable and observe what happens afterwards, but it is good enough?\nDo we need something more on our design?"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#experiments-help-us-ii",
+    "href": "lecture1/ResearchDesigns.html#experiments-help-us-ii",
+    "title": "Research Designs Review",
+    "section": "Experiments help us! II",
+    "text": "Experiments help us! II\n\nPure experiments need a control group to account for counterfactual information, this also helps to rule out possible confounding variables.\n\nExample: how would you measure the effect of physical activity on cardiovascular fitness? What would be a good experimental design?"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#can-we-assume-causality-in-survey-designs",
+    "href": "lecture1/ResearchDesigns.html#can-we-assume-causality-in-survey-designs",
+    "title": "Research Designs Review",
+    "section": "Can we assume causality in survey designs ?",
+    "text": "Can we assume causality in survey designs ?\n\nIn survey designs we cannot manipulate the independent variable, but some researchers claim that is possible to make causal inferences when you conduct a longitudinal study.\nIn longitudinal studies you satisfy the temporal requirement, you could evaluate if X = independent variable happens before Y = dependent variable.\n\nFor instance: You could measure a baby’s weight every month and evaluate how many times the baby is breastfed. But, do we need counterfactual information?"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect",
+    "href": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect",
+    "title": "Research Designs Review",
+    "section": "But we haven’t defined cause, and effect",
+    "text": "But we haven’t defined cause, and effect\nShadish et al. (2002) :\n\nLet’s try an example, consider a forest fire:\n\nMultiple causes: match tossed from a car, a lightning strike, or a smoldering campfire\nNone of these causes is necessary because a forest fire can start even when, say, a match is not present. Also, none of them is sufficient to start the fire. After all, a match must stay “hot” long enough to start combustion; it must contact\ncombustible material such as dry leaves. We also need oxygen!"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect-ii",
+    "href": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect-ii",
+    "title": "Research Designs Review",
+    "section": "But we haven’t defined cause, and effect II",
+    "text": "But we haven’t defined cause, and effect II\n\nA match can be consider part of multiple causes, therefore we can call it a “inus condition” (Mackie, 1974, p. 62) “an insufficient but nonredundant part of an unnecessary but sufficient condition” to cause a fire.\n\nShadish et al. (2002) :\n\nIt is insufficient because a match cannot start a fire without the other conditions.\nIt is nonredundant only if it adds something fire-promoting that is uniquely different from what the other factors in the constellation (e.g., oxygen, dry leaves) contribute to starting a fire. It is part of a sufficient condition to start a fire in combination with the full constellation of factors. But that condition is not necessary because there are other sets of conditions that can also start fires.\n\n\n\n\n\n\n\nImportant\n\n\nMany factors are usually required for an effect to occur, but we rarely know all of them and how they relate to each other. This is one reason that the causal relationships we discuss are not deterministic but only increase the probability that an effect will occur."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect-iii",
+    "href": "lecture1/ResearchDesigns.html#but-we-havent-defined-cause-and-effect-iii",
+    "title": "Research Designs Review",
+    "section": "But we haven’t defined cause, and effect III",
+    "text": "But we haven’t defined cause, and effect III\nWhat is an effect?\n\nAn effect is better define if we have a counterfactual model.\nA counterfactual is something that is contrary to fact.\nIn an experiment we observe what did happen when people received a treatment.\nThe counterfactual is knowledge of what would have happened to those same people if they simultaneously had not received treatment. An effect is the difference between what did happen and what would have happened.\n\n\n\n\n\n\n\nImportant\n\n\nWe could add a group of participants to a waiting list, do you have any example in mind?"
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#lets-finally-define-causal-relationship",
+    "href": "lecture1/ResearchDesigns.html#lets-finally-define-causal-relationship",
+    "title": "Research Designs Review",
+    "section": "Let’s finally define causal relationship",
+    "text": "Let’s finally define causal relationship\nShadish et al. (2002) :\n\nThis definition was first coined by John Stuart Mill (19th-century philosopher), a causal relationship exists if:\n\nThe cause preceded the effect.\nThe cause was related to the effect.\nWe can find no plausible alternative explanation for the effect other than the cause.\n\n\n\n\n\n\n\n\nWarning\n\n\nCorrelation does not prove causation!!! We will use this as a mantra in this class."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#independent-variable",
+    "href": "lecture1/ResearchDesigns.html#independent-variable",
+    "title": "Research Designs Review",
+    "section": "Independent variable",
+    "text": "Independent variable\n\nIndependent variables: are those that influence, or affect outcomes in experimental studies. They are described as “independent” because they are variables that are manipulated in an experiment and thus independent of all other influences.\nHowever, we will use this concept more vaguely, we won’t use it only when talking about experiments. It will be used also for correlational relationships, formally its name in survey designs is predictor."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#dependent-variable",
+    "href": "lecture1/ResearchDesigns.html#dependent-variable",
+    "title": "Research Designs Review",
+    "section": "Dependent variable",
+    "text": "Dependent variable\n\nDependent variables: are those that depend on the independent variables; they are the outcomes or results of the influence of the independent variables. It is also called outcome in survey designs or correlation designs."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#moderating-variables",
+    "href": "lecture1/ResearchDesigns.html#moderating-variables",
+    "title": "Research Designs Review",
+    "section": "Moderating variables",
+    "text": "Moderating variables\nModerating variables are predictor variables that affect the direction and/or the strength of the relationship between independent and the dependent variable."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#mediating-variables",
+    "href": "lecture1/ResearchDesigns.html#mediating-variables",
+    "title": "Research Designs Review",
+    "section": "Mediating variables",
+    "text": "Mediating variables\n\nMediating variables stand between the independent and dependent variables, and they transmit the effect of an independent variable on a dependent variable."
+  },
+  {
+    "objectID": "lecture1/ResearchDesigns.html#references",
+    "href": "lecture1/ResearchDesigns.html#references",
+    "title": "Research Designs Review",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nCreswell, J. W., & Creswell, J. D. (2017). Research design: Qualitative, quantitative, and mixed methods approaches. Sage publications.\n\n\nMackie, J. (1974). Causation: The cement of the universe. Oxford: Oxford University Press.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Houghton, Mifflin; Company."
+  }
+]
