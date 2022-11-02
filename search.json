@@ -1300,5 +1300,12 @@
     "title": "Correlation and Regression Models",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "assignment4/assigment4.html#description",
+    "href": "assignment4/assigment4.html#description",
+    "title": "Assignment #4",
+    "section": "Description",
+    "text": "Description\nThis assignment has multiple aims:\n\nTo assign tasks in a lab format where you are able to use the statistical models studied in class.\nTo show the type of questions you will encounter in the upcoming exam.\n\nYou will perform some calculations using R language, you may also use the software JAMOVI to solve several questions in this assignment.\nPlease, remember to submit your answers in a Word document where you write the question along with the answer as I show in the following example:\n\n1) What is a parameter?\n\n\nAnswer: A parameter is an unknown value in a model, but it will be estimated using the data\n\nIn this assignment you may need to add your R code to your document. Please, keep a tidy style when you answer the question, after you answer the question add the code in a text box. Please watch this video where I explain how to report your results when using R."
   }
 ]
