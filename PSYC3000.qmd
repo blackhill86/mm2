@@ -1,0 +1,35 @@
+---
+title: "PSYC 3000 Lab"
+author: "Esteban Montenegro"
+format: html
+editor: visual
+---
+
+## Welcome!
+
+If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn't like my presentation in html format. So, I decided to create my own site where you can access my presentations.
+
+You might not be an student in my class, but you knew about me and this class from other sources. That's totally fine! You are also welcomed!
+
+I share all the content in this site under a **Creative Commons** license, specifically the license [*CC BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/). This means, 
+you cannot use this material for commercial use, but you can use my material
+and you MUST cite or mention the original source for non-commercial 
+projects such as academic work. 
+
+
+
+# Lectures:
+
+[Lecture 1: Research designs](lecture1/ResearchDesigns.qmd#lecture1)
+
+
+[Lecture 2: Sampling designs](lecture2/Sampling.qmd#lecture2)
+
+[Lecture 3: Introduction to Probability and Statistics](lecture3/introProbAndStats.qmd#lecture3)
+
+
+[Lecture 4: Probability distributions and random variables](lecture4/Distributions.qmd#lecture4)
+
+[Lecture 5: Probability distributions and random variables](lecture5/centralTendency.qmd#lecture5)
+
+

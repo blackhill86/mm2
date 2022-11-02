@@ -2,16 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "2m",
+    "title": "Quantitative Methods Lab",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
-  },
-  {
-    "objectID": "index.html#section-1",
-    "href": "index.html#section-1",
-    "title": "2m",
-    "section": "Section 1",
-    "text": "Section 1\nLecture 1"
+    "text": "Welcome!\nWelcome to this humble home! You will find materials related to my classes at CSU Stan under the Creative Commons License (CC). I have dedicated a large portion of my career to study applied statistics in psychology. I’m still learning new topics and methods, my new passion is Bayesian inference to estimate latent variable models.\nI also conduct research in healthy aging, and social factors affecting the risk of dementia. My aim is to expand this lab and share as much information as possible, not only with students but also with collegues around the globe.\nI mostly work programming in R language, so you might find examples and materials to learn R along with data sets you can use to practice your R skills.\nThis repository is still under construction, it is a timid alpha version written with the help of Quarto. If you have suggestions on how to improve this please contact me at estebanmonte@gmail.com"
   },
   {
     "objectID": "about.html",
@@ -19,6 +12,13 @@
     "title": "About",
     "section": "",
     "text": "About this site"
+  },
+  {
+    "objectID": "assigment4.html",
+    "href": "assigment4.html",
+    "title": "Psych 3000",
+    "section": "",
+    "text": "Welcome to PSYC 3000! At this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE."
   },
   {
     "objectID": "lecture1/ResearchDesigns.html#big-research-families",
@@ -131,5 +131,1174 @@
     "title": "Research Designs Review",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nCreswell, J. W., & Creswell, J. D. (2017). Research design: Qualitative, quantitative, and mixed methods approaches. Sage publications.\n\n\nMackie, J. (1974). Causation: The cement of the universe. Oxford: Oxford University Press.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Houghton, Mifflin; Company."
+  },
+  {
+    "objectID": "PSYC3000.html",
+    "href": "PSYC3000.html",
+    "title": "PSYC 3000 Lab",
+    "section": "",
+    "text": "If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn’t like my presentation in html format. So, I decided to create my own site where you can access my presentations.\nYou might not be an student in my class, but you knew about me and this class from other sources. That’s totally fine! You are also welcomed!\nI share all the content in this site under a Creative Commons license, specifically the license CC BY-NC-ND 4.0. This means, you cannot use this material for commercial use, but you can use my material and you MUST cite or mention the original source for non-commercial projects such as academic work.\n\n\nAt this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!"
+  },
+  {
+    "objectID": "lecture2/Sampling.html",
+    "href": "lecture2/Sampling.html",
+    "title": "Sampling designs",
+    "section": "",
+    "text": "Let’s imagine you want to evaluate the levels of burnout in all companies in USA. Is it feasible?\nIf not, what should we do? How do we get enough information to evaluate burnout nationally?"
+  },
+  {
+    "objectID": "lecture2/Sampling.html#what-is-a-good-sample",
+    "href": "lecture2/Sampling.html#what-is-a-good-sample",
+    "title": "Sampling designs",
+    "section": "What is a good sample?",
+    "text": "What is a good sample?\nLohr (2021): - A sample is representative if it can be used to “reconstruct” what the population looks like—and if we can provide an accurate assessment of how good that reconstruction is.\n\nLet’s define some concepts:\n\nObservation unit: An object on which a measurement is taken, sometimes called an element. In psychology we sample individuals most of the time, but in evolutionary psychology you might compare humans and animal models.\nTarget Population: The complete collection of observations we want to study. For instance: all voters? all technology companies in US?\nSample: A subset of a population."
+  },
+  {
+    "objectID": "lecture2/Sampling.html#more-important-concepts",
+    "href": "lecture2/Sampling.html#more-important-concepts",
+    "title": "Sampling designs",
+    "section": "More important concepts",
+    "text": "More important concepts\n\nSampling unit: A unit that can be selected for a sample.\nSampling frame A list, map, or other specification of sampling units in the population from which a sample may be selected. For a telephone survey, the sampling frame might be a list of telephone numbers of registered voters, or simply the collection of all possible telephone numbers."
+  },
+  {
+    "objectID": "lecture2/Sampling.html#selection-bias",
+    "href": "lecture2/Sampling.html#selection-bias",
+    "title": "Sampling designs",
+    "section": "Selection Bias",
+    "text": "Selection Bias\n\nSelection bias occurs when the target population does not coincide with the sampled population or, more generally, when some population units are sampled at a different rate than intended by the investigator.\n\nEx: overrepresentation of high income households."
+  },
+  {
+    "objectID": "lecture2/Sampling.html#this-is-how-samplig-bias-happens",
+    "href": "lecture2/Sampling.html#this-is-how-samplig-bias-happens",
+    "title": "Sampling designs",
+    "section": "This is how samplig bias happens!",
+    "text": "This is how samplig bias happens!\n\nConvenience Samples: Some persons who are conducting surveys use the first set of population units they encounter as the sample. The problem is that the population units that are easiest to locate or collect may differ from other units in the population on the measures being studied.\nPurposive or Judgment Samples: the investigators use their judgment to select the specific units to be included in the sample.\nSelf-Selected Samples: A self-selected sample consists entirely of volunteers who select themselves to be in the sample.\nNonresponse: —failing to obtain responses from some members of the chosen sample—distorts the results of many surveys\n\n\n\n\n\n\n\nQuestion?\n\n\n\nCan we generalize the information to the population in these cases?"
+  },
+  {
+    "objectID": "lecture2/Sampling.html#are-samples-with-selection-bias-good",
+    "href": "lecture2/Sampling.html#are-samples-with-selection-bias-good",
+    "title": "Sampling designs",
+    "section": "Are samples with selection bias good?",
+    "text": "Are samples with selection bias good?\n\nMany of the studies in psychology have selection bias, even classical studies.\nBut they are still useful, however the authors cannot claim representative conclusions.\nWe also struggle with measurement error such as: is people telling the truth? do participants understand the questions? can they remember details? socially desirable answers?"
+  },
+  {
+    "objectID": "lecture2/Sampling.html#types-of-probability-sample",
+    "href": "lecture2/Sampling.html#types-of-probability-sample",
+    "title": "Sampling designs",
+    "section": "Types of probability sample",
+    "text": "Types of probability sample\n\nSimple random sample: All units have the same chance to be the sample.\nStratified random sample: the population is divided in subgroups, and then we sample observations randomly from each group or stratum. Example, social economical status.\nCluster sample: observation units in the population are aggregated into larger sampling units, called clusters. Example: university departments, companies.\nSystematic sample: a starting point is chosen from a list of population members using a random number. That unit, and every kth unit thereafter, is chosen to be in the sample. A systematic sample thus consists of units that are equally spaced in the list.\n\nExample: A systematic sample could be chosen by selecting an integer at random between 1 and 20; if the random integer is 16, say, then you would include professors in positions 16, 36, 56, and so on, in the list."
+  },
+  {
+    "objectID": "lecture2/Sampling.html#remember",
+    "href": "lecture2/Sampling.html#remember",
+    "title": "Sampling designs",
+    "section": "Remember !",
+    "text": "Remember !\n\nThe sampling strategies mentioned at this point are a good option when you are conducting a correlational study in a survey design.\nThe sampling strategy in experimental and quasi-experimental designs is based on the theory and experimental design.\nA pure experiment aims to determine the causal relationship between X and Y. This means, we’ll have to generate an artificial condition that will affect the external generalizability of the experiment."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html",
+    "href": "lecture3/introProbAndStats.html",
+    "title": "Introduction to probability and statistics",
+    "section": "",
+    "text": "It might seem trivial to talk about nature and how science related to nature. However, we will study nature when we study statistics.\nAs Westfall & Henning (2013) mentioned in their book: “Nature is all aspects of past, present, and future existence. Understanding Nature requires common observation—that is, it encompasses those things that we can agree we are observing” (p.1)\nAs psychologist we study behavior, thoughts, emotions, beliefs, cognition and contextual aspects of all the above. These elements are also part of nature, we mainly study constructs, I will talk about constructs frequently.\nStatistics is the language of science. Statistics concerns the analysis of recorded information or data. Data are commonly observed and subject to common agreement and are therefore more likely to reflect our common reality or Nature."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#reality-nature-science-and-models-ii",
+    "href": "lecture3/introProbAndStats.html#reality-nature-science-and-models-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Reality, Nature, Science, and Models II",
+    "text": "Reality, Nature, Science, and Models II\n\n\n\nTo study and understand Nature we must construct a model for how Nature works.\nA model helps you to understand Nature and also allows you to make predictions about Nature. There is no right or wrong model; they are all wrong! But some are better than others."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-models",
+    "href": "lecture3/introProbAndStats.html#statistical-models",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Models",
+    "text": "Statistical Models\n\n\n\nWe will focus on mathematical models integrated by equations and theorems.\nModels cannot reflect exactly how Nature works, but it is close enough to allow us to make predictions and inferences.\nLet’s create a model for driving distance.Imagine you drive at 100 km/hour, then we can predict your driving time \\(y\\) in hours by creating the following model: \\(y = x/100\\)\nYou could plug in any value to replace \\(x\\) and you’ll get a prediction:\nExample:\n\n\\[\\begin{align}\ny &= 300 km/100 \\\\\ny & = 3 hours \\\\\n\\end{align}\\]"
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#model-produces-data",
+    "href": "lecture3/introProbAndStats.html#model-produces-data",
+    "title": "Introduction to probability and statistics",
+    "section": "Model produces data",
+    "text": "Model produces data\n\nPay attention to our model. The model just created produces data, if we replace \\(x\\) by other values, the model will give us new information:\n\n\nR codePlotData\n\n\n\nkm <- c(200,300,400,500,600,900,1000)\n## Our model\ntime <- km/100\n### Let's plot the information\nlibrary(ggplot2)\n\np <- ggplot(data=data.frame(km,time), aes(x=km ,y=time)) +\n    geom_line() +\n    geom_point()+ \n    theme_classic()\n\n\n\n\np\n\n\n\n\n\n\n\ndata1 <- data.frame(km,time)\ndata1\n\n    km time\n1  200    2\n2  300    3\n3  400    4\n4  500    5\n5  600    6\n6  900    9\n7 1000   10"
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#model-produces-data-ii",
+    "href": "lecture3/introProbAndStats.html#model-produces-data-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Model produces data II",
+    "text": "Model produces data II\n\nA Model is like a recipe, it has some steps and rules that will help you to prepare a cake or a meal. The cake is your data.\n\n\n\n\n\n\n\nAlways remember!\n\n\n\nModels produce data, data does not produce models!\n\n\n\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data.\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-processes",
+    "href": "lecture3/introProbAndStats.html#statistical-processes",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Processes",
+    "text": "Statistical Processes\n\n\n\n\n\n\nAlways remember!\n\n\n\nThe order matters, Nature is there before our measurements,the data comes after we establish our way to measure Nature."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-processes-ii",
+    "href": "lecture3/introProbAndStats.html#statistical-processes-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Processes II",
+    "text": "Statistical Processes II\nWestfall & Henning (2013) are doing an important distinction:\n\nThey present DATA with upper case to differentiate data with lower case. Why?\nWhen we talk about Nature we are talking about infinite numbers of observations, from these infinite number of possibilities we extract a portion of DATA, this is similar to the concept of population. For instance, your DATA could be all the college students in California.\ndata (lowercase) means that we already collected a sample from that DATA. For example, if you get information from only college students from valley, you’ll have one single instance of what is possible in your population.\nYour data is the only way we have to say something about the DATA.\nPrior collecting data, the DATA is random, unknown."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-processes-iii",
+    "href": "lecture3/introProbAndStats.html#statistical-processes-iii",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Processes III",
+    "text": "Statistical Processes III\nMore about models\n\nWe will use the term “probability model” , we will represent this term using: \\(p(y)\\) which translates into “probability of \\(y\\)”.\nLet’s use the flipping coin example. We know that the probability of flipping a coin and getting heads is 50%, same probability can be observed for tails (50%). Then, we can represent this probability by \\(p(heads) = 0.5\\) or \\(p(tail) = 0.5\\).\nThis is actually a good model! Every time, it produces as many random coin flips as you like. Models produce data means: that YOUR model is a model the explains how your DATA will be produced!\nYour model for Nature is that your DATA come from a probability model \\(p(y).\\)"
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-processes-iv",
+    "href": "lecture3/introProbAndStats.html#statistical-processes-iv",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Processes IV",
+    "text": "Statistical Processes IV\n\nOur model \\(p(y)\\) can be used to predict and explain Nature. A prediction is a guess about unknown events in the past, present or future or about events that might not happen at all.\nIt is more like asking “What-if” .For example, what if I had extra $3000 to pay my credit balance?"
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#deterministic-vs.-probabilistic",
+    "href": "lecture3/introProbAndStats.html#deterministic-vs.-probabilistic",
+    "title": "Introduction to probability and statistics",
+    "section": "Deterministic vs. Probabilistic",
+    "text": "Deterministic vs. Probabilistic\n\nIn science, you’ll find models that are deterministic, that means; our outcome is completely determined by our \\(x\\)\n\nLet’s see this example: Free Fall Calculator\n\nIn physics you’ll find several examples of deterministic models, especially from the Newtonian perspective.\nNormally these models are represented with \\(f(.)\\) instead of \\(p(.)\\), for example the driving distance example can be written as \\(f(x) = x/100\\).\nThis symbol \\(f(x)\\) means mathematical function. The function will give us only one solution in the case of a deterministic mode. We plug in values and we get a solution. (\\(y = f(x)\\))."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#deterministic-vs.-probabilistic-ii",
+    "href": "lecture3/introProbAndStats.html#deterministic-vs.-probabilistic-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Deterministic vs. Probabilistic II",
+    "text": "Deterministic vs. Probabilistic II\n\nProbabilistic models models assume variability , they are not deterministic, probabilistic models produce data that varies, therefore we’ll have distributions.\nProbabilistic models are more realistic to explain phenomena in psychology.\nThe following expresion represents a probabilistic model:\n\n\\[\\begin{equation}\nY \\sim p(y)\n\\end{equation}\\]\n\nThe symbol \\(\\sim\\) can be read aloud either as “produced by” or “distributed as.” In a complete sentence, the mathematical shorthand \\(Y \\sim p(y)\\) states that your \\(DATA\\) \\(Y\\) are produced by a probability model having mathematical form \\(p(y)\\)."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#variability",
+    "href": "lecture3/introProbAndStats.html#variability",
+    "title": "Introduction to probability and statistics",
+    "section": "Variability",
+    "text": "Variability\n\nWould a deterministic model explain how people feel after a traumatic event?\nCan we plug in values in a deterministic function to predict your attention span while driving?\nYou must use a probabilistic (stochastic) models to study natural variability."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#parameters",
+    "href": "lecture3/introProbAndStats.html#parameters",
+    "title": "Introduction to probability and statistics",
+    "section": "Parameters",
+    "text": "Parameters\n\nA parameter is a numerical characteristic of the data-generating process, one that is usually unknown but often can be estimated using data.\n\n\\[\\begin{equation}\nY \\sim \\beta_{0} + \\beta_{1}X\n\\end{equation}\\]\nFor instance, in the model showed above, we have two unknown parameters, this model produces data \\(Y\\). The unknown parameters are represented with greek letters, for instance the letter beta in the example above.\n\n\n\n\n\n\nMantra\n\n\n\nModel produces data.\nModel has unknown parameters.\nData reduce the uncertainty about the unknown parameters."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models",
+    "href": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models",
+    "title": "Introduction to probability and statistics",
+    "section": "Purely Probabilistic Statistical Models",
+    "text": "Purely Probabilistic Statistical Models\n\nIn a probabilistic model the variable \\(Y\\) is produced at random. This statement is represented by \\(Y \\sim p(y)\\).\n\\(p(y)\\) is called a probability density function (pdf).\nA pdf assigns a likelihood to your values. I will explain this in the next sessions.\nIMPORTANT: A purely probabilistic statistical model states that a variable \\(Y\\) is produced by a pdf having unknown parameters. In symbolic shorthand, the model is given as \\(Y \\sim p(y|\\theta )\\). This greek letter \\(\\theta\\) is called “theta”."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models-ii",
+    "href": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Purely Probabilistic Statistical Models II",
+    "text": "Purely Probabilistic Statistical Models II\n\nLet’s think that Nature is also observable in our class. Our class belongs to the data generating process of grades in stats classes in the world. Let’s also assume that the data generating process of grades is normally distributed with a mean of 78 (out of 100) and standard deviation of 1. We can also imagine that we have a single sample of 100 students that have taken stats classes. Let’s check the graph…\n\n\nR codeFigure\n\n\n\nset.seed(1234)\n\ndataProcess <- rnorm(16000000, \n                     mean = 78, \n                     sd = 1)\ngrades <- rnorm(100,  \n                mean = 78, \n                sd = 1)\n\nplot(density(dataProcess), \n     lwd = 2, \n     col = \"red\",\n     main = \"DATA generating process\", \n     xlab = \"Grade\", \n     ylab = \"p(x)\")\n\nlines(density(grades), \n      col = \"blue\", \n      lwd = 2)\n\nlegend(80, 0.4, \n       legend=c(\"Data Process\", \"My sample\"),\n       col=c(\"red\", \"blue\"), lty=1)"
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models-iii",
+    "href": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models-iii",
+    "title": "Introduction to probability and statistics",
+    "section": "Purely Probabilistic Statistical Models III",
+    "text": "Purely Probabilistic Statistical Models III\n\nI just used the word “assume” , probabilistic models have assumptions. In the previous example we assumed:\n\nThe data generating process is normally distributed.\nWe assumed a value for the mean.\nWe assumed a value for the standard deviation."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-inference",
+    "href": "lecture3/introProbAndStats.html#statistical-inference",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Inference",
+    "text": "Statistical Inference\n\nNormally if we flip a coin we have around 0.50 probability of getting tails, and also around 0.50 of getting heads. But, what would happen if we bend the coin? Are you sure you’ll get 0.50 probability? Can we assume the same probability?\n\n\nProbability distribution for a Bent Coin\n\n\nOutcome, \\(y\\)\n\\(p(y)\\)\n\n\n\n\nTails\n1 - \\(\\pi\\)\n\n\nHeads\n\\(\\pi\\)\n\n\nTotal\n1.00\n\n\n\n\nNow we have uncertainty, we can only assume that there is a probability represented by \\(\\pi\\). That’s the only think we know."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#statistical-inference-ii",
+    "href": "lecture3/introProbAndStats.html#statistical-inference-ii",
+    "title": "Introduction to probability and statistics",
+    "section": "Statistical Inference II",
+    "text": "Statistical Inference II\n\nWe need to collect data to reduce the uncertainty about the unknown parameters.\nThe reduction in uncertainty about model parameters that you achieve when you collect data is called statistical inference"
+  },
+  {
+    "objectID": "lecture4/Distributions.html",
+    "href": "lecture4/Distributions.html",
+    "title": "Probability distributions and random variables",
+    "section": "",
+    "text": "In our last session we talked about DATA (uppercase) and data (lowercase).\nWe studied that DATA means all the possible values in Nature for instance, all the college students in US versus a single fix observation called data (lowercase)\nIn this session is important to remember this convention.\nDATA means random variable whereas data means fixed quantities.\nFor instance, in a dice you have 6 possible values, when roll a dice ; let’s imagine you get 5 , then your data is y = 5 while you DATA is any possible value from 1 to 6.\nRandom variables have a distribution, this means DATA is random."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#types-of-data",
+    "href": "lecture4/Distributions.html#types-of-data",
+    "title": "Probability distributions and random variables",
+    "section": "Types of DATA",
+    "text": "Types of DATA\n\nNominal DATA: These are DATA whose possible values are essentially labels (or, as the word nominal suggests, names), with no numerical value. Ex: marital status, job title, political affiliation.\nContinuous DATA: These are numerical DATA whose possible values lie in a continuum, or in a continuous range. For instance the duration of this class in seconds.\nOrdinal DATA: These types of DATA are intermediate between nominal and continuous. Unlike nominal data, which can be numbers without intrinsic order such as 1 = male and 2 = female, ordinal DATA are numbers that reflect an intrinsic order, hence, the name ordinal. Example, education level, ranking of your favorite dessert."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#nominal-data",
+    "href": "lecture4/Distributions.html#nominal-data",
+    "title": "Probability distributions and random variables",
+    "section": "Nominal data",
+    "text": "Nominal data\n\nlibrary(ggplot2)  ### <- this is a package in R to create pretty plots.\n## setwd() is a function to set my working directory (folder where the data is located)\nsetwd(\"C:/Users/emontenegro1/Documents/MEGA/stanStateDocuments/PSYC3000/lecture4\")\nrumination <- read.csv(\"ruminationComplete.csv\") \nrumination$sex <- factor(rumination$sex, labels = c(\"female\", \"male\"))\nggplot(data = rumination, aes(x = sex)) + \n  geom_bar()+ theme_bw()"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#continuous-data",
+    "href": "lecture4/Distributions.html#continuous-data",
+    "title": "Probability distributions and random variables",
+    "section": "Continuous data",
+    "text": "Continuous data\n\nggplot(data = rumination, aes(x = ageMonths)) + \n  geom_histogram() + theme_bw()\n\n`stat_bin()` using `bins = 30`. Pick better value with `binwidth`."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#ordinal-data",
+    "href": "lecture4/Distributions.html#ordinal-data",
+    "title": "Probability distributions and random variables",
+    "section": "Ordinal data",
+    "text": "Ordinal data\n\nrumination$grade <- factor(rumination$grade, \n                           labels = c(\"seventh\", \n                                      \"eight\", \n                                      \"nineth\", \n                                      \"tenth\", \n                                      \"eleventh\"))\nggplot(data = rumination, aes(x = grade)) + \n  geom_bar()"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#discrete-vs.-continuous",
+    "href": "lecture4/Distributions.html#discrete-vs.-continuous",
+    "title": "Probability distributions and random variables",
+    "section": "Discrete vs. Continuous",
+    "text": "Discrete vs. Continuous\n\nNominal and Ordinal DATA are considered discrete DATA, this means that values can be listed.\nContinuous DATA cannot be listed because all possible values lie in a continuum."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#discrete-probability-distribution-functions",
+    "href": "lecture4/Distributions.html#discrete-probability-distribution-functions",
+    "title": "Probability distributions and random variables",
+    "section": "Discrete Probability Distribution Functions",
+    "text": "Discrete Probability Distribution Functions\n\nIn our previous class I mentioned the concept of probability density function (pdf), in simple words, the pdf is the model for a random variable.\nFor example, you can assume that the pdf of the normal distribution produces you DATA. DATA such as grades in all the statistics classes in US can be assumed to be generated by a normal distributed model.\nWe will revisit more about the normal distribution in this class."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#discrete-probability-distribution-functions-1",
+    "href": "lecture4/Distributions.html#discrete-probability-distribution-functions-1",
+    "title": "Probability distributions and random variables",
+    "section": "Discrete Probability Distribution Functions",
+    "text": "Discrete Probability Distribution Functions\n\nBut let’s focus on discrete distributions first.\nAs I said before, a discrete variable can be listed as showed below:\n\n\n\nIn this table \\(p(y)\\) represents the probability of any variable \\(y\\).\nWhen we talk about discrete distributions we talk about probability mass function , when the variable is continuous we used the concept probability density function."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#discrete-probability-distribution-functions-ii",
+    "href": "lecture4/Distributions.html#discrete-probability-distribution-functions-ii",
+    "title": "Probability distributions and random variables",
+    "section": "Discrete Probability Distribution Functions II",
+    "text": "Discrete Probability Distribution Functions II\n\nA Discrete pdf or probability mass function has several requirements:\n\nThe probabilities are NEVER negative, but they could be zero.\nThe total probability is 1.0 or 100%"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#discrete-probability-distribution-functions-iii",
+    "href": "lecture4/Distributions.html#discrete-probability-distribution-functions-iii",
+    "title": "Probability distributions and random variables",
+    "section": "Discrete Probability Distribution Functions III",
+    "text": "Discrete Probability Distribution Functions III\n\nProbability distributions are the most important component in statistics.\nWe always talk about the normal distribution model, however there several different distributions in the universe. But we are going to study only a few of them.\nDo you remember the coin example? The right model for the coin problem is the pdf discovered by Bernoulli. In fact, many people call it the Bernoulli distribution. Its formal representation is as follows:\n\n\\[\\begin{equation}\n\np(y|\\pi) = \\pi^{y}(1-\\pi)^{1-y}\n\n\\end{equation}\\]\n\nNo worries about the interpretation of the formula, we might have time to study this distribution at the end of this course. Let’s focus on how we can use this model."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#simulation-time",
+    "href": "lecture4/Distributions.html#simulation-time",
+    "title": "Probability distributions and random variables",
+    "section": "Simulation time!",
+    "text": "Simulation time!\n\nRemember the mantra: Models produce data, this means we can produce data using the Bernoulli model:\nLet’s think about the tossing the coin, we can assign numerical values to the the results, for instance each time we get a head we will code it as 1.00, when we get tail we’ll code it as 0.00.\n\n\nset.seed(1236)\ntossCoin <- rbinom(100,1,0.50)\nsum(tossCoin)/length(tossCoin)\n\n[1] 0.48\n\n\n\nIn the R code above, I’m simulating tossing a coin randomly 100 times using the discrete Bernoulli distribution, after doing that I get exactly zeros and ones, as we expected. Now, following the coin toss model, we should have a probability \\(p(heads)= 0.50\\) in the long run.\nBut wait? Why we don’t get 0.50? According to our simulated data we have a probability of 0.48.\n\nLet’s try again but this time lets generate 1006 values:\n\nset.seed(1236)\ntossCoin <- rbinom(1006,1,0.50)\nsum(tossCoin)/length(tossCoin)\n\n[1] 0.5\n\n\n\nThat’s magic! Now we have 0.50 probability of getting heads, what happened?\nWhen we have more observed data we are closer to the DATA generating process value. The value for our unknown parameter is 0.50 according to our model, after adding more data, we are close to that number. This is also called the Law of Large Numbers."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#simulation-time-ii",
+    "href": "lecture4/Distributions.html#simulation-time-ii",
+    "title": "Probability distributions and random variables",
+    "section": "Simulation time! II",
+    "text": "Simulation time! II\n\nHopefully, at this point the notion of DATA versus data starts to make sense.\nI want to introduce another model that we might study further if time allows, this new model is the Poisson pdf, a.k.a Poisson distribution.\nThe function form of the Poisson distribution is:\n\n\\[\\begin{equation}\np(y|\\lambda) = \\frac{\\lambda^{y}e^{-\\lambda}}{y!}\n\\end{equation}\\]\n\nLet’s untangle the formula:\n\nThe symbol \\(\\lambda\\) is the Greek letter “lambda”, it represents the theoretical average.\nThe letter \\(e\\) is called Euler’s constant, its numerical value is approximately \\(e = 2.71828...\\). You might remember this symbol when you did exponential functions in high school or college. -The term \\(y!\\) is “y factorial” , you might remember factorials from high school or college, they are used a lot in probability. It can be defined as:\n\n\\[\\begin{equation}\n\ny! =  \\textrm{1 x 2 x 3 x 4 x ...x y}\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#simulation-time-iii",
+    "href": "lecture4/Distributions.html#simulation-time-iii",
+    "title": "Probability distributions and random variables",
+    "section": "Simulation time! III",
+    "text": "Simulation time! III\nAs always, it is not required to remember the Poisson formulation, but it is more important to understand how we can use this model to explain our observed data:\n\nLet’s imagine that you want to find a model to describe attendance in high school. We could try to generate data that assumes that a high school student has on average 8 absences.\n\n\nset.seed(1236)\nabsences <- 8\nN <- 300\ndataGenerated <- rpois(N, absences)\ncat(\"The mean is \", mean(dataGenerated))\n\nThe mean is  7.98\n\n\n\nOur model generated 300 observations, with an average number of absences = 7.98. It is likely that this number will be closer to 8 if you simulate more observations."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#simulation-time-iv",
+    "href": "lecture4/Distributions.html#simulation-time-iv",
+    "title": "Probability distributions and random variables",
+    "section": "Simulation time! IV",
+    "text": "Simulation time! IV\nThe probability of each value in our tiny Poisson simulation can be represented in list form as:\n\n\nThe Poisson pdf is a good model to represent counts such as the number of times you successfully wake up early and do exercise, the number of shoes, the number of family members in each household and many other counting variables."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#continuous-probability-distribution-functions",
+    "href": "lecture4/Distributions.html#continuous-probability-distribution-functions",
+    "title": "Probability distributions and random variables",
+    "section": "Continuous Probability Distribution Functions",
+    "text": "Continuous Probability Distribution Functions\n\n\n\n\n\nContinuous distributions have several differences compare to discrete distributions.\n\nWhen the density plot corresponds to a continuous distribution, the \\(y\\)-axis does not show probability.\nWhen you estimate the density of continuous distribution you are estimating the “relative likelihood” For example, in this plot 50 kg has a likelihood of around 0.014, 55 kg has a likelihood of around 0.021. This means that is more likely to observe 55 kg compare to 50 kg."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#continuous-probability-distribution-functions-ii",
+    "href": "lecture4/Distributions.html#continuous-probability-distribution-functions-ii",
+    "title": "Probability distributions and random variables",
+    "section": "Continuous Probability Distribution Functions II",
+    "text": "Continuous Probability Distribution Functions II\n\n\n\n\nImportant: - The probability of a value in a density plot can only be estimated by calculating by estimating the area under the curve.\n\nThe total area under the curve in discrete and continuous functions is always equal to 1.0."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#continuous-probability-distribution-functions-iii",
+    "href": "lecture4/Distributions.html#continuous-probability-distribution-functions-iii",
+    "title": "Probability distributions and random variables",
+    "section": "Continuous Probability Distribution Functions III",
+    "text": "Continuous Probability Distribution Functions III\n\n\n\n\n\nIn this graph Westfall & Henning (2013) changed the metric from kg to metric tons.\nThis helps to show you how to estimate the probability of 0.08 metric tons from a density plot.\nThen the probability of observing a weight (in metric tons) in the range \\(0.08 \\pm 0.005\\) is approximately 17 × 0.01 = 0.17. Or in other words, about 17 out of 100 people will weigh between 0.075 and 0.085 metric tons, equivalently, between 75 and 85 kg.\nBut this is is just an approximation, integrals would give us the exact probability, but we will avoid calculus today."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#continuous-probability-distribution-functions-iv",
+    "href": "lecture4/Distributions.html#continuous-probability-distribution-functions-iv",
+    "title": "Probability distributions and random variables",
+    "section": "Continuous Probability Distribution Functions IV",
+    "text": "Continuous Probability Distribution Functions IV\n\n\nRequirements for a Continuous pdf\n\n\nThe values on the \\(y\\)-axis are always positive, it means the likelihood is always positive.\nGiven that the area under curve represents PROBABILITY, the total area is always equals to 1.0."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution",
+    "text": "More distributions: normal distribution\n\n\n\\[\\begin{align*}\np(y|\\mu, \\sigma^2) &= \\frac{1}{\\sqrt{2\\pi\\sigma}} exp \\left\\{ \\frac{-(y-\\mu)^2}{2\\sigma^2} \\right\\}\\\\\n\\end{align*}\\]\nAt this point it looks a little bit esoteric and dark, I will untangle the components of the normal distribution formulation.\n\nThe component \\(\\frac{1}{\\sqrt{2\\pi\\sigma}}\\) is what we call a constant, it is a fixed quantity. Every probability density function will have a constant. This constant number helps to make sure that the area under the curve of a distribution is equal to 1 (believe me this is true!).\n\n\n\nThe second component \\(exp \\left\\{ \\frac{-(y-\\mu)^2}{2\\sigma^2} \\right\\}\\) is what is called kernel it is like the “core” of the area under the curve.\nThe third important component is \\(p(y|\\mu, \\sigma^2)\\), in this expression; \\(y\\) represents any numeric value, \\(\\mu\\) represents the mean of the distribution and \\(\\sigma\\) is the variance of the distribution. Now we can read this third component as “probability of any number given a mean, and a variance”"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution-ii",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution-ii",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution II",
+    "text": "More distributions: normal distribution II\n\nAs always, let me simulate some values using R, imagine we need to find a model that best describes the weight distribution in College students. For this task, we could assume the normal distribution model with a mean of 65 kg and standard deviation equals to 1.0.\n\n\n### Random starting number\nset.seed(359)\n### Mean or average in Kg \nMean <- 65\n## Standard Deviation\nSD <- 1\n## Number of observations\nN <-  300\n### Generated values from the normal distribution\ndata_1 <-  rnorm(n = N, mean = Mean, sd = SD )\ndata_1\n\n  [1] 65.90960 64.71476 63.83066 63.44413 65.46502 65.31280 66.48675 65.87327\n  [9] 64.84400 64.67924 62.12089 63.97994 64.42622 65.01382 64.85000 65.35106\n [17] 64.86783 64.98873 64.54516 64.14890 63.47823 64.45281 66.13445 64.45036\n [25] 65.66304 65.57285 62.93050 63.46320 63.99792 64.49344 65.89572 64.24975\n [33] 65.90253 65.29621 65.85397 64.34964 65.16825 64.80732 65.56075 66.39590\n [41] 65.68950 65.33977 64.06039 66.64493 64.47345 65.04675 65.85947 67.92296\n [49] 66.34708 65.26185 64.95761 65.18777 64.03615 65.27033 65.84343 64.16392\n [57] 65.61956 64.48135 67.40605 67.23284 65.12713 64.07411 63.98220 65.70498\n [65] 64.88308 65.93083 64.72232 66.42429 65.23638 64.81533 66.98712 63.34341\n [73] 64.93697 63.42742 65.41067 64.40579 64.70454 64.31235 65.16420 63.88185\n [81] 64.43832 64.63143 64.33169 66.17669 65.05522 64.00396 65.43599 66.05379\n [89] 65.39605 63.63870 66.18342 66.61002 65.84883 64.91560 65.79335 65.32865\n [97] 65.93242 64.77581 64.21611 65.83586 67.52724 64.90828 64.33488 64.42051\n[105] 65.95834 66.25977 64.91274 65.06262 64.47752 64.62498 65.13740 64.24417\n[113] 65.36593 67.36820 65.70180 64.33536 65.96453 64.97927 68.24824 65.39837\n[121] 64.00358 65.19193 64.43649 64.03446 63.96788 64.99354 64.32949 66.39454\n[129] 65.46359 66.03655 64.66212 64.30517 64.21899 64.55146 63.81233 65.18873\n[137] 65.30952 64.32071 65.17876 64.50110 64.66146 65.01361 64.74170 65.08205\n[145] 64.42346 64.32447 65.23062 64.46689 66.69426 64.94310 65.24772 65.00605\n[153] 63.93441 67.81550 64.76292 66.26200 64.15244 64.70025 65.06429 65.57770\n[161] 63.39030 65.24833 64.62538 65.88314 64.93269 65.01867 64.83311 64.16538\n[169] 65.08892 65.60057 65.15178 64.51507 64.65132 63.98354 64.43078 63.79769\n[177] 64.79643 65.25849 63.31048 65.06860 64.70367 64.48503 64.58913 65.50374\n[185] 62.96262 64.38087 66.59937 66.05083 63.79779 66.04224 64.68900 65.01352\n[193] 64.49640 63.70097 63.88770 67.28460 66.72947 63.65179 65.44370 65.67320\n[201] 65.26623 64.82400 64.67668 64.78615 64.89735 65.16560 64.86284 63.69684\n[209] 64.36736 65.50050 64.68430 67.10004 65.13415 65.07864 65.75652 66.96074\n[217] 64.67984 65.33965 64.32788 64.99155 63.72848 64.85579 64.81778 64.67416\n[225] 66.54865 65.22833 65.81325 64.69429 66.10983 64.80612 63.39200 65.88671\n[233] 64.01276 64.33288 63.46912 66.61400 64.11193 63.11924 64.71432 63.55637\n[241] 65.91217 64.50794 64.35599 67.67487 66.97199 65.09739 66.49791 65.46359\n[249] 65.92001 65.91692 63.40351 64.27549 66.08439 64.05049 65.84046 63.69535\n[257] 64.29846 65.15456 63.72143 66.81415 65.73656 63.93622 63.74965 65.40493\n[265] 64.74493 64.89682 64.95052 62.67580 65.33750 65.48994 64.24487 65.38974\n[273] 66.34487 63.93986 66.39666 64.63785 65.39375 65.40279 65.28578 65.01735\n[281] 66.74379 66.87585 64.91307 66.32705 64.25904 64.07473 65.96503 65.33417\n[289] 63.96063 65.42224 62.30688 64.32297 66.52509 63.99097 64.86705 65.34434\n[297] 64.17483 65.01194 64.99918 65.14846"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution-iii",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution-iii",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution III",
+    "text": "More distributions: normal distribution III\n\nWe can check the density distribution of this sample that comes from the normal distribution model:\n\n\nplot(density(data_1), \n     xlab = \"Weight (kg)\", \n     ylab = \"p(y) or likelihood\", \nmain = \"Normal density function of college student's weight\" \n)"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution-iv",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution-iv",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution IV",
+    "text": "More distributions: normal distribution IV\n\nWe can also imagine that we need a model to describe the weight of hospital patients. But, this time probably, we will see more overweight individuals because of diverse health problems. Then, a mean = 65 kg is not realistic (143.3 lbs), probably we should assume a mean = 90 kg (198.42 lbs), and probably the observed data will be spread out, so we can use a larger values for the standard deviation, perhaps something around 10.\n\n\n### Random starting number\nset.seed(359)\n### Mean or average in Kg \nMean <- 90\n## Standard Deviation\nSD <- 10\n## Number of observations\nN <-  300\n### Generated values from the normal distribution\ndata_2 <-  rnorm(n = N, mean = Mean, sd = SD )\ndata_2\n\n  [1]  99.09603  87.14758  78.30664  74.44127  94.65025  93.12797 104.86753\n  [8]  98.73265  88.43998  86.79235  61.20891  79.79938  84.26221  90.13819\n [15]  88.49998  93.51056  88.67827  89.88726  85.45157  81.48895  74.78235\n [22]  84.52814 101.34451  84.50357  96.63045  95.72855  69.30499  74.63198\n [29]  79.97919  84.93441  98.95721  82.49745  99.02532  92.96213  98.53972\n [36]  83.49641  91.68247  88.07319  95.60747 103.95905  96.89498  93.39768\n [43]  80.60386 106.44925  84.73451  90.46749  98.59471 119.22961 103.47075\n [50]  92.61846  89.57613  91.87772  80.36150  92.70328  98.43425  81.63920\n [57]  96.19561  84.81348 114.06050 112.32838  91.27126  80.74112  79.82199\n [64]  97.04981  88.83082  99.30830  87.22319 104.24293  92.36383  88.15335\n [71] 109.87124  73.43411  89.36973  74.27417  94.10665  84.05789  87.04545\n [78]  83.12347  91.64199  78.81849  84.38325  86.31432  83.31688 101.76688\n [85]  90.55224  80.03963  94.35986 100.53789  93.96049  76.38699 101.83422\n [92] 106.10019  98.48829  89.15598  97.93345  93.28650  99.32421  87.75811\n [99]  82.16114  98.35859 115.27235  89.08279  83.34876  84.20506  99.58339\n[106] 102.59770  89.12740  90.62618  84.77518  86.24982  91.37400  82.44167\n[113]  93.65933 113.68198  97.01798  83.35357  99.64534  89.79270 122.48244\n[120]  93.98373  80.03576  91.91926  84.36490  80.34458  79.67885  89.93544\n[127]  83.29487 103.94544  94.63586 100.36548  86.62125  83.05169  82.18990\n[134]  85.51461  78.12330  91.88730  93.09520  83.20710  91.78756  85.01100\n[141]  86.61460  90.13608  87.41698  90.82048  84.23460  83.24472  92.30620\n[148]  84.66887 106.94258  89.43101  92.47715  90.06048  79.34405 118.15496\n[155]  87.62915 102.61997  81.52439  87.00250  90.64290  95.77699  73.90302\n[162]  92.48329  86.25377  98.83139  89.32694  90.18671  88.33110  81.65385\n[169]  90.88921  96.00573  91.51776  85.15071  86.51324  79.83544  84.30776\n[176]  77.97693  87.96432  92.58489  73.10476  90.68604  87.03665  84.85029\n[183]  85.89134  95.03740  69.62624  83.80868 105.99374 100.50826  77.97789\n[190] 100.42236  86.88997  90.13518  84.96399  77.00973  78.87698 112.84603\n[197] 107.29474  76.51790  94.43699  96.73195  92.66227  88.23995  86.76681\n[204]  87.86150  88.97352  91.65598  88.62836  76.96842  83.67362  95.00498\n[211]  86.84302 111.00035  91.34154  90.78639  97.56522 109.60737  86.79841\n[218]  93.39651  83.27879  89.91554  77.28481  88.55791  88.17783  86.74163\n[225] 105.48651  92.28331  98.13252  86.94293 101.09826  88.06121  73.91998\n[232]  98.86712  80.12760  83.32878  74.69121 106.14002  81.11932  71.19242\n[239]  87.14321  75.56373  99.12171  85.07938  83.55992 116.74873 109.71989\n[246]  90.97392 104.97909  94.63592  99.20012  99.16920  74.03514  82.75492\n[253] 100.84388  80.50494  98.40457  76.95353  82.98457  91.54557  77.21432\n[260] 108.14149  97.36556  79.36224  77.49653  94.04927  87.44927  88.96823\n[267]  89.50524  66.75803  93.37497  94.89937  82.44871  93.89736 103.44874\n[274]  79.39864 103.96662  86.37846  93.93755  94.02794  92.85782  90.17349\n[281] 107.43790 108.75847  89.13072 103.27050  82.59045  80.74730  99.65032\n[288]  93.34172  79.60634  94.22238  63.06883  83.22968 105.25093  79.90966\n[295]  88.67048  93.44337  81.74835  90.11941  89.99179  91.48458"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution-iv-1",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution-iv-1",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution IV",
+    "text": "More distributions: normal distribution IV\n\nWe can check now the probability density function of our simulated hospital sample:\n\n\nplot(density(data_2), \n     xlab = \"Weight (kg)\", \n     ylab = \"p(y) or likelihood\", \nmain = \"Normal density function hospital patients' weight\" \n)"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#more-distributions-normal-distribution-v",
+    "href": "lecture4/Distributions.html#more-distributions-normal-distribution-v",
+    "title": "Probability distributions and random variables",
+    "section": "More distributions: normal distribution V",
+    "text": "More distributions: normal distribution V\n\nR codePlot\n\n\n\nlibrary(ggplot2) ### <- this is a package in R to create pretty plots.\n\ndataMerged <- data.frame(\n  group =c(rep(\"College\", 300),\n           rep(\"Hospital\", 300)),\n  weight = c(data_1, data_2))\n\nggplot(dataMerged , aes(x=weight, fill=group)) +\n  geom_density(alpha=.25) + \n  theme_bw()+\n  labs(title = \"College and Hospital Weight Density Function\") + \n  xlab(\"Weight (kg)\") + \n  ylab(\"p(y) or likelihood\")"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#what-is-the-main-message-here",
+    "href": "lecture4/Distributions.html#what-is-the-main-message-here",
+    "title": "Probability distributions and random variables",
+    "section": "What is the main message here?",
+    "text": "What is the main message here?\n\nThe main message is: Models produce data!\nRemember we were talking about NATURE and DATA (uppercase)?\n\nOur statistical model (e.g. normal distribution) is our approximation to DATA, we create models that will generate observed data. That’s why in simulations sometimes our model is called “population model”, and from our data generating model we produce observed data.\n\nRemember when we talked about random variables vs. fixed quantities?\n\nWhen we refer to the DATA (population model) the variables are random, but when we generate data like we did in R that data are fixed quantities similar to collect data on campus related to dating strategies, once you collect your data, those numbers are fixed quantities that were generate by a natural process (data generating process). We cannot control the natural process like we do in simulation.\n\nWe reduce uncertainty when we add more observations. We will study more about it in the next classes."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html",
+    "href": "lecture5/centralTendency.html",
+    "title": "Central tendency and variability",
+    "section": "",
+    "text": "In this lecture we will study several basic concepts, but don’t fool yourselves by thinking that these topics are less important.\nThese concepts are the foundations to understand what is coming in this class.\nWe will learn about several measures to describe and understand continuous distributions.\nRemember that this are just a few measures, if time allows we will study more options to describe distributions.\nLet’s focus on the most common type of average you’ll see in psychology:\n\n\\[\\begin{equation}\n\\bar{X} = \\frac{\\sum X}{n}\n\\end{equation}\\]\nWhere:\n\nthe letter X with a line above it (also sometimes called “X bar”) is the mean value of the group of scores or the mean.\nthe \\(\\sum\\) or the Greek letter sigma, is the summation sign, which tells you to add together whatever follows it to obtain a total or sum.\nthe X is each observation\nthe \\(n\\) is the size of the sample from which you are computing the mean.7\n\nExample\n\nsetwd(\"C:/Users/emontenegro1/Documents/MEGA/stanStateDocuments/PSYC3000/lecture5\")\n\nrum <- read.csv(\"ruminationComplete.csv\")\n\nmean(rum$age)\n\n[1] 15.34906\n\n\n\n\n\n\n\n\nNote\n\n\n\n\n\nWe will use \\(M=\\) to represent the word mean"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#central-tendency-measures-iii",
+    "href": "lecture5/centralTendency.html#central-tendency-measures-iii",
+    "title": "Central tendency and variability",
+    "section": "Central tendency measures III",
+    "text": "Central tendency measures III\nLet’s do it by hand:\n\n\\[\\begin{align}\n\\bar{X} &= \\frac{\\sum X}{n}\\\\\n&= \\frac{18+21+24+23+22+24+25}{7}\\\\\n&= \\frac{157}{7}\\\\\n&= 22.43\\\\\n\\end{align}\\]"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#central-tendency-measures-iii-1",
+    "href": "lecture5/centralTendency.html#central-tendency-measures-iii-1",
+    "title": "Central tendency and variability",
+    "section": "Central tendency measures III",
+    "text": "Central tendency measures III\n\nOr we could do it in R:\n\n\n(18+21+24+23+22+24+25)/7\n\n[1] 22.42857"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#central-tendency-measures-iv",
+    "href": "lecture5/centralTendency.html#central-tendency-measures-iv",
+    "title": "Central tendency and variability",
+    "section": "Central tendency measures IV",
+    "text": "Central tendency measures IV\n\nMedian: The median is defined as the midpoint in a set of scores. It’s the point at which one half, or \\(50%\\), of the scores fall above and one half, or \\(50%\\), fall below.\nTo calculate the median we need to order the information. Let’s imagine you have the following values from different households:\n\n\n\n\n$135,456 | $25,500 | $32,456 | $54,365 | $37,668\n\n\n\n\nNow, we’ll need to sort the income from highest to lowest\n\n\n\n\n$135,456| $54,365| $37,668| $32,456| $25,500\n\n\n\n\nWhich value is in the middle?\nThe median is also known as the 50th percentile, because it’s the point below which 50% of the cases in the distribution fall. Other percentiles are useful as well, such as the 25th percentile, often called Q1, and the 75th percentile, referred to as Q3. The median would be Q2."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#median-to-the-rescue",
+    "href": "lecture5/centralTendency.html#median-to-the-rescue",
+    "title": "Central tendency and variability",
+    "section": "Median to the rescue",
+    "text": "Median to the rescue\n\nAs you might remember, the mean is strongly affected by the extreme cases, whereas the median is more “robust” to extreme cases. This means the median is less affected by extreme values.\nLet’s use simulation to find out if it is true, imagine you have data related to a depression score:\n\n\nset.seed(1256)\n\nM <- 25\n\nSD <- 1\n\nn <- 50\n\n## Simulated depression score\ndepressionScore <- rnorm(n = n, mean = M, sd = SD)\n\nhist(depressionScore)\n\n\n\n\n\nLet’s check the mean of these generated values:\n\n\nmean(depressionScore)\n\n[1] 24.97403\n\n\n\nNow, let’s add a very extreme case, imagine one person has a diagnosis of bipolar disorder, and that person is experiencing a depressive episode when she or he filled out your test:\n\n\ndepressionScore.2  <- depressionScore \ndepressionScore.2[50] <- 100\nhist(depressionScore.2)\n\n\n\n\n\nLet’s compare the mean on both cases:\n\n\ncat(\"Mean before the extreme case:\", mean(depressionScore))\n\nMean before the extreme case: 24.97403\n\ncat(\"Mean after the extreme case:\", mean(depressionScore.2))\n\nMean after the extreme case: 26.48716\n\n\n\nWe can check now if the median was heavely affected by th extreme case:\n\n\ncat(\"Median before the extreme case:\", median(depressionScore))\n\nMedian before the extreme case: 24.82834\n\ncat(\"Median after the extreme case:\", median(depressionScore.2))\n\nMedian after the extreme case: 24.89818\n\n\n\nGreat the median is robust enough! It remain practically intact!"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-fashionable-mode",
+    "href": "lecture5/centralTendency.html#the-fashionable-mode",
+    "title": "Central tendency and variability",
+    "section": "The fashionable Mode",
+    "text": "The fashionable Mode\n\nThe mode is the value that occurs most frequently. There is no formula for computing the mode.\n\nTo compute the mode, follow these steps:\n\nList all the values in a distribution but list each value only once.\nTally the number of times that each value occurs.\nThe value that occurs most often is the mode.\n\n\ntable(rum$grade)\n\n\n 7  8  9 10 11 \n30 25 24 72 61 \n\n\n\nThe most frequent grade is 10th, therefore the mode is 10th grade.\n\n\n\n\n\n\n\nNote\n\n\nThe function table() helps to calculate frequencies, this means; how many times a value appears in our data. It looks ugly, but it is helpful. The first row are the values observed in the data, and the second row are the frequencies."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-fashionable-mode-ii",
+    "href": "lecture5/centralTendency.html#the-fashionable-mode-ii",
+    "title": "Central tendency and variability",
+    "section": "The fashionable Mode II",
+    "text": "The fashionable Mode II\n\nHowever, things can get messy when you have two modes!\n\n\n\nWhen you have a bimodal distibution you are dealing with a mixture of two or more distributions."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#summary-function-as-a-good-option",
+    "href": "lecture5/centralTendency.html#summary-function-as-a-good-option",
+    "title": "Central tendency and variability",
+    "section": "Summary() function as a good option",
+    "text": "Summary() function as a good option\n\nIn R we can count on a handy function to describe a distribution, this function is summary().\n\n\nsummary(rum$age)\n\n   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. \n  12.00   14.00   16.00   15.35   16.00   18.00 \n\n\n\nThis function shows the minimum value, the 1st quantile, the median, the 3rd quantile, mean and maximum value.\n\n\nR codePlot\n\n\n\nlibrary(ggplot2) ### package to create pretty plots\n\ndens <- density(rum$age)\n\ndf <- data.frame(x=dens$x, y=dens$y)\n\nprobs <- c(0, 0.25, 0.5, 0.75, 1)\n\nquantiles <- quantile(rum$age, prob=probs)\n\ndf$quant <- factor(findInterval(df$x,quantiles))\n\nfigure <- ggplot(df, aes(x,y)) + \n    geom_line() + \n    geom_ribbon(aes(ymin=0, ymax=y, fill=quant)) + \n     scale_x_continuous(breaks=quantiles) +\n     scale_fill_brewer(guide=\"none\") + \n     geom_vline(xintercept=mean(rum$age), linetype = \"longdash\", color = \"red\") +\n     annotate(\"text\", x = 14, y = 0.2, label = \"Q1 = 14 years\") +\n     annotate(\"text\", x = 17, y = 0.3, label = \"Median = 16 years\") +\n     annotate(\"text\", x = 15.35, y = 0.33, label = \"Mean = 15.35 years\") +\n     ylab(\"Likelihood\") + \n     xlab(\"Age in years\")+\n     ggtitle(\"Quantiles and mean of Age\")+\n     theme_classic()\n\n\n\n\nfigure"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability",
+    "text": "Time to talk more about variability\n\nIn psychology we love variability, this is true also for science itself!\nWe care a lot about variability, the whole point of doing research is to explain or observe how variability happens. For instance, if you had data about life expectancy in the world you could detect which cases are far from the mean. Wait! We do have this type of data, check this webpage from the World Bank.\nAccording to the World Bank the global life expectancy at birth is 73 years old.\nWe could use the World Bank map and think, well we could which countries are far from the mean, For example: Costa Rica is 80.47, that means that Costa Rica is (\\(80.47-73 = 7.47\\)) 7.47 expected years above the mean. That’s good, these people have longer life that many people in the world."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-ii",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-ii",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability II",
+    "text": "Time to talk more about variability II\n\nLet’s check more information. In the next table:\n\n\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(DT)\n\nlife <- read.csv(\"lifeExpect.csv\", header = TRUE) %>%\n  select(Country.Name, Country.Code, X2020) %>%\n  filter(!is.na(X2020))\n##rmarkdown::paged_table(life)\n\ndatatable(life, filter = \"top\", style = \"auto\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-iii",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-iii",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability III",
+    "text": "Time to talk more about variability III\n\nAccording the table, countries such as Central African Republic, Chad, Lesotho, Nigeria, and Sierra Leone have the lowest life expectancy. Let’s see how far they are from the global mean.\n\n\nlowLife <- life %>% \n  filter(Country.Code %in% c(\"CAF\", \"TCD\", \"LSO\", \"NGA\", \"SLE\")) %>%\n  mutate(difference = X2020 -73)\n\ndatatable(lowLife, filter = \"top\", style = \"auto\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-iv",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-iv",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability IV",
+    "text": "Time to talk more about variability IV\n\nWhat we just did is called the absolute difference from the mean, and it is one of the variability measures we can use. Just by computing how far these countries are from the mean, we can draw worrisome conclusions. People are dying at a very young age in those places! And the difference compare to the World’s mean is up to 19.32 years less!\nFollowing the same logic we could estimate something call variance, time to check some math formulas:\n\n\\[\\begin{equation}\ns^2 = \\frac{\\sum (X_{i} - \\bar{X})^2}{n-1}\n\\end{equation}\\]\n\nIn this formula \\(X_{i}\\) is each value you have in your observed distribution, in our example it would be the life expectancy of each country. The symbol \\(\\bar{X}\\) represents the mean of your observed distribution or data (lowercase).\nCan you see what we are doing? We are calculating the absolute difference from the mean, and secondly we square the difference, next we sum the result and divide it finally by \\(n-1\\).\nBut wait! What is \\(n-1\\)? Given that we are working with a possible sample out of infinite samples, \\(n-1\\) helps to account that we are not working with the data generating process itself, it is just one instance generated by the data process.\nThe variance is hard to interpret but itself, but it is a concept that will help you to understand other models.\nThis concept is a measure of variability that depends on the metric of your observations.\nFor instance, you cannot compare the variability in kilometers with miles."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-v",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-v",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability V",
+    "text": "Time to talk more about variability V\n\nLet’s use the data set called mtcars already included inside R, you don’t have to import any data set into R:\n\n\ndatatable(mtcars, filter = \"top\", style = \"auto\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-vi",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-vi",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability VI",
+    "text": "Time to talk more about variability VI\n\nWe will convert miles per gallon to kilometers per liter, we just need to multiply 1 mpg by 0.425 km/l.\n\n\ncarsData <- mtcars %>% select(mpg) %>%\n  mutate(kml = mpg*0.425)\n\ndatatable(carsData, filter = \"top\", style = \"auto\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#time-to-talk-more-about-variability-vii",
+    "href": "lecture5/centralTendency.html#time-to-talk-more-about-variability-vii",
+    "title": "Central tendency and variability",
+    "section": "Time to talk more about variability VII",
+    "text": "Time to talk more about variability VII\n\nWe can try to compare the variance of miles per gallon and kilometers per liter:\n\n\n## Variance mpg\ncat(\"Miles per gallon variance:\", var(carsData$mpg))\n\nMiles per gallon variance: 36.3241\n\n### Variance kml\ncat(\"kilometers per liter variance\", var(carsData$kml))\n\nkilometers per liter variance 6.561041\n\n\n\nIf we were very naive, we would conclude that miles per gallon has more variance compare to kilometers per liter, just because the estimation gives a larger number this conclusion would be wrong.\nThe variance looks larger because the measurement unit has larger numbers, compare to km/l.\nWhen you compare variances you need to compare apples to apples, both variables should follow the same units."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse",
+    "href": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse",
+    "title": "Central tendency and variability",
+    "section": "The Standard Deviation will be a better horse",
+    "text": "The Standard Deviation will be a better horse\n\nThe standard deviation is an improved measure to describe continuous distribution.\nIt is the average distance from the mean. The larger the standard deviation, the larger the average distance each data point is from the mean of the distribution, and the more variable the set of values is.\n\n\\[\\begin{equation}\ns = \\sqrt{\\frac{\\sum (X_{i} - \\bar{X})^2}{n-1}}\n\\end{equation}\\]\n\nThe good thing about the standard deviation is that now we can compare different distributions and answer questions such as: which distribution has more variability? In simple words, we can conclude which distribution has values further away from the mean."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-ii",
+    "href": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-ii",
+    "title": "Central tendency and variability",
+    "section": "The Standard Deviation will be a better horse II",
+    "text": "The Standard Deviation will be a better horse II\n\nAs always we can study an example:\n\nRemember when we were simulating data days ago? Well, we’ll do it again!\n\n\nHospital Example\n\nR codePlot\n\n\n\nlibrary(ggplot2) ### <- this is a package in R to create pretty plots.\n\nset.seed(359)\n\n### Non-hospital observations \n### Mean or average in Kg \nMean <- 65\n## Standard Deviation\nSD <- 1\n## Number of observations\nN <-  300\n### Generated values from the normal distribution\ndata_1 <-  rnorm(n = N, mean = Mean, sd = SD )\ndata_1\n\n### Hospital group\n### Mean or average in Kg \nMean <- 90\n## Standard Deviation\nSD <- 10\n## Number of observations\nN <-  300\n### Generated values from the normal distribution\ndata_2 <-  rnorm(n = N, mean = Mean, sd = SD )\ndata_2\n\n\n\ndataMerged <- data.frame(\n  group =c(rep(\"College\", 300),\n           rep(\"Hospital\", 300)),\n  weight = c(data_1, data_2))\n\nggplot(dataMerged , aes(x=weight, fill=group)) +\n  geom_density(alpha=.25) + \n  theme_bw()+\n  labs(title = \"College and Hospital Weight Density Function\") + \n  xlab(\"Weight (kg)\") + \n  ylab(\"p(y) or likelihood\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-iii",
+    "href": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-iii",
+    "title": "Central tendency and variability",
+    "section": "The Standard Deviation will be a better horse III",
+    "text": "The Standard Deviation will be a better horse III\n\nThanks to the standard deviation, we have a measurement unit to describe better the data.\nWe could also know at what point we consider a case to be extreme or select observations above or below any specific value based on the standard deviation.\nWe can start from the mean and add or subtract standard deviations from the mean. For example, the mean of age in our rumination data set is 15.35 years old, the standard deviation is 1.43 years old."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-iv",
+    "href": "lecture5/centralTendency.html#the-standard-deviation-will-be-a-better-horse-iv",
+    "title": "Central tendency and variability",
+    "section": "The Standard Deviation will be a better horse IV",
+    "text": "The Standard Deviation will be a better horse IV"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#lets-continue-learning-important-concepts",
+    "href": "lecture5/centralTendency.html#lets-continue-learning-important-concepts",
+    "title": "Central tendency and variability",
+    "section": "Let’s continue learning important concepts",
+    "text": "Let’s continue learning important concepts\n\nI already mentioned the concept of “quantiles”, this concept is in fact related to probabilities.\nWe will revisit the household data presented before, but this time we’ll order the income starting from the lowest value up to the highest value:\n\n\n\n\n$25,500| $32,456| $37,668| $54,365| $135,456\n\n\n\n\n\n\nNow, we can follow this formula to estimate our quantiles (Westfall & Henning, 2013):\n\n\\[\\begin{equation}\n\\hat{y}_{(i-0.5)/n} = y_{(i)}\n\\end{equation}\\]\n\nThe little hat \\(\\hat{}\\) on top of \\(y\\) means “estimate of”, this is used in statistics to comunicate that you are estimating a value form “data” (lowercase). This means you are estimating a value from your observed fixed data. The right-hand side is the \\(ith\\) ordered value of the data, all together we can read the formula as:\n\nThe \\((i − 0.5)/n\\) quantile of the distribution is estimated by the \\(ith\\) ordered value of the data\n\nWe can see an example:\n\n\nQuantile example\n\n\n\\(i\\)\n\\(y(i)\\)\n(\\(i\\)-0.5)/\\(n\\)\n\\[\\hat{y}_{(i-0.5)/n} = y(i)\\]\n\n\n\n\n1\n25500\n(1-0.5)/5 =0.10\n25500\n\n\n2\n32456\n(2-0.5)/5 =0.30\n32456\n\n\n3\n37668\n(3-0.5)/5 =0.50\n37668\n\n\n4\n54365\n(4-0.5)/5 =0.70\n54365\n\n\n5\n135456\n(5-0.5)/5 =0.90\n135456\n\n\n\n\nThen, we can say in plain English: “The 70th percentile of the distribution is measured by $54,365”.\nNow notice something, why we don’t have data representing the 75th percentile?\nGiven that these are estimates , these numbers are approximations to the true value, If you collect more data you’ll have data in different percentiles, also more precision to capture the real value."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#another-example-related-to-quantiles",
+    "href": "lecture5/centralTendency.html#another-example-related-to-quantiles",
+    "title": "Central tendency and variability",
+    "section": "Another example related to quantiles",
+    "text": "Another example related to quantiles\n\n### mtcars data set is included in R\n\ndatatable(mtcars %>% select(mpg), filter = \"top\", style = \"auto\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#another-example-related-to-quantiles-ii",
+    "href": "lecture5/centralTendency.html#another-example-related-to-quantiles-ii",
+    "title": "Central tendency and variability",
+    "section": "Another example related to quantiles II",
+    "text": "Another example related to quantiles II\n\nWe can estimate the percentiles using the formula showed before, this time we will find the estimate for the quantiles in mpg variable inside the data mtcars:\n\n\nDataPlot\n\n\n\nlibrary(dplyr)\n\nestimatePercent <- mtcars %>% select(mpg) %>% \n  mutate(cars = row.names(mtcars)) %>%\n  arrange(mpg) %>%\n  mutate(order = 1:n()) %>%\n  mutate(prob = (order-0.50)/n()) %>%\n  mutate(percent = prob*100)\n\ndatatable(estimatePercent, filter = \"top\", style = \"auto\")\n\n\n\n\n\n\n\n\n\nggplot(data = estimatePercent, \n       aes(x = percent, \n           y = factor(cars, \n                      levels = row.names(estimatePercent)))) +\n  geom_point(size=3, color=\"orange\") +\n  geom_segment(aes(xend=percent, yend=0) ) +\n  xlab(\"Percentile\")+\n  ylab(\"Car Model\")+\n  ggtitle(\"Car percentiles\")+\n  theme_bw()"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#another-example-related-to-quantiles-iii",
+    "href": "lecture5/centralTendency.html#another-example-related-to-quantiles-iii",
+    "title": "Central tendency and variability",
+    "section": "Another example related to quantiles III",
+    "text": "Another example related to quantiles III\n\nInstead of estimating the percentiles by hand we can use the function quantile() in R:\n\n\nquantile(mtcars$mpg, type = 5, probs = 0.265625)\n\n26.5625% \n    15.5 \n\n\n\nThis function will require a vector with numbers, and the probability you are interested.\nIf you run ?quantile you’ll see there are different ways to estimate the observed percentiles, all those are possible models to get an estimate.\n\n\n?quantile\n\nstarting httpd help server ... done"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#cumulative-density-function-cdf",
+    "href": "lecture5/centralTendency.html#cumulative-density-function-cdf",
+    "title": "Central tendency and variability",
+    "section": "Cumulative Density Function (CDF)",
+    "text": "Cumulative Density Function (CDF)\n\nWe have been studied Probability Density Functions (PDF), now I’m going to introduce a concept that is related to PDF.\nI said that the area under the curve of the PDF is actually probability, even though the y-axis is showing likelihood instead of probability.\nI also said you can use calculus to get that probability in a easier way.\nThose calculus formulas will give you an easy way to estimate the probability under that curve. The final result is something we call “Cumulative Density Function CDF”."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#cumulative-density-function-cdf-1",
+    "href": "lecture5/centralTendency.html#cumulative-density-function-cdf-1",
+    "title": "Central tendency and variability",
+    "section": "Cumulative Density Function (CDF)",
+    "text": "Cumulative Density Function (CDF)\n\nAs the name says, we are like “stacking” the whole density, therefore it changes the shape of the curve, but at the end is the same information in a different metric.\nIn fact, you get the derivative of a CDF, th calculation will give you the PDF back.\nBut no worries, I won’t ask you to do it… you are safe!"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#cumulative-density-function-cdf-2",
+    "href": "lecture5/centralTendency.html#cumulative-density-function-cdf-2",
+    "title": "Central tendency and variability",
+    "section": "Cumulative Density Function (CDF)",
+    "text": "Cumulative Density Function (CDF)\n\nAll continuous distributions will have a CDF, and we are going to use very often the normal CDF.\nThe normal distribution is also called “Gaussian Distribution” , I prefer this name instead of “normal distribution”.\nAnyhow, let’s check some properties here.\n\nWe can also understand the importance of the Gaussian CDF using R:\n\nWhen we assume that the Gaussian distribution has a mean = 0 and standard deviation = 1, the CDF looks like this:\n\n\nCodePlot\n\n\n\n## sequence of x-values \njustSequence <- seq(-4, 4, .01)\n#calculate normal CDF probabilities \nprob <- pnorm(justSequence)\n#plot normal CDF \nplot(justSequence , \n     prob,\n     type=\"l\",\n     xlab = \"Generated Values\",\n     ylab = \"Probability\",\n     main = \"CDF of the Standard Gaussian Distribution\")\n\nabline(v=1.96, h = 0.975, col = \"red\")\n\n\n\n\n\n\n\n\n\n\n\n\nWe can see that the probability of observing a value less or equal than 1.96 is 0.975."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#cumulative-density-function-cdf-ii",
+    "href": "lecture5/centralTendency.html#cumulative-density-function-cdf-ii",
+    "title": "Central tendency and variability",
+    "section": "Cumulative Density Function (CDF) II",
+    "text": "Cumulative Density Function (CDF) II\n\nLet’s do something more intersting, remember the example of weight where we simulated the weight of two groups: hospital patients vs. college students?\nWe could now get the probability of observing a particular value.\nLet’s imagine again that the distribution of weight among college students has a mean of 65 kg, and standard deviation of 20 kg.\n\n\nCodePlot\n\n\n\nweight <- seq(40, 90, 0.1)\n\nprobability <- pnorm(weight, \n                     mean = 65,\n                     sd = 20)\nplot(weight, \n     probability, type = \"l\")\nabline(v=76, h =  0.7088403, col = \"red\")\n\n\n\n\n\n\n\n\n\n\n\n\nA weight of 76 kg has a probability of 0.71, it is likely to see this weight in the college students under my assumptions."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#skewness",
+    "href": "lecture5/centralTendency.html#skewness",
+    "title": "Central tendency and variability",
+    "section": "Skewness",
+    "text": "Skewness\n\nI left some concepts behind because I got excited talking about the CDF.\nOne important concept to describe a distribution is skewness."
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#skewness-ii",
+    "href": "lecture5/centralTendency.html#skewness-ii",
+    "title": "Central tendency and variability",
+    "section": "Skewness II",
+    "text": "Skewness II\n\nWe say that a distribution is right skewed when the tail is longer to the right:\n\n\nset.seed(5696)\n\nN <- 1000\n\n### Number of times people check Instagram\nweight <- rnbinom(N, 10, .5)\n\nplot(density(weight, kernel = \"gaussian\" ),\n     ylab = \"p(y) or likelihood\",\n     xlab = \"How many times people check Instagram?\",\n     main = \"Density plot of How many times people check Instagram?\")\n\n\n\n\n\nWe say that a distribution is left skewed when the left tail is longer:\n\n\nset.seed(5696)\n\nplot(density(rbeta(300,60,2)),\n     ylab = \"p(y) or likelihood\",\n     xlab = \"Percentage of people who pass this class\",\n     main = \"Density plot of Percentage of people who pass this class\")"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#central-tendency-measures",
+    "href": "lecture5/centralTendency.html#central-tendency-measures",
+    "title": "Central tendency and variability",
+    "section": "Central tendency measures",
+    "text": "Central tendency measures\n\nIn this lecture we will study several basic concepts, but don’t fool yourselves by thinking that these topics are less important.\nThese concepts are the foundations to understand what is coming in this class.\nWe will learn about several measures to describe and understand continuous distributions.\nRemember that this are just a few measures, if time allows we will study more options to describe distributions.\nLet’s focus on the most common type of average you’ll see in psychology:\n\n\\[\\begin{equation}\n\\bar{X} = \\frac{\\sum X}{n}\n\\end{equation}\\]\nWhere:\n\nthe letter X with a line above it (also sometimes called “X bar”) is the mean value of the group of scores or the mean.\nthe \\(\\sum\\) or the Greek letter sigma, is the summation sign, which tells you to add together whatever follows it to obtain a total or sum.\nthe X is each observation\nthe \\(n\\) is the size of the sample from which you are computing the mean.7\n\nExample\n\nsetwd(\"C:/Users/emontenegro1/Documents/MEGA/stanStateDocuments/PSYC3000/lecture5\")\n\nrum <- read.csv(\"ruminationComplete.csv\")\n\nmean(rum$age)\n\n[1] 15.34906\n\n\n\n\n\n\n\n\nNote\n\n\nWe will use \\(M=\\) to represent the word mean"
+  },
+  {
+    "objectID": "lecture5/centralTendency.html#references",
+    "href": "lecture5/centralTendency.html#references",
+    "title": "Central tendency and variability",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html",
+    "href": "lecture7/hypothesisTesting.html",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "",
+    "text": "We will study the concept of p-value a.k.a significance test.\nI will introduce the concept of hypothesis testing.\nI will also introduce the mean comparison for independent groups.\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#what-is-a-p-value",
+    "href": "lecture7/hypothesisTesting.html#what-is-a-p-value",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "What is a p-value?",
+    "text": "What is a p-value?\n\np-value stands for probability value.\nIt was born as a measure to reject a hypothesis.\nIn statistics and science, we always have hypothesis in mind. Statistics translates our hypothesis into evaluations of our hypothesis.\nFor example, we often ask questions to our selves such as: why my boyfriend won’t express her feelings? and then we ask, is this related to gender? Is it true that women share easily their emotions compare to men? If so, does it happen only to me? Is this a coincidence?\nWe can create a hypothesis with these questions, let’s try to write one:\n\n\\(H_{1}\\) = There is a difference in emotional expression between cisgender women and cisgender men.\n\nThis is our alternaive hypothesis but we need a null hypothesis:\n\n\\(H_{0}\\) = There is no difference in emotional expression between cisgender women and cisgender men.\n\nThat was easy you might think, but why do we need a null statement?\n\nScience always starts with a null believe, and what we do as scientist is to collect evidence that might help to reject the null hypothesis. If you collect data to support your alternative hypothesis you would be doing something called “confirmation bias”.\nConfirmation bias consist of collecting information that only supports your alternative hypothesis.\nFor example, you start collecting data that only proofs that all swans are white, instead of looking at information that helps to reject the null: not all swans are white."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#what-is-a-p-value-ii",
+    "href": "lecture7/hypothesisTesting.html#what-is-a-p-value-ii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "What is a p-value? II",
+    "text": "What is a p-value? II\n\nWe can write out null hypothesis in a statistical statement:\n\n\\(H_{0}\\) = The mean difference in emotional expression between cisgender women and cisgender men is equal to zero.\n\nIn the previous hypothesis we know that we are focusing in the mean difference, it is more specific.\nThe very first step to test our null hypothesis is to create a null model.\nA null model is a model where there is not any difference between groups, or there is not relationship between variables."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#what-is-a-p-value-iii",
+    "href": "lecture7/hypothesisTesting.html#what-is-a-p-value-iii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "What is a p-value? III",
+    "text": "What is a p-value? III\n\nIn my new model I will find a null model for the correlation between rumination and depression.\nTo create our new model we will re sample and shuffle our observed data. This is similar to have two decks of cards and you shuffle your cards multiple times until it is hard to guess which card will come next, and imagine cards have equal probability to be selected.\nThis procedure is called permutations, this will help us to create a distribution of null correlations. This means, all the correlations produced by my null model are produced by chance."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#what-is-a-p-value-iv",
+    "href": "lecture7/hypothesisTesting.html#what-is-a-p-value-iv",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "What is a p-value? IV",
+    "text": "What is a p-value? IV\n\nLet’s see the following example, remember the estimated correlation between rumination and depression is \\(r= 0.58\\). This null model will help us to know if the correlation is explained by chance.\n\n\nCodeFigure\n\n\n\nrum <- read.csv(\"ruminationComplete.csv\", na.string = \"99\") ## Imports the data into R\n\nrum_scores <- rum %>% mutate(rumination = rowSums(across(CRQS1:CRSQ13)),\n                             depression =  rowSums(across(CDI1:CDI26))) ### I'm calculating\n                                                                       ## total scores\n\n\ncorr <- cor(rum_scores$rumination, rum_scores$depression,\n            use =  \"pairwise.complete.obs\") ## Correlation between rumination and depression\n\n### Let's create a distribution of null correlations\n\nnsim <- 100000\n\ncor.c <- vector(mode = \"numeric\", length = nsim)\n\nfor(i in 1:nsim){\ndepre <- sample(rum_scores$depression, \n                212, \n                replace = TRUE)\n\nrumia <- sample(rum_scores$rumination, \n                212, \n                replace = TRUE)\n\ncor.c[i] <- cor(depre, rumia, use =  \"pairwise.complete.obs\")\n}\n\n\nhist(cor.c, breaks = 120, \n     xlim= c(min(cor.c), 0.70),\n     main = \"Histograma of null correlations\")\nabline(v = corr, col = \"darkblue\", lwd = 2, lty = 1)\nabline(v = c(quantile(cor.c, .025),quantile(cor.c, .975) ),\n col= \"red\",\n lty = 2,\n lwd = 2)"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#what-is-a-p-value-v",
+    "href": "lecture7/hypothesisTesting.html#what-is-a-p-value-v",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "What is a p-value? V",
+    "text": "What is a p-value? V\nLet’s estimate the probability of seeing \\(r = 0.58\\) according to our null model.\n\npVal <- 2*mean(cor.c >= corr)\npVal\n\n[1] 0\n\n\n\nThe probability is a number close to \\(0.00\\).\nWe now conclude that a correlation as extreme as \\(r = 0.58\\) is not explained by chance alone.\n\n\n\n\n\n\n\nNote:\n\n\nThe ugly rule of thumb is to consider a p-value <= .05 as evidence of small probability."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#mean-difference",
+    "href": "lecture7/hypothesisTesting.html#mean-difference",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Mean difference",
+    "text": "Mean difference\n\nWe can also do the same for the difference between means.\nIn this example, my null model is a model with null differences.\nI also conducted permutations on this example.\nWe will estimate if the difference by sex in rumination is explained by chance.\nIn this sample the mean difference in rumination between males and females is \\(\\Delta M\\) = 2.74.\n\n\nCodeFigure\n\n\n\nset.seed(1236)\n\nob.diff <- mean(rum_scores$rumination[rum_scores$sex==0], na.rm = TRUE )- mean(rum_scores$rumination[rum_scores$sex==1], na.rm = TRUE)\n\n### let's create a distribution of null differences\n\nnsim <- 100000\n\ndiff.c <- vector(mode = \"numeric\", length = nsim)\n\n### This is something called \"loop\", you don't have to pay attention to this.\n\nfor(i in 1:nsim){\nwomen <- sample(rum_scores$rumination[rum_scores$sex==0], \n                length(rum_scores$rumination[rum_scores$sex==0]), \n                replace = TRUE)\n\nmen <- sample(rum_scores$rumination[rum_scores$sex==1], \n                length(rum_scores$rumination[rum_scores$sex == 1]), \n                replace = TRUE)\n\ndiff.c[i] <- mean(women,  na.rm = TRUE)-mean(men,  na.rm = TRUE)\n} \n\n\nhist(diff.c, breaks = 120, \n     #xlim= c(min(diff.c), 0.70),\n     main = \"Histogram of Null Differences\")\nabline(v = ob.diff, col = \"darkblue\", lwd = 2, lty = 1)\nabline(v = c(quantile(diff.c, .025), quantile(diff.c, .975) ),\n col= \"red\",\n lty = 2,\n lwd = 2)\n\n\n\n\n\n\n\n\n\n\n\n\nWe can see the probability of seeing a value as large as 2.74\n\n\npVal <- 2*mean(diff.c >= ob.diff)\npVal\n\n[1] 0.99652"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#mean-difference-ii",
+    "href": "lecture7/hypothesisTesting.html#mean-difference-ii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Mean difference II",
+    "text": "Mean difference II\n\nIn real life, we don’t have to estimate a null model “by hand” as I did before.\nR and JAMOVI will help us on that because the null model is already programmed.\nIn addition, when we compare independent means, we don’t usually do permutations. We follow something called the \\(t\\) - distribution , let’s study more about this distribution: t-distribution."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#mean-difference-iii",
+    "href": "lecture7/hypothesisTesting.html#mean-difference-iii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Mean difference III",
+    "text": "Mean difference III\n\nThe \\(t\\)-distribution helped to develop the test named t-Student Test.\nIn this test we use the \\(t\\)-distribution as our model to calculate the probability to observe a value as extreme as 2.74.\nBut this probbaility will be estimated following the Cumulative Density Function (CDF) of the \\(t\\)-distribution."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#t-test",
+    "href": "lecture7/hypothesisTesting.html#t-test",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "\\(t\\)-Test",
+    "text": "\\(t\\)-Test\n\nThe Student’s test is also known as a the “t-test”.\nIn this test, we will transform the mean difference of both groups into a \\(t\\) value.\n\n\\[\\begin{equation}\nt= \\frac{\\bar{X}_{1} - \\bar{X}_{2}}{\\sqrt{\\Big [\\frac{(n_{1}-1)s^{2}_{1}+(n_{2}-1)s^{2}_{2}}{n_{1} + n_{2}-2}\\Big ]\\Big [\\frac{n_{1}+n_{2}}{n_{1}n_{2}} \\Big ]}}\n\\end{equation}\\]\n\nIn this transformation \\(n_{1}\\) is the sample size for group 1, \\(n_{2}\\) is the sample size for group 2, \\(s^2\\) means variance. The \\(\\bar{X}\\) represents the mean.\nThis formula will help us to tranform the oberved difference in means to a value that comes from the \\(t\\)-distribution."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#t-test-iii",
+    "href": "lecture7/hypothesisTesting.html#t-test-iii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "\\(t\\)-Test III",
+    "text": "\\(t\\)-Test III\n\nRemember we talked about the \\(t\\)-distribution’s CDF. This CDF will help us to estimate the probability of seeing a value. the y-axis represents probability values.\n\n\nvalores <- seq(-4,4, by = 0.1)\n\nprobabilidad <- pt(valores, df = 10)\n\nplot(valores, \n     probabilidad, \n     type = \"l\",\n     xlab = \"t-value\",\n     ylab = \"t-value probability\",\n     main = \"t-distribution's CDF\")"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#t-test-iv",
+    "href": "lecture7/hypothesisTesting.html#t-test-iv",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "\\(t\\)-Test IV",
+    "text": "\\(t\\)-Test IV\n\nWe can see how useful is a \\(t\\)-test by presenting a applied example.\nIn this example we will try to reject the null hypothesis that says:\n\n“The rumination score in males is equal to the rumination score in females”\n\nWe represent this hypothesis in statitistic like this:\n\n\\[\\begin{equation}\nH_{0}: \\mu_{1} = \\mu_{0}\n\\end{equation}\\]\n\nAlso in this example I’m introducing a new function in R named t.test(). This is the function that will helps to know if we can reject the null hypothesis.\nThe function t.test() requires a formula created by using tilde ~.\nIn R the the variable on the right side of ~ is the independent variable, the variable on the left side of ~ is the dependent variable.\nIn a independent samples \\(t\\)-test the independent variable is always the group, and the dependent variable is always any continuous variable.\n\n\nCodePlot\n\n\n\nt.test(rumination ~ sex, data = rum_scores, var.equal = TRUE)\n\n\n    Two Sample t-test\n\ndata:  rumination by sex\nt = 2.2457, df = 203, p-value = 0.0258\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n 0.3347849 5.1535481\nsample estimates:\nmean in group 0 mean in group 1 \n       31.20896        28.46479 \n\n\n\nIn this example, we found that the \\(p\\)-value is 0.03 and the \\(t\\)-value is 2.25. This means:\n\n***“IF we repeat the same analysis with multiple samples the probability of finding a*** \\(t\\)-value = 2.25 is p = 0.03, under the assumptions of the null model”.\n\nThis is a very small probability, what do you think? Is 2.25 a value explainable by chance alone?"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#t-test-assumptions",
+    "href": "lecture7/hypothesisTesting.html#t-test-assumptions",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "\\(t\\)-test Assumptions",
+    "text": "\\(t\\)-test Assumptions\n\nWe haven’t talked about the assumptions of the t-test model.\nRemember that all models have assumptions, we have to assume something to study Nature.\nThe \\(t\\)-test model assumes that the difference in means is generated by a normally distributed process.\nIt also assumes that variances are equal on both groups.\nLet’s see what happens when we assume equal variances but the data does not come from a process with equal variances:\n\n\n\nShow the code\nset.seed(1234)\n\nN1 <- 50 ## Sample size group 1\n\nN2 <- 50 ### sample size group 2\n\nMean1 <- 100 ## Mean group 1\n\nMean2 <- 20 ### Mean group 2\n\nresults <- list()\n\n\nfor(i in 1:10000){\ngroup1 <- rnorm(N1, mean = Mean1, sd = 100) ### variances or standard deviation are not equal\n\ngroup2 <-  rnorm(N2, mean = Mean2, sd = 200) ### variances or standard deviation are not equal\n\ndataSim <- data.frame(genValues = c(group1,group2), \n                      groupVar = c(rep(1,N1),rep(0,N2)))\n\nresults[[i]] <- t.test(genValues ~ groupVar, data = dataSim, var.equal = TRUE)$p.value\n}\n\n### Proportion of times we rejected the null hypothesis\n\ncat(\"Proportion of times we rejected the null hypothesis\",sum(unlist(results) <= .05)/length(results)*100)\n\n\nProportion of times we rejected the null hypothesis 70.5\n\n\n\nWe successfully rejected the null hypothesis in only 70.5% of the data sets generated. But in reality the \\(t\\)-test should reject the null hypothesis 100% of the times.\nLet’s check when we assume equal variances in our \\(t\\) - test and the model that generates is actually a process with equal variances:\n\n\n\nShow the code\nset.seed(1234)\n\nN1 <- 50\n\nN2 <- 50\n\nMean1 <- 100\n\nMean2 <- 20\n\nresults_2 <- list()\n\nfor(i in 1:10000){\n  \ngroup1 <- rnorm(N1, mean = Mean1, sd = 5) ## equal variances or standard deviation\n\ngroup2 <-  rnorm(N2, mean = Mean2, sd = 5) ## equal variances or standard deviation\n\ndataSim <- data.frame(genValues = c(group1,group2), \n                      groupVar = c(rep(1,N1),rep(0,N2)))\n\nresults_2[[i]] <- t.test(genValues ~ groupVar, data = dataSim, var.equal = TRUE)$p.value\n}\n\n### Probability of rejecting the null hypothesis\n\ncat(\"Proportion of times we rejected the null hypothesis\", sum(unlist(results_2) <= .05)/length(results_2)*100)\n\n\nProportion of times we rejected the null hypothesis 100\n\n\n\nThis time we are rejecting the null hypothesis 100% of the times. This is what we were looking for! Remember that we generated data from a process where group 1 had a mean of 100, and the group 2 had a mean of 20. The t-test should reject the null hypothesis every time I generate new data sets, but this doesn’t happen when I made the wrong assumption: I assumed equal variances when I should not do it.\nSummary: when we wrongly assume that the variances are equal between groups, we decrease the probability to reject the null hypothesis when the null should be rejected. This is bad!\nThese simulations showed the relevance of respecting the assumptions of the \\(t\\)-test."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#how-do-we-know-if-my-observed-data-holds-the-assumption",
+    "href": "lecture7/hypothesisTesting.html#how-do-we-know-if-my-observed-data-holds-the-assumption",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "How do we know if my observed data holds the assumption ?",
+    "text": "How do we know if my observed data holds the assumption ?\n\nThere are tests to evaluate the assumption of equivalence of variance between groups.\nThe most used test to evaluate the homogeneity of variance is the Levene’s Test for Homogeneity of Variance.\nWe can implement this test in R using the function leveneTest() , this function comes with the R package car. You might need to install this package in case you don’t have it installed in your computer, you can run the this line of code to install it: install.packages(\"car\")\nI’m going to test if the variance of rumination holds the assumption of equality of variance by sex:\n\n\nlibrary(car)\n\nLoading required package: carData\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:purrr':\n\n    some\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\nleveneTest(rumination ~ as.factor(sex), \n           data = rum_scores) \n\nLevene's Test for Homogeneity of Variance (center = median)\n       Df F value Pr(>F)\ngroup   1  0.2541 0.6148\n      203               \n\n\n\nIn this test the null hypothesis is “The variances of group 1 and group 2 are equal”, if the \\(p\\)-value is less or equal to 0.05 we reject the null hypothesis. In the output above you can see the p-value under the column Pr(>F).\nIn the case of rumination, the \\(p\\)-value = 0.61, given that the \\(p\\)-value is higher than 0.05, we don’t reject the null hypothesis. We can assume the variances of rumination by sex are equal."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#how-do-we-know-if-my-observed-data-holds-the-assumption-ii",
+    "href": "lecture7/hypothesisTesting.html#how-do-we-know-if-my-observed-data-holds-the-assumption-ii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "How do we know if my observed data holds the assumption ? II",
+    "text": "How do we know if my observed data holds the assumption ? II\n\nWhat happens if the Levene’s Test rejects the null hypothesis of homogeneity of variance?\nCan we continue using the \\(t\\) - test to evaluate my hypothesis?\nThe answer is: Yes you can do a \\(t\\)-test but there is a correction on the degrees of freedom. We will talk more about degrees of freedom in the next sessions.\nIf you cannot assume equality of variances, all you have to do in R is to switch the argument var.equal = TRUE to var.equal = FALSE.\n\n\nt.test(rumination ~ sex, data = rum_scores, var.equal = FALSE)\n\n\n    Welch Two Sample t-test\n\ndata:  rumination by sex\nt = 2.2841, df = 149.72, p-value = 0.02377\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n 0.3702483 5.1180847\nsample estimates:\nmean in group 0 mean in group 1 \n       31.20896        28.46479 \n\n\n\nNow , the output says we are performing a Welch Two Sample t-test, Welch was tha mathematician who found the correction."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size",
+    "href": "lecture7/hypothesisTesting.html#effect-size",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size",
+    "text": "Effect size\n\nUp to this point we have studied how we test our hypothesis when we compare independent means, but we still have to answer the question, how large is a large difference between means? Or, how small is a small difference? In fact, what is considered a small difference?\nThese questions were answered by Jacob Cohen (1923-1998).\nCohen created a standardized measure to quantify the magnitude of the difference between means.\nLet’s see a pretty plot about it in this link."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#time-to-check-more-formulas",
+    "href": "lecture7/hypothesisTesting.html#time-to-check-more-formulas",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Time to check more formulas",
+    "text": "Time to check more formulas\nCohen’s \\(d\\) Effect Size:\n\\[\\begin{equation}\nES = \\frac{\\bar{X}_{1}-\\bar{X}_{2}}{\\sqrt{\\Big[\\frac{s^2_{1}+s^2_{2}}{2} \\Big ]}}\n\\end{equation}\\]\nWhere:\n\n\\(ES\\) = is effect size.\n\n\\(\\bar{X}\\) = Mean.\n\n\\(s^2\\) = variance."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example",
+    "text": "Effect size example\n\nLet’s compute an effect size in R. In this example we will resume our \\(t\\)-test example of rumination by sex.\n\n\nt.test(rumination ~ sex, data = rum_scores)\n\n\n    Welch Two Sample t-test\n\ndata:  rumination by sex\nt = 2.2841, df = 149.72, p-value = 0.02377\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n 0.3702483 5.1180847\nsample estimates:\nmean in group 0 mean in group 1 \n       31.20896        28.46479 \n\n\n\nIn the \\(t\\)- test output we have information we can use to compute the effect size. We have the mean for each group \\(M_{(female)} = 31.21\\), \\(M_{(male)}= 28.46\\). We already know that the difference between groups is not explained by chance alone (\\(p\\)= 0.02) because the p-value is smaller than 0.05.\nNow let’s compute the effect size,\n\n\nlibrary(dplyr)\n\n### This will create tidy table by group (sex)\nInfoByBroup <- rum_scores %>% group_by(sex) %>%\n    summarize(Mean = mean(rumination, na.rm = TRUE),  \n          Var = var(rumination, na.rm = TRUE))\n\n\nkable(InfoByBroup, \n      caption = \"Rumination mean and variance by sex\", \n      digits = 2)\n\n\n\nRumination mean and variance by sex\n \n  \n    sex \n    Mean \n    Var \n  \n \n\n  \n    0 \n    31.21 \n    71.88 \n  \n  \n    1 \n    28.46 \n    64.40 \n  \n\n\n\n\n\nEffect size computation\n\n\nShow the code\nmeanFemales <- InfoByBroup$Mean[1]\n\nmeanMales <- InfoByBroup$Mean[2]\n\nvarianceFemales <- InfoByBroup$Var[1]\n\nvarianceMales <- InfoByBroup$Var[2]\n\neffectSize <- (meanFemales-meanMales)/sqrt((varianceFemales+varianceMales)/2)\n\ncat(\"The effect size of sex on rumination is\", \"d =\", round(effectSize,2))\n\n\nThe effect size of sex on rumination is d = 0.33\n\n\n\nAccording to Cohen (2013) a small effect size is \\(d = 0.20\\), a medium effect size is \\(d = 0.50\\), a large effect size is \\(d= .80\\)"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example-ii",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example-ii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example II",
+    "text": "Effect size example II\n\nWe can make this calculation more fun. Let’s imagine you are a clinician, and you need a way to understand how large is the difference in rumination and depression. You need to find a way to quantify which variable you should pay more attention, which variable has larger differences between cisgender males and cisgender females.\nWhy would you care about differences between cisgender males and cisgender females? Why would you care to compare the differences between rumination and depression?\nFirstly, we need to compute the depression score. In the rumination data set you’ll find columns named CDI these are the items that correspond to the Children’s Depression Inventory. We will use this items to compute a total score.\n\n\nlibrary(knitr)\nlibrary(kableExtra)\n\n\nrum_scores <- rum_scores %>% \n  mutate(depression = rowSums(across(CDI1:CDI26))) ## Computes total score\n\nWe need to check if the variances our depression score are equal between groups before running a \\(t\\)-test:\n\nlibrary(car)\n\nleveneTest(depression ~ as.factor(sex), \n           data = rum_scores) \n\nLevene's Test for Homogeneity of Variance (center = median)\n       Df F value Pr(>F)\ngroup   1  0.8682 0.3526\n      205               \n\n\n\nThe Leven’s Test for Homogeneity of Variance did not reject the null hypothesis of equality of variances. Hence, we can hold the assumption of equality of variances. We don’t need to perform a correction\n\n\n## This test assumes equality of variances after performing the Levene's Test.\nt.test(depression ~ sex, data = rum_scores, var.equal = TRUE) \n\n\n    Two Sample t-test\n\ndata:  depression by sex\nt = 2.5468, df = 205, p-value = 0.01161\nalternative hypothesis: true difference in means between group 0 and group 1 is not equal to 0\n95 percent confidence interval:\n 0.5257305 4.1298205\nsample estimates:\nmean in group 0 mean in group 1 \n      11.257353        8.929577 \n\n\n\nNice! Look at the result, we found a difference in depression by cisgender (sex), and it is not explained by chance alone.\n\n\n\n\n\n\n\nImportant\n\n\nHow do you know the difference is not explained by chance alone?"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example-iii",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example-iii",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example III",
+    "text": "Effect size example III\n\nAfter estimating the \\(t-test\\) of depression by sex, we can now quantify the effect’s magnitude:\n\n\nInfoByBroupDepression <- rum_scores %>% group_by(sex) %>%\n    summarize(Mean = mean(depression, na.rm = TRUE),  \n          Var = var(depression, na.rm = TRUE))\n\n\nkable(InfoByBroupDepression, \n      digits= 2, \n      caption = \"Depression mean and variance by sex\")\n\n\n\nDepression mean and variance by sex\n \n  \n    sex \n    Mean \n    Var \n  \n \n\n  \n    0 \n    11.26 \n    36.86 \n  \n  \n    1 \n    8.93 \n    43.04 \n  \n\n\n\n\n\nEffect size computation\n\n\nShow the code\nmeanFemales <- InfoByBroupDepression$Mean[1]\n\nmeanMales <- InfoByBroupDepression $Mean[2]\n\nvarianceFemales <- InfoByBroupDepression$Var[1]\n\nvarianceMales <- InfoByBroupDepression$Var[2]\n\neffectSizeDepression <- (meanFemales-meanMales)/sqrt((varianceFemales+varianceMales)/2)\n\ncat(\"The effect size of sex on depression is\", \"d =\", round(effectSizeDepression,2))\n\n\nThe effect size of sex on depression is d = 0.37\n\n\n\nAs you can see the effect size of sex on depression is \\(d=\\) 0.37 whereas in rumination the effect size of sex is \\(d=\\) 0.33"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example-cont.",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example (cont.)",
+    "text": "Effect size example (cont.)\n\nWhat is your conclusion as a clinician? Is rumination too much different from depression?\nShould we focus on an intervention that addresses depression or/and rumination differently according to sex?\nShould you create a depression intervention accounting for the effect of sex ? Can you ignore rumination for your intervention?\nShould we focus mainly on women because the difference is large between groups?"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example-cont.-1",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example-cont.-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example (cont.)",
+    "text": "Effect size example (cont.)\n\nAs always there are other ways to compute the effect size.\nThe next formula takes into account occasions when the sample size is not the same between groups.\n\n\\[\\begin{equation}\nES = \\frac{\\bar{X}_{1} - \\bar{X}_{2}}{\\sqrt{\\Big [\\frac{(n_{1}-1)s^{2}_{1}+(n_{2}-1)s^{2}_{2}}{n_{1} + n_{2}-2}\\Big ]}}\n\\end{equation}\\]\nWhere:\n\\(\\bar{X}\\) = Mean\n\n\\(s^2\\) = variance\n\n\\(n\\) = sample size\n\n\nYou can study more about effect sizes by clicking this link. It is an article with a good explanation and summary. We will talk about effect sizes again when we study Analysis of Variance (ANOVA)."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#effect-size-example-cont.-2",
+    "href": "lecture7/hypothesisTesting.html#effect-size-example-cont.-2",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Effect size example (cont.)",
+    "text": "Effect size example (cont.)\n\nWe can also estimate the effect sizes with pacakages already programmed to be used in R. In this case we can use the package effectsize.\nYou don’t have this package installed in your R installation. You will have to install the package by running install.packages(\"effectsize\", dependencies = TRUE).\nYou only need to install a package one time. You don’t have to install packages everytime you open RStudio.\n\n\nRuminationDepression\n\n\n\nlibrary(effectsize)\n\ncohens_d(rumination ~ sex,\n         data = rum_scores) ### Equal variances assumed\n\nWarning: Missing values detected. NAs dropped.\n\n\nCohen's d |       95% CI\n------------------------\n0.33      | [0.04, 0.62]\n\n- Estimated using pooled SD.\n\ncohens_d(rumination ~ sex,\n         data = rum_scores, \n         pooled_sd = FALSE) ### does not assume equal variances\n\nWarning: Missing values detected. NAs dropped.\n\n\nCohen's d |       95% CI\n------------------------\n0.33      | [0.04, 0.62]\n\n- Estimated using un-pooled SD.\n\n\n\n\n\ncohens_d(depression ~ sex,\n         data = rum_scores) ### Equal variances assumed\n\nWarning: Missing values detected. NAs dropped.\n\n\nCohen's d |       95% CI\n------------------------\n0.37      | [0.08, 0.66]\n\n- Estimated using pooled SD.\n\ncohens_d(depression ~ sex,\n         data = rum_scores, \n         pooled_sd = FALSE) ### does not assume equal variances\n\nWarning: Missing values detected. NAs dropped.\n\n\nCohen's d |       95% CI\n------------------------\n0.37      | [0.07, 0.66]\n\n- Estimated using un-pooled SD."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#jamovi",
+    "href": "lecture7/hypothesisTesting.html#jamovi",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "JAMOVI",
+    "text": "JAMOVI\n\nI hope you remember JAMOVI. I mentioned this software in the first class.\nIt is also listed in the syllabus.\nThis is a software that runs R using a interface that does not require to write the R code. JAMOVI will write the R code for you behind scenes, it also runs the code for you. Pretty awesome isn’t it?"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#central-limit-theory-clt-1",
+    "href": "lecture7/hypothesisTesting.html#central-limit-theory-clt-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Central Limit Theory (CLT)",
+    "text": "Central Limit Theory (CLT)\n\nThe Central Limit Theory (CLT) is a fact, it describes a rule that happens everywhere in Nature.\n\nThe CLT states: For any population with mean \\(\\mu\\) and standard deviation \\(\\sigma\\), the distribution of sample means for sample size \\(n\\) will have a mean of \\(\\mu\\) and a standard deviation of \\(\\frac{\\sigma}{\\sqrt{n}}\\) and will approach a normal distribution as \\(n\\) approaches infinity.\n\nThe beauty of this theorem is due to:\nit describes the distribution of sample means for any population, no matter what shape, mean, or standard deviation.\nThe distribution of sample means “approaches” a normal distribution very rapidly.\nIt is better to explain this theorem with a simulation, as always we do in this class."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.",
+    "href": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Central Limit Theorem (CLT) (cont.)",
+    "text": "Central Limit Theorem (CLT) (cont.)\n\nIn this example I’ll generate 1000 “datasets” from a Gaussian process (normal distribution) with M = 60, sd = 100. Each data set will contain 10 observations.\nAfter generating 1000 data sets, I’m estimating the mean of those simulated values.\nImagine you are asking the question how many minutes do you need to take a shower? to 10 participants, you then conduct the same study the next day with a different set of 10 participants every day until you get 1000 sets of 10 participants.\n\n\nCodePlot\n\n\n\nset.seed(563)\nN <- 10\n\nM <- 60\n\nSD <- 100\n\n## Number of data sets or replications\nrep <- 1000\n\nresults <- list()\n\nfor(i in 1:rep){\n\nresults[[i]] <- mean(rnorm(n = N, mean = M, sd = SD))\n}\n\n\n\n\nplot(density(unlist(results)),\n     xlab = \"Sample means\",\n     ylab = \"p(y) or likelikood\",\n     main = \"Density plot of Sample means\")"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-1",
+    "href": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Central Limit Theorem (CLT) (cont.)",
+    "text": "Central Limit Theorem (CLT) (cont.)\n\nThere is more beautiful qualities about the CLT. This rule applies to all distributions. When you increase the number of observations per sample, and the number of sample approach infinity. The sample of means will look Gaussian distributed (normally distributed).\nRemember the Poisson distribution I mentioned some lectures behind?\nAs you can see the Poisson distribution after generating 1 data set of 10 observations doesn’t look like a Gaussian process at all!\nCan the sample of means from a Poisson process generate a pretty bell shape?\n\n\nCodeFigure or plot\n\n\n\nset.seed(563)\nplot(density(rpois(n = 5,lambda = 8)),\n     xlab = \"Number of times people take a shower in a week\",\n     ylab = \"p(y) or likelihood\",\n     main = \"Density plot of a Poisson distributed variable\")\n\n\n\n\nset.seed(563)\nplot(density(rpois(n = 10,lambda = 10)),\n     xlab = \"Number of times people take a shower in a week\",\n     ylab = \"p(y) or likelihood\",\n     main = \"Density plot of a Poisson distributed variable\")"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-2",
+    "href": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-2",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Central Limit Theorem (CLT) (cont.)",
+    "text": "Central Limit Theorem (CLT) (cont.)\n\nLet’s find out the answer by simulating 1000 data sets:\n\n\nCodePlot\n\n\n\nset.seed(563)\nN <- 10\n\nM <- 10\n\n## Number of data sets or replications\nrep <- 1000\n\nresults <- list()\n\nfor(i in 1:rep){\n\nresults[[i]] <- mean(rpois(n = N, lambda = M))\n}\n\n\n\n\nplot(density(unlist(results)),\n     xlab = \"Sample of means (Number of times people take a shower in a week)\",\n     ylab = \"p(y) or likelihood\",\n     main = \"Density plot of sample of means from a Poisson data process\")\n\n\n\n\n\n\n\n\nThere is also something even prettier, the mean estimated with all the means, is actually close to the data generating process. It is lovely! This is a natural rule!\n\n\nmean(unlist(results))\n\n[1] 10.0076"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-3",
+    "href": "lecture7/hypothesisTesting.html#central-limit-theorem-clt-cont.-3",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Central Limit Theorem (CLT) (cont.)",
+    "text": "Central Limit Theorem (CLT) (cont.)\n\nWe saw that the mean of sample means is close to the data generating process mean , and it doesn’t matter the type of distribution. However, take into account that there are probability distribution models that will require more than 800000000000 sampled means to approach the Gaussian shape. But eventually the distribution of all the means will look like a Gaussian distribution.\nIn simple terms, what does it mean? It means that the mean is an unbiased estimate on average it tends to be close to the “population” mean. This is why we like the mean as an estimate , and we use it to test hypothesis."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#standard-error",
+    "href": "lecture7/hypothesisTesting.html#standard-error",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Standard Error",
+    "text": "Standard Error\n\nThe CLT will be helpful to introduce the concept of standard error.\nThe Standard Error is a measure of how far is the mean of my sample from the true value in the data generating process.\nThe Standard Error in the context of multiple samples is the standard deviation of all sampled means.\nWe should go to another example:\n\n\n\nShow the code\nset.seed(563)\nN <- 10\n\nM <- 60\n\nSD <- 100\n\n## Number of data sets or replications\nrep <- 1000\n\nresults <- list()\n\nfor(i in 1:rep){\n\nresults[[i]] <- mean(rnorm(n = N, mean = M, sd = SD))\n}\n\ncat(\"The Standard Deviation of 1000 sampled means is\", sd(unlist(results)))\n\n\nThe Standard Deviation of 1000 sampled means is 33.25718\n\n\n\nin this example if we estimate the standard deviation of our sample means we get sd = 33.2571782."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#standard-error-cont.",
+    "href": "lecture7/hypothesisTesting.html#standard-error-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Standard Error (cont.)",
+    "text": "Standard Error (cont.)\n\nIn real life, you’ll never know the standard deviation of sample means, because this is a simulated example.\nIn real application you need to estimate how far your observed mean is from the true mean.\nWe can use this estimation \\(\\frac{\\sigma}{\\sqrt(n)}\\) to approximate how far we are from the mean. In this formula \\(\\sigma\\) is the standard deviation and \\(n\\) is the sample size.\nThe standard error decreases when we increase the sample size, let’s see another example:\n\n\nCodePlot\n\n\n\n\nShow the code\nset.seed(563)\n\nN <- seq(10, 10000, by = 10)\n\nM <- 60\n\nSD <- 100\n\nresults <- list()\n\nfor(i in 1:length(N)){\n\nresults[[i]] <- sd(rnorm(n = N[i], mean = M, sd = SD))/sqrt(N[i])\n}\n\n\n\n\n\nplot(x = N,\n     y = results,\n     type = \"l\",\n     xlab = \"Number of observations in each sample\",\n     ylab = \"Standard error\",\n     main = \"Line plot of Standard Error by sample size\")\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportant\n\n\nIn simple words: The standard error (SE) measures the distance from the true value in the data generating process."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#the-689599.7-rule-for-a-normal-distribution",
+    "href": "lecture7/hypothesisTesting.html#the-689599.7-rule-for-a-normal-distribution",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "The 68–95–99.7 Rule for a Normal Distribution",
+    "text": "The 68–95–99.7 Rule for a Normal Distribution\n\nThere is an important concept in frequentist statistics called “confidence interval”\nBut before getting into details I need to explain a important property of the normal distribution.\nThe following rule applies for the normal distribution:\n\n68 \\(\\%\\) of values will be between \\(\\mu\\) - \\(\\sigma\\) and \\(\\mu\\) + \\(\\sigma\\) .\n95 \\(\\%\\) of values will be between \\(\\mu\\) - \\(2 \\sigma\\) and \\(\\mu\\) + \\(2 \\sigma\\).\n99.7 \\(\\%\\) of values will be between \\(\\mu\\) - \\(3 \\sigma\\) and \\(\\mu\\) + \\(3 \\sigma\\)\n\nWe can see it by generating values from a Gaussian process:\n\n\nlibrary(ggplot2)\n\nset.seed(3632)\n\ngeneratedValues <- rnorm(200000, mean = 50, sd = 2)\n\n### +-1 standard deviation form the mean\n\nupper <- 50 + 2\n\nlower <- 50 - 2\n\npercent1sigma <- (sum(generatedValues <= upper & generatedValues >= lower)\n/length(generatedValues))*100\n\n### +-2 standard deviation form the mean\n\nupper <- 50 + 2*2\n\nlower <- 50 - 2*2\n\npercent2sigma <- (sum(generatedValues <= upper & generatedValues >= lower)/length(generatedValues))*100\n\n### +-3 standard deviation form the mean\n\nupper <- 50 + 3*2\n\nlower <- 50 - 3*2\n\npercent3sigma <- (sum(generatedValues <= upper & generatedValues >= lower)/length(generatedValues))*100\n\n\n68.35 \\(\\%\\) of observations are located at \\(\\pm 1 \\sigma\\) from the data generating process mean. That is true!\n95.45 \\(\\%\\) of observations are located at \\(\\pm 2 \\sigma\\) from the data generating process mean. That is true!\n99.74 \\(\\%\\) of observations are located at \\(\\pm 3 \\sigma\\) from the data generating process mean. That is true!"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor",
+    "href": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Allow me to use a metaphor",
+    "text": "Allow me to use a metaphor\nWestfall & Henning (2013):\n\nImagine there is a lion or perhaps a coyote around your town. Every day the coyote moves around 20 km from the town, forming a circular perimeter. The town is right in the middle of the circle:"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor-cont.",
+    "href": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Allow me to use a metaphor (cont.)",
+    "text": "Allow me to use a metaphor (cont.)\n\nAs you can imagine the lion or coyote could move further from the town but it is always wondering around town chasing chickens or killing cows.\nWe could collect data, for instance, the distance every day from town, and see on average how far it is from town. We could also estimate the standard deviation (). This could be a good measure to see patterns, and be confident about the interval (circle) where the lion or coyote walks."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor-cont.-1",
+    "href": "lecture7/hypothesisTesting.html#allow-me-to-use-a-metaphor-cont.-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Allow me to use a metaphor (cont.)",
+    "text": "Allow me to use a metaphor (cont.)\n\nLet’s imagine that the town is our data generating process mean value (). Also imagine that each time the lion or coyote walks around the town is an independent observed sample from the data generating process.\nWe need to find a way to be confident that our observed data is closed to \\(\\mu\\) (“population mean”).\nA few minutes ago we saw that according to the a Gaussian distribution, you’ll find 95 \\(\\%\\) of the values around \\(\\pm 2 \\sigma\\) from the mean. However, in our simulated data we found out that in reality you’ll find more than 95 \\(\\%\\). It was actually 95.45 \\(\\%\\).\nWe’ll use this great property of the Gaussian distribution, but we will use \\(\\pm 1.96 \\sigma\\) instead of \\(\\pm 2 \\sigma\\). Why? because we want to be closer to exactly find 95\\(%\\) of the observations. This means, we want to be 95\\(\\%\\) confident that we are close to \\(\\mu\\), or the town following our example.\nWe will estimate the confidence interval by computing:\n\n\\[\\begin{equation}\n\\bar{x} \\pm 1.96 \\frac{\\hat{\\sigma}}{ \\sqrt{n}}\n\\end{equation}\\]\nWhere,\n\\(\\bar{x}\\) is the estimated mean.\n\\(\\hat{\\sigma}\\) is the estimated standard deviation.\n\\(1.96\\) is the 97.5 percentile in the standard normal distribution (Gaussian)."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#confidence-interval",
+    "href": "lecture7/hypothesisTesting.html#confidence-interval",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Confidence Interval",
+    "text": "Confidence Interval\nLet’s compute the confidence interval by hand, we can use again the mean of the rumination score:\n\\[\\begin{equation}\n30.25 \\pm 1.96  \\Big (\\frac{8.41}{\\sqrt{205}} \\Big )\n\\end{equation}\\]\nWe need to estimate the mean first:\n\nRumMean <- mean(na.omit(rum_scores$rumination))\nRumMean\n\n[1] 30.25854\n\n\nSecond, we need to estimate the standard deviation:\n\nsd(na.omit(rum_scores$rumination))\n\n[1] 8.406725\n\n\nNow we can estimate the 95\\(\\%\\) confidence interval:\n\nupperCI <- 30.26+1.96*(8.41/sqrt(205))\n\nlowerCI <- 30.26-1.96*(8.41/sqrt(205))\n\ncat(\"The 95% confidence interval for the mean is:\", \n        \"upper-bound=\",\n        round(upperCI,2), \n        \"lower-bound=\",\n          round(lowerCI,2))\n\nThe 95% confidence interval for the mean is: upper-bound= 31.41 lower-bound= 29.11\n\n\nWe can also estimate the confidence interval using the package rcompanion:\n\nlibrary(rcompanion)\n\n\nAttaching package: 'rcompanion'\n\n\nThe following object is masked from 'package:effectsize':\n\n    phi\n\ngroupwiseMean(rumination ~ 1,\n              data   = rum_scores,\n              conf   = 0.95,\n              digits = 3,\n              na.rm = TRUE)\n\n   .id   n Mean Conf.level Trad.lower Trad.upper\n1 <NA> 205 30.3       0.95       29.1       31.4\n\n\n\nThere is something to note here. What you are doing is just multipliying the standard error of the mean by 1.96. This value = 1.96 is called critical value.\n\n\n##Standard error multiplied by 1.96\n1.96*(8.41/sqrt(205))\n\n[1] 1.151265\n\n\n\nWith the information above we could interpret our result as follows:\n\nI am approximately 95\\(\\%\\) confident that \\(\\mu\\) is within 1.15 score points of the sample average 30.26."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#confidence-interval-intepretation",
+    "href": "lecture7/hypothesisTesting.html#confidence-interval-intepretation",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Confidence Interval Intepretation",
+    "text": "Confidence Interval Intepretation\n\nMany of the concepts studied up to this point come from a theory called “frequentist”.\nThe frequentist theory studies the probability in terms of long run events. In this approach we have to imagine that we repeat the same experiment or study several times. Only if we repeat the same study several times we’ll be able to create a confidence interval.\nThis is, of course theoretical. We are able to calculate confidence intervals with one sample. But, this interval is only an approximation.\nThe interpretation of the confidence interval demands to imagine that you repeat the same study \\(n\\) number of times. Hence the interpretation would be:\n\nSince \\(\\mu\\) will lie within the upper and lower limits of similarly constructed intervals for 95% of the repeated samples,my sample is likely to be one of those samples where \\(\\mu\\) is within the upper and lower limits, and I am therefore 95% confident that \\(\\mu\\) is between 29.1 and 31.4.\n\\[\\begin{equation}\n29.1 \\le \\mu \\le 31.4\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#confidence-interval-multiple-means",
+    "href": "lecture7/hypothesisTesting.html#confidence-interval-multiple-means",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Confidence Interval: multiple means",
+    "text": "Confidence Interval: multiple means\n\n\nLet’s imagine a ask the same question: how many minutes do you need to take a shower?\nWe could ask the same question to 50 different people 100 000 times, and then estimate the mean. The frequentist theory says that the true value will be among the 95\\(\\%\\) of the sampled means."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means",
+    "href": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Repeated measures: compare two dependent means",
+    "text": "Repeated measures: compare two dependent means\n\nWe have only studied how to test the difference between independet groups.\nHowever, many times we have research designs where we do a pre-test and a post-test.\nFor example, I could create an intervantion to treat depression. If I want to evaluate if there is an effect of the intervention I could measure the depression levels before the intervention, after that my participants will receive my new depression treatment. After they finish the intervention I measure again thei levels of depression.\nIn this example, we would like to see a lower score in depression after the intervention. We would also like to test if the mean difference between time 1 and time 2 is explained by chance alone.\n\nNull hypothesis: \\[\\begin{equation}\nH_{0} = \\mu_{posttest} = \\mu_{pretest}\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means-cont.",
+    "href": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means-cont.",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Repeated measures: compare two dependent means (cont.)",
+    "text": "Repeated measures: compare two dependent means (cont.)\n\\[\\begin{equation}\nt = \\frac{\\sum D}{\\sqrt{\\frac{n \\sum D^2 - \\big (\\sum D \\big )^2}{n-1}}}\n\\end{equation}\\]\n\\(D\\) is the difference between each individual’s score from the first to the second time point.\n\\(\\sum D\\) is the sum of all the differences between groups of scores.\n\\(\\sum D^2\\) is the sum of the differences squared between groups of scores.\n\\(n\\) is the number of pairs of observations."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means-cont.-1",
+    "href": "lecture7/hypothesisTesting.html#repeated-measures-compare-two-dependent-means-cont.-1",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Repeated measures: compare two dependent means (cont.)",
+    "text": "Repeated measures: compare two dependent means (cont.)\n\nWe can test if the mean difference in life expectancy is explained by chance.\nLet’s compare years 2019 and 2020:\n\n\nlifeExpec <- read.csv(\"lifeExpect.csv\")\n\nt.test(lifeExpec$X2019, lifeExpec$X2020, paired = TRUE)\n\n\n    Paired t-test\n\ndata:  lifeExpec$X2019 and lifeExpec$X2020\nt = -0.19141, df = 243, p-value = 0.8484\nalternative hypothesis: true mean difference is not equal to 0\n95 percent confidence interval:\n -0.07583952  0.06240551\nsample estimates:\nmean difference \n   -0.006717005 \n\n\nWe failed to reject the null hypothesis according to the \\(t\\)-test for dependent means. How did we arrived to this conclusion?\n\n\n\n\n\n\nTip\n\n\nPay attention to the \\(p-value\\). Do you remember the null hypothesis in this case?"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html",
+    "href": "lecture8/correlation&regressionPart1.html",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce correlation to estimate relationships between two variables.\nTo introduce the notion of covariance.\nTo study scatter plots to visualize correlations.\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#what-is-a-correlation-coefficient",
+    "href": "lecture8/correlation&regressionPart1.html#what-is-a-correlation-coefficient",
+    "title": "Correlation and Regression Models",
+    "section": "What is a correlation coefficient ?",
+    "text": "What is a correlation coefficient ?\n\nA correlation coefficient is a numerical index that reflects the relationship between two variables. The value of this descriptive statistic ranges between -1.00 and +1.00.\nA correlation between two variables is sometimes referred to as a bivariate (for two variables) correlation"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#what-is-a-correlation-coefficient-1",
+    "href": "lecture8/correlation&regressionPart1.html#what-is-a-correlation-coefficient-1",
+    "title": "Correlation and Regression Models",
+    "section": "What is a correlation coefficient ?",
+    "text": "What is a correlation coefficient ?\n\nAt the beginning we will study the correlation named Pearson product-moment.\nThere other types of correlation estimation depending on the data generating process of each variable.\nPearson product-moment deals with continuous DATA."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features",
+    "href": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features",
+    "text": "Correlation interpretation and other features\nSalkind & Shaw (2020):"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.",
+    "href": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features (cont.)",
+    "text": "Correlation interpretation and other features (cont.)\nSalkind & Shaw (2020):\n\nA correlation can range in value from \\(-1.00\\) to \\(+1.00\\).\nA correlation equal to 0 means there is no relationship between the two variables.\nThe absolute value of the coefficient reflects the strength of the correlation. So, a correlation of \\(-.70\\) is stronger than a correlation of \\(+.50\\). One frequently made mistake regarding correlation coefficients occurs when students assume that a direct or positive correlation is always stronger (i.e., “better”) than an indirect or negative correlation because of the sign and nothing else.\nA negative correlation is not a “bad” correlation.\nWe will use the letter r to represent correlation. For example \\(r= .06\\)."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.-1",
+    "href": "lecture8/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features (cont.)",
+    "text": "Correlation interpretation and other features (cont.)\n\n\\(r_{xy}\\) is the correlation coefficient.\n\\(n\\) is the sample size.\n\\(X\\) represents variable \\(X\\).\n\\(Y\\) represents variable \\(Y\\).\n\\(\\Sigma\\) means summation or addition."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#lets-take-a-look-at-positive-correlations",
+    "href": "lecture8/correlation&regressionPart1.html#lets-take-a-look-at-positive-correlations",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s take a look at positive correlations",
+    "text": "Let’s take a look at positive correlations"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#lets-take-a-look-at-negative-correlations-cont.",
+    "href": "lecture8/correlation&regressionPart1.html#lets-take-a-look-at-negative-correlations-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s take a look at negative correlations (cont.)",
+    "text": "Let’s take a look at negative correlations (cont.)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#correlation-matrix",
+    "href": "lecture8/correlation&regressionPart1.html#correlation-matrix",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation matrix",
+    "text": "Correlation matrix\nSalkind & Shaw (2020):\n\nYou will find a correlation matrix in publications.\nIt is the best way to represent several correlations between different pairs of variables.\n\n\n\nYou will notice that a a correlation matrix has 1.00 on the diagonal and two “triangles” with the same information."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#coefficient-of-determination",
+    "href": "lecture8/correlation&regressionPart1.html#coefficient-of-determination",
+    "title": "Correlation and Regression Models",
+    "section": "Coefficient of Determination",
+    "text": "Coefficient of Determination\n\nThere is a useful trick, you could square your \\(r\\) and get a measure of correlation in terms of percentage of shared variance:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#coefficient-of-determination-cont.",
+    "href": "lecture8/correlation&regressionPart1.html#coefficient-of-determination-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Coefficient of Determination (cont.)",
+    "text": "Coefficient of Determination (cont.)\n\nWhat is the coefficient of determination in this case?\nWe just need to estimate $ r^2= -0.22^2 = -0.05\\(. Attention and depression shared only 5\\)%$ of the variability (variance)."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation",
+    "text": "Scatter plots and direction of correlation\n\nI have shown you several plots, these plots are called scatter plots.\nThese plots are useful to explore visually possible correlations.\nWhen you create this plots, you only need to represent one of the variables in the x-axis and the other variable will be represented in the y-axis.\n\n\n\n\n\n\n\nNote\n\n\n\nCan you guess if the next scatter plot corresponds to a positive correlation?"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-1",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nWe can check some values and see what is happening, like case #78, in the next plot:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-2",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-2",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nMaybe if we add the line of best fit we will see it better:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-3",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-3",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nCan you spot the direction of this correlation?\nThis data come from a questionnaire that asks to rate how emotional you feel. For instance, it asks: Rate how GREAT you feel where 1 = “not feeling” to 6=“I strongly feel it”."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-4",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-4",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nLet’s add again the line of best linear fit:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-5",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-5",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-6",
+    "href": "lecture8/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-6",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nLet’s add the line of linear fit:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#important-remarks",
+    "href": "lecture8/correlation&regressionPart1.html#important-remarks",
+    "title": "Correlation and Regression Models",
+    "section": "Important remarks",
+    "text": "Important remarks\n\nWhen the correlation is high, it means there is a large portion of shared variance between \\(x\\) and \\(y\\).\nWhen the correlation is high all the values will converge towards the line of best linear fit.\nWhen the correlation is low, the values will be sparse and far from the line of best fit.\nA flat linear line means that there is not correlation between \\(x\\) or \\(y\\) or the correlation is remarkably low. This means \\(r=0\\) or closer to zero."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#section",
+    "href": "lecture8/correlation&regressionPart1.html#section",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "In R you can estimate Pearson correlations using the function cor() as showed here:\n\n\n### pos is the name of the object representing my data set\ncor(pos$down, pos$great)\n\n[1] -0.359944\n\n\nIn this estimation, I’m calculating the correlation between the emotion DOWN and the emotion GREAT. The Pearson correlation was \\(r= -0.36\\). Is this a strong correlation?\n\nWe could follow an ugly rule of thumb, but be careful, these are not rules cast in stone (Salkind & Shaw, 2020):"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#jamovi",
+    "href": "lecture8/correlation&regressionPart1.html#jamovi",
+    "title": "Correlation and Regression Models",
+    "section": "JAMOVI",
+    "text": "JAMOVI"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#jamovi-1",
+    "href": "lecture8/correlation&regressionPart1.html#jamovi-1",
+    "title": "Correlation and Regression Models",
+    "section": "JAMOVI",
+    "text": "JAMOVI"
+  },
+  {
+    "objectID": "assignment4/assigment4.html",
+    "href": "assignment4/assigment4.html",
+    "title": "Assignment #4",
+    "section": "",
+    "text": "This assignment has multiple aims:\n\nTo assign tasks in a lab format where you are able to use the statistical models studied in class.\nTo show the type of questions you will encounter in the upcoming exam.\n\nYou will perform some calculations using R language, you may also use the software JAMOVI to solve several questions in this assignment.\nPlease, remember to submit your answers in a Word document where you write the question along with the answer as I show in the following example:\n\n1) What is a parameter?\n\n\nAnswer: A parameter is an unknown value in a model, but it will be estimated using the data\n\nIn this assignment you may need to add your R code to your document. Please, keep a tidy style when you answer the question, after you answer the question add the code in a text box. Please watch this video where I explain how to report your results when using R."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#todays-aims",
+    "href": "lecture8/correlation&regressionPart1.html#todays-aims",
+    "title": "Correlation and Regression Models",
+    "section": "Today’s aims",
+    "text": "Today’s aims\n\nTo introduce correlation to estimate relationships between two variables.\nTo introduce the notion of covariance.\nTo study scatter plots to visualize correlations."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart1.html#references",
+    "href": "lecture8/correlation&regressionPart1.html#references",
+    "title": "Correlation and Regression Models",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nSalkind, N. J., & Shaw, L. A. (2020). Statistics for people who (think they) hate statistics: Using r. Sage publications."
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#todays-aims",
+    "href": "lecture7/hypothesisTesting.html#todays-aims",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "Today’s aims",
+    "text": "Today’s aims\n\nWe will study the concept of p-value a.k.a significance test.\nI will introduce the concept of hypothesis testing.\nI will also introduce the mean comparison for independent groups.\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union"
+  },
+  {
+    "objectID": "lecture7/hypothesisTesting.html#references",
+    "href": "lecture7/hypothesisTesting.html#references",
+    "title": "Introduction to Hypothesis Testing",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nCohen, J. (2013). Statistical Power Analysis for the Behavioral Sciences. Academic Press.\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html",
+    "href": "lecture8/correlation&regressionPart2.html",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model",
+    "href": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ?",
+    "text": "What is a regression model ?\n\nYou might be thinking, is regression something related that happened in the past?\nIs related to study something that might happen in the future?\nRegression is a weird word!"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model-cont.",
+    "href": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ? (cont.)",
+    "text": "What is a regression model ? (cont.)\nIn this lecture we will follow ideas from Westfall & Arias (2020):\n\nRegression models are used to relate a variable \\(Y\\) with a single variable \\(X\\) or multiple variables \\(X_{1}, X_{2}, ..., X_{k}\\)\nSome questions that you might answer with a regression model:\nHow does a person’s choice of toothpaste (\\(Y\\)) relate to the person’s age (\\(X_{1}\\)) and income (\\(X_{2}\\))?\nHow does a person’s cancer remission status (\\(Y\\)) relate to their chemotherapy regimen (\\(X\\))?\nHow does a person’s self-esteem (\\(Y\\)) relates to time in social media (\\(X_{1}\\)) and number of followers (\\(X_{2}\\))"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model-cont.-1",
+    "href": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ? (cont.)",
+    "text": "What is a regression model ? (cont.)\n\nA regression model can help you to predict what an unknown \\(Y\\) will be for a given fixed value of \\(X\\). Prediction is more like a “what-if” analysis. It is a prediction about the future but also , you can answer what might have happened in the past.\nA regression model can be represented as:\n\n\\[\\begin{equation}\nY|X = x \\sim p(y|x)\n\\end{equation}\\]\n\nThis means the expression \\(p(y|X=x)\\) is the distribution of potentially observable \\(Y\\) values when \\(X = x\\), and is called the conditional distribution of \\(Y\\), given that \\(X = x\\).\nIn simple words, in regression we are estimating a conditional distribution. I know that we are going fast in this class, but the examples and the exercises in this class my help later.\nWe can also represent the regression model as \\(p(y|x)\\). It is shorter!"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions",
+    "href": "lecture8/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions",
+    "title": "Correlation and Regression Models",
+    "section": "We can talk more about conditional distributions",
+    "text": "We can talk more about conditional distributions\n\nLet’s imagine you need to predict the development of episodic memory in humans. You will need to use age of the individual to predict their memory score. Let’s imagine you want to predict the probability of the memory score (\\(X\\)) when age = 27 years old. But also, you need predict the memory score when individuals are 5 years old.\nThe model \\(p(y|x)\\) does not assume any distribution, it doesn’t assume whether the distribution is discrete or continuous. But we will use a Gaussian process to represent the conditional statements \\(p(y|X=27)\\) and \\(p(y|X = 5)\\)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions-cont.",
+    "href": "lecture8/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "We can talk more about conditional distributions (cont.)",
+    "text": "We can talk more about conditional distributions (cont.)\n\nThe model only assumes that there is a distribution of possible values in Nature when age = 27 and age = 5"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#but-soon-we-will-assume-a-distribution",
+    "href": "lecture8/correlation&regressionPart2.html#but-soon-we-will-assume-a-distribution",
+    "title": "Correlation and Regression Models",
+    "section": "But soon we will assume a distribution",
+    "text": "But soon we will assume a distribution\nWestfall & Arias (2020):\n\nFamilies of conditional distributions\n\n\nWhen p(y|x) are Assumed to be:\nThen you have…\n\n\n\n\nPoisson\nPoisson regression\n\n\nNegative binomial\nNegative binomial regression\n\n\nBernoulli\nLogistic regression\n\n\nNormal\nClassical regression\n\n\nMultinomial\nMultinomial logistic regression\n\n\nBeta\nBeta regression\n\n\nLognormal\nLognormal regression\n\n\n\n\nThis is not a final list of possible regression models, but at least the most popular ones.\nWe won’t have time to study all of them, in the best scenario we will study three different regression models: Poisson regression, Logistic regression, and Classical regression."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#important-to-remember",
+    "href": "lecture8/correlation&regressionPart2.html#important-to-remember",
+    "title": "Correlation and Regression Models",
+    "section": "Important to remember!",
+    "text": "Important to remember!\nWestfall & Arias (2020):\n\n\n\n\n\n\nImportant\n\n\nThe regression model \\(p(y|x)\\) does not come from the data. Rather, the regression model \\(p(y|x)\\) is assumed to produce the data.\n\n\n\n\nModels produce data, data DOES NOT produce models!"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names",
+    "href": "lecture8/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names",
+    "title": "Correlation and Regression Models",
+    "section": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names",
+    "text": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names\n\nIn regression you’ll find several names for \\(X\\):\n\npredictor variable(s)\ndescriptor variable(s)\nfeature variable(s)\nindependent variable(s)\nexogenous variable(s)\nresponse/predictor\n\nAlso several names for \\(Y\\):\n\nresponse variable\ntarget variable\ncriterion variable\ndependent variable\nendogenous variable"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names-1",
+    "href": "lecture8/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names-1",
+    "title": "Correlation and Regression Models",
+    "section": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names",
+    "text": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names\n\nThe DATA in regression models looks like this:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#example-time",
+    "href": "lecture8/correlation&regressionPart2.html#example-time",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time",
+    "text": "Example Time\n\nLet’s do preliminary model:\n\nThis is the data named \"Wage\" it comes from the package ISLR. It has information of variables related to wages for a group of males from the Atlantic region of the United States.\n\n\n\nlibrary(ISLR)\nlibrary(DT)\n\ndatatable(Wage)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#example-time-cont.",
+    "href": "lecture8/correlation&regressionPart2.html#example-time-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time (cont.)",
+    "text": "Example Time (cont.)\nLet’s fit a regression model were age will be a predictor of wage. This means \\(X = age\\) and \\(Y= wage\\) :\n\nfitModel <- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 81.70474    2.84624   28.71   <2e-16 ***\nage          0.70728    0.06475   10.92   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 2.2e-16"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#example-time-cont.-1",
+    "href": "lecture8/correlation&regressionPart2.html#example-time-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time (cont.)",
+    "text": "Example Time (cont.)\n\nggplot(data = Wage, aes(x=age, y=wage)) +\n  geom_point()+ geom_smooth(method = \"lm\")+\n  theme_classic()"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#my-aims-in-this-lecture",
+    "href": "lecture8/correlation&regressionPart2.html#my-aims-in-this-lecture",
+    "title": "Correlation and Regression Models",
+    "section": "My aims in this lecture",
+    "text": "My aims in this lecture\n\nTo introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#references",
+    "href": "lecture8/correlation&regressionPart2.html#references",
+    "title": "Correlation and Regression Models",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
   }
 ]

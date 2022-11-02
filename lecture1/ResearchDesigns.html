@@ -7,10 +7,10 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.38">
+  <meta name="generator" content="quarto-1.2.242">
 
   <meta name="author" content="Esteban Montenegro-Montenegro, PhD">
-  <title>2m - Research Designs Review</title>
+  <title>2m_stats - Research Designs Review</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -19,10 +19,15 @@
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
-    span.underline{text-decoration: underline;}
-    div.column{display: inline-block; vertical-align: top; width: 50%;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
     div.csl-bib-body { }
     div.csl-entry {
       clear: both;
@@ -339,16 +344,25 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-image="stan_state_screen_1.png" data-background-opacity="0.5" class="center">
+<section id="title-slide" data-background-image="stan_state_screen_1.png" data-background-opacity="0.5" class="quarto-title-block center">
   <h1 class="title">Research Designs Review</h1>
-  <p class="author">Esteban Montenegro-Montenegro, PhD</p>
-  <p class="institute">Psycholoy and Child Development</p>
-</section>
 
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Esteban Montenegro-Montenegro, PhD 
+</div>
+        <p class="quarto-title-affiliation">
+            Psycholoy and Child Development
+          </p>
+    </div>
+</div>
+
+</section>
 <section id="big-research-families" class="slide level2 smaller" data-background-image="slide2.png" data-background-opacity="0.5">
 <h2>Big research families</h2>
 <table>
-<caption>Alternative research designs <span class="citation" data-cites="creswell2017research">(<a href="#/ref-creswell2017research" role="doc-biblioref" onclick="return false;">Creswell &amp; Creswell, 2017</a>)</span></caption>
+<caption>Alternative research designs <span class="citation" data-cites="creswell2017research">(<a href="#/references" role="doc-biblioref" onclick="">Creswell &amp; Creswell, 2017</a>)</span></caption>
 <colgroup>
 <col style="width: 25%">
 <col style="width: 25%">
@@ -463,7 +477,7 @@
 <img data-src="meme1.jpg" class="r-stretch quarto-figure-right"></section>
 <section id="but-we-havent-defined-cause-and-effect" class="slide level2 smaller" data-background-image="slide2.png" data-background-opacity="0.5">
 <h2>But we haven’t defined cause, and effect</h2>
-<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/ref-shadish2002experimental" role="doc-biblioref" onclick="return false;">2002</a>)</span> :</p>
+<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span> :</p>
 <ul>
 <li>Let’s try an example, consider a forest fire:
 <ul>
@@ -476,9 +490,9 @@ combustible material such as dry leaves. We also need oxygen!</li>
 <section id="but-we-havent-defined-cause-and-effect-ii" class="slide level2 smaller" data-background-image="slide2.png" data-background-opacity="0.5">
 <h2>But we haven’t defined cause, and effect II</h2>
 <ul>
-<li>A match can be consider part of multiple causes, therefore we can call it a <strong>“inus condition”</strong> <span class="citation" data-cites="mackie1974causation">(<a href="#/ref-mackie1974causation" role="doc-biblioref" onclick="return false;">Mackie, 1974, p. 62</a>)</span> “an insufficient but nonredundant part of an unnecessary but sufficient condition” to cause a fire.</li>
+<li>A match can be consider part of multiple causes, therefore we can call it a <strong>“inus condition”</strong> <span class="citation" data-cites="mackie1974causation">(<a href="#/references" role="doc-biblioref" onclick="">Mackie, 1974, p. 62</a>)</span> “an insufficient but nonredundant part of an unnecessary but sufficient condition” to cause a fire.</li>
 </ul>
-<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/ref-shadish2002experimental" role="doc-biblioref" onclick="return false;">2002</a>)</span> :</p>
+<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span> :</p>
 <ul>
 <li>It is insufficient because a match cannot start a fire without the other conditions.</li>
 <li>It is nonredundant only if it adds something fire-promoting that is uniquely different from what the other factors in the constellation (e.g., oxygen, dry leaves) contribute to starting a fire. It is part of a sufficient condition to start a fire in combination with the full constellation of factors. But that condition is not necessary because there are other sets of conditions that can also start fires.</li>
@@ -522,7 +536,7 @@ combustible material such as dry leaves. We also need oxygen!</li>
 </section>
 <section id="lets-finally-define-causal-relationship" class="slide level2" data-background-image="slide2.png" data-background-opacity="0.5">
 <h2>Let’s finally define causal relationship</h2>
-<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/ref-shadish2002experimental" role="doc-biblioref" onclick="return false;">2002</a>)</span> :</p>
+<p><span class="citation" data-cites="shadish2002experimental">Shadish et al. (<a href="#/references" role="doc-biblioref" onclick="">2002</a>)</span> :</p>
 <ul>
 <li>This definition was first coined by John Stuart Mill (19th-century philosopher), a causal relationship exists if:
 <ol type="1">
@@ -846,7 +860,24 @@ Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and 
         button.classList.add('code-copy-button-checked');
         var currentTitle = button.getAttribute("title");
         button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
         setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
           button.setAttribute("title", currentTitle);
           button.classList.remove('code-copy-button-checked');
         }, 1000);
@@ -876,31 +907,50 @@ Shadish, W. R., Cook, T. D., &amp; Campbell, D. T. (2002). <em>Experimental and 
       for (var i=0; i<noterefs.length; i++) {
         const ref = noterefs[i];
         tippyHover(ref, function() {
-          let href = ref.getAttribute('href');
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
           return note.innerHTML;
         });
       }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
       var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
       for (var i=0; i<bibliorefs.length; i++) {
         const ref = bibliorefs[i];
-        const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-        tippyHover(ref, function() {
-          var popup = window.document.createElement('div');
-          cites.forEach(function(cite) {
-            var citeDiv = window.document.createElement('div');
-            citeDiv.classList.add('hanging-indent');
-            citeDiv.classList.add('csl-entry');
-            var biblioDiv = window.document.getElementById('ref-' + cite);
-            if (biblioDiv) {
-              citeDiv.innerHTML = biblioDiv.innerHTML;
-            }
-            popup.appendChild(citeDiv);
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
           });
-          return popup.innerHTML;
-        });
+        }
       }
     });
     </script>
