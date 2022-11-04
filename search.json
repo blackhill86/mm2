@@ -137,7 +137,7 @@
     "href": "PSYC3000.html",
     "title": "PSYC 3000 Lab",
     "section": "",
-    "text": "If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn’t like my presentation in html format. So, I decided to create my own site where you can access my presentations.\nYou might not be an student in my class, but you knew about me and this class from other sources. That’s totally fine! You are also welcomed!\nI share all the content in this site under a Creative Commons license, specifically the license CC BY-NC-ND 4.0. This means, you cannot use this material for commercial use, but you can use my material and you MUST cite or mention the original source for non-commercial projects such as academic work.\n\n\nAt this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!"
+    "text": "If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn’t like my presentation in html format. So, I decided to create my own site where you can access my presentations.\nYou might not be an student in my class, but you knew about me and this class from other sources. That’s totally fine! You are also welcomed!\nI share all the content in this site under a Creative Commons license, specifically the license CC BY-NC-ND 4.0. This means, you cannot use this material for commercial purposes, but you can use my material, and you MUST cite or mention the original source for non-commercial projects such as academic work.\n\n\nAt this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!"
   },
   {
     "objectID": "lecture2/Sampling.html",
@@ -172,7 +172,7 @@
     "href": "lecture2/Sampling.html#this-is-how-samplig-bias-happens",
     "title": "Sampling designs",
     "section": "This is how samplig bias happens!",
-    "text": "This is how samplig bias happens!\n\nConvenience Samples: Some persons who are conducting surveys use the first set of population units they encounter as the sample. The problem is that the population units that are easiest to locate or collect may differ from other units in the population on the measures being studied.\nPurposive or Judgment Samples: the investigators use their judgment to select the specific units to be included in the sample.\nSelf-Selected Samples: A self-selected sample consists entirely of volunteers who select themselves to be in the sample.\nNonresponse: —failing to obtain responses from some members of the chosen sample—distorts the results of many surveys\n\n\n\n\n\n\n\nQuestion?\n\n\n\nCan we generalize the information to the population in these cases?"
+    "text": "This is how samplig bias happens!\n\nConvenience Samples: Some persons who are conducting surveys use the first set of population units they encounter as the sample. The problem is that the population units that are easiest to locate or collect may differ from other units in the population on the measures being studied.\nPurposive or Judgment Samples: the investigators use their judgment to select the specific units to be included in the sample.\nSelf-Selected Samples: A self-selected sample consists entirely of volunteers who select themselves to be in the sample.\nNonresponse: —failing to obtain responses from some members of the chosen sample—distorts the results of many surveys\n\n\n\n\n\n\n\nQuestion?\n\n\nCan we generalize the information to the population in these cases?"
   },
   {
     "objectID": "lecture2/Sampling.html#are-samples-with-selection-bias-good",
@@ -228,14 +228,14 @@
     "href": "lecture3/introProbAndStats.html#model-produces-data-ii",
     "title": "Introduction to probability and statistics",
     "section": "Model produces data II",
-    "text": "Model produces data II\n\nA Model is like a recipe, it has some steps and rules that will help you to prepare a cake or a meal. The cake is your data.\n\n\n\n\n\n\n\nAlways remember!\n\n\n\nModels produce data, data does not produce models!\n\n\n\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data.\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data."
+    "text": "Model produces data II\n\nA Model is like a recipe, it has some steps and rules that will help you to prepare a cake or a meal. The cake is your data.\n\n\n\n\n\n\n\nAlways remember!\n\n\nModels produce data, data does not produce models!\n\n\n\n\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data.\nYou can use data to estimate models, but that does not change the fact that your model comes first, before you ever see any data."
   },
   {
     "objectID": "lecture3/introProbAndStats.html#statistical-processes",
     "href": "lecture3/introProbAndStats.html#statistical-processes",
     "title": "Introduction to probability and statistics",
     "section": "Statistical Processes",
-    "text": "Statistical Processes\n\n\n\n\n\n\nAlways remember!\n\n\n\nThe order matters, Nature is there before our measurements,the data comes after we establish our way to measure Nature."
+    "text": "Statistical Processes\n\n\n\n\n\n\nAlways remember!\n\n\nThe order matters, Nature is there before our measurements,the data comes after we establish our way to measure Nature."
   },
   {
     "objectID": "lecture3/introProbAndStats.html#statistical-processes-ii",
@@ -284,7 +284,7 @@
     "href": "lecture3/introProbAndStats.html#parameters",
     "title": "Introduction to probability and statistics",
     "section": "Parameters",
-    "text": "Parameters\n\nA parameter is a numerical characteristic of the data-generating process, one that is usually unknown but often can be estimated using data.\n\n\\[\\begin{equation}\nY \\sim \\beta_{0} + \\beta_{1}X\n\\end{equation}\\]\nFor instance, in the model showed above, we have two unknown parameters, this model produces data \\(Y\\). The unknown parameters are represented with greek letters, for instance the letter beta in the example above.\n\n\n\n\n\n\nMantra\n\n\n\nModel produces data.\nModel has unknown parameters.\nData reduce the uncertainty about the unknown parameters."
+    "text": "Parameters\n\nA parameter is a numerical characteristic of the data-generating process, one that is usually unknown but often can be estimated using data.\n\n\\[\\begin{equation}\nY \\sim \\beta_{0} + \\beta_{1}X\n\\end{equation}\\]\nFor instance, in the model showed above, we have two unknown parameters, this model produces data \\(Y\\). The unknown parameters are represented with greek letters, for instance the letter beta in the example above.\n\n\n\n\n\n\nMantra\n\n\nModel produces data.\nModel has unknown parameters.\nData reduce the uncertainty about the unknown parameters."
   },
   {
     "objectID": "lecture3/introProbAndStats.html#purely-probabilistic-statistical-models",
@@ -1314,5 +1314,47 @@
     "title": "Esteban Montenegro",
     "section": "Education",
     "text": "Education\nTexas Tech University| Lubbock, TX| PhD in Educational Psychology | May 2020\nUniversity of Costa Rica | San Jose, Costa Rica| B.S. in Psychology | March 2012"
+  },
+  {
+    "objectID": "lecture2/Sampling.html#why-do-we-care-about-sampling",
+    "href": "lecture2/Sampling.html#why-do-we-care-about-sampling",
+    "title": "Sampling designs",
+    "section": "Why do we care about sampling ?",
+    "text": "Why do we care about sampling ?\n\nLet’s imagine you want to evaluate the levels of burnout in all companies in USA. Is it feasible?\nIf not, what should we do? How do we get enough information to evaluate burnout nationally?"
+  },
+  {
+    "objectID": "lecture2/Sampling.html#references",
+    "href": "lecture2/Sampling.html#references",
+    "title": "Sampling designs",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nLohr, S. L. (2021). Sampling: Design and analysis. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#reality-nature-science-and-models",
+    "href": "lecture3/introProbAndStats.html#reality-nature-science-and-models",
+    "title": "Introduction to probability and statistics",
+    "section": "Reality, Nature, Science, and Models",
+    "text": "Reality, Nature, Science, and Models\n\nIt might seem trivial to talk about nature and how science related to nature. However, we will study nature when we study statistics.\nAs Westfall & Henning (2013) mentioned in their book: “Nature is all aspects of past, present, and future existence. Understanding Nature requires common observation—that is, it encompasses those things that we can agree we are observing” (p.1)\nAs psychologist we study behavior, thoughts, emotions, beliefs, cognition and contextual aspects of all the above. These elements are also part of nature, we mainly study constructs, I will talk about constructs frequently.\nStatistics is the language of science. Statistics concerns the analysis of recorded information or data. Data are commonly observed and subject to common agreement and are therefore more likely to reflect our common reality or Nature."
+  },
+  {
+    "objectID": "lecture3/introProbAndStats.html#references",
+    "href": "lecture3/introProbAndStats.html#references",
+    "title": "Introduction to probability and statistics",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
+  },
+  {
+    "objectID": "lecture4/Distributions.html#previous-class",
+    "href": "lecture4/Distributions.html#previous-class",
+    "title": "Probability distributions and random variables",
+    "section": "Previous class",
+    "text": "Previous class\n\nIn our last session we talked about DATA (uppercase) and data (lowercase).\nWe studied that DATA means all the possible values in Nature for instance, all the college students in US versus a single fix observation called data (lowercase)\nIn this session is important to remember this convention.\nDATA means random variable whereas data means fixed quantities.\nFor instance, in a dice you have 6 possible values, when roll a dice ; let’s imagine you get 5 , then your data is y = 5 while you DATA is any possible value from 1 to 6.\nRandom variables have a distribution, this means DATA is random."
+  },
+  {
+    "objectID": "lecture4/Distributions.html#references",
+    "href": "lecture4/Distributions.html#references",
+    "title": "Probability distributions and random variables",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
   }
 ]
