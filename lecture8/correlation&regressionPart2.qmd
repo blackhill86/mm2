@@ -1,0 +1,797 @@
+---
+title: "Correlation and Regression Models "
+subtitle: "Part 2"
+author: "Esteban Montenegro-Montenegro, PhD"
+institute: "Psychology and Child Development"
+title-slide-attributes:
+    data-background-image: "background1.png"
+    data-background-opacity: "0.5"
+format: 
+ revealjs:
+   theme: [default, custom.scss]
+   slide-number: true
+   self-contained: false
+   chalkboard: 
+    theme: whiteboard
+editor: visual
+bibliography: references.bib
+#nocite: | 
+#  @apa7
+csl: apa.csl
+---
+
+## My aims in this lecture {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   To introduce basic notions of the regression model
+
+-   To start thinking about statistical models with more variables (exciting times!)
+
+-   To encourage you to think about more realistic research questions (this might take several sessions!)
+
+```{r}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(gghighlight)
+library(ISLR)
+library(DT)
+```
+
+## What is a regression model ? {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   You might be thinking, is regression something related that happened in the past?
+
+-   Is related to study something that might happen in the future?
+
+-   Regression is a weird word!
+
+![](regre.jpg)
+
+## What is a regression model ? (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+In this lecture we will follow ideas from @westfall2020understanding:
+
+-   Regression models are used to relate a variable $Y$ with a single variable $X$ or multiple variables $X_{1}, X_{2}, ..., X_{k}$
+
+-   Some questions that you might answer with a regression model:
+
+-   How does a person's choice of toothpaste ($Y$) relate to the person's age ($X_{1}$) and income ($X_{2}$)?
+
+-   How does a person's cancer remission status ($Y$) relate to their chemotherapy regimen ($X$)?
+
+-   How does a person's self-esteem ($Y$) relates to time in social media ($X_{1}$) and number of followers ($X_{2}$)
+
+## What is a regression model ? (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   A regression model can help you to *predict* what an unknown $Y$ will be for a given fixed value of $X$. Prediction is more like a ***"what-if"*** analysis. It is a prediction about the future but also , you can answer **what might have happened** in the past.
+
+-   A regression model can be represented as:
+
+```{=tex}
+\begin{equation}
+Y|X = x \sim p(y|x)
+\end{equation}
+```
+-   This means the expression $p(y|X=x)$ is the distribution of potentially observable $Y$ values when $X = x$, and is called the ***conditional distribution*** of $Y$, given that $X = x$.
+
+-   In simple words, in regression we are estimating a conditional distribution. I know that we are going fast in this class, but the examples and the exercises in this class my help later.
+
+-   We can also represent the regression model as $p(y|x)$. It is shorter!
+
+## We can talk more about conditional distributions {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's imagine you need to predict the development of episodic memory in humans. You will need to use age of the individual to predict their memory score. Let's imagine you want to predict the probability of the memory score ($X$) when age = 27 years old. But also, you need predict the memory score when individuals are 5 years old.
+
+-   The model $p(y|x)$ does not assume any distribution, it doesn't assume whether the distribution is discrete or continuous. But we will use a Gaussian process to represent the conditional statements $p(y|X=27)$ and $p(y|X = 5)$
+
+## We can talk more about conditional distributions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   The model only assumes that there is a distribution of possible values in Nature when age = 27 and age = 5
+
+```{r, echo=FALSE, message=FALSE,error=FALSE}
+library(ggplot2)
+set.seed(12369)
+
+age5 <- rnorm(1000, 30, 29)
+
+age27 <- rnorm(1000, 50, 10)
+
+
+dat1 <- data.frame(score= c(age5,age27), 
+                   age = c(rep("age5", 1000), rep("age27",1000)))
+                   
+
+ggplot(dat1, aes(x=score, color=age)) +
+  geom_density() +
+  xlab("memory score, y variable")+
+  ylab("p(y|x)") +
+  ggtitle("Possible conditional distributon of a episodic memory score test")+
+  theme_classic()
+  
+  
+```
+
+## But soon we will assume a distribution {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@westfall2020understanding:
+
+| When p(y\|x) are Assumed to be: | Then you have...                |
+|---------------------------------|---------------------------------|
+| Poisson                         | Poisson regression              |
+| Negative binomial               | Negative binomial regression    |
+| Bernoulli                       | Logistic regression             |
+| Normal                          | Classical regression            |
+| Multinomial                     | Multinomial logistic regression |
+| Beta                            | Beta regression                 |
+| Lognormal                       | Lognormal regression            |
+
+: Families of conditional distributions
+
+-   This is not a final list of possible regression models, but at least the most popular ones.
+-   We won't have time to study all of them, in the best scenario we will study three different regression models: **Poisson regression, Logistic regression, and Classical regression.**
+
+## Important to remember! {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@westfall2020understanding:
+
+::: callout-important
+***The regression model*** $p(y|x)$ does not come from the data. Rather, the regression model $p(y|x)$ is assumed to produce the data.
+:::
+
+-   Models produce data, data DOES NOT produce models!
+
+## Variable $X$ and Variable $Y$: Beasts of many names {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   **In regression you'll find several names for** $X$:
+
+    -   predictor variable(s)
+    -   descriptor variable(s)
+    -   feature variable(s)
+    -   independent variable(s)
+    -   exogenous variable(s)
+    -   response/predictor
+
+-   **Also several names for** $Y$:
+
+    -   response variable
+    -   target variable
+    -   criterion variable
+    -   dependent variable
+    -   endogenous variable
+
+## Variable $X$ and Variable $Y$: Beasts of many names {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   The **DATA** in regression models looks like this:
+
+![](data.png)
+
+## Example Time {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's do preliminary model:
+
+    -   This is the data named `"Wage"` it comes from the package `ISLR`. It has information of variables related to wages for a group of males from the Atlantic region of the United States.
+
+```{r, echo=TRUE}
+library(ISLR)
+library(DT)
+
+datatable(Wage)
+
+```
+
+## Example Time (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+Let's fit a regression model were `age` will be a predictor of `wage`. This means $X = age$ and $Y= wage$ :
+
+```{r, echo=TRUE}
+
+fitModel <- lm(wage ~ age, data = Wage)
+summary(fitModel)
+
+```
+
+-   The estimate column shows two important rows, the first one is the ***intercept*** this is the starting point of a line (more about it later). The second row is an estimate for ***age*** this is called the ***slope***. It tells you the rate of change.
+
+-   In this case it is telling us that, for each year of age, these males earned $0.70728*1000=\$707.28$ more. We'll talk about it later.
+
+## Example Time (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo=TRUE}
+ggplot(data = Wage, aes(x=age, y=wage)) +
+  geom_point()+ geom_smooth(method = "lm")+
+  theme_classic()
+```
+
+# It is time for assumptions! {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+## Classical Regression Model {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   The model that we just ran is named **Classical Regression Model**, many people call it **linear regression**, other people call it **Gaussian regression**.
+
+-   I prefer to call it ***Classical Regression Model*** [@westfall2020understanding].
+
+-   This is how the model looks like in many books:
+
+```{=tex}
+\begin{equation}
+Y = \beta_{0}+ \beta_{1}X + \epsilon 
+\end{equation}
+```
+-   We will talk about this model very often, but before going straight to bussiness we need to talk about assumptions.
+
+## Classical Regression Model: Assumptions {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Remember: Models produce data! Then, models are explanations of what happens in Nature.
+
+-   The first assumption is **randomness**, many books only assume this concept but it doesn't hurt to make it explicit.
+
+-   **Randomness** in this context means that:
+
+::: callout-note
+The value of $Y$ is variable, coming *randomly* from a distribution $p(y|x)$ of potentially observable $Y$ values that is specific to the particular values ($X = x$) of the $X$ variables [@westfall2020understanding].
+:::
+
+-   In simple words, we assume $Y$ is variable produced randomly by a conditional distribution $p(y|X)$.
+
+-   But of course, we test if there is a dependency between $y$ and $x$. That's part of the job.
+
+## Classical Regression Model: Assumptions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Remember when I showed you that $p(y|x)$ is assuming a distribution for each $x$?
+
+-   There is a *conditional mean function* in the Classical Regression Model, the expression looks like this:
+
+```{=tex}
+\begin{equation}
+f(x) = E(Y|X=x)
+\end{equation}
+```
+In this formula $E$ means expectation or expected value. In this case the expected value is the collection of means of the conditional distributions.
+
+## Classical Regression Model: Assumptions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   There is an assumption of **constant variance (homoscedasticity)**.
+
+-   Given that we are assuming there are several distributions, each $x$ has a distribution, we also assume that the variance in this conditional distributions is the same or constant.
+
+::: callout-note
+The variances of the conditional distributions $p(y|x)$ are constant (i.e., they are all the same number, $\sigma^2$) for all specific values $X = x$ [@westfall2020understanding].
+:::
+
+## Classical Regression Model: Assumptions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   There an important assumption which is ***normality***.
+
+-   The Classical Regression Model or linear model, assumes all the conditional distributions are produced by a normal distribution or Gaussian distribution.
+
+::: callout-note
+The conditional probability distribution functions $p(y|x)$ are normal distributions (as opposed to Bernoulli, Poisson, or other) for every $X = x$.[@westfall2020understanding].
+:::
+
+## Classical Regression Model: Assumptions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@westfall2020understanding:
+
+![](regressionModel.png)
+
+## Classical Regression Model: Assumptions (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="40%"}
+-   There is also an assumption of linearity.
+
+-   This assumption states that the means of the conditional distributions $p(y|x)$ fall precisely on a straight line of the form $\beta_{0} + \beta_{1}x$
+
+-   When we assume linearity the parameter $\beta_{O}$ is the mean of $Y$ when the parameter $\beta_{1} = 0$.
+
+-   To make $\beta_{1} = 0$ we would just need to multiply it by zero: $\beta_{0} + \beta_{1}(0)$.
+
+-   But, what happens if $x$ does not have zero? Well, in that case, $\beta_{0}$ would not be exactly the mean of $Y$ , instead $\beta_{0}$ would be the vertical height or distance from zero.
+
+-   In this case, $\beta_{1}$ is a parameter that indicates the difference between conditional means.
+:::
+
+::: {.column width="60%"}
+@westfall2020understanding: ![](regress2.png)
+:::
+:::
+
+## Ordinary Least Squares {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   I have mentioned before in class, the existence of a *line of best fit*
+
+-   This is the time to study what is this line.
+
+-   One fo the estimation methods in the Classical Regression Model is ***Ordinary Least Squares*** estimation.
+
+-   In this method, we draw a line in every possible direction, and calculate the distance of each value from the line. After calculating the distance form the line, we square those distances and add them together. This is what we call a Sum of Squares. The line that produces the lowest *Sum of Squares* is the ***line of best fit***.
+
+::: {#fig-plots layout-ncol="2"}
+![](bestFit.png)
+
+![](sse.png)
+
+@field2012discovering and @westfall2020understanding
+:::
+
+## `Wage` data example {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   By this point we should talk more about our applied example.
+
+-   Let's see what happens when we assume $\beta_{1} = 0$ by just removing `age` from the regression model.
+
+```{r, echo=TRUE}
+
+fitModel <- lm(wage ~ 1, data = Wage)
+summary(fitModel)
+
+```
+
+-   This is what we call the ***intercept only model***, it can also be considered a null model. Remember those words? In this model, we are not modeling any relationship. The regression model returns exactly the mean of `wage`. If you don't believe me you can see it:
+
+```{r, echo=TRUE}
+mean(Wage$wage)
+```
+
+-   It is the same value as the intercept!
+
+-   Let's add again `age` as a predictor:
+
+```{r, echo=TRUE}
+
+fitModel <- lm(wage ~ age, data = Wage)
+summary(fitModel)
+
+```
+
+-   Now the coefficient for the estimated intercept changed. This happened because now the intercept represents the average wage when `age` is zero. But wait, you cannot have a zero age and get a salary? In this case, the intercept misses the interpretation, then it represents the height from zero.
+
+## `Wage` data example {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo = TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+plot(Wage$age, Wage$wage, 
+     pch = 16, 
+     cex = 0.7, 
+     col = "blue",
+     xlab = "Age",
+     ylab = "Wage",
+     main = "Line of Best Fit Linear Regression")
+abline(lm(wage ~ age, data = Wage), col = "red")
+
+
+```
+
+## `Wage` data example {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   If we want to interpret the intercept in the way the linear model specifies. We can transform `age` to get a meaningful zero.
+
+-   There is something call $z$-values, others call it $z$-scores. This tranformation is based on the normal distribution.
+
+-   Let's see the formula to transform any continuous distribution into $z$ values:
+
+```{=tex}
+\begin{equation}
+z= \frac{x_{i}-\bar{x}}{\sigma}
+\end{equation}
+```
+Where: - $x_{i}$ is each observed value. - $\bar{x}$ is the mean of the observed values. - $\sigma$ is the standard deviation of the observed values.
+
+-   As you can see, what we do is to tranform the distribution, now the observed values will be centered at zero. It means the mean is going to be zero, and the values will be negative and positive values.
+
+-   In `R` you can transform any continiuos distributin into $z$-values using the function `scale()`.
+
+```{r, echo=TRUE}
+Wage$age_Z <- scale(Wage$age)
+summary(Wage[, c("age", "age_Z")])
+```
+
+-   In the example above, you can see that the mean of `age` is now zero after transforming the distribution. Also, notice that `age_Z` ranges from -2.12 to 3.26.
+
+-   Given that now we have $z$-values we can interpret the values in terms of standard deviations from the mean. For instance, we can say that 18 years old is a value located -2.12 standard deviation below the mean (because the value is negative), we can also say that 80 years old is a value located 3.26 standard deviations above the mean (because the value is positive)
+
+## `Wage` data example {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+Let's add `age_Z` variable to our regression model:
+
+```{r, echo = TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+fitModel <- lm(wage ~ age_Z, data = Wage)
+summary(fitModel)
+```
+
+-   Do you see what happened? After transforming `age` into values with a real zero, the intercept now shows the mean of `wage`. If you don't believe it, let's estimate again the mean of `wage`:
+
+```{r, echo=TRUE}
+mean(Wage$wage)
+```
+
+-   It is the same number! Then it is true, the intercept is the mean of $Y$ when $\beta_{1}$ has a real zero among the possible values.
+
+-   Then we can interpret the result as: for 1-unit increment in `age_Z`, `wage` increases \$816.37. Also you can say: for 1-standard deviation increment, `wage` increases \$816.37.
+
+## `Wage` data example {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We can also transform `wage` into $z$-values, this will make the interpretation *fully standardized*:
+
+```{r, echo = TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+options(scipen = 999)
+
+Wage$wage_Z <- scale(Wage$wage)
+
+summary(lm(wage_Z ~ age_Z, data = Wage))
+
+```
+
+-   After standardizing `wage` we have an intercept that is almost zero, this makes sense because the mean of `wage` is now zero. It is actually zero, but models are not perfect, they are approximations, and there is randomness, that's why the intercept is not exactly zero.
+
+-   In this model, we could interpret the estimate of `age_Z` like it was a correlation, because it is standardized. We can also say: for 1-standard deviation increase in `age`, `wage` increases 0.20 standard deviations.
+
+## Fun fact: $t$-test is a linear regression extension {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Up to this point I have talked only about the case where the predictor has a continuous distribution. But, what happens when our predictor has discrete values (e.g gender, academic level)?
+
+-   The Classical Regression Models does not assume anything about the predictors. We can actually use any discrete variable.
+
+-   As always, we can understand what happens with a ***binary*** predictor by running an example:
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+### I'm going to transform the values, so I can get a variable where 1 = have insurance, 0 = does not have insurance.
+
+Wage$dummyHealth <- ifelse(Wage$health_ins == "2. No", 0, 1)  ### This is a "if else statement".
+
+## Let's test if having an insurance predicts differences in wage
+
+fitWage <- lm(wage ~ dummyHealth, data = Wage)
+
+summary(fitWage)
+
+```
+
+-   Let's digest the information from this example:
+
+    -   The model that we are fitting looks like this: $y_{wage} = \beta_{0} + \beta_{1}insuranceYES + \epsilon$.
+    -   When the variable is discrete there is a reference group. Normally, the reference group is coded as $0$ and the target group is coded as $1$. This is tipically known as ***dummy coding***.
+
+-   The above table gave a value for the intercept. That intercept, in simple words; is the mean when $dummyHealth = 0$. The slope in the table is 27.922, that number is in simple terms ***the mean difference in wage between groups***.
+
+-   Don't you believe it? Let's see it next:
+
+## Fun fact: $t$-test is a linear regression extension {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+First, let's see the mean of each group:
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+Wage %>% select(dummyHealth, wage) %>% 
+  group_by(dummyHealth) %>%
+  summarise(mean = mean(wage),
+            sd = sd(wage)) %>%
+  kbl(caption = "Wage's mean and standard deviation by insurance status") %>%
+kable_classic_2("hover", full_width = F,bootstrap_options = c("striped", "hover", "condensed", "responsive")) %>%
+  footnote(general = "Not insurance = 0, Insurance = 1")
+
+
+```
+
+-   In the table you can see that the mean of $Insurance = 0$ is 92.32! Just like we expected!
+
+-   Now let's compute the mean difference:
+
+```{r, echo=TRUE}
+
+120.2383-92.3167
+
+```
+
+-   Again! If you check our regression result the slope was 27.922, that's exactly the mean difference!
+
+-   What is the message here? When add ***dummy coded variables*** in a Classical Regression Model, you are measuring how far is the mean of $group = 0$ from $group = 1$, it simple words: ***it is a*** $t$-test.
+
+## Fun fact: $t$-test is a linear regression extension {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-Let's see it with a plot
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+plot(Wage$dummyHealth, Wage$wage,
+     xlab = "Insurance Status",
+     ylab = "Wage",
+     main = "A scatterplot of wage by insurance status",
+     xaxt = "n")
+
+# X-axis
+axis(1, at = c(0, 1))
+abline(lm(wage ~ dummyHealth, data = Wage), col = "red")
+```
+
+## What if my predictor has multiple categories? {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   You might wonder, what if my predictor has multiple groups?
+
+-   We can also transform multiple categories into several *dummy coded* variables, that means, the categories will become variables coded with $0$ or $1$.
+
+-   We can answer the following question:
+
+-   Is race related to wage? If so, how different is the average wage compared to White Americans?
+
+-   In the data set `Wage` there is a variable named `race`. We can check its values:
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+ Wage %>% count(race) %>%
+   kbl(caption = "Number of participants in each race group")%>%
+  kable_classic_2("hover", 
+                  full_width = F,
+                  bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+-   As you can see, we have 4 groups in this variable, and we need to create dummy variables.
+
+-   We should create $k-1$ new dummy variables, that means if you have 4 categories or groups, such as our case, we should have $4-1= 3$ new dummy variables:
+
+| Black | Asian | Other |
+|-------|-------|-------|
+| 0     | 0     | 0     |
+| 1     | 1     | 1     |
+| 0     | 1     | 1     |
+| ...   | ...   | ....  |
+
+-   Now we will create 3 new variables named `black`, `asian`, and `other`. Each variable will have only zeros and ones. Where $1 = YES$, and $0 = NO$.
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+Wage <- Wage %>% mutate(black = ifelse(race == "2. Black", 1, 0),
+                        asian = ifelse(race == "3. Asian", 1, 0),
+                        other = ifelse(race == "4. Other", 1,0))
+
+datatable(Wage %>% select(race, black,asian,other))
+
+```
+
+-   We are ready to estimate the regression model:
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+summary(lm(wage ~ black + asian + other, data = Wage))
+
+```
+
+-   Did you notice that `white` is not in the model? That happens because we don't need it!
+
+-   If you do $k-1$ new dummy variables, you are already estimating the mean of `white` in the intercept.
+
+-   You don't believe me, right? Let's estimate the mean of white:
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+Wage %>% filter(race == "1. White" ) %>%
+  summarise(mean = mean(wage),
+            sd = sd(wage)) %>%
+  kbl(caption = "Mean of wage when participant is White") %>%
+  kable_classic_2("hover", 
+                  full_width = F,
+                  bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+-   Yes! I was right! The mean of white is exactly our intercept!
+
+-   Each slope estimated in our regression model is the mean difference compare to `white` group.
+
+-   Let's see if it true:
+
+```{r}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+Wage %>% group_by(race) %>% summarise(mean = mean(wage)) %>%
+  mutate(DifferenceVsWhite = c(0, 
+                               101.60118	- 112.56367	, 
+                               120.28829- 112.56367	, 
+                               89.97333 -112.56367)) %>% 
+  kbl(caption = "Mean Differences Compare to White") %>%
+    kable_classic_2("hover", 
+                  full_width = F,
+                  bootstrap_options = c("striped", "hover", "condensed", "responsive"))
+```
+
+-   Great! I was right again!
+
+# This is boring, let's add more predictor! {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+
+
+
+## Multiple predictors went to a bar... {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+- In the last example we added multiple predictors after creating ***dummy coded*** variables.
+
+- We estimated a model named *multiple regression*. Many authors prefered the word *multiple*
+to explicitly mention that there are more than one predictor. 
+
+- When you add more predictors, the Classical Regression Model looks like this:
+
+
+```{=tex}
+\begin{equation}
+Y = \beta_{0}+ \beta_{1}X_{1} + \beta_{2}X_{2} + ...+ \epsilon 
+\end{equation}
+```
+
+- Now, this model will account for more possible variables related to $Y$.
+
+
+## Multiple predictors went to a bar... {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+
+library(scatterplot3d)
+rum <- read.csv("ruminationClean.csv")
+fit <- lm(depreZ ~ rumZ + worryZ, data = rum)
+
+plot1 <- scatterplot3d(rum[c("rumZ","worryZ", "depreZ"  )], 
+              angle = 60, 
+              pch = 16,
+              color = "steelblue",
+              box = FALSE)
+plot1$plane3d(fit)
+
+
+```
+
+## Multiple predictors went to a bar... {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+- In the last example, I standardized the my outcome variable `depression`, I 
+also standardized the predictors `rumination` and `worry`. 
+
+- I showed you that transforming the predictors and outcome unto $z$-values will 
+help you to get stadardized estimates.
+
+-  This is not always necessary, may software will do something like this:
+
+\begin{equation}
+ r_{XY} = \beta_{1}\Big(\frac{\sigma_{X}}{\sigma_{Y}}\Big)
+\end{equation}
+
+-Let's see if it works, I'll run a regression with the raw data and compare versus
+a regression where I standardized the variables before fitting the model:
+
+
+
+```{r, echo = TRUE}
+summary(lm(anx ~ worry, data = rum))
+
+```
+
+- Next, let's estimate the standarized slope:
+
+
+```{r, echo = TRUE}
+0.14384*(sd(rum$worry, na.rm = TRUE)/sd(rum$anx, na.rm = TRUE))
+
+```
+- Let's run again the same regression with standardized trasformed variables:
+
+```{r, echo=TRUE}
+summary(lm(scale(anx) ~ worryZ, data = rum))
+```
+
+- Yes, they are the same. The software by default will use the  formula$\beta_{1}\Big(\frac{\sigma_{X}}{\sigma_{Y}}\Big)$ to standardize
+your regression slopes, when you analyze your data using SPSS, SAS, STATA or
+other statistical packages outside `R`.
+
+
+
+## Multiple predictors went to a bar: non-linear models {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+- We have discussed that the assumption of a straight line
+explaining all the conditional means is many times 
+not realistic. 
+
+- We can actually fit a model where we give more freedom to the line.
+
+- How do we do this? We just have to add a polynomial term
+to the equation. For instance we could fit a quadractic 
+regression model by doing something like this:
+
+
+```{=tex}
+\begin{equation}
+Y = \beta_{0}+ \beta_{1}X + \beta_{2}X^2 + \epsilon 
+\end{equation}
+```
+
+- Simply, we square the predictor. Let's do that with our `wage` data example:
+
+
+
+```{r, echo=TRUE}
+
+
+fitSq <- lm(wage ~ age + I(age^2), data = Wage)
+summary(fitSq)
+
+```
+
+## Multiple predictors went to a bar: non-linear models {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+ggplot(Wage, aes(age, wage)) +
+      geom_point() +
+      stat_smooth(method = "lm", 
+                  formula = y ~ x + I(x^2), 
+                  size = 1) + 
+  theme_classic()
+```
+
+## Multiple predictors went to a bar: non-linear models {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+- We could fit a model with a cubic term:
+
+```{=tex}
+\begin{equation}
+Y = \beta_{0}+ \beta_{1}X + \beta_{2}X^2 + \beta_{2}X^3 + \epsilon 
+\end{equation}
+```
+
+
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+ggplot(Wage, aes(age, wage)) +
+      geom_point() +
+      stat_smooth(method = "lm", 
+                  formula = y ~ x + I(x^2) + I(x^3), 
+                  size = 1) + 
+  theme_classic()
+```
+
+## Multiple predictors went to a bar: non-linear models {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+- Let's add more flexibility:
+
+
+```{r, echo=TRUE}
+#| code-fold: true
+#| code-summary: "Show the code"
+#| 
+ggplot(Wage, aes(age, wage)) +
+      geom_point() +
+      stat_smooth(method = "lm", 
+                  formula = y ~ x + I(x^2) + I(x^3) + I(x^4)+ I(x^5), 
+                  size = 1) + 
+  theme_classic()
+```
+
+
+
+## References {background-image="slide2.png" background-opacity="0.5"}

@@ -1,0 +1,402 @@
+---
+title: "Correlation and Regression Models "
+subtitle: "Part 1"
+author: "Esteban Montenegro-Montenegro, PhD"
+institute: "Psychology and Child Development"
+title-slide-attributes:
+    data-background-image: "background1.png"
+    data-background-opacity: "0.5"
+format: 
+ revealjs:
+   theme: [default, custom.scss]
+   slide-number: true
+   self-contained: false
+   chalkboard: 
+    theme: whiteboard
+editor: visual
+bibliography: references.bib
+#nocite: | 
+#  @apa7
+csl: apa.csl
+---
+
+## Today's aims {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   To introduce correlation to estimate relationships between two variables.
+
+-   To introduce the notion of covariance.
+
+-   To study scatter plots to visualize correlations.
+
+```{r}
+library(knitr)
+library(kableExtra)
+library(dplyr)
+library(gghighlight)
+```
+
+## What is a correlation coefficient ? {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   A ***correlation coefficient*** is a numerical index that reflects the relationship between two variables. The value of this descriptive statistic ranges between -1.00 and +1.00.
+
+-   A correlation between two variables is sometimes referred to as a bivariate (for two variables) correlation
+
+## What is a correlation coefficient ? {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   At the beginning we will study the correlation named *Pearson product-moment*.
+-   There other types of correlation estimation depending on the data generating process of each variable.
+-   *Pearson product-moment* deals with ***continuous*** DATA.
+
+## Correlation interpretation and other features {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@salkind2021statistics:
+
+![](table.PNG)
+
+## Correlation interpretation and other features (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@salkind2021statistics:
+
+-   A correlation can range in value from $-1.00$ to $+1.00$.
+
+-   A correlation equal to 0 means there is no relationship between the two variables.
+
+-   The absolute value of the coefficient reflects the strength of the correlation. So, a correlation of $-.70$ is stronger than a correlation of $+.50$. One frequently made mistake regarding correlation coefficients occurs when students assume that a direct or positive correlation is always stronger (i.e., "better") than an indirect or negative correlation because of the sign and nothing else.
+
+-   A negative correlation is not a "bad" correlation.
+
+-   We will use the letter *r* to represent correlation. For example $r= .06$.
+
+## Correlation interpretation and other features (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+![](corre.PNG)
+
+$r_{xy}$ is the correlation coefficient.
+
+$n$ is the sample size.
+
+$X$ represents variable $X$.
+
+$Y$ represents variable $Y$.
+
+$\Sigma$ means summation or addition.
+
+## Let's take a look at positive correlations {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo=FALSE, message=FALSE, error=FALSE}
+library(lavaan)
+library(mvtnorm)
+library(ggplot2)
+library(patchwork)
+
+set.seed(326)
+
+coR <- diag(3)
+coR [lower.tri(coR)] <- c(.20,.50,.90)
+coR [upper.tri(coR)] <- c(.20,.50,.90)
+
+SDS <- c(1.2, 1.3,1.4)
+
+generatedData <- rmvnorm(200, 
+                         mean = c(30,63,95), 
+                         sigma = cor2cov(coR, SDS))
+
+data1 <- as.data.frame(generatedData)
+
+
+corrr1 <- ggplot(data = data1, aes(x = V1, y = V2)) + 
+  geom_point() + 
+  geom_smooth(method = lm)+
+annotate("text", x = 28, y = 65, label = "r = .28")
+ 
+corrr2 <- ggplot(data = data1, aes(x = V1, y = V3)) + 
+  geom_point() + 
+  geom_smooth(method = lm) +
+annotate("text", x = 28, y = 97, label = "r = .52") 
+ 
+corrr3 <- ggplot(data = data1, aes(x = V3, y = V2)) + 
+  geom_point() + 
+  geom_smooth(method = lm) +
+annotate("text", x = 93, y = 65, label = "r = .91") 
+
+corrr1+ corrr2 + corrr3 +  plot_layout(ncol = 2) + gridExtra::tableGrob(round(cor(data1),2))
+
+
+
+
+```
+
+## Let's take a look at negative correlations (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo=FALSE, message=FALSE, error=FALSE}
+
+library(lavaan)
+library(mvtnorm)
+library(ggplot2)
+library(patchwork)
+
+set.seed(326)
+
+coR <- diag(3)
+coR [lower.tri(coR)] <- c(-.25,-.50,-.90)
+coR [upper.tri(coR)] <- c(-.25,-.50,-.90)
+
+SDS <- c(1, 1.3,1.4)
+
+generatedData <- rmvnorm(200, 
+                         mean = c(30,63,95), 
+                         sigma = cor2cov(coR, SDS))
+
+data1 <- as.data.frame(generatedData)
+
+
+corrr1 <- ggplot(data = data1, aes(x = V1, y = V2)) + 
+  geom_point() + 
+  geom_smooth(method = lm)
+
+ 
+corrr2 <- ggplot(data = data1, aes(x = V1, y = V3)) + 
+  geom_point() + 
+  geom_smooth(method = lm) 
+
+ 
+corrr3 <- ggplot(data = data1, aes(x = V3, y = V2)) + 
+  geom_point() + 
+  geom_smooth(method = lm) 
+
+corrr1+ corrr2 + corrr3 +  plot_layout(ncol = 2) + 
+  gridExtra::tableGrob(round(cor(data1),2))
+
+```
+
+## Correlation matrix {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+@salkind2021statistics:
+
+-   You will find a correlation matrix in publications.
+-   It is the best way to represent several correlations between different pairs of variables.
+
+![](matrix.png)
+
+-   You will notice that a a correlation matrix has 1.00 on the diagonal and two "triangles" with the same information.
+
+![](matrix2.png)
+
+## Coefficient of Determination {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   There is a useful trick, you could square your $r$ and get a measure of correlation in terms of percentage of shared variance:
+
+![](deter.PNG)
+
+## Coefficient of Determination (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   What is the coefficient of determination in this case?
+
+-   We just need to estimate \$ r\^2= -0.22\^2 = -0.05$. Attention and depression shared only 5$%\$ of the variability (variance).
+
+```{r echo = FALSE, eval = TRUE, message=FALSE,error=FALSE}
+library(dplyr)
+library(ggplot2)
+
+rum <- read.csv("rumination.csv", na.string = "99")
+
+rum_scores <- rum %>% mutate(rumiacion = rowSums(across(CRQS1:CRSQ13)),
+                             depresion =  rowSums(across(CDI1:CDI26)),
+                             anx = rowSums(across(DASS1:DASS7)),
+                             worry = (PSWQC_2r + PSWQC_7r + PSWQC_9r + PSWQC_1  + PSWQC_3  + PSWQC_4 + PSWQC_5 + PSWQC_6 + PSWQC_8 + PSWQC_10 + PSWQC_11 + PSWQC_12 + PSWQC_13 + PSWQC_14 )) %>%
+  mutate(rumZ = scale(rumiacion),
+         depreZ = scale(depresion),
+         atencionZ = scale(ATENCION),
+         worryZ = scale(worry))
+
+
+
+ggplot(data = rum_scores, aes(x = depreZ, y = atencionZ)) + 
+  geom_point() + 
+  geom_smooth(method = lm, se = FALSE) + 
+  xlab("Standardized Depression Score")+
+  ylab("Standardized Attention Score")+
+  ggtitle("Negative correlation between Depression and Attention") +
+  theme_classic() + 
+  annotate("text", x = -1, y = 3, label = "r = - .22")
+
+```
+
+## Scatter plots and direction of correlation {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   I have shown you several plots, these plots are called ***scatter plots***.
+
+-   These plots are useful to explore visually possible correlations.
+
+-   When you create this plots, you only need to represent one of the variables in the x-axis and the other variable will be represented in the y-axis.
+
+::: callout-note
+-   Can you guess if the next scatter plot corresponds to a positive correlation?
+:::
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, error=FALSE,message=FALSE,error=FALSE}
+
+ggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + 
+  geom_point() + 
+   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  #geom_jitter(width = 0.25) +
+  ##geom_smooth(method = lm) + 
+  xlab("Standardized Rumination Score")+
+  ylab("Standardized Worry Score")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We can check some values and see what is happening, like case #78, in the next plot:
+
+```{r,message=FALSE,error=FALSE}
+
+ggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + 
+  geom_point() + 
+   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  #geom_jitter(width = 0.25) +
+  ##geom_smooth(method = lm) + 
+  xlab("Standardized Rumination Score")+
+  ylab("Standardized Worry Score")+
+  ggtitle("Is this a positive correlation?") +
+  gghighlight(worryZ > 2.5, use_direct_label = FALSE)+
+   geom_label(aes(label = ID),
+               hjust = 1, vjust = 1, fill = "purple", colour = "white", alpha= 0.5)+
+  theme_classic()
+
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Maybe if we add the line of best fit we will see it better:
+
+```{r,message=FALSE,error=FALSE}
+ggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + 
+  geom_point() + 
+  geom_smooth(method = lm, color = "red", se = FALSE)+
+   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +
+  #geom_jitter(width = 0.25) +
+  ##geom_smooth(method = lm) + 
+  xlab("Standardized Rumination Score")+
+  ylab("Standardized Worry Score")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Can you spot the direction of this correlation?
+
+-   This data come from a questionnaire that asks to rate how emotional you feel. For instance, it asks: Rate how GREAT you feel where 1 = "not feeling" to 6="I strongly feel it".
+
+```{r,message=FALSE,error=FALSE}
+pos <- read.csv("pos_neg.csv")
+
+
+ggplot(data = pos, aes(x = great , y = down)) + 
+  geom_point() + 
+  #geom_smooth(method = lm, color = "red", se = FALSE)+
+     geom_jitter(width = 0.25) +
+  scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +
+  scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +
+  xlab("Great")+
+  ylab("Down")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+
+
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's add again the line of best linear fit:
+
+```{r,message=FALSE,error=FALSE}
+ggplot(data = pos, aes(x = great , y = down)) + 
+  geom_point() + 
+  geom_smooth(method = lm, color = "red", se = FALSE)+
+     geom_jitter(width = 0.25) +
+  scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +
+  scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +
+  xlab("Great")+
+  ylab("Down")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+
+
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r,message=FALSE,error=FALSE}
+ggplot(data = rum_scores, aes(x = ageMonths , y = rumZ)) + 
+  geom_point() + 
+  #geom_smooth(method = lm, color = "red", se = FALSE)+
+     #geom_jitter(width = 0.25) +
+  #scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +
+  #scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +
+  xlab("Age in Months")+
+  ylab("Rumination")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+```
+
+## Scatter plots and direction of correlation (cont.) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's add the line of linear fit:
+
+```{r,message=FALSE,error=FALSE}
+ggplot(data = rum_scores, aes(x = ageMonths , y = rumZ)) + 
+  geom_point() + 
+  geom_smooth(method = lm, color = "red", se = FALSE)+
+     #geom_jitter(width = 0.25) +
+  #scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +
+  #scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +
+  xlab("Age in Months")+
+  ylab("Rumination")+
+  ggtitle("Is this a positive correlation?") +
+  theme_classic()
+
+```
+
+## Important remarks {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   When the correlation is high, it means there is a large portion of shared variance between $x$ and $y$.
+-   When the correlation is high all the values will converge towards the line of best linear fit.
+-   When the correlation is low, the values will be sparse and far from the line of best fit.
+-   A flat linear line means that there is not correlation between $x$ or $y$ or the correlation is remarkably low. This means $r=0$ or closer to zero.
+
+# Computer estimation time! {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+##  {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   In `R` you can estimate Pearson correlations using the function `cor()` as showed here:
+
+```{r echo = TRUE,message=FALSE,error=FALSE}
+### pos is the name of the object representing my data set
+cor(pos$down, pos$great)
+```
+
+In this estimation, I'm calculating the correlation between the emotion DOWN and the emotion GREAT. The Pearson correlation was $r= -0.36$. Is this a strong correlation?
+
+-   We could follow an ugly rule of thumb, but be careful, these are not rules cast in stone [@salkind2021statistics]:
+
+![](ugly.png){fig-align="center"}
+
+## JAMOVI {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+![](step1.png)
+
+## JAMOVI {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+![](step2.png)
+
+## References {background-image="slide2.png" background-opacity="0.5"}

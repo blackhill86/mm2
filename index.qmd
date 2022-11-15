@@ -1,0 +1,30 @@
+---
+title: "Quantitative Methods Lab"
+---
+
+
+
+# Welcome!
+
+Welcome to this humble home! You will find materials related to my classes at 
+CSU Stan under the Creative Commons License (CC). I have dedicated a large
+portion of my career to study applied statistics in psychology. I'm still learning 
+new topics and methods, my new passion is Bayesian inference to estimate
+latent variable models. 
+
+I also conduct research in healthy aging, and social factors affecting the risk 
+of dementia. My aim is to expand this lab and share as much information as possible,
+not only with students but also with collegues around the globe. 
+
+I mostly work programming in `R` language, so you might find examples
+and materials to learn `R` along with data sets you can use to practice your `R`
+skills. 
+
+This repository is still under construction, it is a timid ***alpha*** version
+written with the help of `Quarto`. If you have suggestions on how to improve this 
+please contact me at [estebanmonte@gmail.com](estebanmonte@gmail.com)
+
+
+
+
+

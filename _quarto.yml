@@ -1,0 +1,54 @@
+project:
+  type: website
+  render: 
+    - "index.qmd"
+    - "about.qmd"
+    #- "assignment4/assigment4.qmd"
+    - "PSYC3000.qmd"
+    - "lecture1/ResearchDesigns.qmd"
+    - "lecture2/Sampling.qmd"
+    - "lecture3/introProbAndStats.qmd"
+    - "lecture4/Distributions.qmd"
+    - "lecture5/centralTendency.qmd"
+    - "lecture6/visualizations.qmd"
+    - "lecture7/hypothesisTesting.qmd"
+    - "lecture8/correlation&regressionPart1.qmd"
+    - "lecture8/correlation&regressionPart2.qmd"
+    - "introLongitudinal/introLongitudinalSEM.qmd"
+   
+      
+
+website:
+  title: "QuantLab"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+      - PSYC3000.qmd
+  sidebar:
+      style: "floating"
+      search: true
+      contents:
+        - section: "Content"
+          contents:
+          - index.qmd
+          - PSYC3000.qmd
+          - href: about.qmd
+            text: About
+          
+
+format:
+  html:
+    theme: 
+      light: sandstone
+      dark: cyborg
+    #theme: cosmo
+    css: styles.css
+    toc: true
+    toc-title: Sections
+    toc-depth: 2
+
+
+

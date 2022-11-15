@@ -1,0 +1,65 @@
+---
+title: "Test Presentation"
+author: "Esteban Montenegro-Montenegro, PhD"
+institute: "Psycholoy and Child Development"
+title-slide-attributes:
+    data-background-image: "stan_state_screen_1.png"
+    data-background-opacity: "0.5"
+format: 
+ revealjs:
+   theme: simple
+   slide-number: true
+   self-contained: false
+   chalkboard: 
+      theme: whiteboard
+editor: visual
+bibliography: references.bib
+csl: apa.csl
+---
+
+
+## Quarto {background-image="slide2.png" background-opacity=0.5}
+
+Quarto enables you to weave together content and executable code into a finished presentation. To learn more about Quarto presentations see <https://quarto.org/docs/presentations/>.
+
+Citation [@bujacz2014measuring]
+
+# This a title slide {background-image="stan_state_screen_5.png" background-opacity=0.5}
+
+Testing as always
+
+## Bullets {background-image="slide2.png" background-opacity=0.5}
+
+When you click the **Render** button a document will be generated that includes:
+
+-   Content authored with markdown
+-   Output from executable code
+
+## Code {background-image="slide2.png" background-opacity=0.5}
+
+When you click the **Render** button a presentation will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r echo = TRUE}
+1 + 1
+```
+
+## Plot {background-image="slide2.png" background-opacity=0.5}
+Test Interactive
+```{r}
+library(ggplot2)
+library(plotly)
+library(gapminder)
+
+p <- gapminder %>%
+  filter(year==1977) %>%
+  ggplot( aes(gdpPercap, lifeExp, size = pop, color=continent)) +
+  geom_point() +
+  theme_bw()
+
+ggplotly(p)
+```
+
+## References {background-image="slide2.png" background-opacity=0.5}
+
+
+

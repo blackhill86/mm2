@@ -1,0 +1,328 @@
+---
+title: "A friendly Introduction to Longitudinal Analysis with Latent Variables"
+subtitle: "emontenegro1@csustan.edu"
+author: "Esteban Montenegro-Montenegro, PhD"
+institute: "Psychology and Child Development"
+title-slide-attributes:
+    data-background-image: "background1.png"
+    data-background-opacity: "0.5"
+format: 
+ revealjs:
+   theme: [default, custom.scss]
+   slide-number: true
+   self-contained: true
+   #chalkboard: 
+   #  theme: whiteboard
+editor: visual
+bibliography: references.bib
+csl: apa.csl
+---
+
+## My aims today {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: incremental
+-   Introduce the concept of latent variable.
+-   Explain important concepts to jump into Structural Equation Modeling (SEM)
+-   Expose applied examples in Longitudinal SEM.
+:::
+
+## What is a latent variable? {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="50%"}
+@bollen_latent_2012:
+
+-   Hypothetical variables.
+-   Traits.
+-   Data reduction strategy?
+-   Classification strategy?
+-   A variable in regression analysis which is, in principle\
+    unmeasurable.
+:::
+
+::: {.column width="50%"}
+-   Have you thought how to measure intelligence?
+
+-   What about the concept of "good performance"?
+
+-   What does good health look like ? Is it a concept?
+:::
+:::
+
+## Let's see the graphics convention {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](nomen.png)
+
+## What is a latent variable? {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](basicModel.png)
+
+## But wait... what is statistical model? {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](world.png){width="800"}
+
+::: callout-important
+Models are theoretical reductions, they intend to explain how the DATA is produced by Nature.
+:::
+
+## What is the name of this type of models? {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="50%"}
+-   Latent variables like the ones mentioned today belong to a family of models named ***Structural Equation Modeling (SEM)*** .
+
+-   The word ***equation*** is there because we will estimate several equations at the same type.
+
+-   ***Structural*** implies a set of equations we have to solve to unveil the relationship between variables.
+
+-   ***Modeling*** means we will create models based on theory.
+
+-   SEM was created to "confirm" theory. It is thought as a confirmatory approach.
+:::
+
+::: {.column width="50%"}
+![](pooh.jpg){fig-align="right"}
+:::
+:::
+
+## The family's foundation {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   SEM is known as a "covariance-based approach" this means we will use the concept of variance:
+
+```{=tex}
+\begin{equation}
+\sigma^2 = \frac{\sum(x_{i}-\bar{x})}{n-1}
+\end{equation}
+```
+-   Also the concept of covariance is relevant here:
+
+```{=tex}
+\begin{equation}
+cov(X,Y) = \frac{\sum(x_{i}-\bar{x})(y_{i} -\bar{y})}{n-1}
+\end{equation}
+```
+-   And why not, let's throw correlation in here:
+
+```{=tex}
+\begin{equation}
+cor(X,Y) = \frac{cov(X,Y)}{\sigma x \sigma y}
+\end{equation}
+```
+## The family's foundation {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](family.png){fig-align="center"}
+
+## SEM relates to theories and ideas {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+@henseler2020composite:
+
+![](theory.png){fig-align="center"}
+
+## SEM relates to theories and ideas II {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](mod1.png){fig-align="center"}
+
+## Reflective factors // Formative factors {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](formative.png){fig-align="center"}
+
+## Assumptions {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   Depends on how we estimate the model.
+-   Multivariate normal data generating process.
+-   Local independence: only the latent factor explains the indicators.
+-   Sample size should be large enough to estimate the model.
+-   Multicollinearity is a problem.
+
+## Let's formally define the SEM model {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+```{=tex}
+\begin{equation}
+\Sigma = \Lambda \Psi \Lambda' + \Theta
+\end{equation}
+```
+Where:
+
+-   $\Sigma$ = The estimated covariance matrix.
+
+-   $\Psi$ = Matrix with covariance between latent factors.
+
+-   $\Lambda$ = Matrix with factor loadings.
+
+-   $\Theta$ = Matrix with unique observed variances.
+
+-   In SEM we also have another model for the implied means:
+
+```{=tex}
+\begin{equation}
+y = \tau + \Lambda\eta + \epsilon
+\end{equation}
+```
+-   Does it look familiar to you?
+
+## Let's formally define the SEM model II {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](matrix.png){fig-align="center" width="1500"}
+
+## Just a remark about model fit {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](disc.png){fig-align="center" width="1500"}
+
+
+## Positive and Negative example {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](example1.png){width="1000"}
+
+# Longitudinal SEM Models {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="50%"}
+:::
+
+::: {.column width="50%"}
+![](skull.jpg){fig-align="center" width="500"}
+:::
+:::
+
+## Longitudinal SEM {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   In Longitudinal SEM we can model changes overtime in different ways.
+
+-   It depends on the question the researcher wants to address.
+
+    -   Longitudinal Confirmatory Factor Analysis (LCFA)
+
+    -   Panel models.
+
+    -   Latent growth models.
+
+    -   Spline models.
+
+    -   Random Intercept Panel Model.
+
+    -   Latent Change Score Model.
+
+## Longitudinal CFA: Checking assumptions {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+@little2013longitudinal
+
+![Configural Invariance Model](config.png){fig-align="center"}
+
+## Longitudinal CFA II {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![Weak Invariance Model](weak.png){fig-align="center"}
+
+## Longitudinal CFA III {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+![Strong Invariance Model](strong.png){fig-align="center"}
+
+## Panel Models {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+@little2013longitudinal
+
+![Panel Model Example](panelModel.jpg){fig-align="center"}
+
+## Random Intercept Panel Models {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+@mulder_three_2020:
+
+![RI Model](RI.png){fig-align="center"}
+
+## Random Intercept Panel Models II {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+@asebedo2022individual
+
+![RI Model Example](RI2.png){fig-align="center"}
+
+## Latent Growth Models {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="50%"}
+-   Latent Growth Models are an extension of Multilevel Growth Models.
+-   LGM is useful to predict trajectories, and add more paths that can explain the growth, or the growth or change might be a predictor.
+
+Mean structure model:
+
+```{=tex}
+\begin{equation}
+y_{ti} = \lambda_{1t} \eta_{1i} + \lambda_{2t} \eta_{2i}+ \epsilon
+\end{equation}
+```
+The most relevant part is the latent mean:
+
+```{=tex}
+\begin{align}
+\eta_{1t} &= \alpha_{1} + \zeta_{1t}\\
+\eta_{2t} &= \alpha_{2} + \zeta_{2t}\\
+\end{align}
+```
+:::
+
+::: {.column width="50%"}
+![Latent Growth Model](growth.png){fig-align="center"}
+:::
+:::
+
+## Latent Growth Models II {.smaller .smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   In Growth Models we'll get a trajectory for each participant or observation. They are nested in time.
+
+![Estimated Trajectories](traj.png){fig-align="center"}
+
+## Latent Growth Models: Another Example {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+::: columns
+::: {.column width="50%"}
+![Math Score Growth Model](math.jpg){fig-align="center" width="500"}
+:::
+
+::: {.column width="50%"}
+![Math Score Growth Model Trajectory](qtraj.png){fig-align="center"}
+:::
+:::
+
+## Why should we use SEM ? {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   SEM has good properties:
+    -   It helps to model several hypothesis at the same time.
+    -   It has flexibility to estimate multigroup models.
+    -   You have several estimators to choose.
+    -   The model accounts for the error variance in your items.
+    -   You can model non-linearity (we didn't talk about it).
+    -   You can estimate multilevel models and divide the variance (RI panel model).
+    -   It is fun!
+
+## Why should we use SEM ? {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   SEM has also some problems:
+    -   Requires a fair number of observations in most cases (frequentist approach).
+    -   People are afraid of using it! I don't know why?
+    -   There is a chance of misfit in the model. Models with multiple parameters tend to be prone to misspecification.
+    -   Large models might be far from the true data generating process, at least there is more chance.
+
+## When should we use SEM? {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   We should use SEM when the data generating process is truly latent. This applies to many variables in psychology, sociology and social sciences. But also in health sciences.
+
+-   SEM is good at treating missing data under the right assumptions.
+
+-   In fact, the missing values can be imputed when treated as a latent variable.
+
+## What is left for a next talk ? {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+-   How the estimation of SEM takes place.
+-   Bayesian Inference vs. Frequentist Inference.
+-   More about different estimators.
+-   Advanced modeling approaches.
+-   Missing data modeling.
+-   Latent Class Analysis.
+-   Item Response Theory Models (IRT).
+-   More on Dynamic Modeling.
+
+And...more memes for sure.
+
+## Thanks for not falling asleep! {.smaller background-image="slide2.png" background-opacity="0.5"}
+
+![](crazy.jpg){fig-align="center" width="500"}
+
+## References {background-image="slide2.png" background-opacity="0.5"}

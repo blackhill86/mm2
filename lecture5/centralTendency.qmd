@@ -1,0 +1,779 @@
+---
+title: "Central tendency and variability"
+subtitle: "APA Style"
+author: "Esteban Montenegro-Montenegro, PhD"
+institute: "Psychology and Child Development"
+title-slide-attributes:
+    data-background-image: "stan_state_screen_1.png"
+    data-background-opacity: "0.5"
+format: 
+ revealjs:
+   theme: simple
+   slide-number: true
+   self-contained: false
+   chalkboard: 
+    theme: whiteboard
+editor: visual
+bibliography: references.bib
+#nocite: | 
+#  @apa7
+csl: apa.csl
+---
+
+## Central tendency measures {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   In this lecture we will study several basic concepts, but don't fool yourselves by thinking that these topics are less important.
+
+-   These concepts are the foundations to understand what is coming in this class.
+
+-   We will learn about several measures to describe and understand continuous distributions.
+
+-   Remember that this are just a few measures, if time allows we will study more options to describe distributions.
+
+-   Let's focus on the most common type of average you'll see in psychology:
+
+```{=tex}
+\begin{equation}
+\bar{X} = \frac{\sum X}{n}
+\end{equation}
+```
+Where:
+
+-   the letter X with a line above it (also sometimes called "X bar") is the mean value of the group of scores or the mean.
+
+-   the $\sum$ or the Greek letter sigma, is the summation sign, which tells you to add together whatever follows it to obtain a total or sum.
+
+-   the X is each observation
+
+-   the $n$ is the size of the sample from which you are computing the mean.7
+
+***Example***
+
+```{r echo=TRUE}
+setwd("C:/Users/emontenegro1/Documents/MEGA/stanStateDocuments/PSYC3000/lecture5")
+
+rum <- read.csv("ruminationComplete.csv")
+
+mean(rum$age)
+
+```
+
+::: {.callout-note collapse="true"}
+We will use $M=$ to represent the word ***mean***
+:::
+
+## Central tendency measures III {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+Let's do it by hand:
+
+![](table1.png)
+
+```{=tex}
+\begin{align}
+\bar{X} &= \frac{\sum X}{n}\\
+&= \frac{18+21+24+23+22+24+25}{7}\\
+&= \frac{157}{7}\\
+&= 22.43\\
+\end{align}
+```
+## Central tendency measures III {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Or we could do it in `R`:
+
+```{r, echo=TRUE}
+(18+21+24+23+22+24+25)/7
+```
+
+## Central tendency measures IV {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   ***Median***: The median is defined as the midpoint in a set of scores. It's the point at which one half, or $50%$, of the scores fall above and one half, or $50%$, fall below.
+
+-   To calculate the median we need to order the information. Let's imagine you have the following values from different households:
+
+|                                                           |
+|:----------------------------------------------------------|
+| \$135,456 \| \$25,500 \| \$32,456 \| \$54,365 \| \$37,668 |
+
+-   Now, we'll need to sort the income from highest to lowest
+
+|                                                       |
+|-------------------------------------------------------|
+| \$135,456\| \$54,365\| \$37,668\| \$32,456\| \$25,500 |
+
+-   Which value is in the middle?
+
+-   The median is also known as the 50th percentile, because it's the point below which 50% of the cases in the distribution fall. Other percentiles are useful as well, such as the 25th percentile, often called Q1, and the 75th percentile, referred to as Q3. The median would be Q2.
+
+## Median to the rescue {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   As you might remember, the mean is strongly affected by the extreme cases, whereas the median is more "robust" to extreme cases. This means the median is less affected by extreme values.
+
+-   Let's use simulation to find out if it is true, imagine you have data related to a depression score:
+
+```{r echo = TRUE}
+
+set.seed(1256)
+
+M <- 25
+
+SD <- 1
+
+n <- 50
+
+## Simulated depression score
+depressionScore <- rnorm(n = n, mean = M, sd = SD)
+
+hist(depressionScore)
+```
+
+-   Let's check the mean of these generated values:
+
+```{r, echo = TRUE}
+
+mean(depressionScore)
+
+```
+
+-   Now, let's add a very extreme case, imagine one person has a diagnosis of bipolar disorder, and that person is experiencing a depressive episode when she or he filled out your test:
+
+```{r, echo = TRUE}
+
+depressionScore.2  <- depressionScore 
+depressionScore.2[50] <- 100
+hist(depressionScore.2)
+
+```
+
+-   Let's compare the mean on both cases:
+
+```{r echo=TRUE}
+
+cat("Mean before the extreme case:", mean(depressionScore))
+
+cat("Mean after the extreme case:", mean(depressionScore.2))
+
+
+```
+
+-   We can check now if the median was heavely affected by th extreme case:
+
+```{r, echo=TRUE}
+
+cat("Median before the extreme case:", median(depressionScore))
+
+
+cat("Median after the extreme case:", median(depressionScore.2))
+
+```
+
+-   Great the median is robust enough! It remain practically intact!
+
+## The fashionable Mode {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   The mode is the value that occurs most frequently. There is no formula for computing the mode.
+
+To compute the mode, follow these steps:
+
+1)  List all the values in a distribution but list each value only once.
+2)  Tally the number of times that each value occurs.
+3)  The value that occurs most often is the mode.
+
+```{r echo=TRUE}
+
+table(rum$grade)
+
+```
+
+-   The most frequent grade is 10th, therefore the mode is 10th grade.
+
+::: {.callout-note collapse="true"}
+The function `table()` helps to calculate frequencies, this means; how many times a value appears in our data. It looks ugly, but it is helpful. The first row are the values observed in the data, and the second row are the frequencies.
+:::
+
+## The fashionable Mode II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   However, things can get messy when you have two modes!
+
+```{r echo = FALSE, eval=TRUE}
+set.seed(1000)
+
+test1 <- rnorm(10000, mean = 50, sd = 10)
+
+test2 <- rnorm(10000, mean = 200, sd = 50)
+
+test3 <- c(test1,test2)
+
+plot(density(test3), 
+     xlab = "Scores in standardized test",
+     ylab = "p(y) or likelihood",
+     main = "Example of bimodal distribution")
+
+
+```
+
+-   When you have a bimodal distibution you are dealing with a *mixture* of two or more distributions.
+
+## `Summary()` function as a good option {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   In `R` we can count on a handy function to describe a distribution, this function is `summary()`.
+
+```{r echo = TRUE}
+summary(rum$age)
+```
+
+-   This function shows the minimum value, the 1st quantile, the median, the 3rd quantile, mean and maximum value.
+
+::: panel-tabset
+## R code
+
+```{r, echo = TRUE, eval = TRUE}
+library(ggplot2) ### package to create pretty plots
+
+dens <- density(rum$age)
+
+df <- data.frame(x=dens$x, y=dens$y)
+
+probs <- c(0, 0.25, 0.5, 0.75, 1)
+
+quantiles <- quantile(rum$age, prob=probs)
+
+df$quant <- factor(findInterval(df$x,quantiles))
+
+figure <- ggplot(df, aes(x,y)) + 
+    geom_line() + 
+    geom_ribbon(aes(ymin=0, ymax=y, fill=quant)) + 
+     scale_x_continuous(breaks=quantiles) +
+     scale_fill_brewer(guide="none") + 
+     geom_vline(xintercept=mean(rum$age), linetype = "longdash", color = "red") +
+     annotate("text", x = 14, y = 0.2, label = "Q1 = 14 years") +
+     annotate("text", x = 17, y = 0.3, label = "Median = 16 years") +
+     annotate("text", x = 15.35, y = 0.33, label = "Mean = 15.35 years") +
+     ylab("Likelihood") + 
+     xlab("Age in years")+
+     ggtitle("Quantiles and mean of Age")+
+     theme_classic()
+
+```
+
+## Plot
+
+```{r, fig.height = 4, fig.width = 6}
+figure
+```
+:::
+
+## Time to talk more about variability {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   In psychology we love variability, this is true also for science itself!
+
+-   We care a lot about variability, the whole point of doing research is to explain or observe how variability happens. For instance, if you had data about life expectancy in the world you could detect which cases are far from the mean. Wait! We do have this type of data, check [this webpage](https://data.worldbank.org/indicator/SP.DYN.LE00.IN?end=2020&most_recent_year_desc=true&start=2020&view=map&year=2020) from the World Bank.
+
+-   According to the World Bank the global life expectancy at birth is 73 years old.
+
+-   We could use the World Bank map and think, well we could which countries are far from the mean, For example: Costa Rica is 80.47, that means that Costa Rica is ($80.47-73 = 7.47$) 7.47 expected years above the mean. That's good, these people have longer life that many people in the world.
+
+## Time to talk more about variability II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's check more information. In the next table:
+
+```{r}
+library(dplyr)
+library(DT)
+
+life <- read.csv("lifeExpect.csv", header = TRUE) %>%
+  select(Country.Name, Country.Code, X2020) %>%
+  filter(!is.na(X2020))
+##rmarkdown::paged_table(life)
+
+datatable(life, filter = "top", style = "auto")
+
+```
+
+## Time to talk more about variability III {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   According the table, countries such as Central African Republic, Chad, Lesotho, Nigeria, and Sierra Leone have the lowest life expectancy. Let's see how far they are from the global mean.
+
+```{r, echo= TRUE}
+lowLife <- life %>% 
+  filter(Country.Code %in% c("CAF", "TCD", "LSO", "NGA", "SLE")) %>%
+  mutate(difference = X2020 -73)
+
+datatable(lowLife, filter = "top", style = "auto")
+
+```
+
+## Time to talk more about variability IV {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   What we just did is called the absolute difference from the mean, and it is one of the variability measures we can use. Just by computing how far these countries are from the mean, we can draw worrisome conclusions. People are dying at a very young age in those places! And the difference compare to the World's mean is up to 19.32 years less!
+
+-   Following the same logic we could estimate something call ***variance***, time to check some math formulas:
+
+```{=tex}
+\begin{equation}
+s^2 = \frac{\sum (X_{i} - \bar{X})^2}{n-1}
+\end{equation}
+```
+-   In this formula $X_{i}$ is each value you have in your observed distribution, in our example it would be the life expectancy of each country. The symbol $\bar{X}$ represents the mean of your observed distribution or data (lowercase).
+
+-   Can you see what we are doing? We are calculating the absolute difference from the mean, and secondly we square the difference, next we sum the result and divide it finally by $n-1$.
+
+-   But wait! What is $n-1$? Given that we are working with a possible sample out of infinite samples, $n-1$ helps to account that we are not working with the data generating process itself, it is just one instance generated by the data process.
+
+-   The variance is hard to interpret but itself, but it is a concept that will help you to understand other models.
+
+-   This concept is a measure of variability that depends on the metric of your observations.
+
+-   For instance, you cannot compare the variability in kilometers with miles.
+
+## Time to talk more about variability V {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's use the data set called `mtcars` already included inside `R`, you don't have to import any data set into `R`:
+
+```{r}
+datatable(mtcars, filter = "top", style = "auto")
+```
+
+## Time to talk more about variability VI {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We will convert miles per gallon to kilometers per liter, we just need to multiply 1 mpg by 0.425 km/l.
+
+```{r echo = TRUE}
+
+carsData <- mtcars %>% select(mpg) %>%
+  mutate(kml = mpg*0.425)
+
+datatable(carsData, filter = "top", style = "auto")
+
+```
+
+## Time to talk more about variability VII {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We can try to compare the variance of miles per gallon and kilometers per liter:
+
+```{r echo=TRUE}
+## Variance mpg
+cat("Miles per gallon variance:", var(carsData$mpg))
+
+### Variance kml
+cat("kilometers per liter variance", var(carsData$kml))
+
+```
+
+-   If we were very naive, we would conclude that miles per gallon has more variance compare to kilometers per liter, just because the estimation gives a larger number this conclusion would be wrong.
+
+-   The variance looks larger because the measurement unit has larger numbers, compare to km/l.
+
+-   When you compare variances you need to compare apples to apples, both variables should follow the same units.
+
+## The Standard Deviation will be a better horse {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   The standard deviation is an improved measure to describe continuous distribution.
+
+-   It is the average distance from the mean. The larger the standard deviation, the larger the average distance each data point is from the mean of the distribution, and the more variable the set of values is.
+
+```{=tex}
+\begin{equation}
+s = \sqrt{\frac{\sum (X_{i} - \bar{X})^2}{n-1}}
+\end{equation}
+```
+-   The good thing about the standard deviation is that now we can compare different distributions and answer questions such as: which distribution has more variability? In simple words, we can conclude which distribution has values further away from the mean.
+
+## The Standard Deviation will be a better horse II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   As always we can study an example:
+
+    -   Remember when we were simulating data days ago? Well, we'll do it again!
+
+***Hospital Example***
+
+::: panel-tabset
+## R code
+
+```{r, echo = TRUE, eval=FALSE}
+library(ggplot2) ### <- this is a package in R to create pretty plots.
+
+set.seed(359)
+
+### Non-hospital observations 
+### Mean or average in Kg 
+Mean <- 65
+## Standard Deviation
+SD <- 1
+## Number of observations
+N <-  300
+### Generated values from the normal distribution
+data_1 <-  rnorm(n = N, mean = Mean, sd = SD )
+data_1
+
+### Hospital group
+### Mean or average in Kg 
+Mean <- 90
+## Standard Deviation
+SD <- 10
+## Number of observations
+N <-  300
+### Generated values from the normal distribution
+data_2 <-  rnorm(n = N, mean = Mean, sd = SD )
+data_2
+
+
+
+dataMerged <- data.frame(
+  group =c(rep("College", 300),
+           rep("Hospital", 300)),
+  weight = c(data_1, data_2))
+
+ggplot(dataMerged , aes(x=weight, fill=group)) +
+  geom_density(alpha=.25) + 
+  theme_bw()+
+  labs(title = "College and Hospital Weight Density Function") + 
+  xlab("Weight (kg)") + 
+  ylab("p(y) or likelihood")
+
+```
+
+## Plot
+
+```{r, echo=FALSE,eval=TRUE}
+library(ggplot2) ### <- this is a package in R to create pretty plots.
+
+set.seed(359)
+
+### Non-hospital observations 
+### Mean or average in Kg 
+Mean <- 65
+## Standard Deviation
+SD <- 1
+## Number of observations
+N <-  300
+### Generated values from the normal distribution
+data_1 <-  rnorm(n = N, mean = Mean, sd = SD )
+
+### Hospital group
+### Mean or average in Kg 
+Mean <- 90
+## Standard Deviation
+SD <- 10
+## Number of observations
+N <-  300
+### Generated values from the normal distribution
+data_2 <-  rnorm(n = N, mean = Mean, sd = SD )
+
+
+dataMerged <- data.frame(
+  group =c(rep("College", 300),
+           rep("Hospital", 300)),
+  weight = c(data_1, data_2))
+
+ggplot(dataMerged , aes(x=weight, fill=group)) +
+  geom_density(alpha=.25) + 
+  theme_bw()+
+  labs(title = "College and Hospital Weight Density Function") + 
+  xlab("Weight (kg)") + 
+  ylab("p(y) or likelihood")
+```
+:::
+
+## The Standard Deviation will be a better horse III {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Thanks to the standard deviation, we have a measurement unit to describe better the data.
+
+-   We could also know at what point we consider a case to be extreme or select observations above or below any specific value based on the standard deviation.
+
+-   We can start from the mean and add or subtract standard deviations from the mean. For example, the mean of age in our rumination data set is `r round(mean(rum$age),2)` years old, the standard deviation is `r round(sd(rum$age),2)` years old.
+
+## The Standard Deviation will be a better horse IV {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r, echo = FALSE, eval = TRUE}
+library(ggplot2) ### package to create pretty plots
+
+dens <- density(rum$age)
+
+df <- data.frame(x=dens$x, y=dens$y)
+
+
+sds <- c(round(mean(rum$age)-(sd(rum$age)*2),2),
+         round(mean(rum$age)-sd(rum$age),2),
+         round(mean(rum$age),2),
+         round(mean(rum$age)+sd(rum$age),2),
+         round(mean(rum$age)+(sd(rum$age)*2),2))
+
+df$quant <- factor(findInterval(df$x,sds))
+
+figure2 <- ggplot(df, aes(x,y)) + 
+    geom_line() + 
+    geom_ribbon(aes(ymin=0, ymax=y, fill=quant)) + 
+     scale_x_continuous(breaks=sds) +
+     scale_fill_brewer(guide="none") + 
+     geom_vline(xintercept=mean(rum$age), linetype = "longdash", color = "red") +
+     annotate("text", x = 13.2, y = 0.09, label = "-2S") +
+     annotate("text", x = 14.50, y = 0.09, label = "-1S") +
+     annotate("text", x = 15.35, y = 0.33, label = "Mean") +
+     annotate("text", x = 16, y = 0.09, label = "+1S") +
+     annotate("text", x = 17, y = 0.09, label = "+2S")+
+     ylab("Likelihood") + 
+     xlab("Age in years")+
+     ggtitle("Age described by number of Standard Deviations")+
+     theme_classic()
+figure2
+
+```
+
+## Let's continue learning important concepts {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   I already mentioned the concept of "quantiles", this concept is in fact related to probabilities.
+
+-   We will revisit the household data presented before, but this time we'll order the income starting from the lowest value up to the highest value:
+
+| \$25,500\| \$32,456\| \$37,668\| \$54,365\| \$135,456 |
+|-------------------------------------------------------|
+
+-   Now, we can follow this formula to estimate our quantiles [@westfall2013understanding]:
+
+```{=tex}
+\begin{equation}
+\hat{y}_{(i-0.5)/n} = y_{(i)}
+\end{equation}
+```
+-   The little hat $\hat{}$ on top of $y$ means "estimate of", this is used in statistics to comunicate that you are estimating a value form "data" (lowercase). This means you are estimating a value from your observed fixed data. The right-hand side is the $ith$ ordered value of the data, all together we can read the formula as:
+
+*The* $(i − 0.5)/n$ *quantile of the distribution is estimated by the* $ith$ ordered value of the data
+
+-   We can see an example:
+
+| $i$ | $y(i)$ |  ($i$-0.5)/$n$  | $$\hat{y}_{(i-0.5)/n} = y(i)$$ |
+|:---:|:------:|:---------------:|:------------------------------:|
+|  1  | 25500  | (1-0.5)/5 =0.10 |             25500              |
+|  2  | 32456  | (2-0.5)/5 =0.30 |             32456              |
+|  3  | 37668  | (3-0.5)/5 =0.50 |             37668              |
+|  4  | 54365  | (4-0.5)/5 =0.70 |             54365              |
+|  5  | 135456 | (5-0.5)/5 =0.90 |             135456             |
+
+: Quantile example
+
+-   Then, we can say in plain English: "The 70th percentile of the distribution is measured by \$54,365".
+
+-   Now notice something, why we don't have data representing the 75th percentile?
+
+-   Given that these are ***estimates*** , these numbers are approximations to the true value, If you collect more data you'll have data in different percentiles, also more precision to capture the real value.
+
+## Another example related to quantiles {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+```{r}
+
+### mtcars data set is included in R
+
+datatable(mtcars %>% select(mpg), filter = "top", style = "auto")
+```
+
+## Another example related to quantiles II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We can estimate the percentiles using the formula showed before, this time we will find the estimate for the quantiles in `mpg` variable inside the data `mtcars`:
+
+::: panel-tabset
+## Data
+
+```{r echo=TRUE}
+library(dplyr)
+
+estimatePercent <- mtcars %>% select(mpg) %>% 
+  mutate(cars = row.names(mtcars)) %>%
+  arrange(mpg) %>%
+  mutate(order = 1:n()) %>%
+  mutate(prob = (order-0.50)/n()) %>%
+  mutate(percent = prob*100)
+
+datatable(estimatePercent, filter = "top", style = "auto")
+
+```
+
+## Plot
+
+```{r}
+
+ggplot(data = estimatePercent, 
+       aes(x = percent, 
+           y = factor(cars, 
+                      levels = row.names(estimatePercent)))) +
+  geom_point(size=3, color="orange") +
+  geom_segment(aes(xend=percent, yend=0) ) +
+  xlab("Percentile")+
+  ylab("Car Model")+
+  ggtitle("Car percentiles")+
+  theme_bw() 
+  
+```
+:::
+
+## Another example related to quantiles III {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Instead of estimating the percentiles by hand we can use the function `quantile()` in `R`:
+
+```{r, echo = TRUE}
+quantile(mtcars$mpg, type = 5, probs = 0.265625)
+```
+
+-   This function will require a vector with numbers, and the probability you are interested.
+
+-   If you run `?quantile` you'll see there are different ways to estimate the observed percentiles, all those are possible models to get an estimate.
+
+```{r echo=TRUE}
+?quantile
+```
+
+## Cumulative Density Function (CDF) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We have been studied Probability Density Functions (PDF), now I'm going to introduce a concept that is related to PDF.
+
+-   I said that the area under the curve of the PDF is actually probability, even though the y-axis is showing likelihood instead of probability.
+
+-   I also said you can use calculus to get that probability in a easier way.
+
+-   Those calculus formulas will give you an easy way to estimate the probability under that curve. The final result is something we call "Cumulative Density Function CDF".
+
+## Cumulative Density Function (CDF) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   As the name says, we are like "stacking" the whole density, therefore it changes the shape of the curve, but at the end is the same information in a different metric.
+
+-   In fact, you get the derivative of a CDF, th calculation will give you the PDF back.
+
+-   But no worries, I won't ask you to do it... you are safe!
+
+![](areWe.jpg)
+
+## Cumulative Density Function (CDF) {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   All continuous distributions will have a CDF, and we are going to use very often the normal CDF.
+
+-   The normal distribution is also called "Gaussian Distribution" , I prefer this name instead of "normal distribution".
+
+-   Anyhow, let's check some properties [here](https://en.wikipedia.org/wiki/Normal_distribution#Cumulative_distribution_functions).
+
+***We can also understand the importance of the Gaussian CDF using `R`:***
+
+-   When we assume that the Gaussian distribution has a mean = 0 and standard deviation = 1, the CDF looks like this:
+
+::: panel-tabset
+## Code
+
+```{r, echo = TRUE, eval = FALSE}
+
+## sequence of x-values 
+justSequence <- seq(-4, 4, .01)
+#calculate normal CDF probabilities 
+prob <- pnorm(justSequence)
+#plot normal CDF 
+plot(justSequence , 
+     prob,
+     type="l",
+     xlab = "Generated Values",
+     ylab = "Probability",
+     main = "CDF of the Standard Gaussian Distribution")
+
+abline(v=1.96, h = 0.975, col = "red")
+
+```
+
+## Plot
+
+```{r, echo = FALSE, eval = TRUE}
+
+## sequence of x-values 
+justSequence <- seq(-4, 4, .01)
+#calculate normal CDF probabilities 
+prob <- pnorm(justSequence)
+#plot normal CDF 
+plot(justSequence , 
+     prob,
+     type="l",
+     xlab = "Generated Values",
+     ylab = "Probability",
+     main = "CDF of the Standard Gaussian Distribution")
+
+abline(v=1.96, h = 0.975, col = "red")
+
+```
+:::
+
+-   We can see that the probability of observing a value less or equal than 1.96 is 0.975.
+
+## Cumulative Density Function (CDF) II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   Let's do something more intersting, remember the example of weight where we simulated the weight of two groups: hospital patients vs. college students?
+
+-   We could now get the probability of observing a particular value.
+
+-   Let's imagine again that the distribution of weight among college students has a mean of 65 kg, and standard deviation of 20 kg.
+
+::: panel-tabset
+## Code
+
+```{r, echo= TRUE, eval = FALSE}
+weight <- seq(40, 90, 0.1)
+
+probability <- pnorm(weight, 
+                     mean = 65,
+                     sd = 20)
+plot(weight, 
+     probability, type = "l")
+abline(v=76, h =  0.7088403, col = "red")
+
+
+```
+
+## Plot
+
+```{r, echo= FALSE}
+weight <- seq(40, 90, 0.1)
+
+probability <- pnorm(weight, 
+                     mean = 65,
+                     sd = 20)
+plot(weight, 
+     probability, type = "l")
+
+abline(v=76, h =  0.7088403, col = "red")
+```
+:::
+
+-   A weight of 76 kg has a probability of 0.71, it is likely to see this weight in the college students under my assumptions.
+
+## Skewness {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   I left some concepts behind because I got excited talking about the CDF.
+
+-   One important concept to describe a distribution is skewness.
+
+![](skew.jpeg)
+
+## Skewness II {.smaller .scrollable background-image="slide2.png" background-opacity="0.5"}
+
+-   We say that a distribution is right skewed when the tail is longer to the right:
+
+```{r}
+set.seed(5696)
+
+N <- 1000
+
+### Number of times people check Instagram
+weight <- rnbinom(N, 10, .5)
+
+plot(density(weight, kernel = "gaussian" ),
+     ylab = "p(y) or likelihood",
+     xlab = "How many times people check Instagram?",
+     main = "Density plot of How many times people check Instagram?")
+```
+
+-   We say that a distribution is left skewed when the left tail is longer:
+
+```{r}
+set.seed(5696)
+
+plot(density(rbeta(300,60,2)),
+     ylab = "p(y) or likelihood",
+     xlab = "Percentage of people who pass this class",
+     main = "Density plot of Percentage of people who pass this class")
+
+```
+
+## References {background-image="slide2.png" background-opacity="0.5"}

@@ -1,0 +1,184 @@
+---
+title: "Assignment #4"
+subtitle: "22 points"
+title-block-banner: true
+author: "Esteban Montenegro-Montenegro"
+date: 2022-10-14
+format: 
+  html:
+    code-link: true
+editor: visual
+theme: 
+  light: sandstone
+  dark: cyborg
+toc: true
+toc-depth: 2
+toc-title: Sections
+self-contained: true
+bibliography: references.bib
+csl: apa.csl
+---
+
+```{r echo=FALSE}
+knitr::opts_knit$set(root.dir = "C:/Users/emontenegro1/Documents/GitHub/introLongi/assignment4")
+```
+
+## Description
+
+This assignment has multiple aims:
+
+-   To assign tasks in a lab format where you are able to use the statistical models studied in class.
+-   To show the type of questions you will encounter in the upcoming exam.
+
+You will perform some calculations using `R` language, you may also use the software `JAMOVI` to solve several questions in this assignment.
+
+Please, remember to submit your answers in a Word document where you write the question along with the answer as I show in the following example:
+
+::: {#example .message style="color: red;"}
+*1) What is a parameter?*
+:::
+
+::: {.message style="color: red;"}
+*Answer: A parameter is an unknown value in a model, but it will be estimated using the data*
+:::
+
+In this assignment you may need to add your `R` code to your document. Please, keep a tidy style when you answer the question, after you answer the question add the code in a text box. Please watch this [video](https://youtu.be/aaCtUTiq2Ps) where I explain how to report your results when using `R`.
+
+# First Part: Probability distributions and random variables
+
+1)  In the lecture ***"Probability distributions and random variables"***, I we studied several *types of DATA*. Provide an example of an observed variable that fits the description. For instance, we studied that *gender* is considered nominal data. Can you think more examples of nominal, continuous and ordinal DATA? (3 points)
+
+2)  Provide an example of a discrete variable. Check slide 7 to help you understand what is a discrete variable. (1 point).
+
+3)  Revise the following probability model:
+
+```{=tex}
+\begin{equation}
+p(y|\pi) = \pi^{y}(1-\pi)^{1-y}
+\end{equation}
+```
+3.1) What is the name of this probability model? (1 point)
+
+3.2) We used this model in class to explain the probability of getting heads or tails when tossing a coin. Can you think of another applied example where we need to model a binary outcome? Provide at least 1 example. (1 point)
+
+3.3) On slide 12 we simulated tossing a coin 100 times, and the probability of getting heads was 0.48, and not 0.50 as we shold expect. Why did it happen? Why we didn't get a probability exactly equal to 0.50, in the first time we simulated data in that slide? (2 points)
+
+4)  Revise the following probability model:
+
+```{=tex}
+\begin{equation}
+p(y|\lambda) = \frac{\lambda^{y}e^{-\lambda}}{y!}
+\end{equation}
+```
+4.1) What is the name of this probability model? (1 point)
+
+4.2) We studied that this model is appropriate to explain how counts or frequencies are generated in Nature. Provide an example of an observed variable that could be modeled following this distribution.
+
+5)  We have studied the Probability Density Function (PDF) in class. I mentioned that every continuous distribution will have a PDF. I have shown that the PDF can be graphically represented. Which of the following figures represents a PDF? How do you know ? (2 points)
+
+::: {layout-ncol="2"}
+![Figure (A)](Nodensity.png){#fig-surus}
+
+![Figure (B)](density.png){#fig-hanno}
+:::
+
+# Second Part: Central Tendency and Variability.
+
+1)  In the code below, I'm estimating a percentile using the variable `miles per gallon` from the data set `mtcars`. What is the name of this quantile or percentile? (1 point).
+
+```{r, echo=TRUE}
+quantile(mtcars$mpg, prob = 0.50)
+```
+
+2)  In this exercise, you will need to import the data set `lifeExpect.csv` into `R`. To import data in `R` you'll have to run the following code, remember to utilize the function `setwd()` to specify your working directory, then run the function `read.csv()` to import the data set:
+
+```{r, echo=TRUE, eval=FALSE}
+### Replace this path with the path in your computer where R can find your files:
+setwd("C:/Users/emontenegro1/Documents/MEGA/stanStateDocuments/PSYC3000/assignment4")
+```
+
+```{r, echo = TRUE}
+### This line of code imports your the data into R.
+lifeData <- read.csv("lifeExpect.csv")
+```
+
+As you can see, the data set named `lifeExpect.csv` corresponds to the example exposed in class. This data set contains the life expectancy in the world from years 1960 to 2020. Each column in this data represents a different year, each row represent a different country. See the data here:
+
+```{r, echo=FALSE}
+library(DT)
+datatable(lifeData, filter = "top", style = 'bootstrap4')
+```
+
+------------------------------------------------------------------------
+
+Following the next example code, compute the summary information of *year 2020* and compare the results with the summary from year 1960 showed below. What changes do you observe? What does this result mean? (3 points)
+
+```{r}
+summary(lifeData$X1960)
+```
+
+::: callout-warning
+Remember to add your `R` code in your answer following the video I mentioned at the beginning of this assignment.
+:::
+
+3)  According to slide 16, why is better to report the standar deviation instead of the variance? (1 point)
+
+4)  On slide 18 we studied an example where we assumed that college students weight and patients weight in a hospital were produced by a Gaussian process. In that slide, you'll see a figure with the Probability Density Plot corresponding to both groups. Why in this graph the college distribution is narrower than the hospital distribution? (1 point)
+
+5)  The figure below is the density plot of Life Expectancy in the World corresponding to the year 2020. In this plot, I'm describing the distribution in terms of standard deviations from the mean. I computed $\pm 1$ and $\pm 2$ standard deviations from mean. Following a "reverse engineering logic", explain how can you compute the values in the x-axis (12.49, 13.92, 15.35, 16.78, 18.21)? (2 points). What do these numbers mean? (1 point). To compute those values you need to know that the standard deviation of Life Expectancy in year 2020 is 7.07.
+
+```{r, echo = FALSE, eval = TRUE}
+library(ggplot2) ### package to create pretty plots
+
+dens <- density(lifeData$X2020, na.rm = TRUE)
+
+df <- data.frame(x=dens$x, y=dens$y)
+
+
+sds <- c(round(mean(lifeData$X2020,na.rm = TRUE)-(sd(lifeData$X2020,na.rm = TRUE)*2),2),
+         round(mean(lifeData$X2020,na.rm = TRUE)-sd(lifeData$X2020,na.rm = TRUE),2),
+         round(mean(lifeData$X2020,na.rm = TRUE),2),
+         round(mean(lifeData$X2020,na.rm = TRUE)+sd(lifeData$X2020,na.rm = TRUE),2),
+         round(mean(lifeData$X2020,na.rm = TRUE)+(sd(lifeData$X2020,na.rm = TRUE)*2),2))
+
+df$quant <- factor(findInterval(df$x,sds))
+
+figure2 <- ggplot(df, aes(x,y)) + 
+    geom_line() + 
+    geom_ribbon(aes(ymin=0, ymax=y, fill=quant)) + 
+     scale_x_continuous(breaks=sds) +
+     scale_fill_brewer(guide="none") + 
+     geom_vline(xintercept=mean(lifeData$X2020, na.rm = TRUE), 
+                linetype = "longdash", color = "red") +
+     annotate("text", x = 58.46, y = 0.02, label = "-2S") +
+     annotate("text", x = 65.53, y = 0.02, label = "-1S") +
+     annotate("text", x = 72.59, y = 0.02, label = "Mean") +
+     annotate("text", x = 79.66, y = 0.02, label = "+1S") +
+     annotate("text", x = 86.73, y = 0.02, label = "+2S")+
+     ylab("Likelihood") + 
+     xlab("Life expectancy in years (year 2020)")+
+     ggtitle("Life expectancy in the World described by number of Standard Deviations")+
+     theme_classic()
+figure2
+
+```
+
+::: callout-note
+***Extra Points***: Simulate 100 observations from a Gaussian distribution with Mean = 55, and SD = 56. After that, estimate the mean of the simulated values. Is the estimated mean close to 55? Why it is different? (3 points)
+:::
+
+6)  On slide 28, I showed that the Cumulative Density Function (CDF) is useful to estimate probability. I also showed that we are able to estimate the probability of observing a value equal to 76 in a Gaussian distribution with $M$ = 65, and $sd$ = 20. Repeat the same estimation under the same assumptions and the same probability model, but this time estimate the probability of observing a person who has a weight = 90kg.(3 points)
+
+::: callout-important
+Pay attention to the function `pnorm()` showed in the example.
+:::
+
+# Third Part: JAMOVI excercises.
+
+1)  Import the data set `lifeExpect.csv` into `JAMOVI` and perform the next steps:
+
+    1.1. Estimate the mean and standard deviation of life expectancy in year 2020. (1 point).
+
+    1.2. Generate a histogram of year 2020. What are the most frequent values according to the histogram? (1 point). You can watch this [video](https://youtu.be/D_E4mIZGRDM)
+
+    1.3. Remember to export the output in a pdf file as shown in the following [video](https://youtu.be/edzAoueVKHg). After that, include the pdf file with your submitted answers.

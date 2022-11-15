@@ -1,0 +1,53 @@
+---
+title: "PSYC 3000 Lab"
+author: "Esteban Montenegro"
+format: html
+editor: visual
+---
+
+# Welcome!
+
+If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn't like my presentation in html format. So, I decided to create my own site where you can access my presentations.
+
+You might not be an student in my class, but you knew about me and this class from other sources. That's totally fine! You are also welcomed!
+
+I share all the content in this site under a **Creative Commons** license, specifically the license [*CC BY-NC-ND 4.0*](https://creativecommons.org/licenses/by-nc-nd/4.0/). This means, you cannot use this material for commercial purposes, but you can use my material, and you MUST cite or mention the original source for non-commercial projects such as academic work.
+
+## Life is crazy, psychology is also numbers!
+
+At this point you might be thinking: "I decided to study psychology to avoid numbers!"
+
+But numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!
+
+This is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!
+
+# Lectures:
+
+[Lecture 1: Research designs](lecture1/ResearchDesigns.qmd#lecture1)
+
+[Lecture 2: Sampling designs](lecture2/Sampling.qmd#lecture2)
+
+[Lecture 3: Introduction to Probability and Statistics](lecture3/introProbAndStats.qmd#lecture3)
+
+[Lecture 4: Probability distributions and random variables](lecture4/Distributions.qmd#lecture4)
+
+[Lecture 5: Central Tendency Measures](lecture5/centralTendency.qmd#lecture5)
+
+[Lecture 6: The art of plotting](lecture6/visualizations.qmd#lecture6)
+
+[Lecture 7: Introduction to Hypothesis Testing](lecture7/hypothesisTesting.qmd#lecture7)
+
+[Lecture 8: Correlation and Regression Models](lecture8/correlation&regressionPart1.qmd#lecture8)
+
+[Lecture 8: Correlation and Regression Models Part 2](lecture8/correlation&regressionPart2.qmd#lecture8.2)
+
+# Assigments
+
+[Homework #4](assigment4.html)
+
+
+# Advanced topics
+
+[A friendly Introduction to Longitudinal Analysis with Latent Variables](introLongitudinal/introLongitudinalSEM.qmd#long)
+
+
