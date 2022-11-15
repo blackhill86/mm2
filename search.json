@@ -1201,7 +1201,7 @@
     "href": "lecture8/correlation&regressionPart2.html",
     "title": "Correlation and Regression Models",
     "section": "",
-    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2"
+    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
   },
   {
     "objectID": "lecture8/correlation&regressionPart2.html#what-is-a-regression-model",
@@ -1278,28 +1278,28 @@
     "href": "lecture8/correlation&regressionPart2.html#example-time-cont.",
     "title": "Correlation and Regression Models",
     "section": "Example Time (cont.)",
-    "text": "Example Time (cont.)\nLet’s fit a regression model were age will be a predictor of wage. This means \\(X = age\\) and \\(Y= wage\\) :\n\nfitModel <- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 81.70474    2.84624   28.71   <2e-16 ***\nage          0.70728    0.06475   10.92   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 2.2e-16"
+    "text": "Example Time (cont.)\nLet’s fit a regression model were age will be a predictor of wage. This means \\(X = age\\) and \\(Y= wage\\) :\n\nfitModel <- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 81.70474    2.84624   28.71   <2e-16 ***\nage          0.70728    0.06475   10.92   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 2.2e-16\n\n\n\nThe estimate column shows two important rows, the first one is the intercept this is the starting point of a line (more about it later). The second row is an estimate for age this is called the slope. It tells you the rate of change.\nIn this case it is telling us that, for each year of age, these males earned \\(0.70728*1000=\\$707.28\\) more. We’ll talk about it later."
   },
   {
     "objectID": "lecture8/correlation&regressionPart2.html#example-time-cont.-1",
     "href": "lecture8/correlation&regressionPart2.html#example-time-cont.-1",
     "title": "Correlation and Regression Models",
     "section": "Example Time (cont.)",
-    "text": "Example Time (cont.)\n\nggplot(data = Wage, aes(x=age, y=wage)) +\n  geom_point()+ geom_smooth(method = \"lm\")+\n  theme_classic()"
+    "text": "Example Time (cont.)\n\nggplot(data = Wage, aes(x=age, y=wage)) +\n  geom_point()+ geom_smooth(method = \"lm\")+\n  theme_classic()\n\n`geom_smooth()` using formula 'y ~ x'"
   },
   {
     "objectID": "lecture8/correlation&regressionPart2.html#my-aims-in-this-lecture",
     "href": "lecture8/correlation&regressionPart2.html#my-aims-in-this-lecture",
     "title": "Correlation and Regression Models",
     "section": "My aims in this lecture",
-    "text": "My aims in this lecture\n\nTo introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)"
+    "text": "My aims in this lecture\n\nTo introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
   },
   {
     "objectID": "lecture8/correlation&regressionPart2.html#references",
     "href": "lecture8/correlation&regressionPart2.html#references",
     "title": "Correlation and Regression Models",
     "section": "References",
-    "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+    "text": "References\n\n\n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
   },
   {
     "objectID": "assignment4/assigment4.html#description",
@@ -1356,5 +1356,404 @@
     "title": "Probability distributions and random variables",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model",
+    "text": "Classical Regression Model\n\nThe model that we just ran is named Classical Regression Model, many people call it linear regression, other people call it Gaussian regression.\nI prefer to call it Classical Regression Model (Westfall & Arias, 2020).\nThis is how the model looks like in many books:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\epsilon\n\\end{equation}\\]\n\nWe will talk about this model very often, but before going straight to bussiness we need to talk about assumptions."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions",
+    "text": "Classical Regression Model: Assumptions\n\nRemember: Models produce data! Then, models are explanations of what happens in Nature.\nThe first assumption is randomness, many books only assume this concept but it doesn’t hurt to make it explicit.\nRandomness in this context means that:\n\n\n\n\n\n\n\nNote\n\n\nThe value of \\(Y\\) is variable, coming randomly from a distribution \\(p(y|x)\\) of potentially observable \\(Y\\) values that is specific to the particular values (\\(X = x\\)) of the \\(X\\) variables (Westfall & Arias, 2020).\n\n\n\n\nIn simple words, we assume \\(Y\\) is variable produced randomly by a conditional distribution \\(p(y|X)\\).\nBut of course, we test if there is a dependency between \\(y\\) and \\(x\\). That’s part of the job."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nRemember when I showed you that \\(p(y|x)\\) is assuming a distribution for each \\(x\\)?\nThere is a conditional mean function in the Classical Regression Model, the expression looks like this:\n\n\\[\\begin{equation}\nf(x) = E(Y|X=x)\n\\end{equation}\\]\nIn this formula \\(E\\) means expectation or expected value. In this case the expected value is the collection of means of the conditional distributions."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-1",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere is an assumption of constant variance (homoscedasticity).\nGiven that we are assuming there are several distributions, each \\(x\\) has a distribution, we also assume that the variance in this conditional distributions is the same or constant.\n\n\n\n\n\n\n\nNote\n\n\nThe variances of the conditional distributions \\(p(y|x)\\) are constant (i.e., they are all the same number, \\(\\sigma^2\\)) for all specific values \\(X = x\\) (Westfall & Arias, 2020)."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere an important assumption which is normality.\nThe Classical Regression Model or linear model, assumes all the conditional distributions are produced by a normal distribution or Gaussian distribution.\n\n\n\n\n\n\n\nNote\n\n\nThe conditional probability distribution functions \\(p(y|x)\\) are normal distributions (as opposed to Bernoulli, Poisson, or other) for every \\(X = x\\).(Westfall & Arias, 2020)."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-3",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-3",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\nWestfall & Arias (2020):"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-4",
+    "href": "lecture8/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-4",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\n\n\nThere is also an assumption of linearity.\nThis assumption states that the means of the conditional distributions \\(p(y|x)\\) fall precisely on a straight line of the form \\(\\beta_{0} + \\beta_{1}x\\)\nWhen we assume linearity the parameter \\(\\beta_{O}\\) is the mean of \\(Y\\) when the parameter \\(\\beta_{1} = 0\\).\nTo make \\(\\beta_{1} = 0\\) we would just need to multiply it by zero: \\(\\beta_{0} + \\beta_{1}(0)\\).\nBut, what happens if \\(x\\) does not have zero? Well, in that case, \\(\\beta_{0}\\) would not be exactly the mean of \\(Y\\) , instead \\(\\beta_{0}\\) would be the vertical height or distance from zero.\nIn this case, \\(\\beta_{1}\\) is a parameter that indicates the difference between conditional means.\n\n\nWestfall & Arias (2020):"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#ordinary-least-squares",
+    "href": "lecture8/correlation&regressionPart2.html#ordinary-least-squares",
+    "title": "Correlation and Regression Models",
+    "section": "Ordinary Least Squares",
+    "text": "Ordinary Least Squares\n\nI have mentioned before in class, the existence of a line of best fit\nThis is the time to study what is this line.\nOne fo the estimation methods in the Classical Regression Model is Ordinary Least Squares estimation.\nIn this method, we draw a line in every possible direction, and calculate the distance of each value from the line. After calculating the distance form the line, we square those distances and add them together. This is what we call a Sum of Squares. The line that produces the lowest Sum of Squares is the line of best fit.\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Field et al. (2012) and Westfall & Arias (2020)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#wage-data-example",
+    "href": "lecture8/correlation&regressionPart2.html#wage-data-example",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nBy this point we should talk more about our applied example.\nLet’s see what happens when we assume \\(\\beta_{1} = 0\\) by just removing age from the regression model.\n\n\nfitModel <- lm(wage ~ 1, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ 1, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-91.618 -26.320  -6.782  16.977 206.639 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 111.7036     0.7619   146.6   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 41.73 on 2999 degrees of freedom\n\n\n\nThis is what we call the intercept only model, it can also be considered a null model. Remember those words? In this model, we are not modeling any relationship. The regression model returns exactly the mean of wage. If you don’t believe me you can see it:\n\n\nmean(Wage$wage)\n\n[1] 111.7036\n\n\n\nIt is the same value as the intercept!\nLet’s add again age as a predictor:\n\n\nfitModel <- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 81.70474    2.84624   28.71   <2e-16 ***\nage          0.70728    0.06475   10.92   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 2.2e-16\n\n\n\nNow the coefficient for the estimated intercept changed. This happened because now the intercept represents the average wage when age is zero. But wait, you cannot have a zero age and get a salary? In this case, the intercept misses the interpretation, then it represents the height from zero."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#wage-data-example-1",
+    "href": "lecture8/correlation&regressionPart2.html#wage-data-example-1",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\n\nShow the code\nplot(Wage$age, Wage$wage, \n     pch = 16, \n     cex = 0.7, \n     col = \"blue\",\n     xlab = \"Age\",\n     ylab = \"Wage\",\n     main = \"Line of Best Fit Linear Regression\")\nabline(lm(wage ~ age, data = Wage), col = \"red\")"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#wage-data-example-2",
+    "href": "lecture8/correlation&regressionPart2.html#wage-data-example-2",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nIf we want to interpret the intercept in the way the linear model specifies. We can transform age to get a meaningful zero.\nThere is something call \\(z\\)-values, others call it \\(z\\)-scores. This tranformation is based on the normal distribution.\nLet’s see the formula to transform any continuous distribution into \\(z\\) values:\n\n\\[\\begin{equation}\nz= \\frac{x_{i}-\\bar{x}}{\\sigma}\n\\end{equation}\\]\nWhere: - \\(x_{i}\\) is each observed value. - \\(\\bar{x}\\) is the mean of the observed values. - \\(\\sigma\\) is the standard deviation of the observed values.\n\nAs you can see, what we do is to tranform the distribution, now the observed values will be centered at zero. It means the mean is going to be zero, and the values will be negative and positive values.\nIn R you can transform any continiuos distributin into \\(z\\)-values using the function scale().\n\n\nWage$age_Z <- scale(Wage$age)\nsummary(Wage[, c(\"age\", \"age_Z\")])\n\n      age             age_Z.V1      \n Min.   :18.00   Min.   :-2.115215  \n 1st Qu.:33.75   1st Qu.:-0.750681  \n Median :42.00   Median :-0.035925  \n Mean   :42.41   Mean   : 0.000000  \n 3rd Qu.:51.00   3rd Qu.: 0.743808  \n Max.   :80.00   Max.   : 3.256282  \n\n\n\nIn the example above, you can see that the mean of age is now zero after transforming the distribution. Also, notice that age_Z ranges from -2.12 to 3.26.\nGiven that now we have \\(z\\)-values we can interpret the values in terms of standard deviations from the mean. For instance, we can say that 18 years old is a value located -2.12 standard deviation below the mean (because the value is negative), we can also say that 80 years old is a value located 3.26 standard deviations above the mean (because the value is positive)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#wage-data-example-3",
+    "href": "lecture8/correlation&regressionPart2.html#wage-data-example-3",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\nLet’s add age_Z variable to our regression model:\n\n\nShow the code\nfitModel <- lm(wage ~ age_Z, data = Wage)\nsummary(fitModel)\n\n\n\nCall:\nlm(formula = wage ~ age_Z, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(>|t|)    \n(Intercept) 111.7036     0.7473  149.48   <2e-16 ***\nage_Z         8.1637     0.7474   10.92   <2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 2.2e-16\n\n\n\nDo you see what happened? After transforming age into values with a real zero, the intercept now shows the mean of wage. If you don’t believe it, let’s estimate again the mean of wage:\n\n\nmean(Wage$wage)\n\n[1] 111.7036\n\n\n\nIt is the same number! Then it is true, the intercept is the mean of \\(Y\\) when \\(\\beta_{1}\\) has a real zero among the possible values.\nThen we can interpret the result as: for 1-unit increment in age_Z, wage increases $816.37. Also you can say: for 1-standard deviation increment, wage increases $816.37."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#wage-data-example-4",
+    "href": "lecture8/correlation&regressionPart2.html#wage-data-example-4",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nWe can also transform wage into \\(z\\)-values, this will make the interpretation fully standardized:\n\n\n\nShow the code\noptions(scipen = 999)\n\nWage$wage_Z <- scale(Wage$wage)\n\nsummary(lm(wage_Z ~ age_Z, data = Wage))\n\n\n\nCall:\nlm(formula = wage_Z ~ age_Z, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.4028 -0.6019 -0.1453  0.3978  4.9306 \n\nCoefficients:\n                         Estimate            Std. Error t value\n(Intercept) 0.0000000000000001415 0.0179076042933873671    0.00\nage_Z       0.1956372015635888528 0.0179105896404604427   10.92\n                       Pr(>|t|)    \n(Intercept)                   1    \nage_Z       <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.9808 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: < 0.00000000000000022\n\n\n\nAfter standardizing wage we have an intercept that is almost zero, this makes sense because the mean of wage is now zero. It is actually zero, but models are not perfect, they are approximations, and there is randomness, that’s why the intercept is not exactly zero.\nIn this model, we could interpret the estimate of age_Z like it was a correlation, because it is standardized. We can also say: for 1-standard deviation increase in age, wage increases 0.20 standard deviations."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension",
+    "href": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\n\nUp to this point I have talked only about the case where the predictor has a continuous distribution. But, what happens when our predictor has discrete values (e.g gender, academic level)?\nThe Classical Regression Models does not assume anything about the predictors. We can actually use any discrete variable.\nAs always, we can understand what happens with a binary predictor by running an example:\n\n\n\nShow the code\n### I'm going to transform the values, so I can get a variable where 1 = have insurance, 0 = does not have insurance.\n\nWage$dummyHealth <- ifelse(Wage$health_ins == \"2. No\", 0, 1)  ### This is a \"if else statement\".\n\n## Let's test if having an insurance predicts differences in wage\n\nfitWage <- lm(wage ~ dummyHealth, data = Wage)\n\nsummary(fitWage)\n\n\n\nCall:\nlm(formula = wage ~ dummyHealth, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-87.872 -25.355  -5.763  15.919 217.255 \n\nCoefficients:\n            Estimate Std. Error t value            Pr(>|t|)    \n(Intercept)   92.317      1.311   70.41 <0.0000000000000002 ***\ndummyHealth   27.922      1.573   17.75 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 39.7 on 2998 degrees of freedom\nMultiple R-squared:  0.09505,   Adjusted R-squared:  0.09475 \nF-statistic: 314.9 on 1 and 2998 DF,  p-value: < 0.00000000000000022\n\n\n\nLet’s digest the information from this example:\n\nThe model that we are fitting looks like this: \\(y_{wage} = \\beta_{0} + \\beta_{1}insuranceYES + \\epsilon\\).\nWhen the variable is discrete there is a reference group. Normally, the reference group is coded as \\(0\\) and the target group is coded as \\(1\\). This is tipically known as dummy coding.\n\nThe above table gave a value for the intercept. That intercept, in simple words; is the mean when \\(dummyHealth = 0\\). The slope in the table is 27.922, that number is in simple terms the mean difference in wage between groups.\nDon’t you believe it? Let’s see it next:"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-1",
+    "href": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-1",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\nFirst, let’s see the mean of each group:\n\n\nShow the code\nWage %>% select(dummyHealth, wage) %>% \n  group_by(dummyHealth) %>%\n  summarise(mean = mean(wage),\n            sd = sd(wage)) %>%\n  kbl(caption = \"Wage's mean and standard deviation by insurance status\") %>%\nkable_classic_2(\"hover\", full_width = F,bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\")) %>%\n  footnote(general = \"Not insurance = 0, Insurance = 1\")\n\n\n\n\nWage's mean and standard deviation by insurance status\n \n  \n    dummyHealth \n    mean \n    sd \n  \n \n\n  \n    0 \n    92.3167 \n    35.97190 \n  \n  \n    1 \n    120.2383 \n    41.23698 \n  \n\n\nNote: \n\n Not insurance = 0, Insurance = 1\n\n\n\n\n\n\nIn the table you can see that the mean of \\(Insurance = 0\\) is 92.32! Just like we expected!\nNow let’s compute the mean difference:\n\n\n120.2383-92.3167\n\n[1] 27.9216\n\n\n\nAgain! If you check our regression result the slope was 27.922, that’s exactly the mean difference!\nWhat is the message here? When add dummy coded variables in a Classical Regression Model, you are measuring how far is the mean of \\(group = 0\\) from \\(group = 1\\), it simple words: it is a \\(t\\)-test."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-2",
+    "href": "lecture8/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-2",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\n-Let’s see it with a plot\n\n\nShow the code\nplot(Wage$dummyHealth, Wage$wage,\n     xlab = \"Insurance Status\",\n     ylab = \"Wage\",\n     main = \"A scatterplot of wage by insurance status\",\n     xaxt = \"n\")\n\n# X-axis\naxis(1, at = c(0, 1))\nabline(lm(wage ~ dummyHealth, data = Wage), col = \"red\")"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#what-if-my-predictor-has-multiple-categories",
+    "href": "lecture8/correlation&regressionPart2.html#what-if-my-predictor-has-multiple-categories",
+    "title": "Correlation and Regression Models",
+    "section": "What if my predictor has multiple categories?",
+    "text": "What if my predictor has multiple categories?\n\nYou might wonder, what if my predictor has multiple groups?\nWe can also transform multiple categories into several dummy coded variables, that means, the categories will become variables coded with \\(0\\) or \\(1\\).\nWe can answer the following question:\nIs race related to wage? If so, how different is the average wage compared to White Americans?\nIn the data set Wage there is a variable named race. We can check its values:\n\n\n\nShow the code\n Wage %>% count(race) %>%\n   kbl(caption = \"Number of participants in each race group\")%>%\n  kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\n\nNumber of participants in each race group\n \n  \n    race \n    n \n  \n \n\n  \n    1. White \n    2480 \n  \n  \n    2. Black \n    293 \n  \n  \n    3. Asian \n    190 \n  \n  \n    4. Other \n    37 \n  \n\n\n\n\n\n\nAs you can see, we have 4 groups in this variable, and we need to create dummy variables.\nWe should create \\(k-1\\) new dummy variables, that means if you have 4 categories or groups, such as our case, we should have \\(4-1= 3\\) new dummy variables:\n\n\n\n\nBlack\nAsian\nOther\n\n\n\n\n0\n0\n0\n\n\n1\n1\n1\n\n\n0\n1\n1\n\n\n…\n…\n….\n\n\n\n\nNow we will create 3 new variables named black, asian, and other. Each variable will have only zeros and ones. Where \\(1 = YES\\), and \\(0 = NO\\).\n\n\n\nShow the code\nWage <- Wage %>% mutate(black = ifelse(race == \"2. Black\", 1, 0),\n                        asian = ifelse(race == \"3. Asian\", 1, 0),\n                        other = ifelse(race == \"4. Other\", 1,0))\n\ndatatable(Wage %>% select(race, black,asian,other))\n\n\n\n\n\n\n\n\nWe are ready to estimate the regression model:\n\n\n\nShow the code\nsummary(lm(wage ~ black + asian + other, data = Wage))\n\n\n\nCall:\nlm(formula = wage ~ black + asian + other, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-92.478 -24.708  -6.251  17.283 216.741 \n\nCoefficients:\n            Estimate Std. Error t value             Pr(>|t|)    \n(Intercept) 112.5637     0.8333 135.088 < 0.0000000000000002 ***\nblack       -10.9625     2.5634  -4.276            0.0000196 ***\nasian         7.7246     3.1236   2.473              0.01345 *  \nother       -22.5903     6.8726  -3.287              0.00102 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 41.5 on 2996 degrees of freedom\nMultiple R-squared:  0.0121,    Adjusted R-squared:  0.01112 \nF-statistic: 12.24 on 3 and 2996 DF,  p-value: 0.0000000589\n\n\n\nDid you notice that white is not in the model? That happens because we don’t need it!\nIf you do \\(k-1\\) new dummy variables, you are already estimating the mean of white in the intercept.\nYou don’t believe me, right? Let’s estimate the mean of white:\n\n\n\nShow the code\nWage %>% filter(race == \"1. White\" ) %>%\n  summarise(mean = mean(wage),\n            sd = sd(wage)) %>%\n  kbl(caption = \"Mean of wage when participant is White\") %>%\n  kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\n\nMean of wage when participant is White\n \n  \n    mean \n    sd \n  \n \n\n  \n    112.5637 \n    41.73383 \n  \n\n\n\n\n\n\nYes! I was right! The mean of white is exactly our intercept!\nEach slope estimated in our regression model is the mean difference compare to white group.\nLet’s see if it true:\n\n\n\nShow the code\nWage %>% group_by(race) %>% summarise(mean = mean(wage)) %>%\n  mutate(DifferenceVsWhite = c(0, \n                               101.60118    - 112.56367 , \n                               120.28829- 112.56367 , \n                               89.97333 -112.56367)) %>% \n  kbl(caption = \"Mean Differences Compare to White\") %>%\n    kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\n\nMean Differences Compare to White\n \n  \n    race \n    mean \n    DifferenceVsWhite \n  \n \n\n  \n    1. White \n    112.56367 \n    0.00000 \n  \n  \n    2. Black \n    101.60118 \n    -10.96249 \n  \n  \n    3. Asian \n    120.28829 \n    7.72462 \n  \n  \n    4. Other \n    89.97333 \n    -22.59034 \n  \n\n\n\n\n\n\nGreat! I was right again!"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\nIn the last example we added multiple predictors after creating dummy coded variables.\nWe estimated a model named multiple regression. Many authors prefered the word multiple to explicitly mention that there are more than one predictor.\nWhen you add more predictors, the Classical Regression Model looks like this:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X_{1} + \\beta_{2}X_{2} + ...+ \\epsilon\n\\end{equation}\\]\n\nNow, this model will account for more possible variables related to \\(Y\\)."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-1",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-1",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\n\nShow the code\nlibrary(scatterplot3d)\nrum <- read.csv(\"ruminationClean.csv\")\nfit <- lm(depreZ ~ rumZ + worryZ, data = rum)\n\nplot1 <- scatterplot3d(rum[c(\"rumZ\",\"worryZ\", \"depreZ\"  )], \n              angle = 60, \n              pch = 16,\n              color = \"steelblue\",\n              box = FALSE)\nplot1$plane3d(fit)"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-2",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-2",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\nIn the last example, I standardized the my outcome variable depression, I also standardized the predictors rumination and worry.\nI showed you that transforming the predictors and outcome unto \\(z\\)-values will help you to get stadardized estimates.\nThis is not always necessary, may software will do something like this:\n\n\\[\\begin{equation}\nr_{XY} = \\beta_{1}\\Big(\\frac{\\sigma_{X}}{\\sigma_{Y}}\\Big)\n\\end{equation}\\]\n-Let’s see if it works, I’ll run a regression with the raw data and compare versus a regression where I standardized the variables before fitting the model:\n\nsummary(lm(anx ~ worry, data = rum))\n\n\nCall:\nlm(formula = anx ~ worry, data = rum)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-5.202 -1.791 -0.462  1.538  9.935 \n\nCoefficients:\n            Estimate Std. Error t value          Pr(>|t|)    \n(Intercept)  0.01671    0.56609   0.030             0.976    \nworry        0.14384    0.01871   7.688 0.000000000000729 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.856 on 194 degrees of freedom\n  (16 observations deleted due to missingness)\nMultiple R-squared:  0.2335,    Adjusted R-squared:  0.2296 \nF-statistic: 59.11 on 1 and 194 DF,  p-value: 0.0000000000007291\n\n\n\nNext, let’s estimate the standarized slope:\n\n\n0.14384*(sd(rum$worry, na.rm = TRUE)/sd(rum$anx, na.rm = TRUE))\n\n[1] 0.4836261\n\n\n\nLet’s run again the same regression with standardized trasformed variables:\n\n\nsummary(lm(scale(anx) ~ worryZ, data = rum))\n\n\nCall:\nlm(formula = scale(anx) ~ worryZ, data = rum)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-1.6002 -0.5509 -0.1421  0.4731  3.0563 \n\nCoefficients:\n             Estimate Std. Error t value          Pr(>|t|)    \n(Intercept) -0.001125   0.062746  -0.018             0.986    \nworryZ       0.483627   0.062906   7.688 0.000000000000729 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8784 on 194 degrees of freedom\n  (16 observations deleted due to missingness)\nMultiple R-squared:  0.2335,    Adjusted R-squared:  0.2296 \nF-statistic: 59.11 on 1 and 194 DF,  p-value: 0.0000000000007291\n\n\n\nYes, they are the same. The software by default will use the formula\\(\\beta_{1}\\Big(\\frac{\\sigma_{X}}{\\sigma_{Y}}\\Big)\\) to standardize your regression slopes, when you analyze your data using SPSS, SAS, STATA or other statistical packages outside R."
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nWe have discussed that the assumption of a straight line explaining all the conditional means is many times not realistic.\nWe can actually fit a model where we give more freedom to the line.\nHow do we do this? We just have to add a polynomial term to the equation. For instance we could fit a quadractic regression model by doing something like this:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\beta_{2}X^2 + \\epsilon\n\\end{equation}\\]\n\nSimply, we square the predictor. Let’s do that with our wage data example:\n\n\nfitSq <- lm(wage ~ age + I(age^2), data = Wage)\nsummary(fitSq)\n\n\nCall:\nlm(formula = wage ~ age + I(age^2), data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-99.126 -24.309  -5.017  15.494 205.621 \n\nCoefficients:\n              Estimate Std. Error t value            Pr(>|t|)    \n(Intercept) -10.425224   8.189780  -1.273               0.203    \nage           5.294030   0.388689  13.620 <0.0000000000000002 ***\nI(age^2)     -0.053005   0.004432 -11.960 <0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 39.99 on 2997 degrees of freedom\nMultiple R-squared:  0.08209,   Adjusted R-squared:  0.08147 \nF-statistic:   134 on 2 and 2997 DF,  p-value: < 0.00000000000000022"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-1",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-1",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2), \n                  size = 1) + \n  theme_classic()"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-2",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-2",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nWe could fit a model with a cubic term:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\beta_{2}X^2 + \\beta_{2}X^3 + \\epsilon\n\\end{equation}\\]\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2) + I(x^3), \n                  size = 1) + \n  theme_classic()"
+  },
+  {
+    "objectID": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-3",
+    "href": "lecture8/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-3",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nLet’s add more flexibility:\n\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2) + I(x^3) + I(x^4)+ I(x^5), \n                  size = 1) + \n  theme_classic()"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html",
+    "href": "introLongitudinal/introLongitudinalSEM.html",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "",
+    "text": "Introduce the concept of latent variable.\nExplain important concepts to jump into Structural Equation Modeling (SEM)\nExpose applied examples in Longitudinal SEM."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#what-is-a-latent-variable",
+    "href": "introLongitudinal/introLongitudinalSEM.html#what-is-a-latent-variable",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "What is a latent variable?",
+    "text": "What is a latent variable?\n\n\nBollen & Hoyle (2012):\n\nHypothetical variables.\nTraits.\nData reduction strategy?\nClassification strategy?\nA variable in regression analysis which is, in principle\nunmeasurable.\n\n\n\nHave you thought how to measure intelligence?\nWhat about the concept of “good performance”?\nWhat does good health look like ? Is it a concept?"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#lets-see-the-graphics-convention",
+    "href": "introLongitudinal/introLongitudinalSEM.html#lets-see-the-graphics-convention",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Let’s see the graphics convention",
+    "text": "Let’s see the graphics convention"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#what-is-a-latent-variable-1",
+    "href": "introLongitudinal/introLongitudinalSEM.html#what-is-a-latent-variable-1",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "What is a latent variable?",
+    "text": "What is a latent variable?"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#but-wait-what-is-statistical-model",
+    "href": "introLongitudinal/introLongitudinalSEM.html#but-wait-what-is-statistical-model",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "But wait… what is statistical model?",
+    "text": "But wait… what is statistical model?\n\n\n\n\n\n\n\nImportant\n\n\nModels are theoretical reductions, they intend to explain how the DATA is produced by Nature."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#what-is-the-name-of-this-type-of-models",
+    "href": "introLongitudinal/introLongitudinalSEM.html#what-is-the-name-of-this-type-of-models",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "What is the name of this type of models?",
+    "text": "What is the name of this type of models?\n\n\n\nLatent variables like the ones mentioned today belong to a family of models named Structural Equation Modeling (SEM) .\nThe word equation is there because we will estimate several equations at the same type.\nStructural implies a set of equations we have to solve to unveil the relationship between variables.\nModeling means we will create models based on theory.\nSEM was created to “confirm” theory. It is thought as a confirmatory approach."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#the-familys-foundation",
+    "href": "introLongitudinal/introLongitudinalSEM.html#the-familys-foundation",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "The family’s foundation",
+    "text": "The family’s foundation\n\nSEM is known as a “covariance-based approach” this means we will use the concept of variance:\n\n\\[\\begin{equation}\n\\sigma^2 = \\frac{\\sum(x_{i}-\\bar{x})}{n-1}\n\\end{equation}\\]\n\nAlso the concept of covariance is relevant here:\n\n\\[\\begin{equation}\ncov(X,Y) = \\frac{\\sum(x_{i}-\\bar{x})(y_{i} -\\bar{y})}{n-1}\n\\end{equation}\\]\n\nAnd why not, let’s throw correlation in here:\n\n\\[\\begin{equation}\ncor(X,Y) = \\frac{cov(X,Y)}{\\sigma x \\sigma y}\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#the-familys-foundation-1",
+    "href": "introLongitudinal/introLongitudinalSEM.html#the-familys-foundation-1",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "The family’s foundation",
+    "text": "The family’s foundation"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#sem-relates-to-theories-and-ideas",
+    "href": "introLongitudinal/introLongitudinalSEM.html#sem-relates-to-theories-and-ideas",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "SEM relates to theories and ideas",
+    "text": "SEM relates to theories and ideas\nHenseler (2020):"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#sem-relates-to-theories-and-ideas-ii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#sem-relates-to-theories-and-ideas-ii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "SEM relates to theories and ideas II",
+    "text": "SEM relates to theories and ideas II"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#reflective-factors-formative-factors",
+    "href": "introLongitudinal/introLongitudinalSEM.html#reflective-factors-formative-factors",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Reflective factors // Formative factors",
+    "text": "Reflective factors // Formative factors"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#assumptions",
+    "href": "introLongitudinal/introLongitudinalSEM.html#assumptions",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nDepends on how we estimate the model.\nMultivariate normal data generating process.\nLocal independence: only the latent factor explains the indicators.\nSample size should be large enough to estimate the model.\nMulticollinearity is a problem."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#lets-formally-define-the-sem-model",
+    "href": "introLongitudinal/introLongitudinalSEM.html#lets-formally-define-the-sem-model",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Let’s formally define the SEM model",
+    "text": "Let’s formally define the SEM model\n\\[\\begin{equation}\n\\Sigma = \\Lambda \\Psi \\Lambda' + \\Theta\n\\end{equation}\\]\nWhere:\n\n\\(\\Sigma\\) = The estimated covariance matrix.\n\\(\\Psi\\) = Matrix with covariance between latent factors.\n\\(\\Lambda\\) = Matrix with factor loadings.\n\\(\\Theta\\) = Matrix with unique observed variances.\nIn SEM we also have another model for the implied means:\n\n\\[\\begin{equation}\ny = \\tau + \\Lambda\\eta + \\epsilon\n\\end{equation}\\]\n\nDoes it look familiar to you?"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#lets-formally-define-the-sem-model-ii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#lets-formally-define-the-sem-model-ii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Let’s formally define the SEM model II",
+    "text": "Let’s formally define the SEM model II"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#just-a-remark-about-model-fit",
+    "href": "introLongitudinal/introLongitudinalSEM.html#just-a-remark-about-model-fit",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Just a remark about model fit",
+    "text": "Just a remark about model fit"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#positive-and-negative-example",
+    "href": "introLongitudinal/introLongitudinalSEM.html#positive-and-negative-example",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Positive and Negative example",
+    "text": "Positive and Negative example"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#longitudinal-sem",
+    "href": "introLongitudinal/introLongitudinalSEM.html#longitudinal-sem",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Longitudinal SEM",
+    "text": "Longitudinal SEM\n\nIn Longitudinal SEM we can model changes overtime in different ways.\nIt depends on the question the researcher wants to address.\n\nLongitudinal Confirmatory Factor Analysis (LCFA)\nPanel models.\nLatent growth models.\nSpline models.\nRandom Intercept Panel Model.\nLatent Change Score Model."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-checking-assumptions",
+    "href": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-checking-assumptions",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Longitudinal CFA: Checking assumptions",
+    "text": "Longitudinal CFA: Checking assumptions\nLittle (2013)\n\nConfigural Invariance Model"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-ii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-ii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Longitudinal CFA II",
+    "text": "Longitudinal CFA II\n\nWeak Invariance Model"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-iii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#longitudinal-cfa-iii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Longitudinal CFA III",
+    "text": "Longitudinal CFA III\n\nStrong Invariance Model"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#panel-models",
+    "href": "introLongitudinal/introLongitudinalSEM.html#panel-models",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Panel Models",
+    "text": "Panel Models\nLittle (2013)\n\nPanel Model Example"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#random-intercept-panel-models",
+    "href": "introLongitudinal/introLongitudinalSEM.html#random-intercept-panel-models",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Random Intercept Panel Models",
+    "text": "Random Intercept Panel Models\nMulder & Hamaker (2020):\n\nRI Model"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#random-intercept-panel-models-ii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#random-intercept-panel-models-ii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Random Intercept Panel Models II",
+    "text": "Random Intercept Panel Models II\nAsebedo et al. (2022)\n\nRI Model Example"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models",
+    "href": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Latent Growth Models",
+    "text": "Latent Growth Models\n\n\n\nLatent Growth Models are an extension of Multilevel Growth Models.\nLGM is useful to predict trajectories, and add more paths that can explain the growth, or the growth or change might be a predictor.\n\nMean structure model:\n\\[\\begin{equation}\ny_{ti} = \\lambda_{1t} \\eta_{1i} + \\lambda_{2t} \\eta_{2i}+ \\epsilon\n\\end{equation}\\]\nThe most relevant part is the latent mean:\n\\[\\begin{align}\n\\eta_{1t} &= \\alpha_{1} + \\zeta_{1t}\\\\\n\\eta_{2t} &= \\alpha_{2} + \\zeta_{2t}\\\\\n\\end{align}\\]\n\n\n\n\nLatent Growth Model"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models-ii",
+    "href": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models-ii",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Latent Growth Models II",
+    "text": "Latent Growth Models II\n\nIn Growth Models we’ll get a trajectory for each participant or observation. They are nested in time.\n\n\nEstimated Trajectories"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models-another-example",
+    "href": "introLongitudinal/introLongitudinalSEM.html#latent-growth-models-another-example",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Latent Growth Models: Another Example",
+    "text": "Latent Growth Models: Another Example\n\n\n\n\n\nMath Score Growth Model\n\n\n\n\n\n\nMath Score Growth Model Trajectory"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#why-should-we-use-sem",
+    "href": "introLongitudinal/introLongitudinalSEM.html#why-should-we-use-sem",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Why should we use SEM ?",
+    "text": "Why should we use SEM ?\n\nSEM has good properties:\n\nIt helps to model several hypothesis at the same time.\nIt has flexibility to estimate multigroup models.\nYou have several estimators to choose.\nThe model accounts for the error variance in your items.\nYou can model non-linearity (we didn’t talk about it).\nYou can estimate multilevel models and divide the variance (RI panel model).\nIt is fun!"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#why-should-we-use-sem-1",
+    "href": "introLongitudinal/introLongitudinalSEM.html#why-should-we-use-sem-1",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Why should we use SEM ?",
+    "text": "Why should we use SEM ?\n\nSEM has also some problems:\n\nRequires a fair number of observations in most cases (frequentist approach).\nPeople are afraid of using it! I don’t know why?\nThere is a chance of misfit in the model. Models with multiple parameters tend to be prone to misspecification.\nLarge models might be far from the true data generating process, at least there is more chance."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#when-should-we-use-sem",
+    "href": "introLongitudinal/introLongitudinalSEM.html#when-should-we-use-sem",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "When should we use SEM?",
+    "text": "When should we use SEM?\n\nWe should use SEM when the data generating process is truly latent. This applies to many variables in psychology, sociology and social sciences. But also in health sciences.\nSEM is good at treating missing data under the right assumptions.\nIn fact, the missing values can be imputed when treated as a latent variable."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#what-is-left-for-a-next-talk",
+    "href": "introLongitudinal/introLongitudinalSEM.html#what-is-left-for-a-next-talk",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "What is left for a next talk ?",
+    "text": "What is left for a next talk ?\n\nHow the estimation of SEM takes place.\nBayesian Inference vs. Frequentist Inference.\nMore about different estimators.\nAdvanced modeling approaches.\nMissing data modeling.\nLatent Class Analysis.\nItem Response Theory Models (IRT).\nMore on Dynamic Modeling.\n\nAnd…more memes for sure."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#thanks-for-not-falling-asleep",
+    "href": "introLongitudinal/introLongitudinalSEM.html#thanks-for-not-falling-asleep",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "Thanks for not falling asleep!",
+    "text": "Thanks for not falling asleep!"
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#my-aims-today",
+    "href": "introLongitudinal/introLongitudinalSEM.html#my-aims-today",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "My aims today",
+    "text": "My aims today\n\n\nIntroduce the concept of latent variable.\nExplain important concepts to jump into Structural Equation Modeling (SEM)\nExpose applied examples in Longitudinal SEM."
+  },
+  {
+    "objectID": "introLongitudinal/introLongitudinalSEM.html#references",
+    "href": "introLongitudinal/introLongitudinalSEM.html#references",
+    "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nAsebedo, S. D., Quadria, T. H., Chen, Y., & Montenegro-Montenegro, E. (2022). Individual differences in personality and positive emotion for wealth creation. Personality and Individual Differences, 199, 111854.\n\n\nBollen, K. A., & Hoyle, R. H. (2012). Latent variables in structural equation modeling. In Handbook of structural equation modeling (pp. 56–67). The Guilford Press.\n\n\nHenseler, J. (2020). Composite-based structural equation modeling: Analyzing latent and emergent variables. Guilford Publications.\n\n\nLittle, T. D. (2013). Longitudinal structural equation modeling. Guilford press.\n\n\nMulder, J. D., & Hamaker, E. L. (2020). Three Extensions of the Random Intercept Cross-Lagged Panel Model. Structural Equation Modeling: A Multidisciplinary Journal, 1–11. https://doi.org/10.1080/10705511.2020.1784738"
   }
 ]
