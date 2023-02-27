@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Quantitative Methods Lab",
+    "title": "Healthy Aging and Statistical Outcomes Lab (HASO Lab)",
     "section": "",
-    "text": "Welcome!\nWelcome to this humble home! You will find materials related to my classes at CSU Stan under the Creative Commons License (CC). I have dedicated a large portion of my career to study applied statistics in psychology. I’m still learning new topics and methods, my new passion is Bayesian inference to estimate latent variable models.\nI also conduct research in healthy aging, and social factors affecting the risk of dementia. My aim is to expand this lab and share as much information as possible, not only with students but also with collegues around the globe.\nI mostly work programming in R language, so you might find examples and materials to learn R along with data sets you can use to practice your R skills.\nThis repository is still under construction, it is a timid alpha version written with the help of Quarto. If you have suggestions on how to improve this please contact me at estebanmonte@gmail.com"
+    "text": "Welcome!\nWelcome to this humble home! You will find materials related to my classes at CSU Stan under the Creative Commons License (CC). I have dedicated a large portion of my career to study applied statistics in psychology. I’m still learning new topics and methods, my new passion is Bayesian inference to estimate latent variable models.\nI also conduct research in healthy aging, and social factors affecting the risk of dementia. My aim is to expand this lab and share as much information as possible, not only with students but also with colleagues around the globe.\nI mostly work programming in R language, so you might find examples and materials to learn R along with data sets you can use to practice your R skills.\nThis repository is still under construction, it is a timid alpha version written with the help of Quarto. If you have suggestions on how to improve this site please contact me at emontenegro1@csustan.edu."
   },
   {
     "objectID": "about.html",
@@ -135,9 +135,9 @@
   {
     "objectID": "PSYC3000.html",
     "href": "PSYC3000.html",
-    "title": "PSYC 3000 Lab",
+    "title": "PSYC3000",
     "section": "",
-    "text": "If you are in this page is because you are student in my PSYC 3000 class. Sometimes Canvas doesn’t like my presentation in html format. So, I decided to create my own site where you can access my presentations.\nYou might not be an student in my class, but you knew about me and this class from other sources. That’s totally fine! You are also welcomed!\nI share all the content in this site under a Creative Commons license, specifically the license CC BY-NC-ND 4.0. This means, you cannot use this material for commercial purposes, but you can use my material, and you MUST cite or mention the original source for non-commercial projects such as academic work.\n\n\nAt this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!"
+    "text": "If you are in this page is because you are an student in my PSYC 3000 class. Sometimes Canvas doesn’t like my presentation in html format. So, I decided to create my own site where you can access my presentations.\n\n\n\nYou might not be an student in my class, but you knew about me and this class from other sources. That’s totally fine! You are also welcomed!\nI share all the content in this site under a Creative Commons license, specifically the license CC BY-NC-ND 4.0. This means, you cannot use this material for commercial purposes, but you can use my material, and you MUST cite or mention the original source for non-commercial projects such as academic work.\n\n\nAt this point you might be thinking: “I decided to study psychology to avoid numbers!”\nBut numbers are not avoidable if you want to be scientist or scientist practitioner. It might be boring sometimes, but other times you might have fun answering questions related to NATURE. Yes, NATURE!\nThis is a psychology course, and my aim is to study statistics as a science that helps other sciences to study NATURE. Psychological processes are also part of NATURE, of ocurse!"
   },
   {
     "objectID": "lecture2/Sampling.html",
@@ -1755,5 +1755,236 @@
     "title": "A friendly Introduction to Longitudinal Analysis with Latent Variables",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nAsebedo, S. D., Quadria, T. H., Chen, Y., & Montenegro-Montenegro, E. (2022). Individual differences in personality and positive emotion for wealth creation. Personality and Individual Differences, 199, 111854.\n\n\nBollen, K. A., & Hoyle, R. H. (2012). Latent variables in structural equation modeling. In Handbook of structural equation modeling (pp. 56–67). The Guilford Press.\n\n\nHenseler, J. (2020). Composite-based structural equation modeling: Analyzing latent and emergent variables. Guilford Publications.\n\n\nLittle, T. D. (2013). Longitudinal structural equation modeling. Guilford press.\n\n\nMulder, J. D., & Hamaker, E. L. (2020). Three Extensions of the Random Intercept Cross-Lagged Panel Model. Structural Equation Modeling: A Multidisciplinary Journal, 1–11. https://doi.org/10.1080/10705511.2020.1784738"
+  },
+  {
+    "objectID": "PSYC3000.html#test-iframe",
+    "href": "PSYC3000.html#test-iframe",
+    "title": "PSYC 3000 Lab",
+    "section": "Test iframe",
+    "text": "Test iframe"
+  },
+  {
+    "objectID": "agingCourse.html",
+    "href": "agingCourse.html",
+    "title": "Adulthood & Aging",
+    "section": "",
+    "text": "Life span and aging\nAs a researcher I’m interested in studying developmental changes in aging adults. I focus on healthy aging, and sometimes I study dementia. I combine these topics with my passion with statistical methods.\nGiven my goals, I decided to teach the course Adulthood and Aging at CSU Stan. This section is dedicated to share my slides with any person who finds my materials useful. But, I aim primarily to create lectures for students at CSU Stan.\nYou may see the slides in the next section.\n\n\nLectures\nLecture 1: Themes in adult development\nLecture 2: “Models of Development: Nature and Nurture in Adulthood\nLecture 3: Physical changes"
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html",
+    "href": "Lecture1aging/lecture1.html",
+    "title": "Themes in adult development",
+    "section": "",
+    "text": "As you may have read in the first chapter, the authors introduced some misconceptions related to aging. My aim to guide the discussion related to being an aging adult from a biopsychosocial model."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#the-biopsychosocial-model-1",
+    "href": "Lecture1aging/lecture1.html#the-biopsychosocial-model-1",
+    "title": "Themes in adult development",
+    "section": "The biopsychosocial model",
+    "text": "The biopsychosocial model\nThe idea of the biopsychosocial model is to study human development from different fields and areas. We cannot isolate the human being an ignore the following main dimensions:\n\nBiological dimension: Physical changes and genetics.\nSociocultural dimension: social context, history, culture.\nPsychological dimension: cognition, personality, emotions."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#gerontological-perspective",
+    "href": "Lecture1aging/lecture1.html#gerontological-perspective",
+    "title": "Themes in adult development",
+    "section": "Gerontological perspective",
+    "text": "Gerontological perspective\n\nGerontology: is the scientific study of the aging process, is an interdisciplinary field. People who devote their professional lives to the study of gerontology come from many different academic and applied areas—biology, medicine, nursing, sociology, history, and even the arts and literature.\nDon’t confuse gerontology with geriatrics. The latter is a medical field."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#four-principles-of-adult-development",
+    "href": "Lecture1aging/lecture1.html#four-principles-of-adult-development",
+    "title": "Themes in adult development",
+    "section": "Four principles of adult development",
+    "text": "Four principles of adult development\n\nChanges Are Continuous Over the Life Span: Changing is a cumulative process, all the changes you experienced in the adolescence will affect your changes in adulthood. In science, we separate the human’s life span into stages to make easier to study all the changes, but we need to see the context of those changes as a continuum interconnected.\nOnly the Survivors Grow Old: The survivor principle states that the people who live to old age are the ones who managed to outlive the many threats that could have caused their deaths at earlier ages. In human development, we aim to study how people survive, we also aim to describe the characteristic of the healthy survivor. Some survivors are individuals with better physical and cognitive skills, they might have also made changes in their lifestyle to live longer. But, there are a portion of individuals who never change their habits and still they live longer. Why do you think this happens?\nIndividuality matter: As Whitbourne & Whitbourne (2020) mentioned in their book, people who are not scientist, assume that all older adults are “similar”. This is a big misconception, as we grow older, we change a lot. Our life path starts becoming very different as we grow compare to our peers. You might find a lot of similar characteristics in teenagers, but aging adults will have a larger “baggage” where life events changed their development in different ways. This is always a challenge when you try to describe and predict changes in aging adults.\n\n\n\n\n\n\n\nImportant concepts\n\n\nInterindividual differences: differences between people.\nIntraindividual differences: differences within the same individual.\n\n\n\n\n“Normal” Aging Is Different From Disease: The principle that normal aging is different from disease means that growing older doesn’t necessarily mean growing sicker."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#is-age-a-good-measure-to-define-adult",
+    "href": "Lecture1aging/lecture1.html#is-age-a-good-measure-to-define-adult",
+    "title": "Themes in adult development",
+    "section": "Is age a good measure to define “Adult”?",
+    "text": "Is age a good measure to define “Adult”?\n\nIn many cultures there are laws or traditions based on age to define who is an adult.\nFor instance, in USA an adult could be considered a person who is older than 21 years of age. But, in many countries in the world 18 years of age is the threshold. In fact, are there real differences between a person who is 18 years old compare to a 21 years old person? What marks the difference?\nLegally, and culturally, the age of consent, voting or driving a car defines this rule in several countries."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#functional-age-instead-of-chronological-age",
+    "href": "Lecture1aging/lecture1.html#functional-age-instead-of-chronological-age",
+    "title": "Themes in adult development",
+    "section": "Functional age instead of chronological age",
+    "text": "Functional age instead of chronological age\n\nIn gerontology is frequent to see research focused on functional age given that chronological can be confusing and misleading.\nThere are three measures of functional age:\n\nBiological age: cardiovascular fitness, muscle and bone strength, cellular aging.\nPsychological age: reaction time, memory, learning ability.\nSocial age: work roles, family status, position in community."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#life-is-shaped-by-many-influences",
+    "href": "Lecture1aging/lecture1.html#life-is-shaped-by-many-influences",
+    "title": "Themes in adult development",
+    "section": "Life is shaped by many influences",
+    "text": "Life is shaped by many influences\n\nPaul Baltes was a German psychologist who created a vast number of information regarding human development. According to Baltes, there are normative age-graded influences that shape our life.\nFor example, there a cultural norms that say when we should get married, when should we get our degrees, and when should we have children. If a person doesn’t follow these norms, upsetting feelings emerge as a consequence of not meeting the social expectations.\nThere are normative history-graded influences, these are events that happened to everyone or a cohort of individuals. Wars or economic trends are a good example. The best most recent example is the pandemic. The COVID-19 pandemic is a clear example of a historical influence in our development. These events will change the culture, politics, and your health if you got the virus.\nNonnormative influcences are random idiosyncratic events that occur to an individual, they might occur with no regular pattern. It could be an accident, or a surgery."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#key-social-factors",
+    "href": "Lecture1aging/lecture1.html#key-social-factors",
+    "title": "Themes in adult development",
+    "section": "Key social factors",
+    "text": "Key social factors\n\nThere are important social factors that many times are moderators of our development as adults:\n\nSex at birth and gender\nRace\nSocioeconomic status (SES)\nReligion"
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#the-demographic-pyramid",
+    "href": "Lecture1aging/lecture1.html#the-demographic-pyramid",
+    "title": "Themes in adult development",
+    "section": "The demographic pyramid",
+    "text": "The demographic pyramid"
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html",
+    "href": "Lecture3aging/lecture3.html",
+    "title": "Physical changes",
+    "section": "",
+    "text": "Physical changes are perhaps the most evident changes in any human being.\nSociety also marks what changes are desirable or not.\nThere’s no doubt that aging implies many times changing habits, routines, and expectations.\nLet’s study the most important physical changes.\n\n\n\n\n\n\n\nNote\n\n\n\nI know aging is tough, but as scientist and practitioner scientists we should understand that there are ways to live a healthy adulthood and age with energy and empowered."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-skin",
+    "href": "Lecture3aging/lecture3.html#changes-in-skin",
+    "title": "Physical changes",
+    "section": "Changes in skin",
+    "text": "Changes in skin\n\nThis is the most obvious change in life. You start noticing wrinkles, you perhaps start finding small dark dots in your skin. And your skin might be dryer overtime. These are the reasons:\n\nThe skin adapts to the bone mass reduction in the skull.\nFace muscles have less elasticity.\nElastin, a molecule that is supposed to provide flexibility, becomes less able to return to its original shape after it is stretched during a person’s movements.\nExposure to sunlight increases wrinkles.\nProblems in toenails are frequent as we age."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-hair",
+    "href": "Lecture3aging/lecture3.html#changes-in-hair",
+    "title": "Physical changes",
+    "section": "Changes in hair",
+    "text": "Changes in hair\n\nIt is easy to spot when somebody has grey hair.\nThis happens because the pigmented hair falls and new grey hair starts to grow. The melanin is sparse when we get old causing growing hair less pigmented.\nAndrogenic alopecia causes hair loss."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-muscles-bmi-and-height",
+    "href": "Lecture3aging/lecture3.html#changes-in-muscles-bmi-and-height",
+    "title": "Physical changes",
+    "section": "Changes in muscles, BMI, and height",
+    "text": "Changes in muscles, BMI, and height\n\nWe get shorter when we age, this is part of the process.\nAging implies to loss muscle and strength. The process where we loss muscle is named sarcopenia.\nTendons are stiffer.\nIncrease risk of falling.\nthe Body Mass Index (BMI) decreases when you reduce your muscle mass. It is even more dangerous to increase fat while reducing muscle. This is correlated with diabetes.\nWhat should we do to slow down losing muscle? Excercises with weights, changes in diet, changes in cardiovascular activity."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#important-muscles-are-related-to-cognition",
+    "href": "Lecture3aging/lecture3.html#important-muscles-are-related-to-cognition",
+    "title": "Physical changes",
+    "section": "Important: muscles are related to cognition!",
+    "text": "Important: muscles are related to cognition!\n\nYou might be thinking, why should I care about physical changes if I’m a social scientist or behavioral scientist?\nChanges such as muscle loss are strongly related to cognition. There is string evidence of the relationship of muscle mass with improvements in cognitive skills in older adults. You may click the article showed below or click here.\n\nEffects of Resistance Training Program on Muscle Mass and Muscle Strength and the Relationship with Cognition in Older WomenThe aim of this study was to study the effects of a resistance training programme on Maximal Dynamic Strength (MDS) and muscle morphology of the upper limbs (UL) and lower limbs (LL), as well as to analyse their association with cognition, in a population of older women."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-bone-mass",
+    "href": "Lecture3aging/lecture3.html#changes-in-bone-mass",
+    "title": "Physical changes",
+    "section": "Changes in bone mass",
+    "text": "Changes in bone mass\n\nOur bone tissue has the capability to regenerate, but this ability decreases overtime.\nThere is a strong correlation between bone mass and a longer life."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-the-cardiovascular-system",
+    "href": "Lecture3aging/lecture3.html#changes-in-the-cardiovascular-system",
+    "title": "Physical changes",
+    "section": "Changes in the cardiovascular system",
+    "text": "Changes in the cardiovascular system\n\nOne of the most important systems when talking about healthy aging.\nIt is heavily impacted by life style and diet, and of course genetic factors.\nThe ratio of High-density lipoproteins (HDLs) and High-density lipoproteins (HDLs) is a good indicator of a healthy cardiovascular system. When the proportion is unbalanced between these lipoproteins, a plaque starts growing in the arteries.\nIn research we use the VO2 max and Vo2 Peak to determine how healthy is your cardiovascular fitness. This is a measure of the maximum amount of oxygen intake. VO2 max is correlated with cognition."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-the-respiratory-system-and-urinary-system",
+    "href": "Lecture3aging/lecture3.html#changes-the-respiratory-system-and-urinary-system",
+    "title": "Physical changes",
+    "section": "Changes the respiratory system and urinary system",
+    "text": "Changes the respiratory system and urinary system\n\nLungs are also affected by the muscle loss, along with less elastic lungs.\nThe urinary system also suffers some changes. As we age our bladder won’t hold urine efficiently. In males, the prostate gets larger (hypertrophy) and it might cause urinary problems.\nThere is distress in older adults when these changes start happening. Urinary changes might cause sedentarism, therefore the overall health decreases."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-the-endocrine-system",
+    "href": "Lecture3aging/lecture3.html#changes-in-the-endocrine-system",
+    "title": "Physical changes",
+    "section": "Changes in the endocrine system",
+    "text": "Changes in the endocrine system\n\nGrowth Hormone.\nCortisol: effect on hippocampus.\nThyroid Hormones: basal metabolic rate (BMR). The BMR slows overtime.\nMelatonin: Circadian rhythm.\nMenopause.\nAndropause.\nErectile dysfunction."
+  },
+  {
+    "objectID": "Lecture3aging/lecture3.html#changes-in-nervous-system",
+    "href": "Lecture3aging/lecture3.html#changes-in-nervous-system",
+    "title": "Physical changes",
+    "section": "Changes in nervous system",
+    "text": "Changes in nervous system\n\nNeural fallout model: the central nervous system is not able to regenerate neurons or replace neurons with new cells.\nThis was seen like an important factor to claim that aging adults are not able to learn.\nNowadays, theories related to neural plasticity are changing this idea.\nThe Compensation-Related Utilization of Neural Circuits Hypothesis (CRUNCH) model proposes that the demands of cognitively challenging tasks cause an overall excitation of brain activity in older adults leading to overall patterns of compensation not limited to one particular area.\n\n\n\n\n\n\n\nNote\n\n\n\nNeuroplasticity can be conceptualized as an intrinsic property of the brain that enables modification of function and structure in response to environmental demands, via the strengthening, weakening, pruning, or addition of synaptic connections, and by promoting neurogenesis (Gobbi Porto et al., 2015)."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#the-biopsychosocial-model",
+    "href": "Lecture1aging/lecture1.html#the-biopsychosocial-model",
+    "title": "Themes in adult development",
+    "section": "The biopsychosocial model",
+    "text": "The biopsychosocial model\n\nAs you may have read in the first chapter, the authors introduced some misconceptions related to aging. My aim to guide the discussion related to being an aging adult from a biopsychosocial model."
+  },
+  {
+    "objectID": "Lecture1aging/lecture1.html#references",
+    "href": "Lecture1aging/lecture1.html#references",
+    "title": "Themes in adult development",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nWhitbourne, S. K., & Whitbourne, S. B. (2020). Adult development and aging: Biopsychosocial perspectives. John Wiley & Sons."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html",
+    "href": "Lecture2aging/lecture2.html",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "",
+    "text": "It is likely that the most fundamental question in human development is: were we born determine to be like we are right now? Can the environment change what is already programmed in our genome?\nAs gerontologist, psychologist, sociologist, or educators, we care about the answer to these questions. You might be thinking: Come on! It is obvious that both nature and nurture are connected. But, this is not clear in reality.\nWe will discuss in this lecture some important theories that are looking to answer elemental questions. I will develop a separate lecture to address genetics."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#developmental-science",
+    "href": "Lecture2aging/lecture2.html#developmental-science",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Developmental science",
+    "text": "Developmental science\n\nWhitbourne & Whitbourne (2020) emphasized the distinction between using the word “psychology” and “science” along with the word “development”.\nA more integrative approach takes place when we convey a definition where all other sciences can come to the table to discuss aging and human devolopment.\nIf you Google centers such as the Alzheimer’s Disease Center at UC Davis, you will see a lot of scientist from different fields working to understand healthy aging and pathological aging. We represent only one of the fields.\nThis is why we need to study more than only behavior, genes, or social forces. As professionals doing research, and interventions with aging adults,we need to study more than we imagine."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-1",
+    "href": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-1",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Models of individual-environment interactions",
+    "text": "Models of individual-environment interactions\n\nIn the 20th century, psychology and other fields created theories focusing mostly on nature. They saw human development as something happening at natures pace, it was a more deterministic approach.\nJohn Watson and B.F. Skinner did not like this approach.\nThey were the foundation fathers of behaviorism.\nBehaviorist, pay a lot of attention to the context. In fact, Watson was the first to demonstrate that the environment can modify your development and learning process. After that, Skinner created a vast scientific literature. Skinner changed how we approach learning, and the changes impacted by the environment.\n\n\n\n\n\n\n\nWatson’s Experiment with Albert\n\n\n\nWatson conducted an influential experiment where he conditioned a child to be afraid of rabbits. You may see this video to learn more: CLICK HERE)"
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-2",
+    "href": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-2",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Models of individual-environment interactions",
+    "text": "Models of individual-environment interactions\n\nScientist also conduct research with identical twins (monozygotic).\nIn this studies, we want to study the impact of environment on human development.\nFor example, we can address the question: How is possible that two identical human beings develop in different directions? Under the same context (same household, hopefully).\nYou may check this wonderful twins study: CLICK HERE)"
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-3",
+    "href": "Lecture2aging/lecture2.html#models-of-individual-environment-interactions-3",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Models of individual-environment interactions",
+    "text": "Models of individual-environment interactions"
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#ecological-perspective",
+    "href": "Lecture2aging/lecture2.html#ecological-perspective",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Ecological Perspective",
+    "text": "Ecological Perspective\n\nThis perspective is dominated by Urie Bronfenbrenner\nBronfenbrenner was an influential psychologist who advocated to pay attention to the complexity of the environment."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#lets-jump-into-something-negative",
+    "href": "Lecture2aging/lecture2.html#lets-jump-into-something-negative",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Let’s jump into something negative",
+    "text": "Let’s jump into something negative\n\nAgeism: “a set of beliefs, attitudes, social institutions, and acts that denigrate individuals or groups based on their chronological age. Similar to other”isms” such as racism and sexism, ageism occurs when an individual is assumed to possess a set of stereotyped traits.” (Whitbourne & Whitbourne, 2020, p. 29)\nIn fact, Madonna recently claimed that media and general public where criticizing her look because she looks old, she is 65 years old. You may read more on the link below:\n\nMadonna hits back at ageist criticism after Grammy Awards appearanceWritten by Leah Dolan, CNN Madonna has spoken out against criticism of her appearance after presenting at the Grammy Awards Sunday night. In her latest Instagram post, the multi-award-winning singer lamented being \"caught in the glare of ageism and misogyny that permeates the world we live in,\" after a close-up photo of her face went viral online and sparked a torrent of negative comments."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#why-ageism-exist",
+    "href": "Lecture2aging/lecture2.html#why-ageism-exist",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Why ageism exist?",
+    "text": "Why ageism exist?\n\nSome possible explanations:\n\nterror management theory: people regard with panic and dread the thought that their lives will someday come to an end.\nmodernization hypothesis: the increasing urbanization and industrialization of Western society is what causes older adults to be devalued. They can no longer produce, so they become irrelevant and even a drain on the younger population."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#eriksons-psychosocial-theory",
+    "href": "Lecture2aging/lecture2.html#eriksons-psychosocial-theory",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Erikson’s Psychosocial Theory",
+    "text": "Erikson’s Psychosocial Theory\n\nErikson was a prominent psychologist. He was trained as a psychoanalyst."
+  },
+  {
+    "objectID": "Lecture2aging/lecture2.html#schemas-assimilation-and-acommodation",
+    "href": "Lecture2aging/lecture2.html#schemas-assimilation-and-acommodation",
+    "title": "Models of Development: Nature and Nurture in Adulthood",
+    "section": "Schemas, assimilation, and acommodation",
+    "text": "Schemas, assimilation, and acommodation\nYou may learn more about Piaget’s life by CLICKING HERE. Piaget was a French researcher, he was more interested in epistemology. His interest helped to question: how do we learn? how our cognition changes?\n\nSchemas: the mental structures we use to understand the world.\nAssimilation: it refers to the situation in which individuals change their interpretation of reality to fit the schemas they already hold.\nAccomodation: it refers to the situation in which individuals change their interpretation of reality to fit the schemas they already hold. In simple words, you are the one who changes. You change your schema.\nThe aim is to find an equilibrium between these two processes."
   }
 ]
