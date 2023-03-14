@@ -1768,7 +1768,7 @@
     "href": "agingCourse.html",
     "title": "Adulthood & Aging",
     "section": "",
-    "text": "Life span and aging\nAs a researcher I’m interested in studying developmental changes in aging adults. I focus on healthy aging, and sometimes I study dementia. I combine these topics with my passion with statistical methods.\nGiven my goals, I decided to teach the course Adulthood and Aging at CSU Stan. This section is dedicated to share my slides with any person who finds my materials useful. But, I aim primarily to create lectures for students at CSU Stan.\nYou may see the slides in the next section.\n\n\nLectures\nLecture 1: Themes in adult development\nLecture 2: “Models of Development: Nature and Nurture in Adulthood\nLecture 3: Physical changes"
+    "text": "Life span and aging\nAs a researcher I’m interested in studying developmental changes in aging adults. I focus on healthy aging, and sometimes I study dementia. I combine these topics with my passion with statistical methods.\nGiven my goals, I decided to teach the course Adulthood and Aging at CSU Stan. This section is dedicated to share my slides with any person who finds my materials useful. But, I aim primarily to create lectures for students at CSU Stan.\nYou may see the slides in the next section.\n\n\nLectures\nLecture 1: Themes in adult development\nLecture 2: “Models of Development: Nature and Nurture in Adulthood\nLecture 3: Physical changes\nLecture 4: The Study of Adult Development and Aging: Research Methods"
   },
   {
     "objectID": "Lecture1aging/lecture1.html",
@@ -2035,5 +2035,103 @@
     "title": "Assignment #1",
     "section": "Extra points (5 points)",
     "text": "Extra points (5 points)\nCreate a good meme to express how you feel in this class, include your meme in your Word document."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html",
+    "href": "Lecture4aging/lecture4.html",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "",
+    "text": "A variable is any observation that varies, that means it is observed information that has variability. A variable can be age, memory, gender, and many more.\nThe aim is to evaluate how one variable varies as a function of another variable. For example, we can study how memory varies (changes) as a function of age."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#variables-in-developmental-research-1",
+    "href": "Lecture4aging/lecture4.html#variables-in-developmental-research-1",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Variables in Developmental Research",
+    "text": "Variables in Developmental Research\n\nYou may already know the concept of independent and dependent variable. If not that’s ok. I’ll refresh your memory.\nIndependent variables: are those that influence, or affect outcomes in experimental studies. They are described as “independent” because they are variables that are manipulated in an experiment and thus independent of all other influences.\nHowever, we will use this concept more vaguely, we won’t use it only when talking about experiments. It will be used also for correlational relationships, formally its name in survey designs is predictor."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#variables-in-developmental-research-2",
+    "href": "Lecture4aging/lecture4.html#variables-in-developmental-research-2",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Variables in Developmental Research",
+    "text": "Variables in Developmental Research\n\nDependent variables: are those that depend on the independent variables; they are the outcomes or results of the influence of the independent variables. It is also called outcome in survey designs or correlation designs."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#cause-and-effect-conslusions-in-aging-studies",
+    "href": "Lecture4aging/lecture4.html#cause-and-effect-conslusions-in-aging-studies",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Cause-and-Effect conslusions in aging studies",
+    "text": "Cause-and-Effect conslusions in aging studies\n\nIt is impossible to manipulate age as a experimental variable. In essence, the aging studies are quasi-experiments. Because you cannot assign participants randomly to different conditions.\nThat’s why we normally conduct longitudinal studies.\nIn longitudinal studies we can add different cohorts. A cohort is marked by the the date of birth. Let’s imagine you want evaluate the effect of age in social media use. You can add a cohort of participants that were born in 1980, and another cohort that was born in 2001. This two cohorts will help you to understand the impact of social media, or probably the opposite. The impact of age in social use. You might find that older adults look for a different type of content, you may observe differences on how frequent both cohorts use social media."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#longitudinal-designs",
+    "href": "Lecture4aging/lecture4.html#longitudinal-designs",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Longitudinal Designs",
+    "text": "Longitudinal Designs\nIn a study using a longitudinal design, people are followed repeatedly from one test occasion to another. By observing and studying people as they age, researchers aim to determine whether participants have changed over time as a result of the aging process.(Whitbourne & Whitbourne, 2020, p. 50)"
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#longitudinal-designs-1",
+    "href": "Lecture4aging/lecture4.html#longitudinal-designs-1",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Longitudinal Designs",
+    "text": "Longitudinal Designs\n\nNot always is possible to conduct a longitudinal design. This type of study is expensive.\nThis is why is common to conduct a cross-sectional study. A cross-sectional study does not follow the individual overtime. In this studies, we collect data only one time at a specific moment. For instance, if you go to a mall tomorrow at 6 p.m. and ask questions to possible participants, you are conducting a crosssectional study. You cannot do a follow-up of the people at the mall. You have information collected at that particular moment.\nIn aging studies, we try to collect information from different age groups to draw conclusions about the effect of age. For instance, you could perform an study where you aim to study muscular flexibility. You would recruit young people, and also not so young participants for your study."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#truly-longitudinal-designs",
+    "href": "Lecture4aging/lecture4.html#truly-longitudinal-designs",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Truly Longitudinal Designs",
+    "text": "Truly Longitudinal Designs\n\nSingle-cohort longitudinal design: in this studies we do a follow up of a single cohort. For instance, you could select individuals that were born in 2003, then you do a follow up to measure muscle strength the next year, and then the year after the next and so on. You follow the same individuals overtime, that’s the main point."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#truly-longitudinal-designs-1",
+    "href": "Lecture4aging/lecture4.html#truly-longitudinal-designs-1",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Truly Longitudinal Designs",
+    "text": "Truly Longitudinal Designs\n-Cross-sequential study: starts with a traditional cross-sectional study and then follows all participants longitudinally. In this scenario, you could recruit, for instance, teenagers to measure their social skills overtime. You could have collected the data in 2015, then you come back to measure the same group of students in 2016. But, this time you recruit a new group of teenagers. So, you now have participants that were measure in 2015, and 2016, and you have to continue with the follow up every year.\n\nIn this study, we don’t control the age of the participants. We only aim to recruit new participants every year and do follow ups every year.\nThis is a weak design because there might be cohort effects affecting the study and we don’t control those effects. For instance we might have students that were born in 2000, 1999, 2001 or any other year."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#truly-longitudinal-designs-2",
+    "href": "Lecture4aging/lecture4.html#truly-longitudinal-designs-2",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Truly Longitudinal Designs",
+    "text": "Truly Longitudinal Designs\nCohort-Sequential Design: The cohort-sequential design is like starting a longitudinal study at the same age over and over again. That is, each year, a new sample of participants of a certain age are selected and enrolled in a longitudinal study. Here, each new “cohort” is enrolled in a longitudinal sequence that covers the same age span. This design is particularly well suited to identifying age differences while controlling for cohort differences (Little, 2013)."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#far-from-causal-relationships-correlational-designs",
+    "href": "Lecture4aging/lecture4.html#far-from-causal-relationships-correlational-designs",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Far from causal relationships: correlational designs",
+    "text": "Far from causal relationships: correlational designs\n\nCorrelational designs aim to establish relationships between two variable or more.\nThis type of designs are not robust to detect a causal relationship.\nWe use statistics to unveil the relationship between variables, and how they affect each other. It is common to find statistical models such as:\n\nRegression models.\nPath analysis.\nStructural Equation Modeling.\nLatent Class Analysis."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#types-of-research-methods",
+    "href": "Lecture4aging/lecture4.html#types-of-research-methods",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Types of research methods",
+    "text": "Types of research methods\n\nLaboratory Studies\nQualitative Studies\nArchival Research\nSurveys\nEpidemiological Studies\nCase Reports\nFocus Groups\nDaily Diaries\nObservational Methods\nMeta-Analysis"
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#reliability-and-validity",
+    "href": "Lecture4aging/lecture4.html#reliability-and-validity",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Reliability and validity",
+    "text": "Reliability and validity\n\nA measure is reliable if it yields consistent results every time it is used.\nThe concept of validity varies depending on the intended use of the measure. Content validity provides an indication."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#variables-in-developmental-research",
+    "href": "Lecture4aging/lecture4.html#variables-in-developmental-research",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "Variables in Developmental Research",
+    "text": "Variables in Developmental Research\n\nA variable is any observation that varies, that means it is observed information that has variability. A variable can be age, memory, gender, and many more.\nThe aim is to evaluate how one variable varies as a function of another variable. For example, we can study how memory varies (changes) as a function of age."
+  },
+  {
+    "objectID": "Lecture4aging/lecture4.html#references",
+    "href": "Lecture4aging/lecture4.html#references",
+    "title": "The Study of Adult Development and Aging: Research Methods",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nLittle, T. D. (2013). Longitudinal structural equation modeling. Guilford press.\n\n\nWhitbourne, S. K., & Whitbourne, S. B. (2020). Adult development and aging: Biopsychosocial perspectives. John Wiley & Sons."
   }
 ]
