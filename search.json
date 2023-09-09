@@ -2139,7 +2139,7 @@
     "href": "PSYC4310.html",
     "title": "PSYC4310: Seminar in Social Psychology",
     "section": "",
-    "text": "The Seminar in Social Psychology is in reality an excuse to conduct research in a wide number of topics. The main goal in simple words is to provide a space where the students can take their first steps to prepare a research proposal, and create a scientific poster.\n\nIn this course I usually try to add some R code along with stats, because why not? statistics are everywhere and they are fun!\nYou may check a sample of the syllabus: Syllabus\n\n\nComing soon …."
+    "text": "The Seminar in Social Psychology is in reality an excuse to conduct research in a wide number of topics. The main goal in simple words is to provide a space where the students can take their first steps to prepare a research proposal, and create a scientific poster.\n\nIn this course I usually try to add some R code along with stats, because why not? statistics are everywhere and they are fun!\nYou may check a sample of the syllabus: Syllabus\n\n\nLecture 1: The journey to the begining\nLecture 2: Designing your research project"
   },
   {
     "objectID": "syllabusPSYC4310.html",
@@ -2202,7 +2202,7 @@
     "href": "PSYC4310.html#you-may-also-check-some-of-the-presentations-i-prepared-for-this-course",
     "title": "PSYC4310: Seminar in Social Psychology",
     "section": "",
-    "text": "Coming soon …."
+    "text": "Lecture 1: The journey to the begining\nLecture 2: Designing your research project"
   },
   {
     "objectID": "PSYC3000.html#life-is-crazy-psychology-is-also-numbers",
@@ -2497,5 +2497,236 @@
     "title": "Correlation and Regression Models",
     "section": "References",
     "text": "References\n\n\n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html",
+    "href": "Lecture1Psyc4310/researchJourney.html",
+    "title": "The journey to the begining",
+    "section": "",
+    "text": "To give an overview of the next steps.\nHighlight the importance of finding reliable scientific resources.\nKeywords to start searching for articles.\nLiterature review and how to make it work."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#aims-in-this-lecture",
+    "href": "Lecture1Psyc4310/researchJourney.html#aims-in-this-lecture",
+    "title": "The journey to the begining",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nTo give an overview of the next steps.\nHighlight the importance of finding reliable scientific resources.\nKeywords to start searching for articles.\nLiterature review and how to make it work."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#lets-start-with-a-big-picture",
+    "href": "Lecture1Psyc4310/researchJourney.html#lets-start-with-a-big-picture",
+    "title": "The journey to the begining",
+    "section": "Let’s start with a big picture",
+    "text": "Let’s start with a big picture\n\n\n\n\n\nPSYC4310researchProject"
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#how-do-we-start-searching-research-ideas",
+    "href": "Lecture1Psyc4310/researchJourney.html#how-do-we-start-searching-research-ideas",
+    "title": "The journey to the begining",
+    "section": "How do we start searching research ideas ?",
+    "text": "How do we start searching research ideas ?\n\nWhere should I start to get better research ideas?\n\nThe answer is always to read more and more!\nWhere are we going to read and find information?\n\nWe will read always SCIENTIFIC articles, keep reading this lecture to know more!\n\n\n\n\n\n\n\nTip\n\n\nSomebody once said: Good ideas are many times the product of the lack of reading."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#where-are-the-scientific-articles-located",
+    "href": "Lecture1Psyc4310/researchJourney.html#where-are-the-scientific-articles-located",
+    "title": "The journey to the begining",
+    "section": "Where are the scientific articles located?",
+    "text": "Where are the scientific articles located?\n\n\n\nMany sources on Internet will claim that they provide scientific content. However, not all the content is a good fit for this course.\nFor instance, we can check the website Psychology Today. This website has many articles related to diverse topics in psychology, and many times the authors review scientific articles and translate them into a more digestible narrative. For example, in the article titled “Why It’s Hard to Break Up with a Bad Boyfriend or Girlfriend” the author presents scientific terms such as variable ratio reinforcement schedule.\n\n\n\nIs this article a scientific article? How can we know? Let me dissect this creature in the next slide."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#non-scientific-articles-anatomy",
+    "href": "Lecture1Psyc4310/researchJourney.html#non-scientific-articles-anatomy",
+    "title": "The journey to the begining",
+    "section": "Non-scientific article’s anatomy",
+    "text": "Non-scientific article’s anatomy\n\n\n\n\n\nDon’t use this type of source in this course\n\n\n\n\nThe title is written to be a “click-bait”. This means, it was meant to be catchy and easy to click on.\nThere is not an abstract.\nThe article does not have a methods section, results, and discussion.\nThe review process is not double-blinded (I’ll explain later)\nThe pictures are just decorative, they don’t provide information.\nThe narrative in this article tries to be fun to read.\nIt is too brief and takes information from many sources without citations."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#lets-revise-a-scientific-article",
+    "href": "Lecture1Psyc4310/researchJourney.html#lets-revise-a-scientific-article",
+    "title": "The journey to the begining",
+    "section": "Let’s revise a scientific article",
+    "text": "Let’s revise a scientific article\n\n\n\nWe can check the article: “Long-term effects of COVID-19 on mental health: A systematic review” as a good example of scientific article.\nThis article shows the following elements:\nThe name of the scientific journal (Journal of Effective Disorders).\nThe layout has Introduction, Methods, Results, and Discussion.\nThe journal was published by a scientific publisher, in this case; Elsevier.\n\n\n\n\n\n\n\n\nNot, all scientific journals are published by a publisher. The journal might be published by private or public universities.\nThe authors included citations, references, and abstract.\nThe figures and tables are meaningful to understand the information.\nThe title is not a click-bait."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#how-a-scientific-article-is-born",
+    "href": "Lecture1Psyc4310/researchJourney.html#how-a-scientific-article-is-born",
+    "title": "The journey to the begining",
+    "section": "How a scientific article is born?",
+    "text": "How a scientific article is born?\n\n\n\n\nUntitled Diagram"
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#how-a-scientific-article-is-born-2",
+    "href": "Lecture1Psyc4310/researchJourney.html#how-a-scientific-article-is-born-2",
+    "title": "The journey to the begining",
+    "section": "How a scientific article is born? (2)",
+    "text": "How a scientific article is born? (2)\n\nThe key element in scientific publishing is the peer review step.\nIn scientific journals, the scientist who submits an article for publication MUST not know who is the reviewer or reviewers. At the same time, the reviewers MUST not know who is or who are the authors of the article under review.\nWe call this a double-blinded review system. But, as you might imagine this system has been criticized, see this publication, and more in this article."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#where-can-i-download-scientific-articles",
+    "href": "Lecture1Psyc4310/researchJourney.html#where-can-i-download-scientific-articles",
+    "title": "The journey to the begining",
+    "section": "Where can I download scientific articles?",
+    "text": "Where can I download scientific articles?\n\nYou could use Google scholar. But not all the articles are free to download. But, at least you could get the reference from there and after that, you can go to the CSU Stan library website.\nOn the CSU Stan library website you’ll find a search bar where you can fetch scientific articles, and download the articles in pdf format."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#generate-keywords",
+    "href": "Lecture1Psyc4310/researchJourney.html#generate-keywords",
+    "title": "The journey to the begining",
+    "section": "Generate Keywords",
+    "text": "Generate Keywords\n\nIt is common that at the beginning of a research project you don’t know specific keywords. That’s OK.\nYou can start with a broad idea. For instance, if you are interested in romantic relationships. You can say to yourself:\n\nMy first keywords are: “romantic relationships”\nBut, when? When people are teenagers, adults, or aging adults? heterosexual or gay relationships?\nYou may pick teenagers, now you have an additional keyword.\nYou may also pick heterosexual relationships.\nYou can try: romantic relationships, teenagers, adolescence, heterosexual.\n\nIn your first wide search you may find other possible words such as: sexual roles, stereotypes, aggression. or misconceptions in romantic relationships. These words can also be added to your search.\n\n\n\n\n\n\n\nTip\n\n\nWhen you are looking for keywords you are in an early exploration stage. You need to read and write down the keywords that are more frequent in your search."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#generate-keywords-2",
+    "href": "Lecture1Psyc4310/researchJourney.html#generate-keywords-2",
+    "title": "The journey to the begining",
+    "section": "Generate Keywords (2)",
+    "text": "Generate Keywords (2)\n\nYour keywords will be more specific once you define what is your research question.\nIn my example, thanks to my keywords I could formulate the question: What is the influence of sexual stereotypes in romantic relationships in teenagers?\nIt is still a very big question, but it will get refine when you read more. You may find a specific theory that addresses this issue, then you’ll start using the theory’s name as your main keyword or set of keywords.\nFor example, if you study romantic relationship you may come across attachment theory. Then, attachment theory will become a more specific set of keywords.\n\n\n\n\n\n\n\nImportant\n\n\nThe main objective is to find more specific keywords. If after a while you cannot find more specific keywords you are not reading enough or you are looking at the wrong information."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#literature-review-what-is-it",
+    "href": "Lecture1Psyc4310/researchJourney.html#literature-review-what-is-it",
+    "title": "The journey to the begining",
+    "section": "Literature review, what is it?",
+    "text": "Literature review, what is it?\n\n\n\nLiterature reviews sound boring, I know. But, this stage is crucial to select a topic you liked.\nResearch is not boring if you select something you enjoy reading. The literature review will help you to find a fun topic for you.\nAfter knowing your keywords, you can start reviewing articles.\nYou may create small summaries for each article where you extract the information that you need to prepare a narrative related to the state of art in your topic."
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#literature-review-what-is-it-2",
+    "href": "Lecture1Psyc4310/researchJourney.html#literature-review-what-is-it-2",
+    "title": "The journey to the begining",
+    "section": "Literature review, what is it? (2)",
+    "text": "Literature review, what is it? (2)\n\nIn the literature review phase, you will find different types of research articles:\n\n\n\n\n\nflowchart LR\n    338574[\"Articles\"] --- 497165[\"Empirical\"]\n    338574 --- 407950[\"Reviews\"]\n    497165 --- 525687[\"Experiments\"]\n    497165 --- 226158[\"Non-experiments\"]\n    497165 --- 362031[\"Psychometrics/Methods\"]\n    226158 --- 275202[\"Qualitative \"]\n    226158 --- 586082[\"Quantitative \"]\n    275202 --- 359947[\"Interviews\"]\n    275202 --- 648543[\"Focus groups\"]\n    275202 --- 929715[\"Case Studies\"]\n    275202 --- 727734[\"Ethnographies\"]\n    275202 --- 730820[\"Content Analysis\"]\n    275202 --- 229817[\"Observations\"]"
+  },
+  {
+    "objectID": "Lecture1Psyc4310/researchJourney.html#references",
+    "href": "Lecture1Psyc4310/researchJourney.html#references",
+    "title": "The journey to the begining",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html",
+    "href": "Lecture2Psyc4310/ResearchDesign.html",
+    "title": "Designing your research project",
+    "section": "",
+    "text": "Brief refresher on research designs.\nWhat is a dependent variable?\nWhat is a independent variable?\nHypothesis creation."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#aims-in-this-lecture",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#aims-in-this-lecture",
+    "title": "Designing your research project",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nBrief refresher on research designs.\nWhat is a dependent variable?\nWhat is a independent variable?\nHypothesis creation."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#the-big-picture-again",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#the-big-picture-again",
+    "title": "Designing your research project",
+    "section": "The big picture again",
+    "text": "The big picture again\n\n\n\n\n\nPSYC4310researchProject"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#big-research-families",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#big-research-families",
+    "title": "Designing your research project",
+    "section": "Big research families",
+    "text": "Big research families\n\nAlternative research designs (Creswell & Creswell, 2017)\n\n\n\n\n\n\n\nQuantitative\nQualitative\nMixed Methods\n\n\n\n\nExperimental designs\nNarrative Research\nConvergent\n\n\nNon-experimental\nPhenomenology\nExplanatory sequential\n\n\nLongitudinal Designs\nGrounded Theory\nExploratory sequential\n\n\n\nEthnographies\nComplex designs with embedded core designs\n\n\n\nCase Study"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#big-research-families-iii",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#big-research-families-iii",
+    "title": "Designing your research project",
+    "section": "Big research families III",
+    "text": "Big research families III\nQualitative designs\n\nNarrative research: The information retold or restoried by the researcher into a narrative chronology. Often, in the end, the narrative combines views from the participant’s life with those of the researcher’s life in a collaborative narrative\nPhenomenological research: the researcher describes the lived experiences of individuals about a phenomenon as described by participants.\nGrounded theory: is a design of inquiry from sociology in which the researcher derives a general, abstract theory of a process, action, or interaction grounded in the views of participants.\nEthnography: is a design of inquiry coming from anthropology and sociology in which the researcher studies the shared patterns of behaviors, language, and actions of an intact cultural group in a natural setting over a prolonged period of time.\nCase studies: in-depth analysis of a case, often a program, event, activity, process, or one or more individuals."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#what-is-first-a-or-b",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#what-is-first-a-or-b",
+    "title": "Designing your research project",
+    "section": "What is first A or B ?",
+    "text": "What is first A or B ?\n\nCausality means that we would expect variable X to cause variable Y.\n\nFor example: Does low self esteem cause depression? How do we know?\n\n\nLet’s take a look at some spurious correlations:"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#experiments-help-us",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#experiments-help-us",
+    "title": "Designing your research project",
+    "section": "Experiments help us!",
+    "text": "Experiments help us!\n\nCan we know if A causes B with a survey?\nCan we know if A causes B conducting an experiment?\nWe can manipulate a variable and observe what happens afterwards, but it is good enough?\nDo we need something more on our design?"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#experiments-help-us-ii",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#experiments-help-us-ii",
+    "title": "Designing your research project",
+    "section": "Experiments help us! II",
+    "text": "Experiments help us! II\n\nPure experiments need a control group to account for counterfactual information, this also helps to rule out possible confounding variables.\n\nExample: how would you measure the effect of physical activity on cardiovascular fitness? What would be a good experimental design?"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#can-we-assume-causality-in-survey-designs",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#can-we-assume-causality-in-survey-designs",
+    "title": "Designing your research project",
+    "section": "Can we assume causality in survey designs ?",
+    "text": "Can we assume causality in survey designs ?\n\nIn survey designs we cannot manipulate the independent variable, but some researchers claim that is possible to make causal inferences when you conduct a longitudinal study.\nIn longitudinal studies you satisfy the temporal requirement, you could evaluate if X = independent variable happens before Y = dependent variable.\n\nFor instance: You could measure a baby’s weight every month and evaluate how many times the baby is breastfed. But, do we need counterfactual information?"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#but-we-havent-defined-cause-and-effect-iii",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#but-we-havent-defined-cause-and-effect-iii",
+    "title": "Designing your research project",
+    "section": "But we haven’t defined cause, and effect III",
+    "text": "But we haven’t defined cause, and effect III\nWhat is an effect?\n\nAn effect is better define if we have a counterfactual model.\nA counterfactual is something that is contrary to fact.\nIn an experiment we observe what did happen when people received a treatment.\nThe counterfactual is knowledge of what would have happened to those same people if they simultaneously had not received treatment. An effect is the difference between what did happen and what would have happened.\n\n\n\n\n\n\n\nImportant\n\n\nWe could add a group of participants to a waiting list, do you have any example in mind?"
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#lets-finally-define-causal-relationship",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#lets-finally-define-causal-relationship",
+    "title": "Designing your research project",
+    "section": "Let’s finally define causal relationship",
+    "text": "Let’s finally define causal relationship\nShadish et al. (2002) :\n\nThis definition was first coined by John Stuart Mill (19th-century philosopher), a causal relationship exists if:\n\nThe cause preceded the effect.\nThe cause was related to the effect.\nWe can find no plausible alternative explanation for the effect other than the cause.\n\n\n\n\n\n\n\n\nWarning\n\n\nCorrelation does not prove causation!!! We will use this as a mantra in this class."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#independent-variable",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#independent-variable",
+    "title": "Designing your research project",
+    "section": "Independent variable",
+    "text": "Independent variable\n\nIndependent variables: are those that influence, or affect outcomes in experimental studies. They are described as “independent” because they are variables that are manipulated in an experiment and thus independent of all other influences.\nHowever, we will use this concept more vaguely, we won’t use it only when talking about experiments. It will be used also for correlational relationships, formally its name in survey designs is predictor."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#dependent-variable",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#dependent-variable",
+    "title": "Designing your research project",
+    "section": "Dependent variable",
+    "text": "Dependent variable\n\nDependent variables: are those that depend on the independent variables; they are the outcomes or results of the influence of the independent variables. It is also called outcome in survey designs or correlation designs."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#moderating-variables",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#moderating-variables",
+    "title": "Designing your research project",
+    "section": "Moderating variables",
+    "text": "Moderating variables\nModerating variables are predictor variables that affect the direction and/or the strength of the relationship between independent and the dependent variable."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#mediating-variables",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#mediating-variables",
+    "title": "Designing your research project",
+    "section": "Mediating variables",
+    "text": "Mediating variables\n\nMediating variables stand between the independent and dependent variables, and they transmit the effect of an independent variable on a dependent variable."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#what-is-a-hypothesis",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#what-is-a-hypothesis",
+    "title": "Designing your research project",
+    "section": "What is a hypothesis?",
+    "text": "What is a hypothesis?\n\nThe scientific method proposes that hypotheses are an important component to gather insights about nature.\nA hypothesis is an statement regarding what we believe might be happening in nature, or beliefs about what has happened in nature.\nA hypothesis can be for instance the belief that it rained at night when you wake up the next day and you see wet grass. You may create the statement:\n\n“The last night it rain because I can see the grass is wet”\n\nBut wait, is there an alternative possible explanation? Yes there is:\n\n“The last night I saw the grass wet, I believe the sprinklers were on last night”\n\nThese are observations about nature, and they can be hypotheses. Let’s make them more hypothesis-like:\n\n“The grass is wet because it rained last night”\n“The grass is wet because the sprinklers were turned on last night”\n-These are statements that you can test and see if they are true or false. How? You may wake up earlier the next morning and check if the sprinklers were working.\n\nBut wait! One observation might not be enough, you don’t know at what time the sprinklers are working if they are really working. Then, you must wake up every morning at different times and record if the sprinklers were working or not. After several mornings, you may find that the sprinklers were a possible cause. Why possible? Because you still don’t know with this method, if the first time you saw the wet grass it rained. And here is where we need to precise different research methods."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#what-is-a-hypothesis-2",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#what-is-a-hypothesis-2",
+    "title": "Designing your research project",
+    "section": "What is a hypothesis? (2)",
+    "text": "What is a hypothesis? (2)\n\nTalking about grass is not fun, and it is simplistic. It is better if we make more realistic hypotheses in psychology.\nAn example is happiness in married couples. Many researchers have found out that married people report more happiness compare to single people. See this article as example: Does marriage make people happy, or do happy people get married?\n\n\n\n\nLet’s try to generate a hypothesis:\n\nHappy people has a tendency to get married\n\nOr we could state the following hypothesis:\n\nCouples tend to be happier because they are married\n\nWe could also do the following statement:\n\nThere is a correlation between happiness and being married\n\n\n\n\n\n\n\nIf you read carefully you realized that all these statements are measurable, and they can be rejected. Also notice that the second hypothesis is a causal hypothesis, while the other two hypotheses are correlational hypotheses.\nWe need to create hypothesis that are falsifiable."
+  },
+  {
+    "objectID": "Lecture2Psyc4310/ResearchDesign.html#references",
+    "href": "Lecture2Psyc4310/ResearchDesign.html#references",
+    "title": "Designing your research project",
+    "section": "References",
+    "text": "References\n\n\n\n\n\n\nCreswell, J. W., & Creswell, J. D. (2017). Research design: Qualitative, quantitative, and mixed methods approaches. Sage publications.\n\n\nShadish, W. R., Cook, T. D., & Campbell, D. T. (2002). Experimental and quasi-experimental designs for generalized causal inference. Houghton, Mifflin; Company."
   }
 ]
