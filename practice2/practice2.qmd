@@ -1,0 +1,444 @@
+---
+title: "Practice 2"
+subtitle: "135 points"
+title-block-banner: true
+author: "Esteban Montenegro-Montenegro"
+date: 2023-10-30
+format: 
+  html:
+    highlight-style: a11y-dark
+    code-fold: true
+    code-tools: true
+    #page-layout: custom
+    #code-tools: true
+#server: shiny
+#editor: visual
+resources:
+  - webr-serviceworker.js
+  - webr-worker.js
+filters:
+  - webr
+engine: knitr
+webr:
+  packages: ['ggplot2', 'dplyr']
+  home-dir: "/home/esteban/MEGA/stanStateDocuments/PSYC3000/practice2"
+theme: 
+  light: sandstone
+  dark: cyborg
+toc: true
+toc-depth: 4
+toc-title: Sections
+self-contained: true
+bibliography: references.bib
+csl: apa.csl
+editor: 
+  markdown: 
+    wrap: 72
+code-annotations: hover
+---
+
+# What have you learned so far in R?
+
+After completing the first practice, you should have learned these key
+concepts:
+
+-   `R` is an object-oriented programming language.
+-   `R` is free and open source, and you are able to install as many
+    packages as you want for free.
+-   You learned the concept of "package".
+-   You learned about data frames.
+
+In this practice we will work with `data frames` , we will create new
+variables, and we will use extensively `pipes` along with the package
+`tidyverse`.
+
+::: callout-note
+## Good News!
+
+In this practice you will be able to run `R` code straight from your web
+browser. Isn't it awesome!
+:::
+
+# Let's put a frame on those data....
+
+The `data frame` is one type of object in `R`, and it is extremely
+useful to represent information as a data frame. This `R` object looks
+very similar to a spreadsheet in Excel, each column represents a
+variable, while each row represents an observation.
+
+In this practice session we will wrangle the data set named
+`ruminationToClean.csv`. You may download the data set by [Clicking
+Here.](https://mega.nz/file/eJFU3BKA#ljpDkezv325VEI2Ii6xuXoU8BbmPg-lNqdHH0XQqk5s){target="_blank"}
+This is a dataset that was part of a large project that I conducted in
+Costa Rica in collaboration with a colleague and friend David Campos.
+Participants were high school students from the Central Valley in Costa
+Rica. The aim of this study was to explore the relationship between
+rumination and depression in teenagers. We added metacognitive beliefs
+to the study, but we will not talk about metacognition in this practice.
+
+::: column-margin
+*You may follow me and enroll my Cognitive Processes course to know more
+about metacognition*
+:::
+
+When I say ***wrangle*** I mean to manipulate the data set and clean the
+data. In real life, data sets are not perfectly clean. Many times we
+need to delete observations that are extreme (careless answers,
+mistakes, etc.), or sometimes we need to delete new variables.
+Additionally, we might need to compute new variables. We will cover all
+these topics in this practice using `R`.
+
+## The package `tidyverse` is your friend
+
+If you run the following code, you'll see the variable names in the data
+set `ruminationToClean.csv`:
+
+::: column-margin
+*I'm reading in the data file from my personal repository, fancy right?*
+:::
+
+```{webr-r}
+## Link to the data set:
+
+dataLink <- "https://raw.githubusercontent.com/blackhill86/mm2/main/dataSets/ruminationToClean.csv"
+
+ruminationRaw <- read.csv(url(dataLink ),
+                          na.strings = "99") 
+colnames(ruminationRaw)
+```
+
+As you can see, we have a large list of variables. We are using the
+function `colnames()` to get a list of column names, which in this case
+are research variables. Several of these variables could be dropped from
+the data set, others will need to be renamed.
+
+### Dropping variables
+
+In this example we will use the function `select()` from the package
+`tidyverse`. Remember that you'll need to call the package by running
+`library(tidyverse)`.
+
+```{webr}
+### Let's remove "age" from the data set
+ruminationClean <- ruminationRaw |>
+                   select(-age)
+
+colnames(ruminationClean)
+
+```
+
+*What is happening here?* You may have noticed that inside the function
+`selection()` I am adding the name of the variable I want to delete from
+the data set, and then I added a minus sign. When you add a minus sign
+before the name of the variable, the package will delete the variable
+that you list with a minus sign. You can do the same with several
+variables at the same time:
+
+```{webr}
+### Let's remove "age" from the data set
+ruminationClean <- ruminationRaw |>
+                   select(-school, -grade)
+
+colnames(ruminationClean)
+
+```
+
+Now the variables, `age`, `school`, and `grade` are not longer in the
+dataset, if you don't believe me click on `RUN CODE`.
+
+::: callout-tip
+## Excercise 1 (30 points)
+
+1)  Download the data set
+    [`ruminationToClean.csv`](https://mega.nz/file/eJFU3BKA#ljpDkezv325VEI2Ii6xuXoU8BbmPg-lNqdHH0XQqk5s){target="_blank"}
+    then open the data file using
+    `ruminationRaw <- read.csv(file.choose())` or you may copy the code
+    to open the data from the online repository. After opening the data
+    in `R`, delete from the data set all the variables that start with
+    th stem `EATQ_R_`.
+:::
+
+### Change variable names
+
+In some occasions, the research variable was named wrongly or the name
+does not reflect the content of the variable. In the data set
+`ruminationToClean.csv` there are variables with names in Spanish, we
+can change them:
+
+```{webr}
+## rename() requires the following grammar:
+##  oldName = newname
+
+ruminationEnglishNames <- ruminationRaw |>
+  rename(otherTreatments = OtrosEspeci,
+         takinPills = medicamentos,
+         psychTreatment = tratamientopsicologico,
+         ruminationTotalScore = Rumiacion)
+
+colnames(ruminationEnglishNames)
+
+```
+
+In this example, you can see that I'm using the function `rename()` from
+the package `dplyr` which is inside the package `tidyverse`. When you
+use `rename()` you'll need to declare the new name first and then the
+old variable name that will be replaced.
+
+::: callout-tip
+## Excercise 2 (35 points)
+
+2)  In psychological measurement it is common to implement
+    questionnaires with Likert-response options. We typically sum the
+    items corresponding to the latent variable or construct that we are
+    measuring. For example in the
+    [`ruminationToClean.csv`](https://mega.nz/file/eJFU3BKA#ljpDkezv325VEI2Ii6xuXoU8BbmPg-lNqdHH0XQqk5s){target="_blank"}
+    the construct of "Rumination" is measured by the [Children's
+    Response Styles Questionnaire
+    (CRSQ),](https://www.researchgate.net/profile/Randy-Auerbach-2/publication/6286250_Responses_to_Depression_in_Children_Reconceptualizing_the_Relation_Among_Response_Styles/links/54e547dc0cf29865c336b5c8/Responses-to-Depression-in-Children-Reconceptualizing-the-Relation-Among-Response-Styles.pdf){target="_blank"}
+    however the variable names are not self-explained. Your task is to
+    change the name of the variables with stem `CRSQ`, the new variables
+    should have the stem `rumination_itemNumber`. For example
+    `rename(CRSQ1=rumination_1)`. Remember to save the changes in a new
+    object.
+:::
+
+### Compute a new variable
+
+As always in programming languages, there are several ways to create a
+new research variable in a data frame. But, we will use the `tidyverse`
+method by using a function that actually works like a verb. The function
+`mutate()` will help use to create new variables.
+
+I mentioned in ***Exercise 2*** psychology studies *latent variables*
+also known as *hypothetical constructs*, they have many names, but at
+the end we study variables that are implicit; we can measure them but we
+don't see them. For example, we have studied variables such depression
+or rumination in this course, these are latent variables because you
+cannot capture depression or you don't see it walking, however you are
+able to measure depression by asking about symptoms and thoughts.
+
+![Example of a latent
+variable](latentVariable.png){fig-alt="It is a figure where there is a circle, the word \"depression\" is inside the circle. Straight arrows are pointing to three squares. The first square has the label \"I am feeling lonely\", the second square has the label \"I feel sad\", the third square has the label \"I lost my appetite\". The squares are grouped as \"Observed indicators\". The circle with the word depression inside is grouped as a \"latent variable\"."
+fig-align="center" width="1000"}
+
+In the figure above you can see a representation of a latent variable.
+In psychology we often assume that the latent variable is the common
+factor underlying our questions, -in this example- questions related to
+depression.
+
+When we analyze data that corresponds with latent variables we have two
+options:
+
+1.  We can create a Structural Equation Modeling (We won't cover this
+    topic).
+
+2.  We sum all the items to compute a total score. This total score will
+    be our approximation to the latent variable. (Yes, this is covered
+    in this practice).
+
+::: column-margin
+![](roll.jpg){fig-alt="This is a meme, the character rolls her eyes insinuating the explanation was boring"
+width="120"}
+:::
+
+I'll show an example in the next chunk of `R` code:
+
+```{webr}
+#-------------------------------------------------------------------------#
+# Calculates a depression total score and then creates a new variable     #
+# in the data frame.                                                      #  
+#-------------------------------------------------------------------------#
+
+ruminationDepresionScore <- ruminationRaw |>
+  mutate(
+    depressionTotal = rowSums(across(starts_with("CDI"))) ### Starts_with() helps to avoid a lot of typing
+    )
+
+
+```
+
+In this example we are using the function `mutate()` to create a new
+column named `depressionTotal`, this new `depressionTotal` column will
+contain the depression total score for each participant. In this study
+we included the ***"Child's Depression Inventory (CDI)"***, that's why
+the columns follow the stem "CDI". You can see the new column in the
+next table:
+
+```{r, setup, include=FALSE}
+path <- "/home/esteban/MEGA/stanStateDocuments/PSYC3000/practice2"
+knitr::opts_knit$set(root.dir = path )
+
+library(dplyr)
+library(gt)
+```
+
+```{r, echo=TRUE, include=TRUE, warning=FALSE, message=FALSE}
+
+
+ruminationRaw <- read.csv("ruminationToClean.csv", na.string = "99")
+ruminationDepresionScore <- ruminationRaw |>
+  mutate(
+    depressionTotal = rowSums(across(starts_with("CDI")))
+    )
+ruminationDepresionScore |> select(starts_with("CDI"),	
+                                   depressionTotal ) |>
+  gt_preview()
+
+```
+
+::: callout-tip
+## Excercise 3 (30 points)
+
+3)  In the data set
+    [`ruminationToClean.csv`](https://mega.nz/file/eJFU3BKA#ljpDkezv325VEI2Ii6xuXoU8BbmPg-lNqdHH0XQqk5s){target="_blank"}
+    you'll find seven columns with the stem "`DASS`". These columns
+    correspond to the instrument named: [Depression, Anxiety, and Stress
+    Scale
+    (DASS)](https://maic.qld.gov.au/wp-content/uploads/2016/07/DASS-21.pdf){target="_blank"}.
+    This is an scale that measures three latent variables at the same
+    time, but only the anxiety items were added in this study.
+
+Your task is to change the name of the "DASS" items, you should think a
+more informative name for these items in the data frame. After that, you
+will have to compute the total score of anxiety for each participant in
+the data frame.
+:::
+
+### Let's cleanse this data set
+
+::: column-margin
+![](datadirty.png){fig-alt="This is a meme, the character is a aging adult cleaning a data set like it was a window in a house"
+width="200"}
+:::
+
+It is always satisfactory to clean a data set and then see the final
+product, but so far we have cleaned these data in small steps. I'll
+clean the data set in one step. In this example I will delete
+unnecessary columns (aka research variables), and I will translate the
+variables to English when necessary:
+
+```{webr}
+ruminationClean <- ruminationRaw |>
+  rename(otherTreatments = OtrosEspeci,
+         takinPills = medicamentos,
+         psychTreatment = tratamientopsicologico,
+         ruminationTotalScore = Rumiacion,
+         activation = ACTIVACION,
+         attention = ATENCION) |>
+  select(-PBRSad, 
+         -NBRS2ad, 
+         -starts_with("EATQ_R_"))
+
+colnames(ruminationClean)
+
+```
+
+::: callout-tip
+## Excercise 4 (10 points)
+
+4)  Describe the steps taken in the `R` code above.
+:::
+
+# Examine your data
+
+In this second part we will create several plots to examine and explore
+our data. But first we'll need to compute total scores again, because
+after all, the main point is to make conclusions about our latent
+variables (a.k.a latent factors).
+
+```{webr}
+### I'm calculating the total score of depression, rumination, and anxiety.
+
+ruminationClean <- ruminationClean |> mutate(
+    depressionTotal = rowSums(across(starts_with("CDI"))), ### starts_with() function is a time saver!
+    anxietyTotal = rowSums(across(starts_with("DASS"))),
+    ruminationTotal = rowSums(across(starts_with("CR"))))
+
+## This part will print only the new variables in the console
+ruminationClean |> 
+  select(depressionTotal,
+         anxietyTotal,
+         ruminationTotal) |>
+  head()
+
+```
+
+We have now three total scores corresponding to three different latent
+factors: depression, anxiety, and depression. We are in a good place to
+explore the data. It is healthy to start looking at histograms because
+they are now continuous variables:
+
+```{webr}
+hist(ruminationClean$depressionTotal, 
+     main = "Histogram of depression's total score",
+     breaks = 12
+     )
+```
+
+We can see in the histogram that low values are more frequent. This is
+expected because all the participants are healthy teenagers without any
+history of psychopathology. Also, pay attention that we are using the
+function `hist()` in `R`.
+
+We can also generate a density plot to have an idea of the observed
+shape:
+
+```{webr}
+
+### First we need to get an estimate of the observed density:
+
+ruminationDensity <- density(ruminationClean$depressionTotal, 
+                             na.rm = TRUE) ## We need to add "na.rm=" 
+#                                         because there are missing values.
+plot(ruminationDensity ,
+     main="Density plot: Rumination Total Score" ,
+     xlab= "Rumination total score",
+     ylab= "Likelihood")
+```
+
+Notice the function `plot()` which is a generic function in `R` it is
+used as a method in the environment. This functions comes with `R` as a
+base function. If you need to know how to use it you can run `?plot()`,
+but the help section might not be helpful for new users. Additionally,
+pay attention on how you can change the labels in your plot.
+
+::: callout-tip
+## Excercise 5 (15 points)
+
+5)  Create a density plot for the depression total score. Where is most
+    of the density located?
+
+::: callout-note
+R Studio has an option to save plots. Just click on the tab named
+"Plots", then click where it says "Export". You may click on ***"Copy to
+clipboard"***, this will allow you to paste the image on any software.
+You may also select to export the image as PDF file or image.
+
+![Option to save generated plots](saveImage.png)
+:::
+:::
+
+Box plots are also useful to understand our data better, you may revisit
+the box plot's anatomy in this website:
+[link.](https://r-graph-gallery.com/boxplot.html){target="_blank"}
+
+We can see the next example (Click on Run Code):
+
+```{webr}
+
+boxplot(ruminationTotal ~ sex,
+        data=ruminationClean, 
+        main="Box Plot of Rumination total score by Sex",
+   xlab="Sex", 
+   ylab="Rumination total score",
+   names = c("women", "men"))
+```
+
+::: callout-tip
+## Excercise 6 (15 points)
+
+6)  Can you tell which group in the box plot has the highest median in
+    rumination? What else can you see in the box plot?
+:::
+
+![](finalMeme.jpg){fig-align="center" width="400"}

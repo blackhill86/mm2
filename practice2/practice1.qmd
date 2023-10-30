@@ -1,0 +1,311 @@
+---
+title: "Practice 1"
+subtitle: "135 points"
+title-block-banner: true
+author: "Esteban Montenegro-Montenegro"
+date: 2023-09-14
+format: 
+  html:
+    highlight-style: a11y-dark
+    #page-layout: custom
+    #code-tools: true
+#server: shiny
+#editor: visual
+theme: 
+  light: sandstone
+  dark: cyborg
+toc: true
+toc-depth: 4
+toc-title: Sections
+self-contained: true
+bibliography: references.bib
+csl: apa.csl
+editor: 
+  markdown: 
+    wrap: 72
+code-annotations: hover
+---
+
+## What is `R` programming language?
+
+`R` is a programming language mostly used in statistics. It was actually created by programmers who were also statisticians. As @matloff2011art mentions in his book; R was inspired by the statistical language `S` developed by At&T. `S` stands for "statistics" and it was written based on `C` language. After `S` was sold to a small company, `S`-plus was created with a graphical interface.
+
+::: column-margin
+![](bean.jpg){fig-align="center" width="100"}
+:::
+
+### Why should we use `R`?
+
+There are many reasons, but I'll list just a few of them:
+
+-   `R` is an open source language, you are always able to check what is behind the code. You could even create your own language based on `R` if you need it.
+
+-   `R` is free and freely distributed. You don't have to pay for anything. You just download the installer, and then you start playing with data!
+
+-   `R` is superior and more powerful than many commercial software.
+
+-   You can install `R` on multiple operated systems such as Windows, Mac, Linux, and Chrome OS (you need Linux behind scenes).
+
+-   `R` is not only useful for data analysis, you can generate automatic reports in pdf, Word or create a webpage or dashboard to display your results. In fact, this document and my presentations were all created using `R`.
+
+-   The `R` community is the biggest community of users in statistics. You can search on the Internet any problem, and you will find thousands of possible answers for free by thousands of users.
+
+-   `R` has one of the largest repositories with 19000 free packages!
+
+-   If you learn `R` you will feel more comfortable learning new scripting software or languages.
+
+## Let's jump into `R`!
+
+That was just a tiny explanation to introduce `R`. In this part, I'll ask you to replicate some exercises. Don't feel like navigating alone, I'll create videos to show you how to solve them. Also, I'm going to assume that you already know how to install `R` and `RStudio`. If not, this [link](https://blackhill86.github.io/StatsBook/){target="_blank"} will help.
+
+### `R` is an object oriented language
+
+Programming languages such as `Python` or `R` are languages that create objects. All the elements in `R` will be virtual objects. Check the following case:
+
+```{r}
+names_of_people <- c("Karla", "Pedro", "Andrea", "Esteban") 
+```
+
+In this chunk of `R` code, I created an object called `names_of_people`. This object will have properties, similar to physical objects in real life.
+
+::: callout-important
+Notice the presence of the characters `<-`. This arrow assigns information to the object. You can press `ALT` + `-` in your keyboard to insert this arrow, Mac users should press `CMD` + `-`.
+:::
+
+One of the properties of this type of object is the ability to print the contents in your console by typing its name and then run the code:
+
+```{r}
+names_of_people
+```
+
+::: column-margin
+*You can run the code pressing `CTRL` + `Enter` on Windows or `CMD` + `Enter` on Mac.*
+:::
+
+::: callout-tip
+## Excercise 1
+1) Now is your turn to create your own object. Copy my code an replace the names with names of countries. Then, call the object to print the content in the console. Copy your answer in a Word document or Google document. (22.5 points)
+:::
+
+I hope that was easy to do, we are going to walk slowly when 
+learning `R`. The next property of our object is sub-setting. 
+You can take one or two elements inside your object and print 
+only a few elements saved in your object:
+
+```{r}
+names_of_people[1]
+```
+
+
+Notice that I'm indicating that I want to print only the first element 
+inside my object. I'm using square brackets `[]` to indicate I want
+a "slice" of my object. I can do the same and indicate I want to print
+two elements:
+
+
+```{r}
+names_of_people[c(1,3)]
+```
+
+In this example I'm printing the elements in located in the first
+position and the third position.
+
+
+::: callout-tip
+## Excercise 2
+2) Do the same with your object containing names of countries. Print 
+only the first and the third element of your object. (22.5 points)
+:::
+
+I haven't told you what's the name of this type of object. Similar to real life,
+objects can be classified into categories. In this case, this example is a "character vector".
+In `R` when you use letters they should be wrapped with quotes. Also, by using the command `c()`, 
+you are creating a vector. Do you remember the concept of vector in physics? This is something similar,
+vector could represent a vertical space or a horizontal space. In this case is just a horizontal vector
+with characters inside.
+
+Vectors can also contain numbers, I'll create a **numeric** vector containing 
+the year of release of the main [Star War movies](https://en.wikipedia.org/wiki/List_of_Star_Wars_films){target="_blank"}
+
+
+
+```{r}
+star_wars_years <- c(1999,2002,2005,1977,1980,1983,2015,2017,2019)
+```
+
+Nice! Now we have a vector with numbers, we can also print only a few elements
+if we need it:
+
+
+```{r}
+star_wars_years[c(1,2,5,7)]
+```
+
+In this example I'm printing only the elements located in the positions 1,2,5, and 7.
+
+
+
+::: callout-tip
+## Excercise 3
+3) Create a numeric vector with the years of Marvel movies corresponding to *The Infinity Saga* reported
+in this link [CLICK HERE](https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films){target="_blank"}. After that, print only the elements located in positions 5,8, and 9. (22.5 points)
+:::
+
+
+### Operations on objects
+
+
+Objects in `R` are elements that can be manipulated and transformed exactly like 
+objects in real life. For instance pay attention to the following example:
+
+```{r}
+math_score <- c(50,86,96,87)
+
+english_score <- c(10,25,36,56)
+
+english_score + math_score
+
+```
+
+In the code above, I created two vectors reflecting the academic scores of two
+four students. The first student had a score of 50 in math whereas the score in 
+English was 10. You may have noticed that I sum both vectors, the final 
+result reflects the result of adding the first `math_score` plus the first 
+`english_score`, then `R` does the same with the other elements in the vectors.
+
+
+::: callout-tip
+## Excercise 4
+4) Copy the code above, replace the `+` sign for a `-` (minus) sign. Then run the code,
+What happened when you did that ?  (22.5 points)
+:::
+
+## We need to study more important objects
+
+`R` has several types of objects. We will not study all of them because this is
+not a computer programming class (I wish!). Instead, I'll introduce
+the most important objects to understand my assignments and code. 
+
+### Data frames
+
+Data frames are the most useful objects in this class, please read the information
+about data frame objects on this [link.](https://blackhill86.github.io/StatsBook/BasicsR.html){target="_blank"}
+
+
+::: callout-tip
+## Excercise 5
+5) Create a data frame object by copying the code below. Change the object’s name, you may named it “expenses”, then change the variable names in the example (e.g. `variable1`). Finally run the code. How many rows does this data frame have? How many columns does this data frame have? Can you tell what happened after running the function `head()` (22.5 points)
+
+```{r, eval=FALSE}
+Example <- data.frame(variable1 = c(30,63,96),
+               variable2 = c(63,25,45),
+               variable3 = c(78,100,100),
+               variable4 = c(56,89,88))
+
+head(Example)
+```
+:::
+
+::: column-margin
+![](pica.gif){fig-align="center" width="100"}
+
+*You probably noticed that objects can have any name, right? It doesn't matter the human language.*
+:::
+
+
+### Everything is an object... and everything is a function
+
+:::: {.columns}
+::: {.column width="70%"}
+It can be convenient to revisit this topic on this [link](https://blackhill86.github.io/StatsBook/functionsPack.html){target="_blank"}. But, if you
+don't have time, I'll explain the concept of functions. A function is an object that performs an operation based on an input. The function will ask for input information and after that, the function will give an output.
+
+Functions can be created with the command `function()` which is in simple words a function that creates other functions. Sounds redundant but it is an accurate statement!
+:::
+::: {.column width="30%"}
+![](confused.jpg){fig-align="right" width="198"}
+:::
+::::
+
+
+For instance, we can create a function that calculates your age:
+
+```{r}
+
+estimateAge <- function(myBirthday){ # <1>
+
+myBirthday2 <- as.Date(myBirthday)  
+today <- Sys.Date() 
+
+age <- difftime(today,             # <2> 
+                myBirthday2, 
+                units = "days")/365
+
+message("Your age is"," ", age)
+}
+
+```
+1. The argument is called "myBirthday" just type your date of birth ("Year-MM-Day)
+2. The function `difftime()` does the magic for us.  
+
+The new function `estimateAge()` only needs one argument, and that is any date of birth. 
+That's the input information that will help the function to give you a output, in this
+case a message with your estimated age.
+
+
+```{r}
+## Let's enter my date of birth
+estimateAge("1986-01-28") 
+```
+
+::: column-margin
+I hope you are feeling fine, if not please free to insert a meme expressing how you feel in your answers for 3 extra points. 
+:::
+
+You might be thinking: Wait a second! Do we have to create our own functions all the time? The answer is ***NO!***. 
+`R` already provides tons of functions already programmed an ready to be used. If 
+the function you need is not available in base `R`, you can download a package and install 
+the package in your computer. 
+
+::: callout-important
+You should check more information about functions and packages [CLICKING HERE](https://blackhill86.github.io/StatsBook/functionsPack.html){target="_blank"}
+:::
+
+::: callout-tip
+## Excercise 6 (22.5 points)
+6) You probably went to the link I recommended before, if not go a read it [here.](https://blackhill86.github.io/StatsBook/functionsPack.html){target="_blank"}
+After reading the explanation about packages install the package `tidyverse` then,
+call the package. You can copy the following code and paste the code in your RStudio
+session. Remember to install the package first:
+
+```{r, eval=FALSE}
+## Installs the package tidyverse
+install.packages("tidyverse") 
+```
+
+```{r}
+library(tidyverse)
+
+var1 <- rnorm(200)
+var2 <- rnorm(200)
+var3 <- rnorm(200)
+
+data.frame(var1, 
+           var2,
+           var3) |>
+  summarise_all(mean) #<1>
+
+
+
+```
+1. The function `summarise_all()` comes from `tidyverse` package. 
+
+Copy your code and output in a Word document or Google document.
+:::
+
+Check Practice 2 very soon for more `R` exercises!
+
+![](joke1.png){fig-align="center" width="300"}
+
+
+
