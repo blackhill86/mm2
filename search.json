@@ -2777,5 +2777,173 @@
     "title": "Practice 2",
     "section": "The package tidyverse is your friend",
     "text": "The package tidyverse is your friend\nIf you run the following code, you’ll see the variable names in the data set ruminationToClean.csv:\n\n\nI’m reading in the data file from my personal repository, fancy right?\n🟡 Loading\n  webR...\n\n\n  \n\n\nAs you can see, we have a large list of variables. We are using the function colnames() to get a list of column names, which in this case are research variables. Several of these variables could be dropped from the data set, others will need to be renamed.\n\nDropping variables\nIn this example we will use the function select() from the package tidyverse. Remember that you’ll need to call the package by running library(tidyverse).\n\n🟡 Loading\n  webR...\n\n\n  \n\n\n\nWhat is happening here? You may have noticed that inside the function selection() I am adding the name of the variable I want to delete from the data set, and then I added a minus sign. When you add a minus sign before the name of the variable, the package will delete the variable that you list with a minus sign. You can do the same with several variables at the same time:\n\n🟡 Loading\n  webR...\n\n\n  \n\n\n\nNow the variables, age, school, and grade are not longer in the dataset, if you don’t believe me click on RUN CODE.\n\n\n\n\n\n\nExcercise 1 (30 points)\n\n\n\n\nDownload the data set ruminationToClean.csv then open the data file using ruminationRaw &lt;- read.csv(file.choose()) or you may copy the code to open the data from the online repository. After opening the data in R, delete from the data set all the variables that start with th stem EATQ_R_.\n\n\n\n\n\nChange variable names\nIn some occasions, the research variable was named wrongly or the name does not reflect the content of the variable. In the data set ruminationToClean.csv there are variables with names in Spanish, we can change them:\n\n🟡 Loading\n  webR...\n\n\n  \n\n\n\nIn this example, you can see that I’m using the function rename() from the package dplyr which is inside the package tidyverse. When you use rename() you’ll need to declare the new name first and then the old variable name that will be replaced.\n\n\n\n\n\n\nExcercise 2 (35 points)\n\n\n\n\nIn psychological measurement it is common to implement questionnaires with Likert-response options. We typically sum the items corresponding to the latent variable or construct that we are measuring. For example in the ruminationToClean.csv the construct of “Rumination” is measured by the Children’s Response Styles Questionnaire (CRSQ), however the variable names are not self-explained. Your task is to change the name of the variables with stem CRSQ, the new variables should have the stem rumination_itemNumber. For example rename(CRSQ1=rumination_1). Remember to save the changes in a new object.\n\n\n\n\n\nCompute a new variable\nAs always in programming languages, there are several ways to create a new research variable in a data frame. But, we will use the tidyverse method by using a function that actually works like a verb. The function mutate() will help use to create new variables.\nI mentioned in Exercise 2 psychology studies latent variables also known as hypothetical constructs, they have many names, but at the end we study variables that are implicit; we can measure them but we don’t see them. For example, we have studied variables such depression or rumination in this course, these are latent variables because you cannot capture depression or you don’t see it walking, however you are able to measure depression by asking about symptoms and thoughts.\n\n\n\nExample of a latent variable\n\n\nIn the figure above you can see a representation of a latent variable. In psychology we often assume that the latent variable is the common factor underlying our questions, -in this example- questions related to depression.\nWhen we analyze data that corresponds with latent variables we have two options:\n\nWe can create a Structural Equation Modeling (We won’t cover this topic).\nWe sum all the items to compute a total score. This total score will be our approximation to the latent variable. (Yes, this is covered in this practice).\n\n\n\n\nI’ll show an example in the next chunk of R code:\n\n🟡 Loading\n  webR...\n\n\n  \n\n\n\nIn this example we are using the function mutate() to create a new column named depressionTotal, this new depressionTotal column will contain the depression total score for each participant. In this study we included the “Child’s Depression Inventory (CDI)”, that’s why the columns follow the stem “CDI”. You can see the new column in the next table:\n\n\nCode\nruminationRaw &lt;- read.csv(\"ruminationToClean.csv\", na.string = \"99\")\nruminationDepresionScore &lt;- ruminationRaw |&gt;\n  mutate(\n    depressionTotal = rowSums(across(starts_with(\"CDI\")))\n    )\nruminationDepresionScore |&gt; select(starts_with(\"CDI\"),  \n                                   depressionTotal ) |&gt;\n  gt_preview()\n\n\n\n\n\n\n  \n    \n    \n      \n      CDI1\n      CDI2\n      CDI3\n      CDI4\n      CDI5\n      CDI6\n      CDI7\n      CDI8\n      CDI9\n      CDI10\n      CDI11\n      CDI12\n      CDI13\n      CDI14\n      CDI15\n      CDI16\n      CDI17\n      CDI18\n      CDI19\n      CDI20\n      CDI21\n      CDI22\n      CDI23\n      CDI24\n      CDI25\n      CDI26\n      depressionTotal\n    \n  \n  \n    1\n0\n2\n0\n0\n0\n0\n0\n1\n0\n0\n1\n0\n1\n1\n1\n1\n1\n1\n1\n0\n0\n1\n1\n1\n1\n0\n15\n    2\n0\n0\n1\n1\n0\n0\n0\n1\n0\n0\n1\n0\n2\n0\n1\n0\n2\n1\n1\n0\n0\n1\n2\n1\n0\n0\n15\n    3\n0\n1\n0\n0\n0\n1\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n0\n0\n0\n0\n4\n    4\n0\n1\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n1\n0\n0\n0\n1\n1\n0\n0\n0\n0\n0\n1\n0\n0\n6\n    5\n0\n1\n0\n1\n0\n1\n0\n0\n1\n1\n0\n2\n1\n1\n0\n1\n1\n2\n0\n1\n0\n0\n1\n1\n1\n0\n17\n    6..211\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n    212\n0\n0\n0\n0\n0\n0\n0\n0\n0\n1\n0\n0\n0\n1\n0\n0\n0\n1\n0\n0\n0\n1\n0\n1\n0\n0\n5\n  \n  \n  \n\n\n\n\n\n\n\n\n\n\nExcercise 3 (30 points)\n\n\n\n\nIn the data set ruminationToClean.csv you’ll find seven columns with the stem “DASS”. These columns correspond to the instrument named: Depression, Anxiety, and Stress Scale (DASS). This is an scale that measures three latent variables at the same time, but only the anxiety items were added in this study.\n\nYour task is to change the name of the “DASS” items, you should think a more informative name for these items in the data frame. After that, you will have to compute the total score of anxiety for each participant in the data frame.\n\n\n\n\nLet’s cleanse this data set\n\n\n\nIt is always satisfactory to clean a data set and then see the final product, but so far we have cleaned these data in small steps. I’ll clean the data set in one step. In this example I will delete unnecessary columns (aka research variables), and I will translate the variables to English when necessary:\n\n🟡 Loading\n  webR...\n\n\n  \n\n\n\n\n\n\n\n\n\nExcercise 4 (10 points)\n\n\n\n\nDescribe the steps taken in the R code above."
+  },
+  {
+    "objectID": "PSYC3000.html#geoweek-2023",
+    "href": "PSYC3000.html#geoweek-2023",
+    "title": "PSYC3000",
+    "section": "GeoWeek 2023",
+    "text": "GeoWeek 2023\nGentle Introduction to R"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html",
+    "href": "geoWeekPresentation/gentleR.html",
+    "title": "Gentle introduction to R",
+    "section": "",
+    "text": "R is a programming language mostly used in statistics. It was created by statisticians.\nR was inspired by the statistical language S developed by At&T. S stands for “statistics” and it was written based on C language. After S was sold to a small company, S-plus was created with a graphical interface."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#what-is-r",
+    "href": "geoWeekPresentation/gentleR.html#what-is-r",
+    "title": "Gentle introduction to R",
+    "section": "What is R?",
+    "text": "What is R?\nR is a programming language mostly used in statistics. It was created by statisticians.\nR was inspired by the statistical language S developed by At&T. S stands for “statistics” and it was written based on C language. After S was sold to a small company, S-plus was created with a graphical interface."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#what-is-r-ii",
+    "href": "geoWeekPresentation/gentleR.html#what-is-r-ii",
+    "title": "Gentle introduction to R",
+    "section": "What is R (II)?",
+    "text": "What is R (II)?\n\nR was considered a “statistics” language, but nowadays it can perform more tasks. We will see examples where you can create a website, create a dashboard, create a teaching notebook, and presentation slides!\nR also provides multiple options to create graphics and plots. The options are infinite when you use a programming language."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#why-should-we-use-r",
+    "href": "geoWeekPresentation/gentleR.html#why-should-we-use-r",
+    "title": "Gentle introduction to R",
+    "section": "Why should we use R?",
+    "text": "Why should we use R?"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#why-should-we-use-r-1",
+    "href": "geoWeekPresentation/gentleR.html#why-should-we-use-r-1",
+    "title": "Gentle introduction to R",
+    "section": "Why should we use R?",
+    "text": "Why should we use R?\n\nTIOBE index of R overtime"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#why-should-we-use-r-2",
+    "href": "geoWeekPresentation/gentleR.html#why-should-we-use-r-2",
+    "title": "Gentle introduction to R",
+    "section": "Why should we use R?",
+    "text": "Why should we use R?\n\n\n\n\nR is free and open-source software. R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License.\n\n\n\n\nThe amount of users grow every second.\n\n\n\n\nIt is friendly with non-programmers (You don’t believe me I know…).\n\n\n\n\nThe amount of packages is growing (19985 packages as today).\n\n\n\n\nYou don’t depend on buying a license.\n\n\n\n\nYou can see what is under the hood.\n\n\n\n\nThere are many jobs where R skills are needed.\n\n\n\n\n\n\nYou’ll have access to cutting-edge quantitative methods and models.\n\n\n\n\n\n\n\n\nMore info\n\n\nSee datacamp.com opinion."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#section",
+    "href": "geoWeekPresentation/gentleR.html#section",
+    "title": "Gentle introduction to R",
+    "section": "",
+    "text": "R is an interpreted language, that means you don’t need to compile the code. You will need to use a command-line interpreter.\nIt is an object-oriented programming language. It represents the information using virtual objects."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#packages-are-the-key",
+    "href": "geoWeekPresentation/gentleR.html#packages-are-the-key",
+    "title": "Gentle introduction to R",
+    "section": "Packages are the key",
+    "text": "Packages are the key\n\nR has several built-in functions but they are not enough to answer all the possible research questions a researcher will have.\nR users support their data analysis using packages that other members of the community developed.\nThese packages are actually software and they can be installed very easily in R. You don’t have to program anything, there are 19 985 packages as today. But of course, you might need to program some routines if your problem is very specific.\nThe packages are all located in a large repository call Comprehensive R Archive Network (CRAN)"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#editors-and-ide",
+    "href": "geoWeekPresentation/gentleR.html#editors-and-ide",
+    "title": "Gentle introduction to R",
+    "section": "Editors and IDE",
+    "text": "Editors and IDE\n\nMost famous IDE (Integrated Development Environment):\n\nRStudio\nVisual Studio Code\n\nNot so famous but still powerful and full open source:\n\nEMACS\nVIM"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#types-of-objects",
+    "href": "geoWeekPresentation/gentleR.html#types-of-objects",
+    "title": "Gentle introduction to R",
+    "section": "Types of objects",
+    "text": "Types of objects\n\nObjects in R have properties and names, similar to real objects:\n\nvectors\ndata frame\nlists\narrays\nfunctions\n\nThese are just the most common objects in R. I’ll explain a little bit of each one."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#vectors",
+    "href": "geoWeekPresentation/gentleR.html#vectors",
+    "title": "Gentle introduction to R",
+    "section": "Vectors",
+    "text": "Vectors\n\nIt is the most basic object, it is the bones of R.\nIn human language, they look like lists of elements. But, when mixed different type of data (letters mixed with numbers) things get messy:\n\n\n### Let's create a vector with names:\n\nrandomNames &lt;- c(\"Randall\", \"Pablo\", \"Emma\")\n\nprint(randomNames) #You don't need to type print. This is for teaching purposes. \n\n[1] \"Randall\" \"Pablo\"   \"Emma\"   \n\n\nLet’s see what happen’s when I mix numbers and letters:\n\nnumbersNames &lt;- c(\"one\",1, 2, \"two\", 3, \"three\")\nprint(numbersNames)\n\n[1] \"one\"   \"1\"     \"2\"     \"two\"   \"3\"     \"three\"\n\n\nR coerces everything to be a string or character vector.\n\nYou may also subset a vector by using [] as an index indicator\n\n\nnumbersNames[4]\n\n[1] \"two\""
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#data-frames",
+    "href": "geoWeekPresentation/gentleR.html#data-frames",
+    "title": "Gentle introduction to R",
+    "section": "Data frames",
+    "text": "Data frames\n\nData frame is the most useful type of object when you conduct data analysis.\nA data frame is several lists combined together, and it looks pretty much like a matrix or a spreadsheet:\n\n\n\nShow the code\nmtcars\n\n\n                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb\nMazda RX4           21.0   6 160.0 110 3.90 2.620 16.46  0  1    4    4\nMazda RX4 Wag       21.0   6 160.0 110 3.90 2.875 17.02  0  1    4    4\nDatsun 710          22.8   4 108.0  93 3.85 2.320 18.61  1  1    4    1\nHornet 4 Drive      21.4   6 258.0 110 3.08 3.215 19.44  1  0    3    1\nHornet Sportabout   18.7   8 360.0 175 3.15 3.440 17.02  0  0    3    2\nValiant             18.1   6 225.0 105 2.76 3.460 20.22  1  0    3    1\nDuster 360          14.3   8 360.0 245 3.21 3.570 15.84  0  0    3    4\nMerc 240D           24.4   4 146.7  62 3.69 3.190 20.00  1  0    4    2\nMerc 230            22.8   4 140.8  95 3.92 3.150 22.90  1  0    4    2\nMerc 280            19.2   6 167.6 123 3.92 3.440 18.30  1  0    4    4\nMerc 280C           17.8   6 167.6 123 3.92 3.440 18.90  1  0    4    4\nMerc 450SE          16.4   8 275.8 180 3.07 4.070 17.40  0  0    3    3\nMerc 450SL          17.3   8 275.8 180 3.07 3.730 17.60  0  0    3    3\nMerc 450SLC         15.2   8 275.8 180 3.07 3.780 18.00  0  0    3    3\nCadillac Fleetwood  10.4   8 472.0 205 2.93 5.250 17.98  0  0    3    4\nLincoln Continental 10.4   8 460.0 215 3.00 5.424 17.82  0  0    3    4\nChrysler Imperial   14.7   8 440.0 230 3.23 5.345 17.42  0  0    3    4\nFiat 128            32.4   4  78.7  66 4.08 2.200 19.47  1  1    4    1\nHonda Civic         30.4   4  75.7  52 4.93 1.615 18.52  1  1    4    2\nToyota Corolla      33.9   4  71.1  65 4.22 1.835 19.90  1  1    4    1\nToyota Corona       21.5   4 120.1  97 3.70 2.465 20.01  1  0    3    1\nDodge Challenger    15.5   8 318.0 150 2.76 3.520 16.87  0  0    3    2\nAMC Javelin         15.2   8 304.0 150 3.15 3.435 17.30  0  0    3    2\nCamaro Z28          13.3   8 350.0 245 3.73 3.840 15.41  0  0    3    4\nPontiac Firebird    19.2   8 400.0 175 3.08 3.845 17.05  0  0    3    2\nFiat X1-9           27.3   4  79.0  66 4.08 1.935 18.90  1  1    4    1\nPorsche 914-2       26.0   4 120.3  91 4.43 2.140 16.70  0  1    5    2\nLotus Europa        30.4   4  95.1 113 3.77 1.513 16.90  1  1    5    2\nFord Pantera L      15.8   8 351.0 264 4.22 3.170 14.50  0  1    5    4\nFerrari Dino        19.7   6 145.0 175 3.62 2.770 15.50  0  1    5    6\nMaserati Bora       15.0   8 301.0 335 3.54 3.570 14.60  0  1    5    8\nVolvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#section-1",
+    "href": "geoWeekPresentation/gentleR.html#section-1",
+    "title": "Gentle introduction to R",
+    "section": "",
+    "text": "Let’s beautify the data frame output:\n\n\nShow the code\nlibrary(DT)\ndatatable(mtcars,\n          rownames = TRUE)"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#lists",
+    "href": "geoWeekPresentation/gentleR.html#lists",
+    "title": "Gentle introduction to R",
+    "section": "Lists",
+    "text": "Lists\n\nLists are flexible and easy to manipulate in R. You can combine different types of objects in a single list:\n\n\n\nShow the code\n### Let's create different types of objects\n\n### Data frame\n\ndata_1 &lt;- data.frame(v1= rnorm(8),\n                     v2 = rnorm(8),\n                     v3 = rnorm(8))\n\n### Vector\n\nmoreNames &lt;- c(\"Bob\", \"Paris\", \"Ana\")\n\n### Numeric vector\n\nnumericVector &lt;- c(1,3,78,90)\n\n### We can group all these objects in a list\n\nlistOfObjects &lt;- list(data_1,\n                      moreNames,\n                      numericVector)\nprint(listOfObjects)\n\n\n[[1]]\n          v1         v2           v3\n1 -1.3846711  1.1342249  0.005603773\n2 -0.6052452  1.7357052  0.157493762\n3  1.1978363 -0.7972630  0.926481685\n4  0.6755754  0.6163520  0.439208389\n5 -1.0040656 -0.7112245 -0.668112481\n6 -1.0667921 -0.4581647  0.228805642\n7  2.1765713  0.7218299 -0.503185122\n8  0.7557314  1.5541713 -0.714680298\n\n[[2]]\n[1] \"Bob\"   \"Paris\" \"Ana\"  \n\n[[3]]\n[1]  1  3 78 90\n\n\nIf you need to access one object in the list you may use its location plus [[]]:\n\n\nShow the code\nlistOfObjects[[2]]\n\n\n[1] \"Bob\"   \"Paris\" \"Ana\""
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#arrays",
+    "href": "geoWeekPresentation/gentleR.html#arrays",
+    "title": "Gentle introduction to R",
+    "section": "Arrays",
+    "text": "Arrays\n\nI don’t use arrays in my code, but they are common in in R and other languages.\nAn arrays is a multidimensional object, you can have multiple “slices” of information in on single object.\nIt is similar to a multi-layer object.\n\n\narray(c(matrix(1:4,2,2)), dim=c(2,2,3))\n\n, , 1\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n, , 2\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4\n\n, , 3\n\n     [,1] [,2]\n[1,]    1    3\n[2,]    2    4"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#functions",
+    "href": "geoWeekPresentation/gentleR.html#functions",
+    "title": "Gentle introduction to R",
+    "section": "Functions",
+    "text": "Functions\n\nA function is a data object that requires input information, in return; it will give an output.\nI have already used several functions (e.g. data.frame(), rnorm()).\nFunctions will always follow the following structure:\n\n\nmyFunction &lt;- function(argument1, argument2, ...){ \n  \n  operation\n  \n  return()\n  \n  }\n\n\nWe can study the following case, where I created a function to estimate your age:\n\n\n\nShow the code\nestimateAge &lt;- function(myBirthday) {\n  ### Function to check if year is a\n  ### leap year.\n  \n  leapyear &lt;- function(year) {\n    return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))\n  }\n  \n  ### Information necessary to compute age\n  myBirthday2 &lt;- as.Date(myBirthday)\n  today &lt;- Sys.Date()\n  year &lt;- as.numeric(format(myBirthday2, \"%Y\"))\n  leapCheck &lt;- leapyear(year)\n  \n  \n  if (leapCheck == TRUE) {\n    ## leap year\n    age &lt;- difftime(today,\n                    myBirthday2 ,\n                    units = \"days\") / (365 + 1)\n    \n  } else {\n    ## No leap year\n    age &lt;- difftime(today,\n                    myBirthday2,\n                    units = \"days\") / 365\n    \n  }\n  \n  message(\"Your age is\",\" \", age)\n}\n\n\n\nMy function estimateAge() requires only one argument myBirthday, that argument is passed to the computation inside the function to estimate the age.\n\n\n## Let's enter my date of birth\nestimateAge(\"1986-01-28\") \n\nYour age is 37.8027397260274\n\n\n\nBut don’t worry, you don’t have to compute age like I did. There is already a package that has all the tools to manipulate dates. It is the package lubridate."
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#shinyapps",
+    "href": "geoWeekPresentation/gentleR.html#shinyapps",
+    "title": "Gentle introduction to R",
+    "section": "ShinyApps",
+    "text": "ShinyApps\n\nWatch Crime\nWater quality dashboard\nInteractive data visualization\nSuper Zips"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#web-pages",
+    "href": "geoWeekPresentation/gentleR.html#web-pages",
+    "title": "Gentle introduction to R",
+    "section": "Web Pages",
+    "text": "Web Pages\n- Andrew Heiss\n- Quantum Jitter\n- Ella Kaye\n- Books\n- University Course"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#scientific-articles-and-reports-in-pdf",
+    "href": "geoWeekPresentation/gentleR.html#scientific-articles-and-reports-in-pdf",
+    "title": "Gentle introduction to R",
+    "section": "Scientific articles and reports in pdf",
+    "text": "Scientific articles and reports in pdf\n- Article\n- Report"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#we-can-also-add-r-code-and-run-it-in-our-websites",
+    "href": "geoWeekPresentation/gentleR.html#we-can-also-add-r-code-and-run-it-in-our-websites",
+    "title": "Gentle introduction to R",
+    "section": "We can also add R code and run it in our websites",
+    "text": "We can also add R code and run it in our websites"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#happy-penguins",
+    "href": "geoWeekPresentation/gentleR.html#happy-penguins",
+    "title": "Gentle introduction to R",
+    "section": "Happy penguins",
+    "text": "Happy penguins\n\n\nShow the code\n### The rule is to write the packages required by your code at the beginning\n## Packages loaded or called\nlibrary(jpeg)             ## reads pictures into R\nlibrary(patchwork)         ## more tools to add features in a plot\nlibrary(ggplot2)          ## creates plots\nlibrary(palmerpenguins)  ## This package has the penguin data\n\npicture &lt;- \"penguins.jpg\"\nimg &lt;- readJPEG(picture, native = TRUE)\n\n### Plotting the data using ggplot2\n\nggplot(penguins, aes(x = flipper_length_mm, \n                     y= body_mass_g,\n                     color = species)) +\n  geom_point() + \n  geom_smooth(se = FALSE, method = \"lm\" ) + \n  theme_classic() +  \n  xlab(\"Flipper Length in milimeters\")+\n  ylab(\"Body Mass in grams\")+\n  inset_element(p = img,\n                left = 0.05,\n                bottom = 0.65,\n                right = 0.5,\n                top = 0.95)"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#you-can-create-art",
+    "href": "geoWeekPresentation/gentleR.html#you-can-create-art",
+    "title": "Gentle introduction to R",
+    "section": "You can create art",
+    "text": "You can create art\n\n\nDanielle Navarro’s blog\n\nBasics on generative art"
+  },
+  {
+    "objectID": "geoWeekPresentation/gentleR.html#gis-and-spatial-data",
+    "href": "geoWeekPresentation/gentleR.html#gis-and-spatial-data",
+    "title": "Gentle introduction to R",
+    "section": "GIS and spatial data",
+    "text": "GIS and spatial data\n\n\nMaking Middle Earth maps with R"
   }
 ]
