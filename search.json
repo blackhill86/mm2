@@ -4,7 +4,7 @@
     "href": "index.html",
     "title": "Healthy Aging and Statistical Outcomes Lab (HASO Lab)",
     "section": "",
-    "text": "Welcome!\nWelcome to this humble home! You will find materials related to my classes at CSU Stan under the Creative Commons License (CC). I have dedicated a large portion of my career to study applied statistics in psychology. I’m still learning new topics and methods, my new passion is Bayesian inference to estimate latent variable models.\nI also conduct research in healthy aging, and social factors affecting the risk of dementia. My aim is to expand this lab and share as much information as possible, not only with students but also with colleagues around the globe.\nI frequently work programming in R language, so you might find examples and materials to learn R along with data sets you can use to practice your R skills.\nThis repository is still under construction, it is a timid alpha version written with the help of Quarto. If you have suggestions on how to improve this site please contact me at emontenegro1@csustan.edu..",
+    "text": "Welcome!\nWelcome to this humble home! You will find materials related to my classes at CSU Stan under the Creative Commons License (CC). I have dedicated a large portion of my career to study applied statistics in psychology. I’m still learning new topics and methods, my new passion is Bayesian inference to estimate latent variable models.\nI also conduct research in healthy aging, and social factors affecting the risk of dementia. My aim is to expand this lab and share as much information as possible, not only with students but also with colleagues around the globe.\nI frequently work programming in R language, so you might find examples and materials to learn R along with data sets you can use to practice your R skills.\nThis repository is still under construction, it is a timid alpha version written with the help of Quarto. If you have suggestions on how to improve this site please contact me at emontenegro1@csustan.edu.",
     "crumbs": [
       "Home",
       "Content",
@@ -4067,8 +4067,8 @@
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#my-aims-in-this-lecture",
     "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#my-aims-in-this-lecture",
     "title": "Correlation and Regression Models",
-    "section": "",
-    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
+    "section": "My aims in this lecture",
+    "text": "My aims in this lecture\n\nTo introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
   },
   {
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model",
@@ -4117,7 +4117,7 @@
     "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#important-to-remember",
     "title": "Correlation and Regression Models",
     "section": "Important to remember!",
-    "text": "Important to remember!\nWestfall & Arias (2020):\n\n\n\n\n\n\nImportant\n\n\n\nThe regression model \\(p(y|x)\\) does not come from the data. Rather, the regression model \\(p(y|x)\\) is assumed to produce the data.\n\n\n\nModels produce data, data DOES NOT produce models!"
+    "text": "Important to remember!\nWestfall & Arias (2020):\n\n\n\n\n\n\nImportant\n\n\nThe regression model \\(p(y|x)\\) does not come from the data. Rather, the regression model \\(p(y|x)\\) is assumed to produce the data.\n\n\n\n\nModels produce data, data DOES NOT produce models!"
   },
   {
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names",
@@ -4166,7 +4166,7 @@
     "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions",
     "title": "Correlation and Regression Models",
     "section": "Classical Regression Model: Assumptions",
-    "text": "Classical Regression Model: Assumptions\n\nRemember: Models produce data! Then, models are explanations of what happens in Nature.\nThe first assumption is randomness, many books only assume this concept but it doesn’t hurt to make it explicit.\nRandomness in this context means that:\n\n\n\n\n\n\n\nNote\n\n\n\nThe value of \\(Y\\) is variable, coming randomly from a distribution \\(p(y|x)\\) of potentially observable \\(Y\\) values that is specific to the particular values (\\(X = x\\)) of the \\(X\\) variables (Westfall & Arias, 2020).\n\n\n\nIn simple words, we assume \\(Y\\) is variable produced randomly by a conditional distribution \\(p(y|X)\\).\nBut of course, we test if there is a dependency between \\(y\\) and \\(x\\). That’s part of the job."
+    "text": "Classical Regression Model: Assumptions\n\nRemember: Models produce data! Then, models are explanations of what happens in Nature.\nThe first assumption is randomness, many books only assume this concept but it doesn’t hurt to make it explicit.\nRandomness in this context means that:\n\n\n\n\n\n\n\nNote\n\n\nThe value of \\(Y\\) is variable, coming randomly from a distribution \\(p(y|x)\\) of potentially observable \\(Y\\) values that is specific to the particular values (\\(X = x\\)) of the \\(X\\) variables (Westfall & Arias, 2020).\n\n\n\n\nIn simple words, we assume \\(Y\\) is variable produced randomly by a conditional distribution \\(p(y|X)\\).\nBut of course, we test if there is a dependency between \\(y\\) and \\(x\\). That’s part of the job."
   },
   {
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.",
@@ -4180,14 +4180,14 @@
     "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-1",
     "title": "Correlation and Regression Models",
     "section": "Classical Regression Model: Assumptions (cont.)",
-    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere is an assumption of constant variance (homoscedasticity).\nGiven that we are assuming there are several distributions, each \\(x\\) has a distribution, we also assume that the variance in this conditional distributions is the same or constant.\n\n\n\n\n\n\n\nNote\n\n\n\nThe variances of the conditional distributions \\(p(y|x)\\) are constant (i.e., they are all the same number, \\(\\sigma^2\\)) for all specific values \\(X = x\\) (Westfall & Arias, 2020)."
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere is an assumption of constant variance (homoscedasticity).\nGiven that we are assuming there are several distributions, each \\(x\\) has a distribution, we also assume that the variance in this conditional distributions is the same or constant.\n\n\n\n\n\n\n\nNote\n\n\nThe variances of the conditional distributions \\(p(y|x)\\) are constant (i.e., they are all the same number, \\(\\sigma^2\\)) for all specific values \\(X = x\\) (Westfall & Arias, 2020)."
   },
   {
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
     "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
     "title": "Correlation and Regression Models",
     "section": "Classical Regression Model: Assumptions (cont.)",
-    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere an important assumption which is normality.\nThe Classical Regression Model or linear model, assumes all the conditional distributions are produced by a normal distribution or Gaussian distribution.\n\n\n\n\n\n\n\nNote\n\n\n\nThe conditional probability distribution functions \\(p(y|x)\\) are normal distributions (as opposed to Bernoulli, Poisson, or other) for every \\(X = x\\).(Westfall & Arias, 2020)."
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere an important assumption which is normality.\nThe Classical Regression Model or linear model, assumes all the conditional distributions are produced by a normal distribution or Gaussian distribution.\n\n\n\n\n\n\n\nNote\n\n\nThe conditional probability distribution functions \\(p(y|x)\\) are normal distributions (as opposed to Bernoulli, Poisson, or other) for every \\(X = x\\).(Westfall & Arias, 2020)."
   },
   {
     "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-3",
@@ -4332,6 +4332,13 @@
   {
     "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#references",
     "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#references",
+    "title": "Correlation and Regression Models",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#references",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#references",
     "title": "Correlation and Regression Models",
     "section": "References",
     "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
