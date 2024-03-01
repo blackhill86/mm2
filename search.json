@@ -2971,7 +2971,7 @@
     "href": "advancedMethods/advancedMethods.html",
     "title": "Advanced Methods",
     "section": "",
-    "text": "Lectures\nLecture 1: Introduction to important concepts in Statistics\nLecture 2: “Probability distributions and random variables”\nLecture 3: Compare means and many more stories\n\n\nR activities\nPractice 1\nPractice 2",
+    "text": "Lectures\nLecture 1: Introduction to important concepts in Statistics\nLecture 2: “Probability distributions and random variables”\nLecture 3: Compare means and many more stories\nLecture 4: Correlations\nLecture 4: Linear regression\nLecture 4: General Linear Model\n\n\nR activities\nPractice 1\nPractice 2",
     "crumbs": [
       "Home",
       "Content",
@@ -3726,5 +3726,614 @@
     "title": "Compare means and many more stories",
     "section": "References",
     "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "library(ISLR)\nlibrary(DT)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(kableExtra)\n\n\nAttaching package: 'kableExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\nlibrary(broom)\nlibrary(viridis)\n\nLoading required package: viridisLite\n\nlibrary(ggplot2)\n\n\nRegression is only one member of the family of General Linear Model (GLM).\nThe GLM covers models such as Analysis of Variance (ANOVA), Multivariate Analysis of Variance (MANOVA), Classical Regression Model (linear regression) and \\(t\\)-test.\nMy aim was to introduce these topics as a generalization of GLM, or better said, as a family.\nThere is a large theory related to these GLM models, but we don’t have time to discuss every detail. More advanced classes are necessary to explain particular details.\n\n\n\n\n\n\n  graph TD\n    A[GLM] --&gt; B(ANOVA)\n    A[GLM] --&gt; C(MANOVA)\n    A[GLM] --&gt; D(t-test)\n    A[GLM] --&gt; E(Linear Regression)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#why-are-we-studying-the-regression-model-and-other-demons",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#why-are-we-studying-the-regression-model-and-other-demons",
+    "title": "Correlation and Regression Models",
+    "section": "Why are we studying the regression model and other demons?",
+    "text": "Why are we studying the regression model and other demons?\n\nlibrary(ISLR)\nlibrary(DT)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(kableExtra)\n\n\nAttaching package: 'kableExtra'\n\n\nThe following object is masked from 'package:dplyr':\n\n    group_rows\n\nlibrary(broom)\nlibrary(viridis)\n\nLoading required package: viridisLite\n\nlibrary(ggplot2)\n\n\nRegression is only one member of the family of General Linear Model (GLM).\nThe GLM covers models such as Analysis of Variance (ANOVA), Multivariate Analysis of Variance (MANOVA), Classical Regression Model (linear regression) and \\(t\\)-test.\nMy aim was to introduce these topics as a generalization of GLM, or better said, as a family.\nThere is a large theory related to these GLM models, but we don’t have time to discuss every detail. More advanced classes are necessary to explain particular details.\n\n\n\n\n\n\n  graph TD\n    A[GLM] --&gt; B(ANOVA)\n    A[GLM] --&gt; C(MANOVA)\n    A[GLM] --&gt; D(t-test)\n    A[GLM] --&gt; E(Linear Regression)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s make up time for ANOVA",
+    "text": "Let’s make up time for ANOVA\n\nAnalysis of Variance a.k.a ANOVA is a model that helps to analyze mean differences in multiple groups. It is actually very similar to the Classical Regression Model, that’s why I included ANOVA in the Classical Regression Model lecture.\nThe ANOVA model tests the null hypothesis that all group means are equal. It could be represented like this:\n\n\\[\\begin{equation}\nH_{0}: \\mu_{1} = \\mu_{2} = \\mu_{3}\n\\end{equation}\\]\n\nThis would be what we call an omnibus test, which means we are testing the overall effect of our independent variable on the dependent variable.\nAs always, let’s understand this with an example:\n\n\nWage |&gt; select(wage, maritl) |&gt;\n            group_by(maritl) |&gt;\n            summarise(M = round(mean(wage),2),\n                      SD = round(sd(wage),2),\n                      variance = round(var(wage),2)) |&gt;\n  kbl(caption = \"Wage's mean, sd, and variance by Marital Status\") %&gt;%\nkable_classic_2(\"hover\", full_width = T,bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\nWage's mean, sd, and variance by Marital Status\n\n\nmaritl\nM\nSD\nvariance\n\n\n\n\n1. Never Married\n92.73\n32.92\n1083.73\n\n\n2. Married\n118.86\n43.12\n1859.38\n\n\n3. Widowed\n99.54\n23.74\n563.64\n\n\n4. Divorced\n103.16\n33.80\n1142.51\n\n\n5. Separated\n101.22\n33.66\n1133.22\n\n\n\n\n\n\n\n\nIn the table above we can see the mean of wage by marital status, there are males who never married, married, widowed, divorced or separated. ANOVA will help us to answer the question:\n\n\nAre the mean differences in wage by marital status explainable by chance alone?\n\n\nIn this case ANOVA could tell us: Yes! there is a difference, but where?\nIn this scenario, ANOVA will allow us to do pairwise comparisons , this means; we could compare the mean of divorced males versus the mean of married males, but also test all the combinations later on. This is called a post hoc analysis."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s make up time for ANOVA (cont.)",
+    "text": "Let’s make up time for ANOVA (cont.)\n\nThe ANOVA follows the logic of variance decomposition:\n\n\\[\\begin{equation}\noutcome_{i} = (model) + error_{i}\n\\end{equation}\\]\n\nThis means, that ANOVA accounts for the variances within your groups, and also calculates the variance that is explained by your MODEL. In fact, the Classical Regression Model does exactly the same thing.\nRemember: The line of best fit in regression is estimated adding the sum of square distances from the line. The line with the lowest sum of distances is the best line in regression.\nWe are going to do something similar in ANOVA, it is called the Total Sum of Squares (\\(SS_{T}\\)), this calculation will give you the distance from the grand mean:\n\n\\[\\begin{equation}\nSS_{T} = \\sum^N_{i=1}(x_{i}-\\bar{x}_{(grandMean)})\n\\end{equation}\\]\n\nThe term \\(x_{i}\\) is the score or value for each observation, and \\(\\bar{x}_{(grandMean)}\\) is the overall mean."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s make up time for ANOVA (cont.)",
+    "text": "Let’s make up time for ANOVA (cont.)\n\nWe can continue with our example with wage \\(\\sim\\) maritl.\nWe can calculate the grand mean of wage:\n\n\nWageGrandMean &lt;- mean(Wage$wage)\nWageGrandMean \n\n[1] 111.7036\n\n\n\nNow we could estimate \\(SS_{t}\\) in R:\n\n\nsstData &lt;- Wage |&gt; select(wage, maritl) |&gt; \n  mutate(SSt = (wage - mean(wage))^2)\n  \nsum(sstData$SSt)\n\n[1] 5222086\n\n\nThe total \\(SS\\) is 5222086. This is the TOTAL variation within the data.\n\nWe also need to estimate the Model Sum of Squares:\n\n\\[\\begin{equation}\n\nSS_{M} = \\sum^k_{n=1}n_{k}(\\bar{x}_{k}-\\bar{x}_{grandMean})^2\n\\end{equation}\\]\n\n\\(k\\) represents each group, in simple words we are estimating the mean difference of each group from the overall mean. That’s the distance from the grand mean.\nWe will need to estimate the residuals of the our model, the residuals is variance not explained by our ANOVA model. The estimation is:"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#lets-make-up-time-for-anova-cont.-2",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s make up time for ANOVA (cont.)",
+    "text": "Let’s make up time for ANOVA (cont.)\n\n\nIn this estimation we calculate the difference of each observation from the group mean where the observation is located. So, for instance if Katie was in the divorced group, then we could compute: \\(wage_{katie} - mean(wage_{divorced})\\). This is an indicator of variation not explained by the model. This means, ANOVA does not explain what happens within each group’s variation, it accounts for the between group variation."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples",
+    "title": "Correlation and Regression Models",
+    "section": "Time for examples !",
+    "text": "Time for examples !\n\n\nShow the code\nmodelAnova &lt;- aov(wage ~ maritl, data = Wage)\nsummary(modelAnova)\n\n\n              Df  Sum Sq Mean Sq F value Pr(&gt;F)    \nmaritl         4  363144   90786   55.96 &lt;2e-16 ***\nResiduals   2995 4858941    1622                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nThe result showed that the difference is not explained by chance alone. But wait, this is an omnibus test. It just tell me that at least one mean is different."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples-1",
+    "title": "Correlation and Regression Models",
+    "section": "Time for examples !",
+    "text": "Time for examples !\n\n\nShow the code\n  ggplot(data = Wage,aes(x=maritl, y=wage, fill=maritl)) +\n    geom_boxplot() +\n   stat_summary(fun=\"mean\", color=\"red\")+\n    scale_fill_viridis(discrete = TRUE, alpha=0.6, option=\"A\") +\n    theme_classic()+\n   theme(legend.position = \"none\")+\n  labs(x= \"Marital Status\", y= \"Wage\", title = \"Boxplot of Wage by Marital Status\")\n\n\nWarning: Removed 5 rows containing missing values (`geom_segment()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#time-for-examples-2",
+    "title": "Correlation and Regression Models",
+    "section": "Time for examples !",
+    "text": "Time for examples !\n\nLet’s see the pairwise comparisons:\n\n\n\nShow the code\npairTest &lt;-TukeyHSD(modelAnova)\n\n\n\n\nas.data.frame(lapply(pairTest, function(x) round(x,2))) %&gt;%\n  rename(meanDiff = maritl.diff,\n          lower = maritl.lwr ,\n         upper = maritl.upr ,\n         pvalueAdj = maritl.p.adj\n         ) %&gt;%\n kbl(caption = \"Pairwise Contrast\") %&gt;%\nkable_classic_2(\"hover\", full_width = T, \n                bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\nPairwise Contrast\n\n\n\nmeanDiff\nlower\nupper\npvalueAdj\n\n\n\n\n2. Married-1. Never Married\n26.13\n21.18\n31.07\n0.00\n\n\n3. Widowed-1. Never Married\n6.80\n-18.78\n32.39\n0.95\n\n\n4. Divorced-1. Never Married\n10.42\n1.60\n19.25\n0.01\n\n\n5. Separated-1. Never Married\n8.48\n-6.96\n23.92\n0.56\n\n\n3. Widowed-2. Married\n-19.32\n-44.66\n6.02\n0.23\n\n\n4. Divorced-2. Married\n-15.70\n-23.77\n-7.63\n0.00\n\n\n5. Separated-2. Married\n-17.64\n-32.66\n-2.63\n0.01\n\n\n4. Divorced-3. Widowed\n3.62\n-22.75\n29.99\n1.00\n\n\n5. Separated-3. Widowed\n1.68\n-27.58\n30.93\n1.00\n\n\n5. Separated-4. Divorced\n-1.94\n-18.65\n14.76\n1.00"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation",
+    "text": "F ratio estimation\n\nIn previous classes we studied the \\(t\\)-test. Hopefully, you remember the \\(t\\)-distribution:\n\n\n\nShow the code\nset.seed(234)\n\nplot(density(rt(30000,5)),\n     xlab = \"Simulated Values\",\n     ylab = \"p(y)/likelihood\",\n     main = \"Probability density plot generated from the t-distribution\")"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-1",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation",
+    "text": "F ratio estimation\n\nThe t-distribution is used to find the probability of the estimated mean difference.\nIn ANOVA we will use the F-distribution to find the probability of the estimated difference. In \\(t\\)-test we find only one mean difference, in ANOVA we will have several mean differences. The F-distribution will help us to test all the mean differences at the same time. That’s way we call omnibus test the first step in ANOVA.\nThis distribution is a little bit peculiar. Because it requires degrees of freedom in the numerator and the denominator, we will see later how are we going to use these degrees of freedom in the context of the ANOVA."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-2",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation",
+    "text": "F ratio estimation\nJust another F distribution\n\n\nShow the code\nset.seed(234)\nplot(density(rf(30000,5,10)),\n     xlab = \"Simulated Values\",\n     ylab = \"Likelihood\",\n     main = \"Probability density plot generated from the F-distribution\")"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation: let’s go to the point",
+    "text": "F ratio estimation: let’s go to the point\n\nTo estimate the F ratio we need first to estimate the Mean Squares based on the Sum of Squares.\nWe previously saw the formula to estimate the \\(SS_{R}\\), which in simple words, the total variation due to external factors not controlled by the variables in the model. While \\(SS_{M}\\) is the total variation accounted by the ANOVA model. \\[\\begin{align}\nMS_{M} &= \\frac{SS_{M}}{df_{M}}\\\\\nMS_{R} &= \\frac{SS_{R}}{df_{R}}\\\\\n\\end{align}\\]\n\n\\(MS_{m}\\) is the average amount of variation explained by the model (e.g., the systematic variation) , whereas \\(MS_{R}\\) is a gauge of the average amount of variation explained by extraneous variables (the unsystematic variation) (Field et al., 2012).\n\nThe \\(df\\) in \\(MS_{M}\\) are estimated by subtracting 1 to the number of groups. In our example we have 5 groups, then we should do \\(df = 5-1\\). The degrees of freedom in \\(MS_{R}\\) are estimated by computing \\(N-k\\), where \\(N\\) is the sample size and \\(k\\) the number of groups. In our example would be \\(df = 3000-5\\).\nLet’s take a loot again at the ANOVA taht we estimated before:\n\n\n\nShow the code\nmodelAnova &lt;- aov(wage ~ maritl, data = Wage)\nsummary(modelAnova)\n\n\n              Df  Sum Sq Mean Sq F value Pr(&gt;F)    \nmaritl         4  363144   90786   55.96 &lt;2e-16 ***\nResiduals   2995 4858941    1622                   \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nRemember that we had 5 marital status groups, and the total sample is 3000 males. If you check the Df column in the table above you will see two numbers, the first one is 4 (\\(5-1=4\\)) , and the second number is 2995 (\\(3000-5= 2995\\))."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point-1",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation: let’s go to the point",
+    "text": "F ratio estimation: let’s go to the point\n\nAfter computing the Mean Squares and degrees of freedom, you’ll be able estimate the F ratio:\n\n\\[\\begin{align}\nF &= \\frac{MS_{M}}{MS_{R}}\\\\\n  &= \\frac{90786}{1622}\\\\\n  &= 55.96\\\\\n\\end{align}\\]\n\nThe F in this case is a ratio of the variation explained by the model. If we conducted an experiment, we want a large F ratio because it would mean that we maximize the systematic variance explained by the experiment. Ideally, \\(MS_{R}\\) should be small."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#f-ratio-estimation-lets-go-to-the-point-2",
+    "title": "Correlation and Regression Models",
+    "section": "F ratio estimation: let’s go to the point",
+    "text": "F ratio estimation: let’s go to the point\n\nThe Cumulative Density Function of the F distribution will help us to estimate the probability of seeing a number as extreme as: 55.96. The red line corresponds to the location of 55.96.\n\n\n\nShow the code\nsimValues &lt;- seq(0,60,0.1)\n\nvalues &lt;-  pf(simValues, \n              df1 = 4, \n              df2 = 2995,\n              lower.tail = FALSE)\n\nplot(simValues, values, type = \"l\",\n     xlab = \"F values\",\n     ylab = \"Probability of F\",\n     main = \"Probability of observing F values\")\nabline(v = 55.96, col=\"red\", lwd=3, lty=2)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model",
+    "title": "Correlation and Regression Models",
+    "section": "ANOVA and Classical Regression Model",
+    "text": "ANOVA and Classical Regression Model\n\nOne of the most important assumptions in ANOVA and Classical Regression Model is constant variance.\nWhen you estimate an ANOVA you could test this assumption using the Levene’s Test, the same test that we used to test the constant variance in \\(t\\)-test.\nThe null hypothesis in the Levene’s test states: The variances of all groups are equal. If the test shows a \\(p\\)-value lower than 0.05, we reject the null hypothesis.\n\n\n\nShow the code\nlibrary(car)\n\n\nLoading required package: carData\n\n\n\nAttaching package: 'car'\n\n\nThe following object is masked from 'package:dplyr':\n\n    recode\n\n\nShow the code\nleveneTest(wage ~ maritl, data = Wage)\n\n\nLevene's Test for Homogeneity of Variance (center = median)\n        Df F value    Pr(&gt;F)    \ngroup    4  10.258 3.006e-08 ***\n      2995                      \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\n\n\nThe result shows a \\(p\\)-value lower than 0.05, therefore we should reject the null hypothesis. The variances are not equal between groups.\n\n\n\n\n\n\n\nAlways remember!\n\n\nALL OF THE ASSUMPTIONS REFER TO THE DATA-GENERATING PROCESS. NONE OF THE ASSUMPTIONS REFER TO THE ACTUAL OBSERVED DATA (Westfall & Arias, 2020)\n\n\n\n\nIn this case, we have a large sample size, this might cause a small p-value in the case of the Levene’s Test."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-1",
+    "title": "Correlation and Regression Models",
+    "section": "ANOVA and Classical Regression Model",
+    "text": "ANOVA and Classical Regression Model\n\nIn the context of regression we can plot the predicted values called \\(\\hat{y}\\) (“yhat”), versus the residuals\n\n\n\nShow the code\nnewWage &lt;- Wage %&gt;%  mutate(married = ifelse(maritl == \"2. Married\", 1,0),\n                          widowed = ifelse(maritl== \"3. Widowed\", 1,0),\n                          divorced = ifelse(maritl== \"4. Divorced\", 1,0),\n                          separate = ifelse(maritl== \"5. Separated\", 1,0))\n\n\n\nfitModel &lt;- lm(wage ~ married  + widowed + divorced + separate, data = newWage)\n\ny.hat = fitModel$fitted.values\nresid = fitModel$residuals\nplot(y.hat, resid,\n     xlab = \"Predicted wage\",\n     ylab = \"residuals\")\nabline(h=0)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-2",
+    "title": "Correlation and Regression Models",
+    "section": "ANOVA and Classical Regression Model",
+    "text": "ANOVA and Classical Regression Model\n\nIn the previous plot we can see more variability when the predicted wage is high. We can also see differences in variability in the lower income groups.\nWe can plot similar information, but this time let’s use the absolute residuals:\n\n\n\nShow the code\nabs.resid = abs(resid)\nplot(y.hat, abs.resid,\n     xlab = \"Predicted wage\",\n     ylab = \"Absolute residuals\",\n     main = \"Predicted wage by absolute residuals\") \n\n\n\n\nSimilar pattern, there is more variability in the groups where men earn more money. But is this bad for the linear model?\nIt depends. We need to think if this is just part of the data generating process."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-3",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-3",
+    "title": "Correlation and Regression Models",
+    "section": "ANOVA and Classical Regression Model",
+    "text": "ANOVA and Classical Regression Model\n\nWe can check the constant variance assumption in the context of a continuous predictor. This example only applies to Linear Regression, it won’t work with ANOVA because ANOVA only supports nominal predictors (groups).\n\n\n\nShow the code\nrum &lt;- read.csv(\"ruminationClean.csv\")\n\nfitModel &lt;- lm(anx ~ worry, data = rum)\n\ny.hat = fitModel$fitted.values\nresid = fitModel$residuals\nplot(y.hat, resid,\n     xlab = \"Predicted Anxiety\",\n     ylab = \"residuals\")\nabline(h=0)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-4",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#anova-and-classical-regression-model-4",
+    "title": "Correlation and Regression Models",
+    "section": "ANOVA and Classical Regression Model",
+    "text": "ANOVA and Classical Regression Model\n\nGiven that plots are sometimes difficult to interpret in this case, you might conduct another test called the Glejser test (Westfall & Arias, 2020).\nIn this test we regress the absolute residuals on the predicted values. So, we are going to estimate a regression model to predict the residual, weird right?\nThe short story is that we will get an slope, and if this slope is not explained by chance alone we will reject the constant variance assumption.\nLet’s test the constant variance assumption when we estimate anxiety \\(\\sim\\) worry.\n\n\n\nShow the code\n### The target model\nfitAnx &lt;- lm(anx ~ worry, data = rum)\n### get the residuals and predicted values\nyhat &lt;-  fitAnx$fitted.values ## predicted values\nresi &lt;- abs(fitAnx$residuals) ## residuals \n\nsummary(lm(resi ~ yhat))\n\n\n\nCall:\nlm(formula = resi ~ yhat)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-3.4731 -1.1677 -0.3061  0.8137  7.6189 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept)  0.71106    0.35353   2.011   0.0457 *  \nyhat         0.35385    0.08094   4.372 2.01e-05 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 1.777 on 194 degrees of freedom\nMultiple R-squared:  0.08968,   Adjusted R-squared:  0.08499 \nF-statistic: 19.11 on 1 and 194 DF,  p-value: 2.009e-05\n\n\n\nIn this case we cannot hold the assumption of homocedasticity (constant variance), because the estimated slope is not explained by chance alone (\\(p &lt; .001\\))."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: normality assumption",
+    "text": "Classical Regression Model: normality assumption\n\nYou can graphically evaluate if your model holds the assumption of normality. Remember that this assumption states that each conditional distribution \\(p(y|x)\\) is normally distributed.\nThe best option is to plot the residuals of your model versus the quantiles of the normal distribution, this is called a QQ-Plot (quantile to quantile plot)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption-1",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption-1",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: normality assumption",
+    "text": "Classical Regression Model: normality assumption\n\n\nShow the code\n### The target model\nfitAnx &lt;- lm(anx ~ worry, data = rum)\n### get the residuals and predicted values\nres &lt;- abs(fitAnx$residuals) ## residuals \nqqnorm(res)\nqqline(res)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption-2",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#classical-regression-model-normality-assumption-2",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: normality assumption",
+    "text": "Classical Regression Model: normality assumption\n\nThe qqplot can be sometimes difficult to read. We could perform a test called the Shapiro-Wilk test. In this test, the null hypothesis states “There is not deviation from the normal distribution”. A \\(p\\)-value less than .05 means that the model does not hold the assumption of conditional normality.\n\n\n\nShow the code\nshapiro.test(res)\n\n\n\n    Shapiro-Wilk normality test\n\ndata:  res\nW = 0.85861, p-value = 1.612e-12\n\n\n\nThe Shapiro-Wilk test showed a p-value lower than .001, this means that the deviations of the residuals from the normal distribution are not explained by chance.\n\n\n\n\n\n\n\nIMPORTANT!\n\n\nThe regression model and the General Linear Model does not assume that the outcome should come from a normally distributed process. That’s why the normality test is performed on the residuals of the model. The residuals are the product of the conditional relationship \\(p(y|x)\\). Don’t test the normality assumption on your dependent or outcome variable."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce correlation to estimate relationships between two variables.\nTo introduce the notion of covariance.\nTo study scatter plots to visualize correlations."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#todays-aims",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#todays-aims",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce correlation to estimate relationships between two variables.\nTo introduce the notion of covariance.\nTo study scatter plots to visualize correlations."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#what-is-a-correlation-coefficient",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#what-is-a-correlation-coefficient",
+    "title": "Correlation and Regression Models",
+    "section": "What is a correlation coefficient ?",
+    "text": "What is a correlation coefficient ?\n\nA correlation coefficient is a numerical index that reflects the relationship between two variables. The value of this descriptive statistic ranges between -1.00 and +1.00.\nA correlation between two variables is sometimes referred to as a bivariate (for two variables) correlation"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#what-is-a-correlation-coefficient-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#what-is-a-correlation-coefficient-1",
+    "title": "Correlation and Regression Models",
+    "section": "What is a correlation coefficient ?",
+    "text": "What is a correlation coefficient ?\n\nAt the beginning we will study the correlation named Pearson product-moment.\nThere other types of correlation estimation depending on the data generating process of each variable.\nPearson product-moment deals with continuous DATA."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features",
+    "text": "Correlation interpretation and other features\nSalkind & Shaw (2020):"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features (cont.)",
+    "text": "Correlation interpretation and other features (cont.)\nSalkind & Shaw (2020):\n\nA correlation can range in value from \\(-1.00\\) to \\(+1.00\\).\nA correlation equal to 0 means there is no relationship between the two variables.\nThe absolute value of the coefficient reflects the strength of the correlation. So, a correlation of \\(-.70\\) is stronger than a correlation of \\(+.50\\). One frequently made mistake regarding correlation coefficients occurs when students assume that a direct or positive correlation is always stronger (i.e., “better”) than an indirect or negative correlation because of the sign and nothing else.\nA negative correlation is not a “bad” correlation.\nWe will use the letter r to represent correlation. For example \\(r= .06\\)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-interpretation-and-other-features-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation interpretation and other features (cont.)",
+    "text": "Correlation interpretation and other features (cont.)\n\n\\(r_{xy}\\) is the correlation coefficient.\n\\(n\\) is the sample size.\n\\(X\\) represents variable \\(X\\).\n\\(Y\\) represents variable \\(Y\\).\n\\(\\Sigma\\) means summation or addition."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#lets-take-a-look-at-positive-correlations",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#lets-take-a-look-at-positive-correlations",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s take a look at positive correlations",
+    "text": "Let’s take a look at positive correlations"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#lets-take-a-look-at-negative-correlations-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#lets-take-a-look-at-negative-correlations-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Let’s take a look at negative correlations (cont.)",
+    "text": "Let’s take a look at negative correlations (cont.)\n\n\nWarning in rmvnorm(200, mean = c(30, 63, 95), sigma = cor2cov(coR, SDS)): sigma\nis numerically not positive semidefinite"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-matrix",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#correlation-matrix",
+    "title": "Correlation and Regression Models",
+    "section": "Correlation matrix",
+    "text": "Correlation matrix\nSalkind & Shaw (2020):\n\nYou will find a correlation matrix in publications.\nIt is the best way to represent several correlations between different pairs of variables.\n\n\n\nYou will notice that a a correlation matrix has 1.00 on the diagonal and two “triangles” with the same information."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#coefficient-of-determination",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#coefficient-of-determination",
+    "title": "Correlation and Regression Models",
+    "section": "Coefficient of Determination",
+    "text": "Coefficient of Determination\n\nThere is a useful trick, you could square your \\(r\\) and get a measure of correlation in terms of percentage of shared variance:"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#coefficient-of-determination-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#coefficient-of-determination-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Coefficient of Determination (cont.)",
+    "text": "Coefficient of Determination (cont.)\n\nWhat is the coefficient of determination in this case?\nWe just need to estimate \\(r^2= -0.22^2 = -0.05\\). Attention and depression shared only 5% of the variability (variance).\n\n\n\nWarning: Removed 7 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 7 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation",
+    "text": "Scatter plots and direction of correlation\n\nI have shown you several plots, these plots are called scatter plots.\nThese plots are useful to explore visually possible correlations.\nWhen you create this plots, you only need to represent one of the variables in the x-axis and the other variable will be represented in the y-axis.\n\n\n\n\n\n\n\nNote\n\n\n\n\nCan you guess if the next scatter plot corresponds to a positive correlation?"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + \n  geom_point() + \n   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  #geom_jitter(width = 0.25) +\n  ##geom_smooth(method = lm) + \n  xlab(\"Standardized Rumination Score\")+\n  ylab(\"Standardized Worry Score\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 23 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nWe can check some values and see what is happening, like case #78, in the next plot:\n\n\nggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + \n  geom_point() + \n   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  #geom_jitter(width = 0.25) +\n  ##geom_smooth(method = lm) + \n  xlab(\"Standardized Rumination Score\")+\n  ylab(\"Standardized Worry Score\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  gghighlight(worryZ &gt; 2.5, use_direct_label = FALSE)+\n   geom_label(aes(label = ID),\n               hjust = 1, vjust = 1, fill = \"purple\", colour = \"white\", alpha= 0.5)+\n  theme_classic()\n\nWarning: Using one column matrices in `filter()` was deprecated in dplyr 1.1.0.\nℹ Please use one dimensional logical vectors instead.\nℹ The deprecated feature was likely used in the gghighlight package.\n  Please report the issue at\n  &lt;https://github.com/yutannihilation/gghighlight/issues&gt;.\n\n\nWarning: Removed 23 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 2 rows containing missing values (`geom_point()`).\n\n\nWarning: Removed 2 rows containing missing values (`geom_label()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-2",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nMaybe if we add the line of best fit we will see it better:\n\n\nggplot(data = rum_scores, aes(x = rumZ, y = worryZ)) + \n  geom_point() + \n  geom_smooth(method = lm, color = \"red\", se = FALSE)+\n   scale_y_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  scale_x_continuous(breaks = c(-3, -2, -1, 0, 1, 2, 3),limits = c(-3,3)) +\n  #geom_jitter(width = 0.25) +\n  ##geom_smooth(method = lm) + \n  xlab(\"Standardized Rumination Score\")+\n  ylab(\"Standardized Worry Score\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 23 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 23 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-3",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-3",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nCan you spot the direction of this correlation?\nThis data come from a questionnaire that asks to rate how emotional you feel. For instance, it asks: Rate how GREAT you feel where 1 = “not feeling” to 6=“I strongly feel it”.\n\n\npos &lt;- read.csv(\"pos_neg.csv\")\n\n\nggplot(data = pos, aes(x = great , y = down)) + \n  geom_point() + \n  #geom_smooth(method = lm, color = \"red\", se = FALSE)+\n     geom_jitter(width = 0.25) +\n  scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +\n  scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +\n  xlab(\"Great\")+\n  ylab(\"Down\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 1 rows containing missing values (`geom_point()`).\nRemoved 1 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-4",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-4",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nLet’s add again the line of best linear fit:\n\n\nggplot(data = pos, aes(x = great , y = down)) + \n  geom_point() + \n  geom_smooth(method = lm, color = \"red\", se = FALSE)+\n     geom_jitter(width = 0.25) +\n  scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +\n  scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +\n  xlab(\"Great\")+\n  ylab(\"Down\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 1 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 1 rows containing missing values (`geom_point()`).\nRemoved 1 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-5",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-5",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nggplot(data = rum_scores, aes(x = ageMonths , y = rumZ)) + \n  geom_point() + \n  #geom_smooth(method = lm, color = \"red\", se = FALSE)+\n     #geom_jitter(width = 0.25) +\n  #scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +\n  #scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +\n  xlab(\"Age in Months\")+\n  ylab(\"Rumination\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 7 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-6",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#scatter-plots-and-direction-of-correlation-cont.-6",
+    "title": "Correlation and Regression Models",
+    "section": "Scatter plots and direction of correlation (cont.)",
+    "text": "Scatter plots and direction of correlation (cont.)\n\nLet’s add the line of linear fit:\n\n\nggplot(data = rum_scores, aes(x = ageMonths , y = rumZ)) + \n  geom_point() + \n  geom_smooth(method = lm, color = \"red\", se = FALSE)+\n     #geom_jitter(width = 0.25) +\n  #scale_y_continuous(breaks = c(1,2,3,4),limits = c(0,4)) +\n  #scale_x_continuous(breaks = c(1,2,3,4,5),limits = c(0,6)) +\n  xlab(\"Age in Months\")+\n  ylab(\"Rumination\")+\n  ggtitle(\"Is this a positive correlation?\") +\n  theme_classic()\n\nWarning: Removed 7 rows containing non-finite values (`stat_smooth()`).\n\n\nWarning: Removed 7 rows containing missing values (`geom_point()`)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#important-remarks",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#important-remarks",
+    "title": "Correlation and Regression Models",
+    "section": "Important remarks",
+    "text": "Important remarks\n\nWhen the correlation is high, it means there is a large portion of shared variance between \\(x\\) and \\(y\\).\nWhen the correlation is high all the values will converge towards the line of best linear fit.\nWhen the correlation is low, the values will be sparse and far from the line of best fit.\nA flat linear line means that there is not correlation between \\(x\\) or \\(y\\) or the correlation is remarkably low. This means \\(r=0\\) or closer to zero."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#section",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#section",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "In R you can estimate Pearson correlations using the function cor() as showed here:\n\n\n### pos is the name of the object representing my data set\ncor(pos$down, pos$great)\n\n[1] -0.359944\n\n\nIn this estimation, I’m calculating the correlation between the emotion DOWN and the emotion GREAT. The Pearson correlation was \\(r= -0.36\\). Is this a strong correlation?\n\nWe could follow an ugly rule of thumb, but be careful, these are not rules cast in stone (Salkind & Shaw, 2020):"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#jamovi",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#jamovi",
+    "title": "Correlation and Regression Models",
+    "section": "JAMOVI",
+    "text": "JAMOVI"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#jamovi-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#jamovi-1",
+    "title": "Correlation and Regression Models",
+    "section": "JAMOVI",
+    "text": "JAMOVI"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#my-aims-in-this-lecture",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#my-aims-in-this-lecture",
+    "title": "Correlation and Regression Models",
+    "section": "",
+    "text": "To introduce basic notions of the regression model\nTo start thinking about statistical models with more variables (exciting times!)\nTo encourage you to think about more realistic research questions (this might take several sessions!)\n\n\nlibrary(knitr)\nlibrary(kableExtra)\nlibrary(dplyr)\n\n\nAttaching package: 'dplyr'\n\n\nThe following object is masked from 'package:kableExtra':\n\n    group_rows\n\n\nThe following objects are masked from 'package:stats':\n\n    filter, lag\n\n\nThe following objects are masked from 'package:base':\n\n    intersect, setdiff, setequal, union\n\nlibrary(gghighlight)\n\nLoading required package: ggplot2\n\nlibrary(ISLR)\nlibrary(DT)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ?",
+    "text": "What is a regression model ?\n\nYou might be thinking, is regression something related that happened in the past?\nIs related to study something that might happen in the future?\nRegression is a weird word!"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ? (cont.)",
+    "text": "What is a regression model ? (cont.)\nIn this lecture we will follow ideas from Westfall & Arias (2020):\n\nRegression models are used to relate a variable \\(Y\\) with a single variable \\(X\\) or multiple variables \\(X_{1}, X_{2}, ..., X_{k}\\)\nSome questions that you might answer with a regression model:\nHow does a person’s choice of toothpaste (\\(Y\\)) relate to the person’s age (\\(X_{1}\\)) and income (\\(X_{2}\\))?\nHow does a person’s cancer remission status (\\(Y\\)) relate to their chemotherapy regimen (\\(X\\))?\nHow does a person’s self-esteem (\\(Y\\)) relates to time in social media (\\(X_{1}\\)) and number of followers (\\(X_{2}\\))"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model-cont.-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-is-a-regression-model-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "What is a regression model ? (cont.)",
+    "text": "What is a regression model ? (cont.)\n\nA regression model can help you to predict what an unknown \\(Y\\) will be for a given fixed value of \\(X\\). Prediction is more like a “what-if” analysis. It is a prediction about the future but also , you can answer what might have happened in the past.\nA regression model can be represented as:\n\n\\[\\begin{equation}\nY|X = x \\sim p(y|x)\n\\end{equation}\\]\n\nThis means the expression \\(p(y|X=x)\\) is the distribution of potentially observable \\(Y\\) values when \\(X = x\\), and is called the conditional distribution of \\(Y\\), given that \\(X = x\\).\nIn simple words, in regression we are estimating a conditional distribution. I know that we are going fast in this class, but the examples and the exercises in this class my help later.\nWe can also represent the regression model as \\(p(y|x)\\). It is shorter!"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions",
+    "title": "Correlation and Regression Models",
+    "section": "We can talk more about conditional distributions",
+    "text": "We can talk more about conditional distributions\n\nLet’s imagine you need to predict the development of episodic memory in humans. You will need to use age of the individual to predict their memory score. Let’s imagine you want to predict the probability of the memory score (\\(X\\)) when age = 27 years old. But also, you need predict the memory score when individuals are 5 years old.\nThe model \\(p(y|x)\\) does not assume any distribution, it doesn’t assume whether the distribution is discrete or continuous. But we will use a Gaussian process to represent the conditional statements \\(p(y|X=27)\\) and \\(p(y|X = 5)\\)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#we-can-talk-more-about-conditional-distributions-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "We can talk more about conditional distributions (cont.)",
+    "text": "We can talk more about conditional distributions (cont.)\n\nThe model only assumes that there is a distribution of possible values in Nature when age = 27 and age = 5"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#but-soon-we-will-assume-a-distribution",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#but-soon-we-will-assume-a-distribution",
+    "title": "Correlation and Regression Models",
+    "section": "But soon we will assume a distribution",
+    "text": "But soon we will assume a distribution\nWestfall & Arias (2020):\n\nFamilies of conditional distributions\n\n\nWhen p(y|x) are Assumed to be:\nThen you have…\n\n\n\n\nPoisson\nPoisson regression\n\n\nNegative binomial\nNegative binomial regression\n\n\nBernoulli\nLogistic regression\n\n\nNormal\nClassical regression\n\n\nMultinomial\nMultinomial logistic regression\n\n\nBeta\nBeta regression\n\n\nLognormal\nLognormal regression\n\n\n\n\nThis is not a final list of possible regression models, but at least the most popular ones.\nWe won’t have time to study all of them, in the best scenario we will study three different regression models: Poisson regression, Logistic regression, and Classical regression."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#important-to-remember",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#important-to-remember",
+    "title": "Correlation and Regression Models",
+    "section": "Important to remember!",
+    "text": "Important to remember!\nWestfall & Arias (2020):\n\n\n\n\n\n\nImportant\n\n\n\nThe regression model \\(p(y|x)\\) does not come from the data. Rather, the regression model \\(p(y|x)\\) is assumed to produce the data.\n\n\n\nModels produce data, data DOES NOT produce models!"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names",
+    "title": "Correlation and Regression Models",
+    "section": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names",
+    "text": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names\n\nIn regression you’ll find several names for \\(X\\):\n\npredictor variable(s)\ndescriptor variable(s)\nfeature variable(s)\nindependent variable(s)\nexogenous variable(s)\nresponse/predictor\n\nAlso several names for \\(Y\\):\n\nresponse variable\ntarget variable\ncriterion variable\ndependent variable\nendogenous variable"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#variable-x-and-variable-y-beasts-of-many-names-1",
+    "title": "Correlation and Regression Models",
+    "section": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names",
+    "text": "Variable \\(X\\) and Variable \\(Y\\): Beasts of many names\n\nThe DATA in regression models looks like this:"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time",
+    "text": "Example Time\n\nLet’s do preliminary model:\n\nThis is the data named \"Wage\" it comes from the package ISLR. It has information of variables related to wages for a group of males from the Atlantic region of the United States.\n\n\n\nlibrary(ISLR)\nlibrary(DT)\n\ndatatable(Wage)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time (cont.)",
+    "text": "Example Time (cont.)\nLet’s fit a regression model were age will be a predictor of wage. This means \\(X = age\\) and \\(Y= wage\\) :\n\nfitModel &lt;- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 81.70474    2.84624   28.71   &lt;2e-16 ***\nage          0.70728    0.06475   10.92   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: &lt; 2.2e-16\n\n\n\nThe estimate column shows two important rows, the first one is the intercept this is the starting point of a line (more about it later). The second row is an estimate for age this is called the slope. It tells you the rate of change.\nIn this case it is telling us that, for each year of age, these males earned \\(0.70728*1000=\\$707.28\\) more. We’ll talk about it later."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time-cont.-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#example-time-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Example Time (cont.)",
+    "text": "Example Time (cont.)\n\nggplot(data = Wage, aes(x=age, y=wage)) +\n  geom_point()+ geom_smooth(method = \"lm\")+\n  theme_classic()\n\n`geom_smooth()` using formula = 'y ~ x'"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model",
+    "text": "Classical Regression Model\n\nThe model that we just ran is named Classical Regression Model, many people call it linear regression, other people call it Gaussian regression.\nI prefer to call it Classical Regression Model (Westfall & Arias, 2020).\nThis is how the model looks like in many books:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\epsilon\n\\end{equation}\\]\n\nWe will talk about this model very often, but before going straight to bussiness we need to talk about assumptions."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions",
+    "text": "Classical Regression Model: Assumptions\n\nRemember: Models produce data! Then, models are explanations of what happens in Nature.\nThe first assumption is randomness, many books only assume this concept but it doesn’t hurt to make it explicit.\nRandomness in this context means that:\n\n\n\n\n\n\n\nNote\n\n\n\nThe value of \\(Y\\) is variable, coming randomly from a distribution \\(p(y|x)\\) of potentially observable \\(Y\\) values that is specific to the particular values (\\(X = x\\)) of the \\(X\\) variables (Westfall & Arias, 2020).\n\n\n\nIn simple words, we assume \\(Y\\) is variable produced randomly by a conditional distribution \\(p(y|X)\\).\nBut of course, we test if there is a dependency between \\(y\\) and \\(x\\). That’s part of the job."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nRemember when I showed you that \\(p(y|x)\\) is assuming a distribution for each \\(x\\)?\nThere is a conditional mean function in the Classical Regression Model, the expression looks like this:\n\n\\[\\begin{equation}\nf(x) = E(Y|X=x)\n\\end{equation}\\]\nIn this formula \\(E\\) means expectation or expected value. In this case the expected value is the collection of means of the conditional distributions."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-1",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere is an assumption of constant variance (homoscedasticity).\nGiven that we are assuming there are several distributions, each \\(x\\) has a distribution, we also assume that the variance in this conditional distributions is the same or constant.\n\n\n\n\n\n\n\nNote\n\n\n\nThe variances of the conditional distributions \\(p(y|x)\\) are constant (i.e., they are all the same number, \\(\\sigma^2\\)) for all specific values \\(X = x\\) (Westfall & Arias, 2020)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-2",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\nThere an important assumption which is normality.\nThe Classical Regression Model or linear model, assumes all the conditional distributions are produced by a normal distribution or Gaussian distribution.\n\n\n\n\n\n\n\nNote\n\n\n\nThe conditional probability distribution functions \\(p(y|x)\\) are normal distributions (as opposed to Bernoulli, Poisson, or other) for every \\(X = x\\).(Westfall & Arias, 2020)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-3",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-3",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\nWestfall & Arias (2020):"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-4",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#classical-regression-model-assumptions-cont.-4",
+    "title": "Correlation and Regression Models",
+    "section": "Classical Regression Model: Assumptions (cont.)",
+    "text": "Classical Regression Model: Assumptions (cont.)\n\n\n\nThere is also an assumption of linearity.\nThis assumption states that the means of the conditional distributions \\(p(y|x)\\) fall precisely on a straight line of the form \\(\\beta_{0} + \\beta_{1}x\\)\nWhen we assume linearity the parameter \\(\\beta_{O}\\) is the mean of \\(Y\\) when the parameter \\(\\beta_{1} = 0\\).\nTo make \\(\\beta_{1} = 0\\) we would just need to multiply it by zero: \\(\\beta_{0} + \\beta_{1}(0)\\).\nBut, what happens if \\(x\\) does not have zero? Well, in that case, \\(\\beta_{0}\\) would not be exactly the mean of \\(Y\\) , instead \\(\\beta_{0}\\) would be the vertical height or distance from zero.\nIn this case, \\(\\beta_{1}\\) is a parameter that indicates the difference between conditional means.\n\n\nWestfall & Arias (2020):"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#ordinary-least-squares",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#ordinary-least-squares",
+    "title": "Correlation and Regression Models",
+    "section": "Ordinary Least Squares",
+    "text": "Ordinary Least Squares\n\nI have mentioned before in class, the existence of a line of best fit\nThis is the time to study what is this line.\nOne fo the estimation methods in the Classical Regression Model is Ordinary Least Squares estimation.\nIn this method, we draw a line in every possible direction, and calculate the distance of each value from the line. After calculating the distance form the line, we square those distances and add them together. This is what we call a Sum of Squares. The line that produces the lowest Sum of Squares is the line of best fit.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nFigure 1: Field et al. (2012) and Westfall & Arias (2020)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nBy this point we should talk more about our applied example.\nLet’s see what happens when we assume \\(\\beta_{1} = 0\\) by just removing age from the regression model.\n\n\nfitModel &lt;- lm(wage ~ 1, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ 1, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-91.618 -26.320  -6.782  16.977 206.639 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 111.7036     0.7619   146.6   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 41.73 on 2999 degrees of freedom\n\n\n\nThis is what we call the intercept only model, it can also be considered a null model. Remember those words? In this model, we are not modeling any relationship. The regression model returns exactly the mean of wage. If you don’t believe me you can see it:\n\n\nmean(Wage$wage)\n\n[1] 111.7036\n\n\n\nIt is the same value as the intercept!\nLet’s add again age as a predictor:\n\n\nfitModel &lt;- lm(wage ~ age, data = Wage)\nsummary(fitModel)\n\n\nCall:\nlm(formula = wage ~ age, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 81.70474    2.84624   28.71   &lt;2e-16 ***\nage          0.70728    0.06475   10.92   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: &lt; 2.2e-16\n\n\n\nNow the coefficient for the estimated intercept changed. This happened because now the intercept represents the average wage when age is zero. But wait, you cannot have a zero age and get a salary? In this case, the intercept misses the interpretation, then it represents the height from zero."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-1",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\n\nShow the code\nplot(Wage$age, Wage$wage, \n     pch = 16, \n     cex = 0.7, \n     col = \"blue\",\n     xlab = \"Age\",\n     ylab = \"Wage\",\n     main = \"Line of Best Fit Linear Regression\")\nabline(lm(wage ~ age, data = Wage), col = \"red\")"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-2",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nIf we want to interpret the intercept in the way the linear model specifies. We can transform age to get a meaningful zero.\nThere is something call \\(z\\)-values, others call it \\(z\\)-scores. This tranformation is based on the normal distribution.\nLet’s see the formula to transform any continuous distribution into \\(z\\) values:\n\n\\[\\begin{equation}\nz= \\frac{x_{i}-\\bar{x}}{\\sigma}\n\\end{equation}\\]\nWhere: - \\(x_{i}\\) is each observed value. - \\(\\bar{x}\\) is the mean of the observed values. - \\(\\sigma\\) is the standard deviation of the observed values.\n\nAs you can see, what we do is to tranform the distribution, now the observed values will be centered at zero. It means the mean is going to be zero, and the values will be negative and positive values.\nIn R you can transform any continiuos distributin into \\(z\\)-values using the function scale().\n\n\nWage$age_Z &lt;- scale(Wage$age)\nsummary(Wage[, c(\"age\", \"age_Z\")])\n\n      age             age_Z.V1      \n Min.   :18.00   Min.   :-2.115215  \n 1st Qu.:33.75   1st Qu.:-0.750681  \n Median :42.00   Median :-0.035925  \n Mean   :42.41   Mean   : 0.000000  \n 3rd Qu.:51.00   3rd Qu.: 0.743808  \n Max.   :80.00   Max.   : 3.256282  \n\n\n\nIn the example above, you can see that the mean of age is now zero after transforming the distribution. Also, notice that age_Z ranges from -2.12 to 3.26.\nGiven that now we have \\(z\\)-values we can interpret the values in terms of standard deviations from the mean. For instance, we can say that 18 years old is a value located -2.12 standard deviation below the mean (because the value is negative), we can also say that 80 years old is a value located 3.26 standard deviations above the mean (because the value is positive)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-3",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-3",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\nLet’s add age_Z variable to our regression model:\n\n\nShow the code\nfitModel &lt;- lm(wage ~ age_Z, data = Wage)\nsummary(fitModel)\n\n\n\nCall:\nlm(formula = wage ~ age_Z, data = Wage)\n\nResiduals:\n     Min       1Q   Median       3Q      Max \n-100.265  -25.115   -6.063   16.601  205.748 \n\nCoefficients:\n            Estimate Std. Error t value Pr(&gt;|t|)    \n(Intercept) 111.7036     0.7473  149.48   &lt;2e-16 ***\nage_Z         8.1637     0.7474   10.92   &lt;2e-16 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 40.93 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: &lt; 2.2e-16\n\n\n\nDo you see what happened? After transforming age into values with a real zero, the intercept now shows the mean of wage. If you don’t believe it, let’s estimate again the mean of wage:\n\n\nmean(Wage$wage)\n\n[1] 111.7036\n\n\n\nIt is the same number! Then it is true, the intercept is the mean of \\(Y\\) when \\(\\beta_{1}\\) has a real zero among the possible values.\nThen we can interpret the result as: for 1-unit increment in age_Z, wage increases $816.37. Also you can say: for 1-standard deviation increment, wage increases $816.37."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-4",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#wage-data-example-4",
+    "title": "Correlation and Regression Models",
+    "section": "Wage data example",
+    "text": "Wage data example\n\nWe can also transform wage into \\(z\\)-values, this will make the interpretation fully standardized:\n\n\n\nShow the code\noptions(scipen = 999)\n\nWage$wage_Z &lt;- scale(Wage$wage)\n\nsummary(lm(wage_Z ~ age_Z, data = Wage))\n\n\n\nCall:\nlm(formula = wage_Z ~ age_Z, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-2.4028 -0.6019 -0.1453  0.3978  4.9306 \n\nCoefficients:\n                         Estimate            Std. Error t value\n(Intercept) 0.0000000000000001415 0.0179076042933873671    0.00\nage_Z       0.1956372015635888528 0.0179105896404604427   10.92\n                       Pr(&gt;|t|)    \n(Intercept)                   1    \nage_Z       &lt;0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.9808 on 2998 degrees of freedom\nMultiple R-squared:  0.03827,   Adjusted R-squared:  0.03795 \nF-statistic: 119.3 on 1 and 2998 DF,  p-value: &lt; 0.00000000000000022\n\n\n\nAfter standardizing wage we have an intercept that is almost zero, this makes sense because the mean of wage is now zero. It is actually zero, but models are not perfect, they are approximations, and there is randomness, that’s why the intercept is not exactly zero.\nIn this model, we could interpret the estimate of age_Z like it was a correlation, because it is standardized. We can also say: for 1-standard deviation increase in age, wage increases 0.20 standard deviations."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\n\nUp to this point I have talked only about the case where the predictor has a continuous distribution. But, what happens when our predictor has discrete values (e.g gender, academic level)?\nThe Classical Regression Models does not assume anything about the predictors. We can actually use any discrete variable.\nAs always, we can understand what happens with a binary predictor by running an example:\n\n\n\nShow the code\n### I'm going to transform the values, so I can get a variable where 1 = have insurance, 0 = does not have insurance.\n\nWage$dummyHealth &lt;- ifelse(Wage$health_ins == \"2. No\", 0, 1)  ### This is a \"if else statement\".\n\n## Let's test if having an insurance predicts differences in wage\n\nfitWage &lt;- lm(wage ~ dummyHealth, data = Wage)\n\nsummary(fitWage)\n\n\n\nCall:\nlm(formula = wage ~ dummyHealth, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-87.872 -25.355  -5.763  15.919 217.255 \n\nCoefficients:\n            Estimate Std. Error t value            Pr(&gt;|t|)    \n(Intercept)   92.317      1.311   70.41 &lt;0.0000000000000002 ***\ndummyHealth   27.922      1.573   17.75 &lt;0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 39.7 on 2998 degrees of freedom\nMultiple R-squared:  0.09505,   Adjusted R-squared:  0.09475 \nF-statistic: 314.9 on 1 and 2998 DF,  p-value: &lt; 0.00000000000000022\n\n\n\nLet’s digest the information from this example:\n\nThe model that we are fitting looks like this: \\(y_{wage} = \\beta_{0} + \\beta_{1}insuranceYES + \\epsilon\\).\nWhen the variable is discrete there is a reference group. Normally, the reference group is coded as \\(0\\) and the target group is coded as \\(1\\). This is tipically known as dummy coding.\n\nThe above table gave a value for the intercept. That intercept, in simple words; is the mean when \\(dummyHealth = 0\\). The slope in the table is 27.922, that number is in simple terms the mean difference in wage between groups.\nDon’t you believe it? Let’s see it next:"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-1",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\nFirst, let’s see the mean of each group:\n\n\nShow the code\nWage %&gt;% select(dummyHealth, wage) %&gt;% \n  group_by(dummyHealth) %&gt;%\n  summarise(mean = mean(wage),\n            sd = sd(wage)) %&gt;%\n  kbl(caption = \"Wage's mean and standard deviation by insurance status\") %&gt;%\nkable_classic_2(\"hover\", full_width = F,bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\")) %&gt;%\n  footnote(general = \"Not insurance = 0, Insurance = 1\")\n\n\n\nWage's mean and standard deviation by insurance status\n\n\ndummyHealth\nmean\nsd\n\n\n\n\n0\n92.3167\n35.97190\n\n\n1\n120.2383\n41.23698\n\n\n\nNote: \n\n\n\n\n Not insurance = 0, Insurance = 1\n\n\n\n\n\n\n\n\n\n\n\nIn the table you can see that the mean of \\(Insurance = 0\\) is 92.32! Just like we expected!\nNow let’s compute the mean difference:\n\n\n120.2383-92.3167\n\n[1] 27.9216\n\n\n\nAgain! If you check our regression result the slope was 27.922, that’s exactly the mean difference!\nWhat is the message here? When add dummy coded variables in a Classical Regression Model, you are measuring how far is the mean of \\(group = 0\\) from \\(group = 1\\), it simple words: it is a \\(t\\)-test."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#fun-fact-t-test-is-a-linear-regression-extension-2",
+    "title": "Correlation and Regression Models",
+    "section": "Fun fact: \\(t\\)-test is a linear regression extension",
+    "text": "Fun fact: \\(t\\)-test is a linear regression extension\n-Let’s see it with a plot\n\n\nShow the code\nplot(Wage$dummyHealth, Wage$wage,\n     xlab = \"Insurance Status\",\n     ylab = \"Wage\",\n     main = \"A scatterplot of wage by insurance status\",\n     xaxt = \"n\")\n\n# X-axis\naxis(1, at = c(0, 1))\nabline(lm(wage ~ dummyHealth, data = Wage), col = \"red\")"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-if-my-predictor-has-multiple-categories",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#what-if-my-predictor-has-multiple-categories",
+    "title": "Correlation and Regression Models",
+    "section": "What if my predictor has multiple categories?",
+    "text": "What if my predictor has multiple categories?\n\nYou might wonder, what if my predictor has multiple groups?\nWe can also transform multiple categories into several dummy coded variables, that means, the categories will become variables coded with \\(0\\) or \\(1\\).\nWe can answer the following question:\nIs race related to wage? If so, how different is the average wage compared to White Americans?\nIn the data set Wage there is a variable named race. We can check its values:\n\n\n\nShow the code\n Wage %&gt;% count(race) %&gt;%\n   kbl(caption = \"Number of participants in each race group\")%&gt;%\n  kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\nNumber of participants in each race group\n\n\nrace\nn\n\n\n\n\n1. White\n2480\n\n\n2. Black\n293\n\n\n3. Asian\n190\n\n\n4. Other\n37\n\n\n\n\n\n\n\n\nAs you can see, we have 4 groups in this variable, and we need to create dummy variables.\nWe should create \\(k-1\\) new dummy variables, that means if you have 4 categories or groups, such as our case, we should have \\(4-1= 3\\) new dummy variables:\n\n\n\n\nBlack\nAsian\nOther\n\n\n\n\n0\n0\n0\n\n\n1\n1\n1\n\n\n0\n1\n1\n\n\n…\n…\n….\n\n\n\n\nNow we will create 3 new variables named black, asian, and other. Each variable will have only zeros and ones. Where \\(1 = YES\\), and \\(0 = NO\\).\n\n\n\nShow the code\nWage &lt;- Wage %&gt;% mutate(black = ifelse(race == \"2. Black\", 1, 0),\n                        asian = ifelse(race == \"3. Asian\", 1, 0),\n                        other = ifelse(race == \"4. Other\", 1,0))\n\ndatatable(Wage %&gt;% select(race, black,asian,other))\n\n\n\n\n\n\n\nWe are ready to estimate the regression model:\n\n\n\nShow the code\nsummary(lm(wage ~ black + asian + other, data = Wage))\n\n\n\nCall:\nlm(formula = wage ~ black + asian + other, data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-92.478 -24.708  -6.251  17.283 216.741 \n\nCoefficients:\n            Estimate Std. Error t value             Pr(&gt;|t|)    \n(Intercept) 112.5637     0.8333 135.088 &lt; 0.0000000000000002 ***\nblack       -10.9625     2.5634  -4.276            0.0000196 ***\nasian         7.7246     3.1236   2.473              0.01345 *  \nother       -22.5903     6.8726  -3.287              0.00102 ** \n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 41.5 on 2996 degrees of freedom\nMultiple R-squared:  0.0121,    Adjusted R-squared:  0.01112 \nF-statistic: 12.24 on 3 and 2996 DF,  p-value: 0.0000000589\n\n\n\nDid you notice that white is not in the model? That happens because we don’t need it!\nIf you do \\(k-1\\) new dummy variables, you are already estimating the mean of white in the intercept.\nYou don’t believe me, right? Let’s estimate the mean of white:\n\n\n\nShow the code\nWage %&gt;% filter(race == \"1. White\" ) %&gt;%\n  summarise(mean = mean(wage),\n            sd = sd(wage)) %&gt;%\n  kbl(caption = \"Mean of wage when participant is White\") %&gt;%\n  kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\nMean of wage when participant is White\n\n\nmean\nsd\n\n\n\n\n112.5637\n41.73383\n\n\n\n\n\n\n\n\nYes! I was right! The mean of white is exactly our intercept!\nEach slope estimated in our regression model is the mean difference compare to white group.\nLet’s see if it true:\n\n\n\nShow the code\nWage %&gt;% group_by(race) %&gt;% summarise(mean = mean(wage)) %&gt;%\n  mutate(DifferenceVsWhite = c(0, \n                               101.60118    - 112.56367 , \n                               120.28829- 112.56367 , \n                               89.97333 -112.56367)) %&gt;% \n  kbl(caption = \"Mean Differences Compare to White\") %&gt;%\n    kable_classic_2(\"hover\", \n                  full_width = F,\n                  bootstrap_options = c(\"striped\", \"hover\", \"condensed\", \"responsive\"))\n\n\n\nMean Differences Compare to White\n\n\nrace\nmean\nDifferenceVsWhite\n\n\n\n\n1. White\n112.56367\n0.00000\n\n\n2. Black\n101.60118\n-10.96249\n\n\n3. Asian\n120.28829\n7.72462\n\n\n4. Other\n89.97333\n-22.59034\n\n\n\n\n\n\n\n\nGreat! I was right again!"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\nIn the last example we added multiple predictors after creating dummy coded variables.\nWe estimated a model named multiple regression. Many authors prefered the word multiple to explicitly mention that there are more than one predictor.\nWhen you add more predictors, the Classical Regression Model looks like this:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X_{1} + \\beta_{2}X_{2} + ...+ \\epsilon\n\\end{equation}\\]\n\nNow, this model will account for more possible variables related to \\(Y\\)."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-1",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\n\nShow the code\nlibrary(scatterplot3d)\nrum &lt;- read.csv(\"ruminationClean.csv\")\nfit &lt;- lm(depreZ ~ rumZ + worryZ, data = rum)\n\nplot1 &lt;- scatterplot3d(rum[c(\"rumZ\",\"worryZ\", \"depreZ\"  )], \n              angle = 60, \n              pch = 16,\n              color = \"steelblue\",\n              box = FALSE)\nplot1$plane3d(fit)"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-2",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar…",
+    "text": "Multiple predictors went to a bar…\n\nIn the last example, I standardized the my outcome variable depression, I also standardized the predictors rumination and worry.\nI showed you that transforming the predictors and outcome unto \\(z\\)-values will help you to get stadardized estimates.\nThis is not always necessary, may software will do something like this:\n\n\\[\\begin{equation}\nr_{XY} = \\beta_{1}\\Big(\\frac{\\sigma_{X}}{\\sigma_{Y}}\\Big)\n\\end{equation}\\]\n-Let’s see if it works, I’ll run a regression with the raw data and compare versus a regression where I standardized the variables before fitting the model:\n\nsummary(lm(anx ~ worry, data = rum))\n\n\nCall:\nlm(formula = anx ~ worry, data = rum)\n\nResiduals:\n   Min     1Q Median     3Q    Max \n-5.202 -1.791 -0.462  1.538  9.935 \n\nCoefficients:\n            Estimate Std. Error t value          Pr(&gt;|t|)    \n(Intercept)  0.01671    0.56609   0.030             0.976    \nworry        0.14384    0.01871   7.688 0.000000000000729 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 2.856 on 194 degrees of freedom\n  (16 observations deleted due to missingness)\nMultiple R-squared:  0.2335,    Adjusted R-squared:  0.2296 \nF-statistic: 59.11 on 1 and 194 DF,  p-value: 0.0000000000007291\n\n\n\nNext, let’s estimate the standarized slope:\n\n\n0.14384*(sd(rum$worry, na.rm = TRUE)/sd(rum$anx, na.rm = TRUE))\n\n[1] 0.4836261\n\n\n\nLet’s run again the same regression with standardized trasformed variables:\n\n\nsummary(lm(scale(anx) ~ worryZ, data = rum))\n\n\nCall:\nlm(formula = scale(anx) ~ worryZ, data = rum)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-1.6002 -0.5509 -0.1421  0.4731  3.0563 \n\nCoefficients:\n             Estimate Std. Error t value          Pr(&gt;|t|)    \n(Intercept) -0.001125   0.062746  -0.018             0.986    \nworryZ       0.483627   0.062906   7.688 0.000000000000729 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 0.8784 on 194 degrees of freedom\n  (16 observations deleted due to missingness)\nMultiple R-squared:  0.2335,    Adjusted R-squared:  0.2296 \nF-statistic: 59.11 on 1 and 194 DF,  p-value: 0.0000000000007291\n\n\n\nYes, they are the same. The software by default will use the formula\\(\\beta_{1}\\Big(\\frac{\\sigma_{X}}{\\sigma_{Y}}\\Big)\\) to standardize your regression slopes, when you analyze your data using SPSS, SAS, STATA or other statistical packages outside R."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nWe have discussed that the assumption of a straight line explaining all the conditional means is many times not realistic.\nWe can actually fit a model where we give more freedom to the line.\nHow do we do this? We just have to add a polynomial term to the equation. For instance we could fit a quadractic regression model by doing something like this:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\beta_{2}X^2 + \\epsilon\n\\end{equation}\\]\n\nSimply, we square the predictor. Let’s do that with our wage data example:\n\n\nfitSq &lt;- lm(wage ~ age + I(age^2), data = Wage)\nsummary(fitSq)\n\n\nCall:\nlm(formula = wage ~ age + I(age^2), data = Wage)\n\nResiduals:\n    Min      1Q  Median      3Q     Max \n-99.126 -24.309  -5.017  15.494 205.621 \n\nCoefficients:\n              Estimate Std. Error t value            Pr(&gt;|t|)    \n(Intercept) -10.425224   8.189780  -1.273               0.203    \nage           5.294030   0.388689  13.620 &lt;0.0000000000000002 ***\nI(age^2)     -0.053005   0.004432 -11.960 &lt;0.0000000000000002 ***\n---\nSignif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1\n\nResidual standard error: 39.99 on 2997 degrees of freedom\nMultiple R-squared:  0.08209,   Adjusted R-squared:  0.08147 \nF-statistic:   134 on 2 and 2997 DF,  p-value: &lt; 0.00000000000000022"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-1",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-1",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2), \n                  size = 1) + \n  theme_classic()\n\n\nWarning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.\nℹ Please use `linewidth` instead."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-2",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-2",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nWe could fit a model with a cubic term:\n\n\\[\\begin{equation}\nY = \\beta_{0}+ \\beta_{1}X + \\beta_{2}X^2 + \\beta_{2}X^3 + \\epsilon\n\\end{equation}\\]\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2) + I(x^3), \n                  size = 1) + \n  theme_classic()"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-3",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart2.html#multiple-predictors-went-to-a-bar-non-linear-models-3",
+    "title": "Correlation and Regression Models",
+    "section": "Multiple predictors went to a bar: non-linear models",
+    "text": "Multiple predictors went to a bar: non-linear models\n\nLet’s add more flexibility:\n\n\n\nShow the code\nggplot(Wage, aes(age, wage)) +\n      geom_point() +\n      stat_smooth(method = \"lm\", \n                  formula = y ~ x + I(x^2) + I(x^3) + I(x^4)+ I(x^5), \n                  size = 1) + \n  theme_classic()"
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/correlation&regressionPart1.html#references",
+    "href": "advancedMethods/Lecture4/correlation&regressionPart1.html#references",
+    "title": "Correlation and Regression Models",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nSalkind, N. J., & Shaw, L. A. (2020). Statistics for people who (think they) hate statistics: Using r. Sage publications."
+  },
+  {
+    "objectID": "advancedMethods/Lecture4/AssumptionsAndMore.html#references",
+    "href": "advancedMethods/Lecture4/AssumptionsAndMore.html#references",
+    "title": "Correlation and Regression Models",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
   }
 ]
