@@ -2971,7 +2971,7 @@
     "href": "advancedMethods/advancedMethods.html",
     "title": "Advanced Methods",
     "section": "",
-    "text": "Lectures\nLecture 1: Introduction to important concepts in Statistics\nLecture 2: “Probability distributions and random variables”\nLecture 3: Compare means and many more stories\nLecture 4: Correlations\nLecture 4: Linear regression\nLecture 4: General Linear Model\n\n\nR activities\nPractice 1\nPractice 2",
+    "text": "Lectures\nLecture 1: Introduction to important concepts in Statistics\nLecture 2: “Probability distributions and random variables”\nLecture 3: Compare means and many more stories\nLecture 4: Correlations\nLecture 4: Linear regression\nLecture 4: General Linear Model\nLecture 5: Moderation Models\nLecture 6: Model Selection\n\n\nR activities\nPractice 1\nPractice 2",
     "crumbs": [
       "Home",
       "Content",
@@ -4342,5 +4342,250 @@
     "title": "Correlation and Regression Models",
     "section": "References",
     "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using r. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html",
+    "href": "advancedMethods/lecture6/ModelComparasion.html",
+    "title": "Compare multiple models",
+    "section": "",
+    "text": "Introduce the concept of nested model.\nExplain why we need to compare different statistical models?\nExplain the concept of over-fitting a model.\nAnd probably some memes…"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#aims-in-this-lecture",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#aims-in-this-lecture",
+    "title": "Compare multiple models",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nIntroduce the concept of nested model.\nExplain why we need to compare different statistical models?\nExplain the concept of over-fitting a model.\nAnd probably some memes…"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#why-do-we-care-about-model-comparasion",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#why-do-we-care-about-model-comparasion",
+    "title": "Compare multiple models",
+    "section": "Why do we care about model comparasion ?",
+    "text": "Why do we care about model comparasion ?\n\nAs you might remember, probabilistic models are our possible explanations on how DATA is produced in Nature.\nYou may also recall that statistics is concerned with reducing uncertainty, specially because we always have unknown parameters in our models.\nThere could be multiple possible models that potentially explain how DATA is produced. We need to make a decision and select the model that best fit the DATA."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#but-wait-what-is-the-best-fit",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#but-wait-what-is-the-best-fit",
+    "title": "Compare multiple models",
+    "section": "But wait… What is the best fit ?",
+    "text": "But wait… What is the best fit ?\n\n\n\nYou might be asking, what is a “fit” or “best fit” model?\nWhen I’m using the word “fit”, I’m referring to how appropriate is the statistical model to explain the relationships of the outcome with all possible independent variables.\n“Fit” also means that our model is an estimated model on observed data, therefore, our model could be a “good fit model” or “bad fit model”.\nA bad fit model will not reproduce the most reliable estimates, and your standard errors will be large.\n\n\n\n\n\n\n\n\n\n\n\nRemember:\n\n\nAll models are wrong…but some are useful! (Box, 1976)"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#lets-think-about-possible-scenarios",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#lets-think-about-possible-scenarios",
+    "title": "Compare multiple models",
+    "section": "Let’s think about possible scenarios",
+    "text": "Let’s think about possible scenarios\n\nImagine that you have three independent variables that could be related to depression, let’s see the model:\n\n\\[depression \\sim \\beta_{0} + \\beta_{1}selfEsteem_{1} + \\beta_{2}likePancake_{2} + \\beta_{3}rumination_{3} + \\epsilon\\]\n\nIn this model we have three predictors: 1) self-esteem score, 2) Do you like pancakes?, and a rumination score.\nHowever, is this the best model? Would a model without \\(\\beta_{2}likePancake\\) be a better fit model?"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring",
+    "title": "Compare multiple models",
+    "section": "\\(R^2\\) R-Square is not so boring",
+    "text": "\\(R^2\\) R-Square is not so boring\n\nCommonly, we evaluate how good-fitted is hour regression model using the \\(R^2\\):\n\n\\[R^2 = 1- \\frac{SS_{M}}{SS_{t}}\\] Where:\n\\(SS_{M}\\) = Sum of Squares of the Model.\n\\(SS_{T}\\) = Total Sum of Squares.\n\nThis should look similar to the estimation that we did when calculating an ANOVA model. Because, linear regression and ANOVA belong to the same family of the General Linear Model."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-1",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-1",
+    "title": "Compare multiple models",
+    "section": "\\(R^2\\) R-Square is not so boring",
+    "text": "\\(R^2\\) R-Square is not so boring\n\nYou can see that \\(R^2\\) is a proportion of variance explained by the model. Why? Because, we divide the variability of the model by the total variability in the data. The result is an estimate that quantifies the percentage of variance explained by the model. As always, we can study an example:\n\n\\[depression \\sim \\beta_{0} + \\beta_{1}selfEsteem_{1} + \\beta_{2}numberCandies_{2} + \\beta_{3}rumination_{3} + \\epsilon\\]\n\n\nShow the code\n### Simulation time!!\nlibrary(lavaan) ## &lt;--- package to generate the values.\n\n\n\n1\n\nI’m specifying the “population model”.\n\n2\n\nThis line creates the simulated values. I’m generating 100 random values.\n\n3\n\nEstimating the model using function lm().\n\n\n\n\nThis is lavaan 0.6-16\nlavaan is FREE software! Please report any bugs.\n\n\nShow the code\nlibrary(broom)\n\n1mod1 &lt;- 'depression ~ 0.5*selfSteem + 0.8*rumination + 0*numberCandies'\n\n\n\ngenerated &lt;- simulateData(mod1,\n                          meanstructure = TRUE, \n                          sample.nobs = 100,\n2                          seed = 12)\n\n\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination + \n                 numberCandies, \n3               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.37\n0.10\n3.80\n0.00\n\n\nrumination\n0.75\n0.10\n7.81\n0.00\n\n\nnumberCandies\n0.03\n0.09\n0.28\n0.78\n\n\n\n\n\n\n\n\n\nNow let’s check the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\")\n\n\n\n\n\n\n\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n272.60\n285.63\n\n\n\n\n\n\n\n\n\nThe \\(R^2\\) is 0.42, this can be read as: the linear model explains 42 % of the total variance."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-2",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-2",
+    "title": "Compare multiple models",
+    "section": "\\(R^2\\) R-Square is not so boring",
+    "text": "\\(R^2\\) R-Square is not so boring\n\nBut, let’s see what happens when I delete the independent variable number of candies from the model:\n\n\n\nShow the code\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination, \n1               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n1\n\nIn this example number of candies is omitted.\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.38\n0.10\n3.84\n0.00\n\n\nrumination\n0.75\n0.10\n7.84\n0.00\n\n\n\n\n\n\n\n\n\nWe can see again the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\") |&gt;\n  tab_header(title = \"R-squared after deleting number of candies\")\n\n\n\n\n\n\n\n\n\nR-squared after deleting number of candies\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n270.68\n281.10\n\n\n\n\n\n\n\n\n\nSo far, the \\(R^2\\) remained the same. It is an expected result, because number of candies was not explaining a portion of variance beyond chance.\nBut, if we delete a meaningful variable such as rumination the \\(R^2\\) will decrease:\n\n\nfitModel &lt;- lm(depression ~ selfSteem + \n                 numberCandies, \n1               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Estimated values after deleting rumination\")\n\n\n1\n\nRumination was deleted in this model.\n\n\n\n\n\n\n\n\n\n\n\nEstimated values after deleting rumination\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.06\n0.12\n−0.48\n0.63\n\n\nselfSteem\n0.28\n0.12\n2.22\n0.03\n\n\nnumberCandies\n0.00\n0.12\n0.04\n0.97\n\n\n\n\n\n\n\n\n\nWe can check again the \\(R^2\\) after deleting rumination:\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\") |&gt;\n  tab_header(title = \"R-squared after deleting rumination\")\n\n\n\n\n\n\n\n\n\nR-squared after deleting rumination\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.05\n319.76\n330.18\n\n\n\n\n\n\n\n\n\nYou will see that the \\(R^2\\) value decreased after removing rumination. Why? Rumination is an important variable related to depression, by omitting rumination, your model explains less variance and therefore it affects the model fit."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#low-vs.-high-r2",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#low-vs.-high-r2",
+    "title": "Compare multiple models",
+    "section": "Low vs. High \\(R^2\\)",
+    "text": "Low vs. High \\(R^2\\)\n\nHigh R-squaredLow R-squared\n\n\n\nfitModelHigh &lt;- lm(depression ~ selfSteem + rumination +\n                     numberCandies, \n                   data = generated)\n\n\nplot(x=predict(fitModelHigh), y=generated$depression,\n     xlab='Predicted Values',\n     ylab='Actual Values',\n     main='Predicted vs. Actual Values with high R-Squared')\n\nabline(a=0, b=1)\n\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nfitModelLow &lt;- lm(depression ~ selfSteem + \n                    numberCandies, \n                  data = generated)\n\n\nplot(x=predict(fitModelLow), y=generated$depression,\n     xlab='Predicted Values',\n     ylab='Actual Values',\n     main='Predicted vs. Actual Values with low R-Squared')\n\nabline(a=0, b=1)"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-can-be-adjusted",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#r2-can-be-adjusted",
+    "title": "Compare multiple models",
+    "section": "\\(R^2\\) can be adjusted …",
+    "text": "\\(R^2\\) can be adjusted …\n\n\n\\[\nR^2_{adj} = 1 - \\frac{(1-R^2)(n-1)}{n-p-1}\n\\] Where:\n\\(n=\\) Number of observations\n\\(p =\\) Number of predictors in the model"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models",
+    "title": "Compare multiple models",
+    "section": "More options to compare models",
+    "text": "More options to compare models\n\nThe \\(R^2\\) is an estimate that helps to select the best model. You will see that researchers select the model with a larger \\(R^2\\). But this is misleading.\nThe \\(R^2\\) could be inflated by adding non-meaningful predictors. If you throw multiple predictors into a regression you will get a high R-Squared. This is like doing a soup with random ingredients, you will probably get your soup but, is it the best soup?"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models-1",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models-1",
+    "title": "Compare multiple models",
+    "section": "More options to compare models",
+    "text": "More options to compare models\n\nAkaike Information Criterion (AIC) is one of the alternatives to select variables, therefore we can arrive to the best fitted model possible.\nThe AIC was created by Hirotugu Akaike.\n\n-Let’s see how this AIC fit measure looks like:\n\\[AIC = −2(\\text{Log Likelihood}) + 2 \\cdot ( \\text{number of estimated parameters})\\] - In the AIC estimation, you can see something call “Log Likelihood”. This is the information of the model. We haven’t had time to cover what is likelihood or something call “Maximum Likelihood”. But, at this point you are good if you understand “likelihood” as model information.\n\nNumber of estimated parameters is also part of the AIC estimation. This term in the estimation corresponds to how many parameter you are estimating in your model.\n\n\n\n\n\n\n\nTip\n\n\nParameter: unknown information in the model, we collect data to have information to reduce the uncertainty of the parameter or set of parameters.\n\n\n\n\nWe can understand the concept of number of parameters via an example:\n\n\\[depression \\sim \\beta_{0} + \\beta_{1}selfEsteem_{1} + \\beta_{2}numberCandies_{2} + \\beta_{3}rumination_{3} + \\epsilon\\]\n\nA few slides before, we studied the above model. If you count how many Greek letters it has, you will arrive to the total number of parameters:\nWe have three slopes represented by \\(\\beta_{i}\\) (Beta).\nWe also have a residual error represented by \\(\\epsilon\\).\nWe also have an intercept represented by \\(\\beta_{0}\\).\nHence, we have in total 5 parameters!"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models-2",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#more-options-to-compare-models-2",
+    "title": "Compare multiple models",
+    "section": "More options to compare models",
+    "text": "More options to compare models\n\nThe AIC is considered a “penalized” information criterion. It will penalize models with a large number of parameters.\nLower values indicate a better fit model. While large values indicate poorly fitted models.\nAs always, take a look at the following example. I’m estimating a regression model where only the intercept of depression is estimated. In simple words, it is a model that is estimating only the mean of depression.\n\n\n\nShow the code\nruminData &lt;- \n  read.csv(\"https://raw.githubusercontent.com/blackhill86/mm2/main/dataSets/ruminationComplete.csv\", \n                       na.strings = \"99\") |&gt;\n  mutate(ruminTotal = rowMeans(across(CRQS1:CRSQ13)),\n         depreTotal = rowSums(across(CDI1:CDI26), na.rm = TRUE),\n         anxTotal = rowMeans(across(DASS1:DASS7)),\n         negativeBeliefs = rowMeans(across(NBRSdv1:NBRSdv13)),\n         positiveBeliefs = rowMeans(across(PBRSdv1:PBRSdv9)),\n         attention = ATENCION,\n1         activation = ACTIVACION)\n\n#### We could estimate the most simple model.\n#### This is a model that estimates only the intercept.\n\ninterceptOnly &lt;- lm(depreTotal ~ 1, data = ruminData)\n\ngt(tidy(interceptOnly),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Intercept-only model for the Depression score\")\n\n\n\n1\n\nI’m reading in the data, then I’m computing the total score with mutate() function.\n\n\n\n\n\n\n\n\n\n\n\nIntercept-only model for the Depression score\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n10.44\n0.43\n24.12\n0.00\n\n\n\n\n\n\n\n\n\nThe mean of depression according to the intercept-only model is 10.4433962. This model is so simple, because we didn’t add any predictor. This is what it makes this model a null model."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#we-can-compare-the-null-model",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#we-can-compare-the-null-model",
+    "title": "Compare multiple models",
+    "section": "We can compare the null model",
+    "text": "We can compare the null model\n\nNow we are in good position to compare the intercept-only model versus alternative models. And guess what? We will use the AIC to compare alternative models.\nWe can start by adding one predictor, let’s add rumination:\n\n\n\nShow the code\n### Let's add rumination as a predictor.\n\nfitWithRumination &lt;- lm(depreTotal ~ ruminTotal, data = ruminData)\n\ngt(tidy(fitWithRumination),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Rumination as predictor of the Depression score\")\n\n\n\n\n\n\n\n\n\nRumination as predictor of the Depression score\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−2.81\n1.35\n−2.08\n0.04\n\n\nruminTotal\n5.69\n0.56\n10.16\n0.00\n\n\n\n\n\n\n\n\n\nThe result is not surprising, if you pay attention to the slope, we can say: For 1-point increment in rumination, depression increments 5.69 points. But, is this model a good fit for the data compare with the intercept-only model?\n\n\n\nShow the code\ncompareAIC &lt;- data.frame(Model = c(\"Intercept Model\", \n                                   \"Model adding Rumination\"),\n                         AICvalue = c(AIC(interceptOnly)[1], \n                                      AIC(fitWithRumination)[1]))\n\ngt(compareAIC,\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"AIC values for the Intercept Model and the model with Rumination as predictor\")\n\n\n\n\n\n\n\n\n\nAIC values for the Intercept Model and the model with Rumination as predictor\n\n\nModel\nAICvalue\n\n\n\n\nIntercept Model\n1,385.27\n\n\nModel adding Rumination\n1,259.84\n\n\n\n\n\n\n\n\n\nThe AIC value for the intercept model was higher compare to the model with one predictor. We can conclude that adding rumination helps to estimate a model that fits the data better."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models",
+    "title": "Compare multiple models",
+    "section": "Backward, and Forward variable selection: Building models",
+    "text": "Backward, and Forward variable selection: Building models\n\nWe just saw that AIC helps to select the best model, but what happens if you have multiple variables? Is there a way to select the best model faster? The answers is YES!\nYou can start adding one variable at the time, starting from the intercept-only model. In this approach you go “forward” by adding one variable at the time, then you compare each model versus the previous model.\nYou may also estimate a big model with multiple predictors. AIC can help you to trim the model until you keep the best variables related to your outcome. This is called “backwards” selection."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-1",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-1",
+    "title": "Compare multiple models",
+    "section": "Backward, and Forward variable selection: Building models",
+    "text": "Backward, and Forward variable selection: Building models\n\nIn R you can use the function stepAIC() to select the best model with the best set of variables.\nYou can follow a forward selection process or a backwards selection process.\nIn the next example, I’ll start building all models using the forward method. The first model will be a model estimating only the intercept of depression, and at each step, the stepAIC() function will add one variable at the time, while comparing all the possible combination of models.\nI’ll select the best model out of the following predictors:\n\nRumination.\nAnxiety.\nNegative metacognitive beliefs about rumination.\nPositive metacognitive beliefs about rumination.\nActivation.\nAttention.\n\n\n\n\nShow the code\nlibrary(MASS)\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\nShow the code\n### Omit missing values\n\nruminDataNoMissing &lt;- ruminData |&gt;\n  dplyr::select(depreTotal, \n         ruminTotal,\n         anxTotal,\n         negativeBeliefs,\n         positiveBeliefs,\n         attention,\n         activation) |&gt;\n drop_na()\n\ninterceptModel &lt;- lm(depreTotal ~ 1, \n                     data = ruminDataNoMissing )\n\nmodelSelection &lt;- stepAIC(interceptModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"forward\",\n                          trace = FALSE)\n\n\ngt(tidy(modelSelection),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Final model selected by stepAIC\")\n\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\n\n\n\n\n\n\n\nThe final model selected by the stepAIC function was a model where positiveBeliefs is omitted. If we drop this variable we obtain the best set of variables to predict depression.\n\n\ngt(modelSelection$anova,\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n   cols_hide(columns = c(Df, Deviance, \"Resid. Df\", \"Resid. Dev\")) |&gt;\n  tab_header(title = \"AIC values for all models forward method\")\n\n\n\n\n\n\n\n\nAIC values for all models forward method\n\n\nStep\nAIC\n\n\n\n\n\n715.80\n\n\n+ ruminTotal\n646.46\n\n\n+ anxTotal\n626.58\n\n\n+ attention\n624.43\n\n\n+ activation\n620.49\n\n\n+ negativeBeliefs\n619.46\n\n\n\n\n\n\n\n\nIn the table above, you can see all the AIC values estimated after adding one predictor at the time. The first step label is empty because there was not any predictor, it was an intercept-only model."
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-2",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-2",
+    "title": "Compare multiple models",
+    "section": "Backward, and Forward variable selection: Building models",
+    "text": "Backward, and Forward variable selection: Building models\n\nA plot or multiple plots are always useful to interpret the results of the final best model:\n\n\nlibrary(marginaleffects)\nlibrary(patchwork)\n\n\nAttaching package: 'patchwork'\n\n\nThe following object is masked from 'package:MASS':\n\n    area\n\nfinalModel &lt;- lm(depreTotal ~ ruminTotal+\n                   anxTotal+\n                   negativeBeliefs+\n                   attention+\n                   activation, \n                 data = ruminDataNoMissing)\n\n\nrumPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"ruminTotal\"),\n                 points = 0.5)\n\nanxPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"anxTotal\"),\n                 points = 0.5)\n\nnegativePlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"negativeBeliefs\"),\n                 points = 0.5)\n\nattentionPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"attention\"),\n                 points = 0.5)\n\nactivationPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"activation\"),\n                 points = 0.5)\n\n(rumPlot + anxPlot + negativePlot + attentionPlot)  + activationPlot"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-3",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-3",
+    "title": "Compare multiple models",
+    "section": "Backward, and Forward variable selection: Building models",
+    "text": "Backward, and Forward variable selection: Building models\n\nThe backwards procedure, will start with a full model and then, we can reduce the model based on the AIC measure. In the function stepAIC() you have to change direction = \"forward\" for direction = \"backwards\".\nFollowing the previous example we can start with the full model:\n\n\n\nShow the code\nfullModel &lt;- lm(depreTotal ~ ruminTotal+\n                   anxTotal+\n                   negativeBeliefs+\n                   positiveBeliefs+\n                   attention+\n                   activation, \n1                 data = ruminDataNoMissing)\n\n\n\n1\n\nThe full model has all the predictors related to depression. The model will be reduced later.\n\n\n\n\n\nThen, we can compare all the possible models using the function stepAIC():\n\n\n\nShow the code\nbackwardsSelection &lt;- stepAIC(fullModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"backward\",\n                          trace = FALSE)\n\n\n\ngt(tidy(backwardsSelection),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Final model selected by stepAIC backwards method\")\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC backwards method\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "",
+    "text": "At this point you probably remember the notion of linearity in the Classical Regression Model.\nIt is a important assumption in the Classical Regression Model, but it is not a strict assumption. This is a good characteristic of the linear model.\nMultiple phenomena in the universe are not linear such as growing curves, or developing curves in human beings are many times not linear at all.\nFor example, we could check a case where we select the wrong model for the data, like the one showed below:\n\n\n\n\\[Y = \\beta_{0} + \\beta_{1}X_{1} + \\epsilon\\]\n\n#|echo: FALSE\n#|eval: TRUE\n#|fig-height: 3\n#|fig-width: 3\n\n\nlibrary(ggplot2)\n\nset.seed(1236)\n\nX &lt;- rnorm(500, 0, 1)            # simulate from the normal distribution\nY &lt;- X^2 + runif(500, -0.99, 0.20) # make it squared +/- a little bit\n\ndat &lt;- data.frame(independent_x = X,\n                  dependent_y = Y)\n\nggplot(aes(x=independent_x, y= dependent_y), data=dat ) + \n  geom_point(color = \"navy\")+\n  geom_smooth(method = lm, color = \"red\")+\n  ggtitle(\"Wrong linear model\") +\n  theme_classic()+\n    theme(plot.title = element_text(hjust = 0.5))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\\[Y = \\beta_{0} + \\beta_{1}X_{1} + \\beta_{2}X_{1}^2 + \\epsilon\\]\n\n#|echo: FALSE\n#|eval: TRUE\n#|fig-height: 3\n#|fig-width: 3\n\n\nlibrary(ggplot2)\n\nset.seed(1236)\n\nX &lt;- rnorm(500, 0, 1)            # simulate from the normal distribution\nY &lt;- X^2 + runif(500, -0.99, 0.20) # make it squared +/- a little bit\n\ndat &lt;- data.frame(independent_x = X,\n                  dependent_y = Y)\n\nggplot(aes(x=independent_x, y= dependent_y), data=dat ) + \n  geom_point(color = \"navy\")+\n  geom_smooth(color = \"red\")+\n  ggtitle(\"Correct non-linear model\") +\n  theme_classic()+\n    theme(plot.title = element_text(hjust = 0.5))\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#the-world-can-be-non-linear",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#the-world-can-be-non-linear",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "The world can be non-linear",
+    "text": "The world can be non-linear\n\nAt this point you probably remember the notion of linearity in the Classical Regression Model.\nIt is a important assumption in the Classical Regression Model, but it is not a strict assumption. This is a good characteristic of the linear model.\nMultiple phenomena in the universe are not linear such as growing curves, or developing curves in human beings are many times not linear at all.\nFor example, we could check a case where we select the wrong model for the data, like the one showed below:\n\n\n\n\\[Y = \\beta_{0} + \\beta_{1}X_{1} + \\epsilon\\]\n\n#|echo: FALSE\n#|eval: TRUE\n#|fig-height: 3\n#|fig-width: 3\n\n\nlibrary(ggplot2)\n\nset.seed(1236)\n\nX &lt;- rnorm(500, 0, 1)            # simulate from the normal distribution\nY &lt;- X^2 + runif(500, -0.99, 0.20) # make it squared +/- a little bit\n\ndat &lt;- data.frame(independent_x = X,\n                  dependent_y = Y)\n\nggplot(aes(x=independent_x, y= dependent_y), data=dat ) + \n  geom_point(color = \"navy\")+\n  geom_smooth(method = lm, color = \"red\")+\n  ggtitle(\"Wrong linear model\") +\n  theme_classic()+\n    theme(plot.title = element_text(hjust = 0.5))\n\n`geom_smooth()` using formula = 'y ~ x'\n\n\n\n\n\n\n\n\n\n\n\\[Y = \\beta_{0} + \\beta_{1}X_{1} + \\beta_{2}X_{1}^2 + \\epsilon\\]\n\n#|echo: FALSE\n#|eval: TRUE\n#|fig-height: 3\n#|fig-width: 3\n\n\nlibrary(ggplot2)\n\nset.seed(1236)\n\nX &lt;- rnorm(500, 0, 1)            # simulate from the normal distribution\nY &lt;- X^2 + runif(500, -0.99, 0.20) # make it squared +/- a little bit\n\ndat &lt;- data.frame(independent_x = X,\n                  dependent_y = Y)\n\nggplot(aes(x=independent_x, y= dependent_y), data=dat ) + \n  geom_point(color = \"navy\")+\n  geom_smooth(color = \"red\")+\n  ggtitle(\"Correct non-linear model\") +\n  theme_classic()+\n    theme(plot.title = element_text(hjust = 0.5))\n\n`geom_smooth()` using method = 'loess' and formula = 'y ~ x'"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#the-world-can-show-you-interactions",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#the-world-can-show-you-interactions",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "The world can show you interactions",
+    "text": "The world can show you interactions\n\nRegression models are flexible in terms of interactions.\nBut, what is an interaction?: An interaction is what we call a moderated effect. Let’s see how it looks like:\n\n\n\n\n\n\n\nFigure 1: Conceptual model\n\n\n\nYou can see in (Figure 1) there is a third variable Z affecting the relationship between X and Y. When this happens we say that the relationship between X and Y DEPENDS on Z\n\n\n\n\n\n\nFigure 2: Analytical model\n\n\n\nWhen we analyze an interaction we are estimating the product of a multiplication.\nWe can represent the Figure 2 in its mathematical form:\n\\[Y= \\alpha + \\beta_{1}X + \\beta_{2}Z + \\beta_{3}XZ + \\epsilon_{i}\\]"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#how-do-we-know-we-should-add-a-moderation-term",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#how-do-we-know-we-should-add-a-moderation-term",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "How do we know we should add a moderation term?",
+    "text": "How do we know we should add a moderation term?\n\nThe first step is to test if we need a moderation term in our equation1 .\n\n\nWe can test it by estimating a regression model.\n\n\n\nShow the code\nlibrary(haven)\nlibrary(parameters)\n\n#### continuous moderation\n## stress:\n## socsup: social support\n## dep: depression\n## stressXss: interaction stress * social support\n## \n\nstress &lt;- read_sav(\"continuous_moderation_example.sav\")\n\n### Regression model without interaction\nfitModel_1 &lt;- lm(dep ~ socsup + stress, \n                 data=stress)\n\nmodel_parameters(fitModel_1,  \n                 verbose = FALSE)\n\n\nParameter   | Coefficient |   SE |         95% CI | t(138) |      p\n-------------------------------------------------------------------\n(Intercept) |       12.75 | 2.52 | [ 7.77, 17.74] |   5.06 | &lt; .001\nsocsup      |       -0.43 | 0.12 | [-0.66, -0.20] |  -3.71 | &lt; .001\nstress      |        0.13 | 0.03 | [ 0.08,  0.19] |   4.87 | &lt; .001\n\n\nIn the model above, I’m testing if social support and stress are related to depression.\nThe model looks like this:\n\\[Y= \\alpha + \\beta_{1}Stress + \\beta_{2}SocialSupport + e_{i}\\]\n\nGiven that the p-value is smaller than 0.05 (\\(\\le .05\\)) we can conclude that the relationship of depression with social support and stress is not explained by chance alone. But, do we need to add an interaction term? Let’s test if a interaction term is explainable by chance:\n\n\\[Y= \\alpha + \\beta_{1}Stress + \\beta_{2}SocialSupport + \\beta_{3}Stress*SocialSupport + e_{i}\\]\n\n\nShow the code\n### Model with interaction \nfitModel_2 &lt;- lm(dep ~ socsup + stress+ socsup*stress, \n                 data=stress)\n\nmodel_parameters(fitModel_2,  \n                 verbose = FALSE)\n\n\nParameter       | Coefficient |       SE |         95% CI | t(137) |      p\n---------------------------------------------------------------------------\n(Intercept)     |        1.81 |     4.77 | [-7.63, 11.25] |   0.38 | 0.705 \nsocsup          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 \nstress          |        0.48 |     0.13 | [ 0.22,  0.75] |   3.63 | &lt; .001\nsocsup × stress |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 \n\n\n\nThe interaction term is not explained by chance because \\(p= 0.008\\) which is less than \\(0.05\\).\nIf you find that a interaction terms is not explained by chance, you CANNOT interpret the individual terms because they are MODIFIED or DEPEND on Z.\n\nYou may download the data set from here"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#how-do-you-interpret-an-interaction-effect",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#how-do-you-interpret-an-interaction-effect",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "How do you interpret an interaction effect ?",
+    "text": "How do you interpret an interaction effect ?\n\nThe interpretation can be a little bit tricky. First, we need to understand the relation between depression and stress at each level of our moderator.\nIn our example, I selected social support as our moderator:"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#how-do-you-interpret-an-interaction-effect-1",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#how-do-you-interpret-an-interaction-effect-1",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "How do you interpret an interaction effect ?",
+    "text": "How do you interpret an interaction effect ?\n\n\nShow the code\nlibrary(marginaleffects)\nlibrary(ggplot2)\n\n### WE can use the package marginaleffects to\n### generate slopes at different levels of \n### the moderator\n\nplot_predictions(fitModel_2, \n                 condition = list(\"stress\", \n                                  \"socsup\" = \"threenum\" ), \n                 points = 0.5) + \n  theme_classic()+\n  ggtitle(\"Relationship between Stress and Depression at Social Support\")+\n  theme(plot.title = element_text(hjust = 0.5))"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#lets-talk-about-simple-slopes",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#lets-talk-about-simple-slopes",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Let’s talk about simple slopes",
+    "text": "Let’s talk about simple slopes\n\nIt is also named pick-a-point or spotlight analysis.\nIn this approach we can select any value from our moderator, and test the conditional effect of \\(X\\) on \\(Y\\).\nI apologize but you will see some math here:\n\nYou may remember our moderated equation:\n\n\n\\[Y= \\alpha + \\beta_{1}X + \\beta_{2}Z + \\beta_{3}XZ + \\epsilon_{i}\\] - We can reorder terms to get back to this:\n\\[Y= \\alpha + (\\beta_{1} + \\beta_{3}Z)X + \\beta_{2}Z + \\epsilon\\]\n\nThis re-organization will help us to formulate the next function:\n\n\\[f(Z)=\\beta_{1} + \\beta_{3}Z\\] \\(f(Z)\\) is actually our simple slope. By plugging different values of \\(Z\\) into \\(f(Z)\\), we get the slope of the conditional effect of \\(X\\) on \\(Y\\) at the chosen value of \\(Z\\)."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes estimation",
+    "text": "Simple slopes estimation\n\nThe most popular choices to plug in here: \\(f(Z)=\\beta_{1} + \\beta_{3}Z\\), are \\(+1SD\\), the mean, and \\(-1SD\\) corresponding to our moderator \\(Z\\).\nWe don’t have to estimate these simple slopes “by-hand”, we can estimate different regression models after centering at the critical values we want to test."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-centering",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-centering",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes estimation: centering",
+    "text": "Simple slopes estimation: centering\nCentering transforms a variable by subtracting a constant (e.g., the variable’s mean) from each observation of the variable.\n\nThe most familiar form of center is mean centering We can center on any value.\nWhen probing interactions, we can center \\(Z\\) on the interesting values we choose during the pick-a-point approach.\nRunning the model with \\(Z\\) centered on specific values automatically provides tests of the simple slope conditional on those values of \\(Z\\)."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-centering-1",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-centering-1",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes estimation: centering",
+    "text": "Simple slopes estimation: centering\n\nIn our example, the moderator is social support. We can center our moderator at the mean, 1 SD above the mean, and 1 SD below the mean.\n\n-In the following R chunk, I’ll create three new variables in the object stress which contains my data information. The three new variables are:\n\nSocialMean = \\(socialSupport_{i} - mean(SocialSupport)\\)\nSocialHigh = \\(socialSupport_{i} - (mean(SocialSupport)+ sd(SocialSupport))\\)\nSocialLow = \\(socialSupport_{i} - (mean(SocialSupport) - sd(SocialSupport))\\)\n\n\n\nShow the code\nlibrary(tidyverse)\n\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.2     ✔ readr     2.1.4\n✔ forcats   1.0.0     ✔ stringr   1.5.0\n✔ lubridate 1.9.2     ✔ tibble    3.2.1\n✔ purrr     1.0.1     ✔ tidyr     1.3.0\n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors\n\n\nShow the code\nstress &lt;- stress |&gt;\n  mutate(socialMean = socsup - mean(socsup),\n         socialHigh = socsup - (mean(socsup)+sd(socsup)),\n          socialLow = socsup - (mean(socsup)-sd(socsup))\n         )\n\n\n\nLet’s check the new variables with a histogram:\n\n\n\nShow the code\nlibrary(patchwork)\n\natMean &lt;- ggplot(aes(x=socialMean), data = stress) + \n  geom_histogram(colour = 1,\n                 fill = \"white\", \n                 binwidth = 1) +\n  theme_classic() \n\natHigh &lt;- ggplot(aes(x=socialHigh), data = stress) + \n  geom_histogram(colour = 1,\n                 fill = \"white\", \n                 binwidth = 1) +\n  theme_classic() \n\natLow &lt;- ggplot(aes(x=socialLow), data = stress) + \n  geom_histogram(colour = 1,\n                 fill = \"white\", \n                 binwidth = 1) +\n  theme_classic() \n\natMean/(atHigh+atLow)\n\n\n\n\n\n\n\n\n\n\nNow, we can use this three new computed centered variables to estimate our simple slopes at the mean, \\(mean + 1SD\\), and \\(mean - 1SD\\)."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-time",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-estimation-time",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes estimation time",
+    "text": "Simple slopes estimation time\n\nWith our new computed variables we can now test our simple slopes, we will estimate a regression model for each simple slope. This will help us to test if the simple slope is explainable by chance.\nFirst simple slope at the mean:\n\n\n\nShow the code\nmodelAtMean &lt;- lm(dep ~ stress + socialMean + socialMean*stress, \n                 data=stress)\n\nparameters(modelAtMean, \n           verbose = FALSE)\n\n\nParameter           | Coefficient |       SE |         95% CI | t(137) |      p\n-------------------------------------------------------------------------------\n(Intercept)         |        3.99 |     1.02 | [ 1.97,  6.01] |   3.91 | &lt; .001\nstress              |        0.14 |     0.03 | [ 0.09,  0.19] |   5.24 | &lt; .001\nsocialMean          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 \nstress × socialMean |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 \n\n\n\nWhen estimating a model with a centered moderator, the slope of your predictor, in this case stress becomes your estimated simple slope. In our example the simple slope at the mean of social support is: \\(\\beta=0.14\\), and it is not explained by chance because the p-value is less than 0.05.\nSecond simple slope at high values of social support:\n\n\n\nShow the code\nmodelAtHigh &lt;- lm(dep ~ stress + socialHigh + socialHigh*stress, \n                 data=stress)\n\nparameters(modelAtHigh, \n           verbose = FALSE)\n\n\nParameter           | Coefficient |       SE |         95% CI | t(137) |     p\n------------------------------------------------------------------------------\n(Intercept)         |        4.48 |     1.39 | [ 1.74,  7.22] |   3.23 | 0.002\nstress              |        0.06 |     0.04 | [-0.01,  0.14] |   1.73 | 0.086\nsocialHigh          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635\nstress × socialHigh |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008\n\n\n\nIn the case of the simple slope at the high level of social support is \\(\\beta = 0.06\\), and it is explained by chance because the p-value is greater than \\(0.05\\).\nThird simple slope at low values of social support:\n\n\n\nShow the code\nmodelAtLow &lt;- lm(dep ~ stress + socialLow + socialLow*stress, \n                 data=stress)\n\nparameters(modelAtLow, \n           verbose = FALSE)\n\n\nParameter          | Coefficient |       SE |         95% CI | t(137) |      p\n------------------------------------------------------------------------------\n(Intercept)        |        3.50 |     1.51 | [ 0.50,  6.49] |   2.31 | 0.022 \nstress             |        0.22 |     0.04 | [ 0.14,  0.30] |   5.26 | &lt; .001\nsocialLow          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 \nstress × socialLow |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 \n\n\n\nIn the third simple slope, the estimated value is \\(\\beta = 0.22\\), and it is not easy to explain this slope by chance because the p-value is much less than 0.05."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-interpretation-time",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-interpretation-time",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes interpretation time",
+    "text": "Simple slopes interpretation time\n\nIn our model depression is our outcome, stress our predictor, and social support our moderator. After estimating our simple slopes at different levels of our moderator we can conclude the following:\nThe effect of stress on depression is stronger when participants have a low level of social support: \\(\\beta = 0.22\\).\nThe effect of stress on depression gets weaker when participants are close to the mean of social support: \\(\\beta= 0.14\\).\nThe effect of stress on depression gets much weaker when participants have a high score in social support \\(\\beta= 0.11\\). This simple slope is explained by chance. This means that the relationship between depression and stress is explained by chance when participants have a high social support."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-johnson-neyman-technique",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-johnson-neyman-technique",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes: Johnson-Neyman technique",
+    "text": "Simple slopes: Johnson-Neyman technique\n\nYou may be thinking: what happens if I want to test all the possible values of my moderator?\nThe answer is the Johnson-Neyman technique.\nThe Johnson-Neyman technique is an alternative approach that removes the arbitrary choices necessary for pick-a-point.\nJohnson-Neyman finds the region of significance wherein the conditional effect of \\(X\\) on \\(Y\\) is statistically significant.\nInverts the pick-a-point approach to find what cut-points on the moderator correspond to a critical \\(t\\) value for the conditional \\(\\beta_{1}\\).\nThis requires to solve a set of equations that I’m not explaining in this lecture but, the simple message is that Johnson-Neyman’s strategy can give you a region of significance accross values of your moderator."
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-johnson-neyman-technique-in-r",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#simple-slopes-johnson-neyman-technique-in-r",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Simple slopes: Johnson-Neyman technique in R",
+    "text": "Simple slopes: Johnson-Neyman technique in R\n\nThe Johnson-Neyman technique is implemented in the R package rockchalk. There are more packages performing this strategy.\nYou first need to estimate your moderated regression model, this means a model with at least one interaction term.\nSecondly you can estimate the simple slopes, and the region of significance.\n\n\n\nShow the code\nlibrary (rockchalk) ### You need to install this package \n\n\n\nAttaching package: 'rockchalk'\n\n\nThe following object is masked from 'package:dplyr':\n\n    summarize\n\n\nThe following objects are masked from 'package:parameters':\n\n    kurtosis, skewness\n\n\nShow the code\nmodModerated &lt;- lm(dep ~ stress + socsup + socsup*stress, \n                 data=stress)\n\n\nplotOut &lt;- plotSlopes ( model = modModerated  ,\n                        plotx = \"stress\" ,\n                        modx = \"socsup\" ,\n                        plotPoints = TRUE,\n                        modxVals = \"std.dev.\") ### This will plot the simple slopes\n\n\n\n\n\n\n\n\n\n\n### TestSlopes will give you the region where the the relationship of depression with stress \n### is not explained by chance.\ntestOut &lt;-  testSlopes (plotOut)\n\nValues of socsup OUTSIDE this interval:\n      lo       hi \n23.78004 50.43883 \ncause the slope of (b1 + b2*socsup)stress to be statistically significant\n\n\n\nFinally, you can plot the region where the relationship of \\(X\\) and \\(Y\\) is not explained by chance:\n\n\nplot(testOut)"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#acknowledgement",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#acknowledgement",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Acknowledgement",
+    "text": "Acknowledgement\nThis lecture was created based on the materials created by Kyle M. Lang (2016) and Mauricio Garnier-Villareal (2020)\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\nFigure 1: Conceptual model\nFigure 2: Analytical model"
+  },
+  {
+    "objectID": "advancedMethods/lecture5/moderation_polynomials.html#footnotes",
+    "href": "advancedMethods/lecture5/moderation_polynomials.html#footnotes",
+    "title": "Non-linearity in the classical regression model and basics on moderation",
+    "section": "Footnotes",
+    "text": "Footnotes\n\n\nYou may download the data set from here↩︎"
+  },
+  {
+    "objectID": "advancedMethods/lecture6/ModelComparasion.html#references",
+    "href": "advancedMethods/lecture6/ModelComparasion.html#references",
+    "title": "Compare multiple models",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBox, G. E. (1976). Science and statistics. Journal of the American Statistical Association, 71(356), 791–799."
   }
 ]

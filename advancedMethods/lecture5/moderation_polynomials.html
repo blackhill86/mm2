@@ -1,0 +1,1540 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<script src="../../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-html/tabby.min.js"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.js" defer="true"></script>
+<link href="../../site_libs/quarto-contrib/reveal-header-1.0.0/add_header.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
+<script src="../../site_libs/quarto-contrib/glightbox/glightbox.min.js"></script>
+<link href="../../site_libs/quarto-contrib/glightbox/glightbox.min.css" rel="stylesheet">
+<link href="../../site_libs/quarto-contrib/glightbox/lightbox.css" rel="stylesheet"><meta charset="utf-8">
+  <meta name="generator" content="quarto-1.4.553">
+
+  <meta name="author" content="Esteban Montenegro-Montenegro, PhD">
+  <title>{HASO} - Non-linearity in the classical regression model and basics on moderation</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/reveal.css">
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+      vertical-align: middle;
+    }
+    /* CSS for syntax highlighting */
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        background-color: #2a211c;
+        color: #bdae9d;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #bdae9d;  padding-left: 4px; }
+    div.sourceCode
+      { color: #bdae9d; background-color: #2a211c; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span.al { color: #ffff00; } /* Alert */
+    code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
+    code span.at { } /* Attribute */
+    code span.bn { color: #44aa43; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
+    code span.ch { color: #049b0a; } /* Char */
+    code span.cn { } /* Constant */
+    code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
+    code span.do { color: #0066ff; font-style: italic; } /* Documentation */
+    code span.dt { text-decoration: underline; } /* DataType */
+    code span.dv { color: #44aa43; } /* DecVal */
+    code span.er { color: #ffff00; font-weight: bold; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #44aa43; } /* Float */
+    code span.fu { color: #ff9358; font-weight: bold; } /* Function */
+    code span.im { } /* Import */
+    code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
+    code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
+    code span.op { } /* Operator */
+    code span.pp { font-weight: bold; } /* Preprocessor */
+    code span.sc { color: #049b0a; } /* SpecialChar */
+    code span.ss { color: #049b0a; } /* SpecialString */
+    code span.st { color: #049b0a; } /* String */
+    code span.va { } /* Variable */
+    code span.vs { color: #049b0a; } /* VerbatimString */
+    code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
+  </style>
+  <link rel="stylesheet" href="../../site_libs/revealjs/dist/theme/quarto.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UG-RWF2RC4JVK"></script>
+
+  <script type="text/plain" cookie-consent="tracking">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UG-RWF2RC4JVK', { 'anonymize_ip': true});
+  </script>
+  
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+    "notice_banner_type":"headline",
+    "consent_type":"express",
+    "palette":"light",
+    "language":"en",
+    "page_load_consent_levels":["strictly-necessary"],
+    "notice_banner_reject_button_hide":false,
+    "preferences_center_close_button_hide":false,
+    "website_name":""
+    ,
+  "language":"en"
+    });
+  });
+  </script> 
+    
+  <link href="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/font-awesome/css/all.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-chalkboard/style.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/reveal-pointer/pointer.css" rel="stylesheet">
+  <link href="../../site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <style type="text/css">
+
+  .callout {
+    margin-top: 1em;
+    margin-bottom: 1em;  
+    border-radius: .25rem;
+  }
+
+  .callout.callout-style-simple { 
+    padding: 0em 0.5em;
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+    display: flex;
+  }
+
+  .callout.callout-style-default {
+    border-left: solid #acacac .3rem;
+    border-right: solid 1px silver;
+    border-top: solid 1px silver;
+    border-bottom: solid 1px silver;
+  }
+
+  .callout .callout-body-container {
+    flex-grow: 1;
+  }
+
+  .callout.callout-style-simple .callout-body {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-style-default .callout-body {
+    font-size: 0.9rem;
+    font-weight: 400;
+  }
+
+  .callout.callout-titled.callout-style-simple .callout-body {
+    margin-top: 0.2em;
+  }
+
+  .callout:not(.callout-titled) .callout-body {
+      display: flex;
+  }
+
+  .callout:not(.no-icon).callout-titled.callout-style-simple .callout-content {
+    padding-left: 1.6em;
+  }
+
+  .callout.callout-titled .callout-header {
+    padding-top: 0.2em;
+    margin-bottom: -0.2em;
+  }
+
+  .callout.callout-titled .callout-title  p {
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+  }
+    
+  .callout.callout-titled.callout-style-simple .callout-content  p {
+    margin-top: 0;
+  }
+
+  .callout.callout-titled.callout-style-default .callout-content  p {
+    margin-top: 0.7em;
+  }
+
+  .callout.callout-style-simple div.callout-title {
+    border-bottom: none;
+    font-size: .9rem;
+    font-weight: 600;
+    opacity: 75%;
+  }
+
+  .callout.callout-style-default  div.callout-title {
+    border-bottom: none;
+    font-weight: 600;
+    opacity: 85%;
+    font-size: 0.9rem;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-default div.callout-content {
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+  }
+
+  .callout.callout-style-simple .callout-icon::before {
+    height: 1rem;
+    width: 1rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 1rem 1rem;
+  }
+
+  .callout.callout-style-default .callout-icon::before {
+    height: 0.9rem;
+    width: 0.9rem;
+    display: inline-block;
+    content: "";
+    background-repeat: no-repeat;
+    background-size: 0.9rem 0.9rem;
+  }
+
+  .callout-title {
+    display: flex
+  }
+    
+  .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  .callout.no-icon::before {
+    display: none !important;
+  }
+
+  .callout.callout-titled .callout-body > .callout-content > :last-child {
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
+  }
+
+  .callout.callout-titled .callout-icon::before {
+    margin-top: .5rem;
+    padding-right: .5rem;
+  }
+
+  .callout:not(.callout-titled) .callout-icon::before {
+    margin-top: 1rem;
+    padding-right: .5rem;
+  }
+
+  /* Callout Types */
+
+  div.callout-note {
+    border-left-color: #4582ec !important;
+  }
+
+  div.callout-note .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEU0lEQVRYCcVXTWhcVRQ+586kSUMMxkyaElstCto2SIhitS5Ek8xUKV2poatCcVHtUlFQk8mbaaziwpWgglJwVaquitBOfhQXFlqlzSJpFSpIYyXNjBNiTCck7x2/8/LeNDOZxDuEkgOXe++553zfefee+/OYLOXFk3+1LLrRdiO81yNqZ6K9cG0P3MeFaMIQjXssE8Z1JzLO9ls20MBZX7oG8w9GxB0goaPrW5aNMp1yOZIa7Wv6o2ykpLtmAPs/vrG14Z+6d4jpbSKuhdcSyq9wGMPXjonwmESXrriLzFGOdDBLB8Y6MNYBu0dRokSygMA/mrun8MGFN3behm6VVAwg4WR3i6FvYK1T7MHo9BK7ydH+1uurECoouk5MPRyVSBrBHMYwVobG2aOXM07sWrn5qgB60rc6mcwIDJtQrnrEr44kmy+UO9r0u9O5/YbkS9juQckLed3DyW2XV/qWBBB3ptvI8EUY3I9p/67OW+g967TNr3Sotn3IuVlfMLVnsBwH4fsnebJvyGm5GeIUA3jljERmrv49SizPYuq+z7c2H/jlGC+Ghhupn/hcapqmcudB9jwJ/3jvnvu6vu5lVzF1fXyZuZZ7U8nRmVzytvT+H3kilYvH09mLWrQdwFSsFEsxFVs5fK7A0g8gMZjbif4ACpKbjv7gNGaD8bUrlk8x+KRflttr22JEMRUbTUwwDQScyzPgedQHZT0xnx7ujw2jfVfExwYHwOsDTjLdJ2ebmeQIlJ7neo41s/DrsL3kl+W2lWvAga0tR3zueGr6GL78M3ifH0rGXrBC2aAR8uYcIA5gwV8zIE8onoh8u0Fca/ciF7j1uOzEnqcIm59sEXoGc0+z6+H45V1CvAvHcD7THztu669cnp+L0okAeIc6zjbM/24LgGM1gZk7jnRu1aQWoU9sfUOuhrmtaPIO3YY1KLLWZaEO5TKUbMY5zx8W9UJ6elpLwKXbsaZ4EFl7B4bMtDv0iRipKoDQT2sNQI9b1utXFdYisi+wzZ/ri/1m7QfDgEuvgUUEIJPq3DhX/5DWNqIXDOweC2wvIR90Oq3lDpdMIgD2r0dXvGdsEW5H6x6HLRJYU7C69VefO1x8Gde1ZFSJLfWS1jbCnhtOPxmpfv2LXOA2Xk2tvnwKKPFuZ/oRmwBwqRQDcKNeVQkYcOjtWVBuM/JuYw5b6isojIkYxyYAFn5K7ZBF10fea52y8QltAg6jnMqNHFBmGkQ1j+U43HMi2xMar1Nv0zGsf1s8nUsmUtPOOrbFIR8bHFDMB5zL13Gmr/kGlCkUzedTzzmzsaJXhYawnA3UmARpiYj5ooJZiUoxFRtK3X6pgNPv+IZVPcnwbOl6f+aBaO1CNvPW9n9LmCp01nuSaTRF2YxHqZ8DYQT6WsXT+RD6eUztwYLZ8rM+rcPxamv1VQzFUkzFXvkiVrySGQgJNvXHJAxiU3/NwiC03rSf05VBaPtu/Z7/B8Yn/w7eguloAAAAAElFTkSuQmCC');
+  }
+
+  div.callout-note.callout-style-default .callout-title {
+    background-color: #dae6fb
+  }
+
+  div.callout-important {
+    border-left-color: #d9534f !important;
+  }
+
+  div.callout-important .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAEKklEQVRYCcVXTWhcVRS+575MJym48A+hSRFr00ySRQhURRfd2HYjk2SSTokuBCkU2o0LoSKKraKIBTcuFCoidGFD08nkBzdREbpQ1EDNIv8qSGMFUboImMSZd4/f9zJv8ibJMC8xJQfO3HPPPef7zrvvvnvviIkpC9nsw0UttFunbUhpFzFtarSd6WJkStVMw5xyVqYTvkwfzuf/5FgtkVoB0729j1rjXwThS7Vio+Mo6DNnvLfahoZ+i/o32lULuJ3NNiz7q6+pyAUkJaFF6JwaM2lUJlV0MlnQn5aTRbEu0SEqHUa0A4AdiGuB1kFXRfVyg5d87+Dg4DL6m2TLAub60ilj7A1Ec4odSAc8X95sHh7+ZRPCFo6Fnp7HfU/fBng/hi10CjCnWnJjsxvDNxWw0NfV6Rv5GgP3I3jGWXumdTD/3cbEOP2ZbOZp69yniG3FQ9z1jD7bnBu9Fc2tKGC2q+uAJOQHBDRiZX1x36o7fWBs7J9ownbtO+n0/qWkvW7UPIfc37WgT6ZGR++EOJyeQDSb9UB+DZ1G6DdLDzyS+b/kBCYGsYgJbSQHuThGKRcw5xdeQf8YdNHsc6ePXrlSYMBuSIAFTGAtQo+VuALo4BX83N190NWZWbynBjhOHsmNfFWLeL6v+ynsA58zDvvAC8j5PkbOcXCMg2PZFk3q8MjI7WAG/Dp9AwP7jdGBOOQkAvlFUB+irtm16I1Zw9YBcpGTGXYmk3kQIC/Cds55l+iMI3jqhjAuaoe+am2Jw5GT3Nbz3CkE12NavmzN5+erJW7046n/CH1RO/RVa8lBLozXk9uqykkGAyRXLWlLv5jyp4RFsG5vGVzpDLnIjTWgnRy2Rr+tDKvRc7Y8AyZq10jj8DqXdnIRNtFZb+t/ZRtXcDiVnzpqx8mPcDWxgARUqx0W1QB9MeUZiNrV4qP+Ehc+BpNgATsTX8ozYKL2NtFYAHc84fG7ndxUPr+AR/iQSns7uSUufAymwDOb2+NjK27lEFocm/EE2WpyIy/Hi66MWuMKJn8RvxIcj87IM5Vh9663ziW36kR0HNenXuxmfaD8JC7tfKbrhFr7LiZCrMjrzTeGx+PmkosrkNzW94ObzwocJ7A1HokLolY+AvkTiD/q1H0cN48c5EL8Crkttsa/AXQVDmutfyku0E7jShx49XqV3MFK8IryDhYVbj7Sj2P2eBxwcXoe8T8idsKKPRcnZw1b+slFTubwUwhktrfnAt7J++jwQtLZcm3sr9LQrjRzz6cfMv9aLvgmnAGvpoaGLxM4mAEaLV7iAzQ3oU0IvD5x9ix3yF2RAAuYAOO2f7PEFWCXZ4C9Pb2UsgDeVnFSpbFK7/IWu7TPTvBqzbGdCHOJQSxiEjt6IyZmxQyEJHv6xyQsYk//moVFsN2zP6fRImjfq7/n/wFDguUQFNEwugAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-important.callout-style-default .callout-title {
+    background-color: #f7dddc
+  }
+
+  div.callout-warning {
+    border-left-color: #f0ad4e !important;
+  }
+
+  div.callout-warning .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAAETklEQVRYCeVWW2gcVRg+58yaTUnizqbipZeX4uWhBEniBaoUX1Ioze52t7sRq6APio9V9MEaoWlVsFasRq0gltaAPuxms8lu0gcviE/FFOstVbSIxgcv6SU7EZqmdc7v9+9mJtNks51NTUH84ed889/PP+cmxP+d5FIbMJmNbpREu4WUkiTtCicKny0l1pIKmBzovF2S+hIJHX8iEu3hZJ5lNZGqyRrGSIQpq15AzF28jgpeY6yk6GVdrfFqdrD6Iw+QlB8g0YS2g7dyQmXM/IDhBhT0UCiRf59lfqmmDvzRt6kByV/m4JjtzuaujMUM2c5Z2d6JdKrRb3K2q6mA+oYVz8JnDdKPmmNthzkAk/lN63sYPgevrguc72aZX/L9C6x09GYyxBgCX4NlvyGUHOKELlm5rXeR1kchuChJt4SSwyddZRXgvwMGvYo4QSlk3/zkHD8UHxwVJA6zjZZqP8v8kK8OWLnIZtLyCAJagYC4rTGW/9Pqj92N/c+LUaAj27movwbi19tk/whRCIE7Q9vyI6yvRpftAKVTdUjOW40X3h5OXsKCdmFcx0xlLJoSuQngnrJe7Kcjm4OMq9FlC7CMmScQANuNvjfP3PjGXDBaUQmbp296S5L4DrpbrHN1T87ZVEZVCzg1FF0Ft+dKrlLukI+/c9ENo+TvlTDbYFvuKPtQ9+l052rXrgKoWkDAFnvh0wTOmYn8R5f4k/jN/fZiCM1tQx9jQQ4ANhqG4hiL0qIFTGViG9DKB7GYzgubnpofgYRwO+DFjh0Zin2m4b/97EDkXkc+f6xYAPX0KK2I/7fUQuwzuwo/L3AkcjugPNixC8cHf0FyPjWlItmLxWw4Ou9YsQCr5fijMGoD/zpdRy95HRysyXA74MWOnscpO4j2y3HAVisw85hX5+AFBRSHt4ShfLFkIMXTqyKFc46xdzQM6XbAi702a7sy04J0+feReMFKp5q9esYLCqAZYw/k14E/xcLLsFElaornTuJB0svMuJINy8xkIYuL+xPAlWRceH6+HX7THJ0djLUom46zREu7tTkxwmf/FdOZ/sh6Q8qvEAiHpm4PJ4a/doJe0gH1t+aHRgCzOvBvJedEK5OFE5jpm4AGP2a8Dxe3gGJ/pAutug9Gp6he92CsSsWBaEcxGx0FHytmIpuqGkOpldqNYQK8cSoXvd+xLxXADw0kf6UkJNFtdo5MOgaLjiQOQHcn+A6h5NuL2s0qsC2LOM75PcF3yr5STuBSAcGG+meA14K/CI21HcS4LBT6tv0QAh8Dr5l93AhZzG5ZJ4VxAqdZUEl9z7WJ4aN+svMvwHHL21UKTd1mqvChH7/Za5xzXBBKrUcB0TQ+Ulgkfbi/H/YT5EptrGzsEK7tR1B7ln9BBwckYfMiuSqklSznIuoIIOM42MQO+QnduCoFCI0bpkzjCjddHPN/F+2Yu+sd9bKNpVwHhbS3LluK/0zgfwD0xYI5dXuzlQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-warning.callout-style-default .callout-title {
+    background-color: #fcefdc
+  }
+
+  div.callout-tip {
+    border-left-color: #02b875 !important;
+  }
+
+  div.callout-tip .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAADr0lEQVRYCe1XTWgTQRj9ZjZV8a9SPIkKgj8I1bMHsUWrqYLVg4Ue6v9BwZOxSYsIerFao7UiUryIqJcqgtpimhbBXoSCVxUFe9CTiogUrUp2Pt+3aUI2u5vdNh4dmMzOzHvvezuz8xNFM0mjnbXaNu1MvFWRXkXEyE6aYOYJpdW4IXuA4r0fo8qqSMDBU0v1HJUgVieAXxzCsdE/YJTdFcVIZQNMyhruOMJKXYFoLfIfIvVIMWdsrd+Rpd86ZmyzzjJmLStqRn0v8lzkb4rVIXvnpScOJuAn2ACC65FkPzEdEy4TPWRLJ2h7z4cArXzzaOdKlbOvKKX25Wl00jSnrwVxAg3o4dRxhO13RBSdNvH0xSARv3adTXbBdTf64IWO2vH0LT+cv4GR1DJt+DUItaQogeBX/chhbTBxEiZ6gftlDNXTrvT7co4ub5A6gp9HIcHvzTa46OS5fBeP87Qm0fQkr4FsYgVQ7Qg+ZayaDg9jhg1GkWj8RG6lkeSacrrHgDaxdoBiZPg+NXV/KifMuB6//JmYH4CntVEHy/keA6x4h4CU5oFy8GzrBS18cLJMXcljAKB6INjWsRcuZBWVaS3GDrqB7rdapVIeA+isQ57Eev9eCqzqOa81CY05VLd6SamW2wA2H3SiTbnbSxmzfp7WtKZkqy4mdyAlGx7ennghYf8voqp9cLSgKdqNfa6RdRsAAkPwRuJZNbpByn+RrJi1RXTwdi8RQF6ymDwGMAtZ6TVE+4uoKh+MYkcLsT0Hk8eAienbiGdjJHZTpmNjlbFJNKDVAp2fJlYju6IreQxQ08UJDNYdoLSl6AadO+fFuCQqVMB1NJwPm69T04Wv5WhfcWyfXQB+wXRs1pt+nCknRa0LVzSA/2B+a9+zQJadb7IyyV24YAxKp2Jqs3emZTuNnKxsah+uabKbMk7CbTgJx/zIgQYErIeTKRQ9yD9wxVof5YolPHqaWo7TD6tJlh7jQnK5z2n3+fGdggIOx2kaa2YI9QWarc5Ce1ipNWMKeSG4DysFF52KBmTNMmn5HqCFkwy34rDg05gDwgH3bBi+sgFhN/e8QvRn8kbamCOhgrZ9GJhFDgfcMHzFb6BAtjKpFhzTjwv1KCVuxHvCbsSiEz4CANnj84cwHdFXAbAOJ4LTSAawGWFn5tDhLMYz6nWeU2wJfIhmIJBefcd/A5FWQWGgrWzyORZ3Q6HuV+Jf0Bj+BTX69fm1zWgK7By1YTXchFDORywnfQ7GpzOo6S+qECrsx2ifVQAAAABJRU5ErkJggg==');
+  }
+
+  div.callout-tip.callout-style-default .callout-title {
+    background-color: #ccf1e3
+  }
+
+  div.callout-caution {
+    border-left-color: #fd7e14 !important;
+  }
+
+  div.callout-caution .callout-icon::before {
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAAXNSR0IArs4c6QAAAERlWElmTU0AKgAAAAgAAYdpAAQAAAABAAAAGgAAAAAAA6ABAAMAAAABAAEAAKACAAQAAAABAAAAIKADAAQAAAABAAAAIAAAAACshmLzAAACV0lEQVRYCdVWzWoUQRCuqp2ICBLJXgITZL1EfQDBW/bkzUMUD7klD+ATSHBEfAIfQO+iXsWDxJsHL96EHAwhgzlkg8nBg25XWb0zIb0zs9muYYWkoKeru+vn664fBqElyZNuyh167NXJ8Ut8McjbmEraKHkd7uAnAFku+VWdb3reSmRV8PKSLfZ0Gjn3a6Xlcq9YGb6tADjn+lUfTXtVmaZ1KwBIvFI11rRXlWlatwIAAv2asaa9mlB9wwygiDX26qaw1yYPzFXg2N1GgG0FMF8Oj+VIx7E/03lHx8UhvYyNZLN7BwSPgekXXLribw7w5/c8EF+DBK5idvDVYtEEwMeYefjjLAdEyQ3M9nfOkgnPTEkYU+sxMq0BxNR6jExrAI31H1rzvLEfRIdgcv1XEdj6QTQAS2wtstEALLG1yEZ3QhH6oDX7ExBSFEkFINXH98NTrme5IOaaA7kIfiu2L8A3qhH9zRbukdCqdsA98TdElyeMe5BI8Rs2xHRIsoTSSVFfCFCWGPn9XHb4cdobRIWABNf0add9jakDjQJpJ1bTXOJXnnRXHRf+dNL1ZV1MBRCXhMbaHqGI1JkKIL7+i8uffuP6wVQAzO7+qVEbF6NbS0LJureYcWXUUhH66nLR5rYmva+2tjRFtojkM2aD76HEGAD3tPtKM309FJg5j/K682ywcWJ3PASCcycH/22u+Bh7Aa0ehM2Fu4z0SAE81HF9RkB21c5bEn4Dzw+/qNOyXr3DCTQDMBOdhi4nAgiFDGCinIa2owCEChUwD8qzd03PG+qdW/4fDzjUMcE1ZpIAAAAASUVORK5CYII=');
+  }
+
+  div.callout-caution.callout-style-default .callout-title {
+    background-color: #ffe5d0
+  }
+
+  </style>
+  <style type="text/css">
+    .reveal div.sourceCode {
+      margin: 0;
+      overflow: auto;
+    }
+    .reveal div.hanging-indent {
+      margin-left: 1em;
+      text-indent: -1em;
+    }
+    .reveal .slide:not(.center) {
+      height: 100%;
+    }
+    .reveal .slide.scrollable {
+      overflow-y: auto;
+    }
+    .reveal .footnotes {
+      height: 100%;
+      overflow-y: auto;
+    }
+    .reveal .slide .absolute {
+      position: absolute;
+      display: block;
+    }
+    .reveal .footnotes ol {
+      counter-reset: ol;
+      list-style-type: none; 
+      margin-left: 0;
+    }
+    .reveal .footnotes ol li:before {
+      counter-increment: ol;
+      content: counter(ol) ". "; 
+    }
+    .reveal .footnotes ol li > p:first-child {
+      display: inline-block;
+    }
+    .reveal .slide ul,
+    .reveal .slide ol {
+      margin-bottom: 0.5em;
+    }
+    .reveal .slide ul li,
+    .reveal .slide ol li {
+      margin-top: 0.4em;
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide ul[role="tablist"] li {
+      margin-bottom: 0;
+    }
+    .reveal .slide ul li > *:first-child,
+    .reveal .slide ol li > *:first-child {
+      margin-block-start: 0;
+    }
+    .reveal .slide ul li > *:last-child,
+    .reveal .slide ol li > *:last-child {
+      margin-block-end: 0;
+    }
+    .reveal .slide .columns:nth-child(3) {
+      margin-block-start: 0.8em;
+    }
+    .reveal blockquote {
+      box-shadow: none;
+    }
+    .reveal .tippy-content>* {
+      margin-top: 0.2em;
+      margin-bottom: 0.7em;
+    }
+    .reveal .tippy-content>*:last-child {
+      margin-bottom: 0.2em;
+    }
+    .reveal .slide > img.stretch.quarto-figure-center,
+    .reveal .slide > img.r-stretch.quarto-figure-center {
+      display: block;
+      margin-left: auto;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-left,
+    .reveal .slide > img.r-stretch.quarto-figure-left  {
+      display: block;
+      margin-left: 0;
+      margin-right: auto; 
+    }
+    .reveal .slide > img.stretch.quarto-figure-right,
+    .reveal .slide > img.r-stretch.quarto-figure-right  {
+      display: block;
+      margin-left: auto;
+      margin-right: 0; 
+    }
+  </style>
+</head>
+<body class="quarto-light">
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide" data-background-image="stan_state_screen_5.png" data-background-opacity="0.3" class="quarto-title-block center">
+  <h1 class="title">Non-linearity in the classical regression model and basics on moderation</h1>
+
+<div class="quarto-title-authors">
+<div class="quarto-title-author">
+<div class="quarto-title-author-name">
+Esteban Montenegro-Montenegro, PhD 
+</div>
+        <p class="quarto-title-affiliation">
+            Department of Psychology and Child Development
+          </p>
+    </div>
+</div>
+
+</section>
+<section id="the-world-can-be-non-linear" class="slide level2 smaller scrollable">
+<h2>The world can be non-linear</h2>
+<ul>
+<li><p>At this point you probably remember the notion of linearity in the Classical Regression Model.</p></li>
+<li><p>It is a important assumption in the Classical Regression Model, but it is not a strict assumption. This is a good characteristic of the linear model.</p></li>
+<li><p>Multiple phenomena in the universe are not linear such as growing curves, or developing curves in human beings are many times not linear at all.</p></li>
+<li><p>For example, we could check a case where we select the wrong model for the data, like the one showed below:</p></li>
+</ul>
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><span class="math display">\[Y = \beta_{0} + \beta_{1}X_{1} + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="co">#|echo: FALSE</span></span>
+<span id="cb1-2"><a></a><span class="co">#|eval: TRUE</span></span>
+<span id="cb1-3"><a></a><span class="co">#|fig-height: 3</span></span>
+<span id="cb1-4"><a></a><span class="co">#|fig-width: 3</span></span>
+<span id="cb1-5"><a></a></span>
+<span id="cb1-6"><a></a></span>
+<span id="cb1-7"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb1-8"><a></a></span>
+<span id="cb1-9"><a></a><span class="fu">set.seed</span>(<span class="dv">1236</span>)</span>
+<span id="cb1-10"><a></a></span>
+<span id="cb1-11"><a></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="dv">0</span>, <span class="dv">1</span>)            <span class="co"># simulate from the normal distribution</span></span>
+<span id="cb1-12"><a></a>Y <span class="ot">&lt;-</span> X<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">runif</span>(<span class="dv">500</span>, <span class="sc">-</span><span class="fl">0.99</span>, <span class="fl">0.20</span>) <span class="co"># make it squared +/- a little bit</span></span>
+<span id="cb1-13"><a></a></span>
+<span id="cb1-14"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">independent_x =</span> X,</span>
+<span id="cb1-15"><a></a>                  <span class="at">dependent_y =</span> Y)</span>
+<span id="cb1-16"><a></a></span>
+<span id="cb1-17"><a></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>independent_x, <span class="at">y=</span> dependent_y), <span class="at">data=</span>dat ) <span class="sc">+</span> </span>
+<span id="cb1-18"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"navy"</span>)<span class="sc">+</span></span>
+<span id="cb1-19"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> lm, <span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb1-20"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Wrong linear model"</span>) <span class="sc">+</span></span>
+<span id="cb1-21"><a></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb1-22"><a></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-1-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-1"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-1-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div><div class="column" style="width:50%;">
+<p><span class="math display">\[Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{1}^2 + \epsilon\]</span></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="co">#|echo: FALSE</span></span>
+<span id="cb3-2"><a></a><span class="co">#|eval: TRUE</span></span>
+<span id="cb3-3"><a></a><span class="co">#|fig-height: 3</span></span>
+<span id="cb3-4"><a></a><span class="co">#|fig-width: 3</span></span>
+<span id="cb3-5"><a></a></span>
+<span id="cb3-6"><a></a></span>
+<span id="cb3-7"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb3-8"><a></a></span>
+<span id="cb3-9"><a></a><span class="fu">set.seed</span>(<span class="dv">1236</span>)</span>
+<span id="cb3-10"><a></a></span>
+<span id="cb3-11"><a></a>X <span class="ot">&lt;-</span> <span class="fu">rnorm</span>(<span class="dv">500</span>, <span class="dv">0</span>, <span class="dv">1</span>)            <span class="co"># simulate from the normal distribution</span></span>
+<span id="cb3-12"><a></a>Y <span class="ot">&lt;-</span> X<span class="sc">^</span><span class="dv">2</span> <span class="sc">+</span> <span class="fu">runif</span>(<span class="dv">500</span>, <span class="sc">-</span><span class="fl">0.99</span>, <span class="fl">0.20</span>) <span class="co"># make it squared +/- a little bit</span></span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a>dat <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">independent_x =</span> X,</span>
+<span id="cb3-15"><a></a>                  <span class="at">dependent_y =</span> Y)</span>
+<span id="cb3-16"><a></a></span>
+<span id="cb3-17"><a></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>independent_x, <span class="at">y=</span> dependent_y), <span class="at">data=</span>dat ) <span class="sc">+</span> </span>
+<span id="cb3-18"><a></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"navy"</span>)<span class="sc">+</span></span>
+<span id="cb3-19"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">color =</span> <span class="st">"red"</span>)<span class="sc">+</span></span>
+<span id="cb3-20"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Correct non-linear model"</span>) <span class="sc">+</span></span>
+<span id="cb3-21"><a></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb3-22"><a></a>    <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`geom_smooth()` using method = 'loess' and formula = 'y ~ x'</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-2-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-2"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-2-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="the-world-can-show-you-interactions" class="slide level2 smaller scrollable">
+<h2>The world can show you interactions</h2>
+<ul>
+<li><p>Regression models are flexible in terms of interactions.</p></li>
+<li><p>But, what is an interaction?: An interaction is what we call a moderated effect. Let’s see how it looks like:</p></li>
+</ul>
+<div id="fig-concep" class="quarto-figure quarto-figure-center quarto-float" data-fig-align="center" alt="This is a diagram where a &quot;X&quot; variable is connected to a &quot;Y&quot; variable. This means that X is the cause of Y variable. However, in this path there is a third variable named &quot;Z&quot; and this variable also has a straight arrow pointing to relationship between X and Y/">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-concep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="conceptual.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3" data-glightbox="description: .lightbox-desc-3"><img data-src="conceptual.png" class="quarto-figure quarto-figure-center" alt="This is a diagram where a &quot;X&quot; variable is connected to a &quot;Y&quot; variable. This means that X is the cause of Y variable. However, in this path there is a third variable named &quot;Z&quot; and this variable also has a straight arrow pointing to relationship between X and Y/" width="500"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-concep-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Conceptual model
+</figcaption>
+</figure>
+</div>
+<p>You can see in (<a href="#/the-world-can-show-you-interactions" class="quarto-xref">Figure&nbsp;1</a>) there is a third variable <span class="red"><em>Z</em></span> affecting the relationship between X and Y. When this happens we say that the relationship between <span class="blue"><em>X</em></span> and <span class="blue"><em>Y</em></span> <strong><em>DEPENDS</em></strong> on <span class="red"><em>Z</em></span></p>
+<div id="fig-analy" class="quarto-figure quarto-figure-center quarto-float" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig">
+<div aria-describedby="fig-analy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<a href="analytical.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4" data-glightbox="description: .lightbox-desc-4"><img data-src="analytical.png" class="quarto-figure quarto-figure-center" width="500"></a>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-analy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Analytical model
+</figcaption>
+</figure>
+</div>
+<p>When we analyze an interaction we are estimating the product of a multiplication.</p>
+<p>We can represent the <a href="#/the-world-can-show-you-interactions" class="quarto-xref">Figure&nbsp;2</a> in its mathematical form:</p>
+<p><span class="math display">\[Y= \alpha + \beta_{1}X + \beta_{2}Z + \beta_{3}XZ + \epsilon_{i}\]</span></p>
+</section>
+<section id="how-do-we-know-we-should-add-a-moderation-term" class="slide level2 smaller scrollable">
+<h2>How do we know we should add a moderation term?</h2>
+<ul>
+<li>The first step is to test if we need a moderation term in our equation<sup>1</sup> .</li>
+</ul>
+<ul>
+<li>We can test it by estimating a regression model.</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(haven)</span>
+<span id="cb5-2"><a></a><span class="fu">library</span>(parameters)</span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="do">#### continuous moderation</span></span>
+<span id="cb5-5"><a></a><span class="do">## stress:</span></span>
+<span id="cb5-6"><a></a><span class="do">## socsup: social support</span></span>
+<span id="cb5-7"><a></a><span class="do">## dep: depression</span></span>
+<span id="cb5-8"><a></a><span class="do">## stressXss: interaction stress * social support</span></span>
+<span id="cb5-9"><a></a><span class="do">## </span></span>
+<span id="cb5-10"><a></a></span>
+<span id="cb5-11"><a></a>stress <span class="ot">&lt;-</span> <span class="fu">read_sav</span>(<span class="st">"continuous_moderation_example.sav"</span>)</span>
+<span id="cb5-12"><a></a></span>
+<span id="cb5-13"><a></a><span class="do">### Regression model without interaction</span></span>
+<span id="cb5-14"><a></a>fitModel_1 <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> socsup <span class="sc">+</span> stress, </span>
+<span id="cb5-15"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb5-16"><a></a></span>
+<span id="cb5-17"><a></a><span class="fu">model_parameters</span>(fitModel_1,  </span>
+<span id="cb5-18"><a></a>                 <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter   | Coefficient |   SE |         95% CI | t(138) |      p
+-------------------------------------------------------------------
+(Intercept) |       12.75 | 2.52 | [ 7.77, 17.74] |   5.06 | &lt; .001
+socsup      |       -0.43 | 0.12 | [-0.66, -0.20] |  -3.71 | &lt; .001
+stress      |        0.13 | 0.03 | [ 0.08,  0.19] |   4.87 | &lt; .001</code></pre>
+</div>
+</div>
+<p>In the model above, I’m testing if social support and stress are related to depression.</p>
+<p>The model looks like this:</p>
+<p><span class="math display">\[Y= \alpha + \beta_{1}Stress + \beta_{2}SocialSupport + e_{i}\]</span></p>
+<ul>
+<li>Given that the p-value is smaller than 0.05 (<span class="math inline">\(\le .05\)</span>) we can conclude that the relationship of depression with social support and stress is not explained by chance alone. But, do we need to add an interaction term? Let’s test if a interaction term is explainable by chance:</li>
+</ul>
+<p><span class="math display">\[Y= \alpha + \beta_{1}Stress + \beta_{2}SocialSupport + \beta_{3}Stress*SocialSupport + e_{i}\]</span></p>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a><span class="do">### Model with interaction </span></span>
+<span id="cb7-2"><a></a>fitModel_2 <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> socsup <span class="sc">+</span> stress<span class="sc">+</span> socsup<span class="sc">*</span>stress, </span>
+<span id="cb7-3"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb7-4"><a></a></span>
+<span id="cb7-5"><a></a><span class="fu">model_parameters</span>(fitModel_2,  </span>
+<span id="cb7-6"><a></a>                 <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter       | Coefficient |       SE |         95% CI | t(137) |      p
+---------------------------------------------------------------------------
+(Intercept)     |        1.81 |     4.77 | [-7.63, 11.25] |   0.38 | 0.705 
+socsup          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 
+stress          |        0.48 |     0.13 | [ 0.22,  0.75] |   3.63 | &lt; .001
+socsup × stress |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>The interaction term is not explained by chance because <span class="math inline">\(p= 0.008\)</span> which is less than <span class="math inline">\(0.05\)</span>.</p></li>
+<li><p>If you find that a interaction terms is not explained by chance, you CANNOT interpret the individual terms because they are MODIFIED or DEPEND on <span class="red"><em>Z</em>.</span></p></li>
+</ul>
+<aside><ol class="aside-footnotes"><li id="fn1"><p>You may download the data set from <a href="https://mega.nz/file/PYdAhDiD#ED7EXCgcf3aaqHy299Fid84EhY2Lw_B_DQ4VNyAoF28" target="_blank">here</a></p></li></ol></aside></section>
+<section id="how-do-you-interpret-an-interaction-effect" class="slide level2 smaller scrollable">
+<h2>How do you interpret an interaction effect ?</h2>
+<ul>
+<li><p>The interpretation can be a little bit tricky. First, we need to understand the relation between depression and stress at each level of our moderator.</p></li>
+<li><p>In our example, I selected social support as our moderator:</p></li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="stress.png" class="lightbox" data-gallery="quarto-lightbox-gallery-5"><img data-src="stress.png" class="quarto-figure quarto-figure-center" width="613"></a></p>
+</figure>
+</div>
+</section>
+<section id="how-do-you-interpret-an-interaction-effect-1" class="slide level2 smaller scrollable">
+<h2>How do you interpret an interaction effect ?</h2>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(marginaleffects)</span>
+<span id="cb9-2"><a></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-3"><a></a></span>
+<span id="cb9-4"><a></a><span class="do">### WE can use the package marginaleffects to</span></span>
+<span id="cb9-5"><a></a><span class="do">### generate slopes at different levels of </span></span>
+<span id="cb9-6"><a></a><span class="do">### the moderator</span></span>
+<span id="cb9-7"><a></a></span>
+<span id="cb9-8"><a></a><span class="fu">plot_predictions</span>(fitModel_2, </span>
+<span id="cb9-9"><a></a>                 <span class="at">condition =</span> <span class="fu">list</span>(<span class="st">"stress"</span>, </span>
+<span id="cb9-10"><a></a>                                  <span class="st">"socsup"</span> <span class="ot">=</span> <span class="st">"threenum"</span> ), </span>
+<span id="cb9-11"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>) <span class="sc">+</span> </span>
+<span id="cb9-12"><a></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb9-13"><a></a>  <span class="fu">ggtitle</span>(<span class="st">"Relationship between Stress and Depression at Social Support"</span>)<span class="sc">+</span></span>
+<span id="cb9-14"><a></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust =</span> <span class="fl">0.5</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-5-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-6"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-5-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="lets-talk-about-simple-slopes" class="slide level2 smaller scrollable">
+<h2>Let’s talk about simple slopes</h2>
+<ul>
+<li><p>It is also named <em>pick-a-point</em> or <em>spotlight analysis</em>.</p></li>
+<li><p>In this approach we can select any value from our moderator, and test the conditional effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span>.</p></li>
+<li><p>I apologize but you will see some math here:</p>
+<ul>
+<li>You may remember our moderated equation:</li>
+</ul></li>
+</ul>
+<p><span class="math display">\[Y= \alpha + \beta_{1}X + \beta_{2}Z + \beta_{3}XZ + \epsilon_{i}\]</span> - We can reorder terms to get back to this:</p>
+<p><span class="math display">\[Y= \alpha + (\beta_{1} + \beta_{3}Z)X + \beta_{2}Z + \epsilon\]</span></p>
+<ul>
+<li>This re-organization will help us to formulate the next function:</li>
+</ul>
+<p><span class="math display">\[f(Z)=\beta_{1} + \beta_{3}Z\]</span> <span class="math inline">\(f(Z)\)</span> is actually our simple slope. By plugging different values of <span class="math inline">\(Z\)</span> into <span class="math inline">\(f(Z)\)</span>, we get the slope of the conditional effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> at the chosen value of <span class="math inline">\(Z\)</span>.</p>
+</section>
+<section id="simple-slopes-estimation" class="slide level2 smaller scrollable">
+<h2>Simple slopes estimation</h2>
+<ul>
+<li><p>The most popular choices to plug in here: <span class="math inline">\(f(Z)=\beta_{1} + \beta_{3}Z\)</span>, are <span class="math inline">\(+1SD\)</span>, the mean, and <span class="math inline">\(-1SD\)</span> corresponding to our moderator <span class="math inline">\(Z\)</span>.</p></li>
+<li><p>We don’t have to estimate these simple slopes “by-hand”, we can estimate different regression models after centering at the critical values we want to test.</p></li>
+</ul>
+</section>
+<section id="simple-slopes-estimation-centering" class="slide level2 smaller scrollable">
+<h2>Simple slopes estimation: centering</h2>
+<p>Centering transforms a variable by subtracting a constant (e.g., the variable’s mean) from each observation of the variable.</p>
+<ul>
+<li><p>The most familiar form of center is mean centering We can center on any value.</p></li>
+<li><p>When probing interactions, we can center <span class="math inline">\(Z\)</span> on the interesting values we choose during the pick-a-point approach.</p></li>
+<li><p>Running the model with <span class="math inline">\(Z\)</span> centered on specific values automatically provides tests of the simple slope conditional on those values of <span class="math inline">\(Z\)</span>.</p></li>
+</ul>
+</section>
+<section id="simple-slopes-estimation-centering-1" class="slide level2 smaller scrollable">
+<h2>Simple slopes estimation: centering</h2>
+<ul>
+<li>In our example, the moderator is social support. We can center our moderator at the mean, 1 SD above the mean, and 1 SD below the mean.</li>
+</ul>
+<p>-In the following <code>R</code> chunk, I’ll create three new variables in the object <code>stress</code> which contains my data information. The three new variables are:</p>
+<ul>
+<li>SocialMean = <span class="math inline">\(socialSupport_{i} - mean(SocialSupport)\)</span></li>
+<li>SocialHigh = <span class="math inline">\(socialSupport_{i} - (mean(SocialSupport)+ sd(SocialSupport))\)</span></li>
+<li>SocialLow = <span class="math inline">\(socialSupport_{i} - (mean(SocialSupport) - sd(SocialSupport))\)</span></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.2     ✔ readr     2.1.4
+✔ forcats   1.0.0     ✔ stringr   1.5.0
+✔ lubridate 1.9.2     ✔ tibble    3.2.1
+✔ purrr     1.0.1     ✔ tidyr     1.3.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>stress <span class="ot">&lt;-</span> stress <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a></a>  <span class="fu">mutate</span>(<span class="at">socialMean =</span> socsup <span class="sc">-</span> <span class="fu">mean</span>(socsup),</span>
+<span id="cb12-3"><a></a>         <span class="at">socialHigh =</span> socsup <span class="sc">-</span> (<span class="fu">mean</span>(socsup)<span class="sc">+</span><span class="fu">sd</span>(socsup)),</span>
+<span id="cb12-4"><a></a>          <span class="at">socialLow =</span> socsup <span class="sc">-</span> (<span class="fu">mean</span>(socsup)<span class="sc">-</span><span class="fu">sd</span>(socsup))</span>
+<span id="cb12-5"><a></a>         )</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+</div>
+<ul>
+<li>Let’s check the new variables with a histogram:</li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="fu">library</span>(patchwork)</span>
+<span id="cb13-2"><a></a></span>
+<span id="cb13-3"><a></a>atMean <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>socialMean), <span class="at">data =</span> stress) <span class="sc">+</span> </span>
+<span id="cb13-4"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="dv">1</span>,</span>
+<span id="cb13-5"><a></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb13-6"><a></a>                 <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a></a>  <span class="fu">theme_classic</span>() </span>
+<span id="cb13-8"><a></a></span>
+<span id="cb13-9"><a></a>atHigh <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>socialHigh), <span class="at">data =</span> stress) <span class="sc">+</span> </span>
+<span id="cb13-10"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="dv">1</span>,</span>
+<span id="cb13-11"><a></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb13-12"><a></a>                 <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-13"><a></a>  <span class="fu">theme_classic</span>() </span>
+<span id="cb13-14"><a></a></span>
+<span id="cb13-15"><a></a>atLow <span class="ot">&lt;-</span> <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>socialLow), <span class="at">data =</span> stress) <span class="sc">+</span> </span>
+<span id="cb13-16"><a></a>  <span class="fu">geom_histogram</span>(<span class="at">colour =</span> <span class="dv">1</span>,</span>
+<span id="cb13-17"><a></a>                 <span class="at">fill =</span> <span class="st">"white"</span>, </span>
+<span id="cb13-18"><a></a>                 <span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-19"><a></a>  <span class="fu">theme_classic</span>() </span>
+<span id="cb13-20"><a></a></span>
+<span id="cb13-21"><a></a>atMean<span class="sc">/</span>(atHigh<span class="sc">+</span>atLow)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-7-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-7"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-7-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<ul>
+<li>Now, we can use this three new computed centered variables to estimate our simple slopes at the mean, <span class="math inline">\(mean + 1SD\)</span>, and <span class="math inline">\(mean - 1SD\)</span>.</li>
+</ul>
+</section>
+<section id="simple-slopes-estimation-time" class="slide level2 smaller scrollable">
+<h2>Simple slopes estimation time</h2>
+<ul>
+<li><p>With our new computed variables we can now test our simple slopes, we will estimate a regression model for each simple slope. This will help us to test if the simple slope is explainable by chance.</p></li>
+<li><p>First simple slope at the mean:</p></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a>modelAtMean <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> stress <span class="sc">+</span> socialMean <span class="sc">+</span> socialMean<span class="sc">*</span>stress, </span>
+<span id="cb14-2"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb14-3"><a></a></span>
+<span id="cb14-4"><a></a><span class="fu">parameters</span>(modelAtMean, </span>
+<span id="cb14-5"><a></a>           <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter           | Coefficient |       SE |         95% CI | t(137) |      p
+-------------------------------------------------------------------------------
+(Intercept)         |        3.99 |     1.02 | [ 1.97,  6.01] |   3.91 | &lt; .001
+stress              |        0.14 |     0.03 | [ 0.09,  0.19] |   5.24 | &lt; .001
+socialMean          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 
+stress × socialMean |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 </code></pre>
+</div>
+</div>
+<ul>
+<li><p>When estimating a model with a centered moderator, the slope of your predictor, in this case <em>stress</em> becomes your estimated simple slope. In our example the simple slope at the mean of social support is: <span class="math inline">\(\beta=0.14\)</span>, and it is not explained by chance because the p-value is less than 0.05.</p></li>
+<li><p>Second simple slope at high values of social support:</p></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>modelAtHigh <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> stress <span class="sc">+</span> socialHigh <span class="sc">+</span> socialHigh<span class="sc">*</span>stress, </span>
+<span id="cb16-2"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb16-3"><a></a></span>
+<span id="cb16-4"><a></a><span class="fu">parameters</span>(modelAtHigh, </span>
+<span id="cb16-5"><a></a>           <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter           | Coefficient |       SE |         95% CI | t(137) |     p
+------------------------------------------------------------------------------
+(Intercept)         |        4.48 |     1.39 | [ 1.74,  7.22] |   3.23 | 0.002
+stress              |        0.06 |     0.04 | [-0.01,  0.14] |   1.73 | 0.086
+socialHigh          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635
+stress × socialHigh |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008</code></pre>
+</div>
+</div>
+<ul>
+<li><p>In the case of the simple slope at the high level of social support is <span class="math inline">\(\beta = 0.06\)</span>, and it is explained by chance because the p-value is greater than <span class="math inline">\(0.05\)</span>.</p></li>
+<li><p>Third simple slope at low values of social support:</p></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>modelAtLow <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> stress <span class="sc">+</span> socialLow <span class="sc">+</span> socialLow<span class="sc">*</span>stress, </span>
+<span id="cb18-2"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb18-3"><a></a></span>
+<span id="cb18-4"><a></a><span class="fu">parameters</span>(modelAtLow, </span>
+<span id="cb18-5"><a></a>           <span class="at">verbose =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>Parameter          | Coefficient |       SE |         95% CI | t(137) |      p
+------------------------------------------------------------------------------
+(Intercept)        |        3.50 |     1.51 | [ 0.50,  6.49] |   2.31 | 0.022 
+stress             |        0.22 |     0.04 | [ 0.14,  0.30] |   5.26 | &lt; .001
+socialLow          |        0.11 |     0.23 | [-0.35,  0.57] |   0.48 | 0.635 
+stress × socialLow |       -0.02 | 6.47e-03 | [-0.03,  0.00] |  -2.68 | 0.008 </code></pre>
+</div>
+</div>
+<ul>
+<li>In the third simple slope, the estimated value is <span class="math inline">\(\beta = 0.22\)</span>, and it is not easy to explain this slope by chance because the p-value is much less than 0.05.</li>
+</ul>
+</section>
+<section id="simple-slopes-interpretation-time" class="slide level2 smaller scrollable">
+<h2>Simple slopes interpretation time</h2>
+<ul>
+<li><p>In our model depression is our outcome, stress our predictor, and social support our moderator. After estimating our simple slopes at different levels of our moderator we can conclude the following:</p></li>
+<li><p>The effect of stress on depression is stronger when participants have a <span class="red">low level</span> of social support: <span class="math inline">\(\beta = 0.22\)</span>.</p></li>
+<li><p>The effect of stress on depression gets weaker when participants are close to the <span class="red">mean</span> of social support: <span class="math inline">\(\beta= 0.14\)</span>.</p></li>
+<li><p>The effect of stress on depression gets much weaker when participants have a <span class="red">high score</span> in social support <span class="math inline">\(\beta= 0.11\)</span>. This simple slope is explained by chance. This means that the relationship between depression and stress is explained by chance when participants have a high social support.</p></li>
+</ul>
+</section>
+<section id="simple-slopes-johnson-neyman-technique" class="slide level2 smaller scrollable">
+<h2>Simple slopes: Johnson-Neyman technique</h2>
+<ul>
+<li><p>You may be thinking: what happens if I want to test all the possible values of my moderator?</p></li>
+<li><p>The answer is the <strong>Johnson-Neyman</strong> technique.</p></li>
+<li><p>The Johnson-Neyman technique is an alternative approach that removes the arbitrary choices necessary for pick-a-point.</p></li>
+<li><p>Johnson-Neyman finds the region of significance wherein the conditional effect of <span class="math inline">\(X\)</span> on <span class="math inline">\(Y\)</span> is statistically significant.</p></li>
+<li><p>Inverts the pick-a-point approach to find what cut-points on the moderator correspond to a critical <span class="math inline">\(t\)</span> value for the conditional <span class="math inline">\(\beta_{1}\)</span>.</p></li>
+<li><p>This requires to solve a set of equations that I’m not explaining in this lecture but, the simple message is that Johnson-Neyman’s strategy can give you a region of significance accross values of your moderator.</p></li>
+</ul>
+</section>
+<section id="simple-slopes-johnson-neyman-technique-in-r" class="slide level2 smaller scrollable">
+<h2>Simple slopes: Johnson-Neyman technique in <code>R</code></h2>
+<ul>
+<li><p>The Johnson-Neyman technique is implemented in the <code>R</code> package <code>rockchalk</code>. There are more packages performing this strategy.</p></li>
+<li><p>You first need to estimate your moderated regression model, this means a model with at least one interaction term.</p></li>
+<li><p>Secondly you can estimate the simple slopes, and the region of significance.</p></li>
+</ul>
+<div class="cell">
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">library</span> (rockchalk) <span class="do">### You need to install this package </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'rockchalk'</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following object is masked from 'package:dplyr':
+
+    summarize</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>The following objects are masked from 'package:parameters':
+
+    kurtosis, skewness</code></pre>
+</div>
+<details class="code-fold">
+<summary>Show the code</summary>
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a></a>modModerated <span class="ot">&lt;-</span> <span class="fu">lm</span>(dep <span class="sc">~</span> stress <span class="sc">+</span> socsup <span class="sc">+</span> socsup<span class="sc">*</span>stress, </span>
+<span id="cb24-2"><a></a>                 <span class="at">data=</span>stress)</span>
+<span id="cb24-3"><a></a></span>
+<span id="cb24-4"><a></a></span>
+<span id="cb24-5"><a></a>plotOut <span class="ot">&lt;-</span> <span class="fu">plotSlopes</span> ( <span class="at">model =</span> modModerated  ,</span>
+<span id="cb24-6"><a></a>                        <span class="at">plotx =</span> <span class="st">"stress"</span> ,</span>
+<span id="cb24-7"><a></a>                        <span class="at">modx =</span> <span class="st">"socsup"</span> ,</span>
+<span id="cb24-8"><a></a>                        <span class="at">plotPoints =</span> <span class="cn">TRUE</span>,</span>
+<span id="cb24-9"><a></a>                        <span class="at">modxVals =</span> <span class="st">"std.dev."</span>) <span class="do">### This will plot the simple slopes</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-11-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-8"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-11-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a></a><span class="do">### TestSlopes will give you the region where the the relationship of depression with stress </span></span>
+<span id="cb25-2"><a></a><span class="do">### is not explained by chance.</span></span>
+<span id="cb25-3"><a></a>testOut <span class="ot">&lt;-</span>  <span class="fu">testSlopes</span> (plotOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Values of socsup OUTSIDE this interval:
+      lo       hi 
+23.78004 50.43883 
+cause the slope of (b1 + b2*socsup)stress to be statistically significant</code></pre>
+</div>
+</div>
+<ul>
+<li>Finally, you can plot the region where the relationship of <span class="math inline">\(X\)</span> and <span class="math inline">\(Y\)</span> is not explained by chance:</li>
+</ul>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a></a><span class="fu">plot</span>(testOut)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure>
+<p><a href="moderation_polynomials_files/figure-html/unnamed-chunk-13-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="moderation_polynomials_files/figure-html/unnamed-chunk-13-1.png" width="672"></a></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="acknowledgement" class="slide level2">
+<h2>Acknowledgement</h2>
+<p>This lecture was created based on the materials created by Kyle M. Lang (2016) and Mauricio Garnier-Villareal (2020)</p>
+
+<div class="quarto-auto-generated-content">
+<p><img src="stan-state-logo_nickname-full-color.png" class="slide-logo"></p>
+<div class="footer footer-default">
+<p><a href="https://blackhill86.github.io/mm2/"><strong>Visit my website</strong></a></p>
+</div>
+</div>
+<div class="reveal-header">
+<div class="header-logo">
+<img data-src="warrior_head2.png">
+</div>
+<div class="sc-title">
+<p> </p>
+</div>
+<div class="header-text">
+<p> </p>
+</div>
+<div class="sb-title">
+<p> </p>
+</div>
+</div>
+<div class="hidden" aria-hidden="true">
+<span class="glightbox-desc lightbox-desc-3">Figure&nbsp;1: Conceptual model</span>
+<span class="glightbox-desc lightbox-desc-4">Figure&nbsp;2: Analytical model</span>
+</div>
+</section>
+
+    </div>
+  </div>
+
+  <script>window.backupDefine = window.define; window.define = undefined;</script>
+  <script src="../../site_libs/revealjs/dist/reveal.js"></script>
+  <!-- reveal.js plugins -->
+  <script src="../../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="../../site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-chalkboard/plugin.js"></script>
+  <script src="../../site_libs/revealjs/plugin/reveal-pointer/pointer.js"></script>
+  <script src="../../site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  
+
+  <script src="../../site_libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="../../site_libs/revealjs/plugin/search/search.js"></script>
+  <script src="../../site_libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="../../site_libs/revealjs/plugin/math/math.js"></script>
+  <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://revealjs.com/config/
+      Reveal.initialize({
+'controlsAuto': true,
+'previewLinksAuto': false,
+'pdfSeparateFragments': false,
+'autoAnimateEasing': "ease",
+'autoAnimateDuration': 1,
+'autoAnimateUnmatched': true,
+'menu': {"side":"left","useTextContentForMissingTitles":true,"markers":false,"loadIcons":false,"custom":[{"title":"Tools","icon":"<i class=\"fas fa-gear\"></i>","content":"<ul class=\"slide-menu-items\">\n<li class=\"slide-tool-item active\" data-item=\"0\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.fullscreen(event)\"><kbd>f</kbd> Fullscreen</a></li>\n<li class=\"slide-tool-item\" data-item=\"1\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.speakerMode(event)\"><kbd>s</kbd> Speaker View</a></li>\n<li class=\"slide-tool-item\" data-item=\"2\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.overview(event)\"><kbd>o</kbd> Slide Overview</a></li>\n<li class=\"slide-tool-item\" data-item=\"3\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.togglePdfExport(event)\"><kbd>e</kbd> PDF Export Mode</a></li>\n<li class=\"slide-tool-item\" data-item=\"4\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleChalkboard(event)\"><kbd>b</kbd> Toggle Chalkboard</a></li>\n<li class=\"slide-tool-item\" data-item=\"5\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.toggleNotesCanvas(event)\"><kbd>c</kbd> Toggle Notes Canvas</a></li>\n<li class=\"slide-tool-item\" data-item=\"6\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.downloadDrawings(event)\"><kbd>d</kbd> Download Drawings</a></li>\n<li class=\"slide-tool-item\" data-item=\"7\"><a href=\"#\" onclick=\"RevealMenuToolHandlers.keyboardHelp(event)\"><kbd>?</kbd> Keyboard Help</a></li>\n</ul>"}],"openButton":true},
+'chalkboard': {"buttons":true,"theme":"whiteboard"},
+'pointer': {"key":"q","color":"#32cd32","pointerSize":18,"alwaysVisible":false},
+'smaller': false,
+ 
+        // Display controls in the bottom right corner
+        controls: false,
+
+        // Help the user learn the controls by providing hints, for example by
+        // bouncing the down arrow when they first encounter a vertical slide
+        controlsTutorial: false,
+
+        // Determines where controls appear, "edges" or "bottom-right"
+        controlsLayout: 'edges',
+
+        // Visibility rule for backwards navigation arrows; "faded", "hidden"
+        // or "visible"
+        controlsBackArrows: 'faded',
+
+        // Display a presentation progress bar
+        progress: true,
+
+        // Display the page number of the current slide
+        slideNumber: 'c/t',
+
+        // 'all', 'print', or 'speaker'
+        showSlideNumber: 'all',
+
+        // Add the current slide number to the URL hash so that reloading the
+        // page/copying the URL will return you to the same slide
+        hash: true,
+
+        // Start with 1 for the hash rather than 0
+        hashOneBasedIndex: false,
+
+        // Flags if we should monitor the hash and change slides accordingly
+        respondToHashChanges: true,
+
+        // Push each slide change to the browser history
+        history: true,
+
+        // Enable keyboard shortcuts for navigation
+        keyboard: true,
+
+        // Enable the slide overview mode
+        overview: true,
+
+        // Disables the default reveal.js slide layout (scaling and centering)
+        // so that you can use custom CSS layout
+        disableLayout: false,
+
+        // Vertical centering of slides
+        center: false,
+
+        // Enables touch navigation on devices with touch input
+        touch: true,
+
+        // Loop the presentation
+        loop: false,
+
+        // Change the presentation direction to be RTL
+        rtl: false,
+
+        // see https://revealjs.com/vertical-slides/#navigation-mode
+        navigationMode: 'linear',
+
+        // Randomizes the order of slides each time the presentation loads
+        shuffle: false,
+
+        // Turns fragments on and off globally
+        fragments: true,
+
+        // Flags whether to include the current fragment in the URL,
+        // so that reloading brings you to the same fragment position
+        fragmentInURL: false,
+
+        // Flags if the presentation is running in an embedded mode,
+        // i.e. contained within a limited portion of the screen
+        embedded: false,
+
+        // Flags if we should show a help overlay when the questionmark
+        // key is pressed
+        help: true,
+
+        // Flags if it should be possible to pause the presentation (blackout)
+        pause: true,
+
+        // Flags if speaker notes should be visible to all viewers
+        showNotes: false,
+
+        // Global override for autoplaying embedded media (null/true/false)
+        autoPlayMedia: null,
+
+        // Global override for preloading lazy-loaded iframes (null/true/false)
+        preloadIframes: null,
+
+        // Number of milliseconds between automatically proceeding to the
+        // next slide, disabled when set to 0, this value can be overwritten
+        // by using a data-autoslide attribute on your slides
+        autoSlide: 0,
+
+        // Stop auto-sliding after user input
+        autoSlideStoppable: true,
+
+        // Use this method for navigation when auto-sliding
+        autoSlideMethod: null,
+
+        // Specify the average time in seconds that you think you will spend
+        // presenting each slide. This is used to show a pacing timer in the
+        // speaker view
+        defaultTiming: null,
+
+        // Enable slide navigation via mouse wheel
+        mouseWheel: false,
+
+        // The display mode that will be used to show slides
+        display: 'block',
+
+        // Hide cursor if inactive
+        hideInactiveCursor: true,
+
+        // Time before the cursor is hidden (in ms)
+        hideCursorTime: 5000,
+
+        // Opens links in an iframe preview overlay
+        previewLinks: true,
+
+        // Transition style (none/fade/slide/convex/concave/zoom)
+        transition: 'none',
+
+        // Transition speed (default/fast/slow)
+        transitionSpeed: 'default',
+
+        // Transition style for full page slide backgrounds
+        // (none/fade/slide/convex/concave/zoom)
+        backgroundTransition: 'none',
+
+        // Number of slides away from the current that are visible
+        viewDistance: 3,
+
+        // Number of slides away from the current that are visible on mobile
+        // devices. It is advisable to set this to a lower number than
+        // viewDistance in order to save resources.
+        mobileViewDistance: 2,
+
+        // The "normal" size of the presentation, aspect ratio will be preserved
+        // when the presentation is scaled to fit different resolutions. Can be
+        // specified using percentage units.
+        width: 1050,
+
+        height: 700,
+
+        // Factor of the display size that should remain empty around the content
+        margin: 0.1,
+
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // reveal.js plugins
+        plugins: [QuartoLineHighlight, PdfExport, RevealMenu, RevealChalkboard, RevealPointer, QuartoSupport,
+
+          RevealMath,
+          RevealNotes,
+          RevealSearch,
+          RevealZoom
+        ]
+      });
+    </script>
+    <script id="quarto-html-after-body" type="application/javascript">
+    window.document.addEventListener("DOMContentLoaded", function (event) {
+      const toggleBodyColorMode = (bsSheetEl) => {
+        const mode = bsSheetEl.getAttribute("data-mode");
+        const bodyEl = window.document.querySelector("body");
+        if (mode === "dark") {
+          bodyEl.classList.add("quarto-dark");
+          bodyEl.classList.remove("quarto-light");
+        } else {
+          bodyEl.classList.add("quarto-light");
+          bodyEl.classList.remove("quarto-dark");
+        }
+      }
+      const toggleBodyColorPrimary = () => {
+        const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+        if (bsSheetEl) {
+          toggleBodyColorMode(bsSheetEl);
+        }
+      }
+      toggleBodyColorPrimary();  
+      const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
+      tabsets.forEach(function(tabset) {
+        const tabby = new Tabby('#' + tabset.id);
+      });
+      const isCodeAnnotation = (el) => {
+        for (const clz of el.classList) {
+          if (clz.startsWith('code-annotation-')) {                     
+            return true;
+          }
+        }
+        return false;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button', {
+        text: function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+        }
+      });
+      clipboard.on('success', function(e) {
+        // button target
+        const button = e.trigger;
+        // don't keep focus
+        button.blur();
+        // flash "checked"
+        button.classList.add('code-copy-button-checked');
+        var currentTitle = button.getAttribute("title");
+        button.setAttribute("title", "Copied!");
+        let tooltip;
+        if (window.bootstrap) {
+          button.setAttribute("data-bs-toggle", "tooltip");
+          button.setAttribute("data-bs-placement", "left");
+          button.setAttribute("data-bs-title", "Copied!");
+          tooltip = new bootstrap.Tooltip(button, 
+            { trigger: "manual", 
+              customClass: "code-copy-button-tooltip",
+              offset: [0, -8]});
+          tooltip.show();    
+        }
+        setTimeout(function() {
+          if (tooltip) {
+            tooltip.hide();
+            button.removeAttribute("data-bs-title");
+            button.removeAttribute("data-bs-toggle");
+            button.removeAttribute("data-bs-placement");
+          }
+          button.setAttribute("title", currentTitle);
+          button.classList.remove('code-copy-button-checked');
+        }, 1000);
+        // clear code selection
+        e.clearSelection();
+      });
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+        const config = {
+          allowHTML: true,
+          maxWidth: 500,
+          delay: 100,
+          arrow: false,
+          appendTo: function(el) {
+              return el.closest('section.slide') || el.parentElement;
+          },
+          interactive: true,
+          interactiveBorder: 10,
+          theme: 'light-border',
+          placement: 'bottom-start',
+        };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
+          config['offset'] = [0,0];
+          config['maxWidth'] = 700;
+        window.tippy(el, config); 
+      }
+      const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+      for (var i=0; i<noterefs.length; i++) {
+        const ref = noterefs[i];
+        tippyHover(ref, function() {
+          // use id or data attribute instead here
+          let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+          try { href = new URL(href).hash; } catch {}
+          const id = href.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
+        });
+      }
+          let selectedAnnoteEl;
+          const selectorForAnnotation = ( cell, annotation) => {
+            let cellAttr = 'data-code-cell="' + cell + '"';
+            let lineAttr = 'data-code-annotation="' +  annotation + '"';
+            const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+            return selector;
+          }
+          const selectCodeLines = (annoteEl) => {
+            const doc = window.document;
+            const targetCell = annoteEl.getAttribute("data-target-cell");
+            const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+            const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+            const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+            const lineIds = lines.map((line) => {
+              return targetCell + "-" + line;
+            })
+            let top = null;
+            let height = null;
+            let parent = null;
+            if (lineIds.length > 0) {
+                //compute the position of the single el (top and bottom and make a div)
+                const el = window.document.getElementById(lineIds[0]);
+                top = el.offsetTop;
+                height = el.offsetHeight;
+                parent = el.parentElement.parentElement;
+              if (lineIds.length > 1) {
+                const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+                const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+                height = bottom - top;
+              }
+              if (top !== null && height !== null && parent !== null) {
+                // cook up a div (if necessary) and position it 
+                let div = window.document.getElementById("code-annotation-line-highlight");
+                if (div === null) {
+                  div = window.document.createElement("div");
+                  div.setAttribute("id", "code-annotation-line-highlight");
+                  div.style.position = 'absolute';
+                  parent.appendChild(div);
+                }
+                div.style.top = top - 2 + "px";
+                div.style.height = height + 4 + "px";
+                div.style.left = 0;
+                let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+                if (gutterDiv === null) {
+                  gutterDiv = window.document.createElement("div");
+                  gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                  gutterDiv.style.position = 'absolute';
+                  const codeCell = window.document.getElementById(targetCell);
+                  const gutter = codeCell.querySelector('.code-annotation-gutter');
+                  gutter.appendChild(gutterDiv);
+                }
+                gutterDiv.style.top = top - 2 + "px";
+                gutterDiv.style.height = height + 4 + "px";
+              }
+              selectedAnnoteEl = annoteEl;
+            }
+          };
+          const unselectCodeLines = () => {
+            const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+            elementsIds.forEach((elId) => {
+              const div = window.document.getElementById(elId);
+              if (div) {
+                div.remove();
+              }
+            });
+            selectedAnnoteEl = undefined;
+          };
+            // Handle positioning of the toggle
+        window.addEventListener(
+          "resize",
+          throttle(() => {
+            elRect = undefined;
+            if (selectedAnnoteEl) {
+              selectCodeLines(selectedAnnoteEl);
+            }
+          }, 10)
+        );
+        function throttle(fn, ms) {
+        let throttle = false;
+        let timer;
+          return (...args) => {
+            if(!throttle) { // first call gets through
+                fn.apply(this, args);
+                throttle = true;
+            } else { // all the others get throttled
+                if(timer) clearTimeout(timer); // cancel #2
+                timer = setTimeout(() => {
+                  fn.apply(this, args);
+                  timer = throttle = false;
+                }, ms);
+            }
+          };
+        }
+          const annoteTargets = window.document.querySelectorAll('.code-annotation-anchor');
+          for (let i=0; i<annoteTargets.length; i++) {
+            const annoteTarget = annoteTargets[i];
+            const targetCell = annoteTarget.getAttribute("data-target-cell");
+            const targetAnnotation = annoteTarget.getAttribute("data-target-annotation");
+            const contentFn = () => {
+              const content = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+              if (content) {
+                const tipContent = content.cloneNode(true);
+                tipContent.classList.add("code-annotation-tip-content");
+                return tipContent.outerHTML;
+              }
+            }
+            const config = {
+              allowHTML: true,
+              content: contentFn,
+              onShow: (instance) => {
+                selectCodeLines(instance.reference);
+                instance.reference.classList.add('code-annotation-active');
+                window.tippy.hideAll();
+              },
+              onHide: (instance) => {
+                unselectCodeLines();
+                instance.reference.classList.remove('code-annotation-active');
+              },
+              maxWidth: 300,
+              delay: [50, 0],
+              duration: [200, 0],
+              offset: [5, 10],
+              arrow: true,
+              appendTo: function(el) {
+                return el.parentElement.parentElement.parentElement;
+              },
+              interactive: true,
+              interactiveBorder: 10,
+              theme: 'light-border',
+              placement: 'right',
+              popperOptions: {
+                modifiers: [
+                {
+                  name: 'flip',
+                  options: {
+                    flipVariations: false, // true by default
+                    allowedAutoPlacements: ['right'],
+                    fallbackPlacements: ['right', 'top', 'top-start', 'top-end', 'bottom', 'bottom-start', 'bottom-end', 'left'],
+                  },
+                },
+                {
+                  name: 'preventOverflow',
+                  options: {
+                    mainAxis: false,
+                    altAxis: false
+                  }
+                }
+                ]        
+              }      
+            };
+            window.tippy(annoteTarget, config); 
+          }
+      const findCites = (el) => {
+        const parentEl = el.parentElement;
+        if (parentEl) {
+          const cites = parentEl.dataset.cites;
+          if (cites) {
+            return {
+              el,
+              cites: cites.split(' ')
+            };
+          } else {
+            return findCites(el.parentElement)
+          }
+        } else {
+          return undefined;
+        }
+      };
+      var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+      for (var i=0; i<bibliorefs.length; i++) {
+        const ref = bibliorefs[i];
+        const citeInfo = findCites(ref);
+        if (citeInfo) {
+          tippyHover(citeInfo.el, function() {
+            var popup = window.document.createElement('div');
+            citeInfo.cites.forEach(function(cite) {
+              var citeDiv = window.document.createElement('div');
+              citeDiv.classList.add('hanging-indent');
+              citeDiv.classList.add('csl-entry');
+              var biblioDiv = window.document.getElementById('ref-' + cite);
+              if (biblioDiv) {
+                citeDiv.innerHTML = biblioDiv.innerHTML;
+              }
+              popup.appendChild(citeDiv);
+            });
+            return popup.innerHTML;
+          });
+        }
+      }
+    });
+    </script>
+    <script>var lightboxQuarto = GLightbox({"descPosition":"bottom","selector":".lightbox","loop":false,"closeEffect":"zoom","openEffect":"zoom"});
+    window.onload = () => {
+      lightboxQuarto.on('slide_before_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        const href = trigger.getAttribute('href');
+        if (href !== null) {
+          const imgEl = window.document.querySelector(`a[href="${href}"] img`);
+          if (imgEl !== null) {
+            const srcAttr = imgEl.getAttribute("src");
+            if (srcAttr && srcAttr.startsWith("data:")) {
+              slideConfig.href = srcAttr;
+            }
+          }
+        } 
+      });
+
+      lightboxQuarto.on('slide_after_load', (data) => {
+        const { slideIndex, slideNode, slideConfig, player, trigger } = data;
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(slideNode);
+        }
+      });
+
+    };
+              </script>
+    
+
+</body></html>
