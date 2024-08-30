@@ -545,52 +545,45 @@ Esteban Montenegro-Montenegro, PhD
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">### Simulation time!!</span></span>
-<span id="cb1-2"><a></a><span class="fu">library</span>(lavaan) <span class="do">## &lt;--- package to generate the values.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-1"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-1-1"><a href="#annotated-cell-1-1"></a><span class="do">### Simulation time!!</span></span>
+<span id="annotated-cell-1-2"><a href="#annotated-cell-1-2"></a><span class="fu">library</span>(lavaan) <span class="do">## &lt;--- package to generate the values.</span></span>
+<span id="annotated-cell-1-3"><a href="#annotated-cell-1-3"></a><span class="fu">library</span>(broom)</span>
+<span id="annotated-cell-1-4"><a href="#annotated-cell-1-4"></a></span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="1">1</button><span id="annotated-cell-1-5" class="code-annotation-target"><a href="#annotated-cell-1-5"></a>mod1 <span class="ot">&lt;-</span> <span class="st">'depression ~ 0.5*selfSteem + 0.8*rumination + 0*numberCandies'</span></span>
+<span id="annotated-cell-1-6"><a href="#annotated-cell-1-6"></a></span>
+<span id="annotated-cell-1-7"><a href="#annotated-cell-1-7"></a></span>
+<span id="annotated-cell-1-8"><a href="#annotated-cell-1-8"></a></span>
+<span id="annotated-cell-1-9"><a href="#annotated-cell-1-9"></a>generated <span class="ot">&lt;-</span> <span class="fu">simulateData</span>(mod1,</span>
+<span id="annotated-cell-1-10"><a href="#annotated-cell-1-10"></a>                          <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, </span>
+<span id="annotated-cell-1-11"><a href="#annotated-cell-1-11"></a>                          <span class="at">sample.nobs =</span> <span class="dv">100</span>,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="2">2</button><span id="annotated-cell-1-12" class="code-annotation-target"><a href="#annotated-cell-1-12"></a>                          <span class="at">seed =</span> <span class="dv">12</span>)</span>
+<span id="annotated-cell-1-13"><a href="#annotated-cell-1-13"></a></span>
+<span id="annotated-cell-1-14"><a href="#annotated-cell-1-14"></a></span>
+<span id="annotated-cell-1-15"><a href="#annotated-cell-1-15"></a>fitModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
+<span id="annotated-cell-1-16"><a href="#annotated-cell-1-16"></a>                 rumination <span class="sc">+</span> </span>
+<span id="annotated-cell-1-17"><a href="#annotated-cell-1-17"></a>                 numberCandies, </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-1" data-target-annotation="3">3</button><span id="annotated-cell-1-18" class="code-annotation-target"><a href="#annotated-cell-1-18"></a>               <span class="at">data =</span> generated)</span>
+<span id="annotated-cell-1-19"><a href="#annotated-cell-1-19"></a></span>
+<span id="annotated-cell-1-20"><a href="#annotated-cell-1-20"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitModel),</span>
+<span id="annotated-cell-1-21"><a href="#annotated-cell-1-21"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-1-22"><a href="#annotated-cell-1-22"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-2" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="3" data-code-annotation="1">I’m specifying the “population model”.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="5" data-code-annotation="1">I’m specifying the “population model”.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="2">2</dt>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="2">2</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="10" data-code-annotation="2">This line creates the simulated values. I’m generating 100 random values.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="12" data-code-annotation="2">This line creates the simulated values. I’m generating 100 random values.</span>
 </dd>
-<dt data-target-cell="annotated-cell-2" data-target-annotation="3">3</dt>
+<dt data-target-cell="annotated-cell-1" data-target-annotation="3">3</dt>
 <dd>
-<span data-code-cell="annotated-cell-2" data-code-lines="16" data-code-annotation="3">Estimating the model using function <code>lm()</code>.</span>
+<span data-code-cell="annotated-cell-1" data-code-lines="18" data-code-annotation="3">Estimating the model using function <code>lm()</code>.</span>
 </dd>
 </dl>
 </div>
-<div class="cell-output cell-output-stderr">
-<pre><code>This is lavaan 0.6-16
-lavaan is FREE software! Please report any bugs.</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-2"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-2-1"><a href="#annotated-cell-2-1"></a><span class="fu">library</span>(broom)</span>
-<span id="annotated-cell-2-2"><a href="#annotated-cell-2-2"></a></span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="1">1</button><span id="annotated-cell-2-3" class="code-annotation-target"><a href="#annotated-cell-2-3"></a>mod1 <span class="ot">&lt;-</span> <span class="st">'depression ~ 0.5*selfSteem + 0.8*rumination + 0*numberCandies'</span></span>
-<span id="annotated-cell-2-4"><a href="#annotated-cell-2-4"></a></span>
-<span id="annotated-cell-2-5"><a href="#annotated-cell-2-5"></a></span>
-<span id="annotated-cell-2-6"><a href="#annotated-cell-2-6"></a></span>
-<span id="annotated-cell-2-7"><a href="#annotated-cell-2-7"></a>generated <span class="ot">&lt;-</span> <span class="fu">simulateData</span>(mod1,</span>
-<span id="annotated-cell-2-8"><a href="#annotated-cell-2-8"></a>                          <span class="at">meanstructure =</span> <span class="cn">TRUE</span>, </span>
-<span id="annotated-cell-2-9"><a href="#annotated-cell-2-9"></a>                          <span class="at">sample.nobs =</span> <span class="dv">100</span>,</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="2">2</button><span id="annotated-cell-2-10" class="code-annotation-target"><a href="#annotated-cell-2-10"></a>                          <span class="at">seed =</span> <span class="dv">12</span>)</span>
-<span id="annotated-cell-2-11"><a href="#annotated-cell-2-11"></a></span>
-<span id="annotated-cell-2-12"><a href="#annotated-cell-2-12"></a></span>
-<span id="annotated-cell-2-13"><a href="#annotated-cell-2-13"></a>fitModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
-<span id="annotated-cell-2-14"><a href="#annotated-cell-2-14"></a>                 rumination <span class="sc">+</span> </span>
-<span id="annotated-cell-2-15"><a href="#annotated-cell-2-15"></a>                 numberCandies, </span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-2" data-target-annotation="3">3</button><span id="annotated-cell-2-16" class="code-annotation-target"><a href="#annotated-cell-2-16"></a>               <span class="at">data =</span> generated)</span>
-<span id="annotated-cell-2-17"><a href="#annotated-cell-2-17"></a></span>
-<span id="annotated-cell-2-18"><a href="#annotated-cell-2-18"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitModel),</span>
-<span id="annotated-cell-2-19"><a href="#annotated-cell-2-19"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-2-20"><a href="#annotated-cell-2-20"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <div id="dloetsnsrw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -1086,12 +1079,12 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="fu">gt</span>(<span class="fu">glance</span>(fitModel) <span class="sc">|&gt;</span></span>
-<span id="cb3-2"><a></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(r.squared, AIC, BIC)) <span class="sc">|&gt;</span></span>
-<span id="cb3-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb3-4"><a></a>  <span class="fu">data_color</span>(</span>
-<span id="cb3-5"><a></a>    <span class="at">columns =</span> <span class="fu">c</span>(r.squared),</span>
-<span id="cb3-6"><a></a>    <span class="at">palette =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="fu">gt</span>(<span class="fu">glance</span>(fitModel) <span class="sc">|&gt;</span></span>
+<span id="cb1-2"><a></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(r.squared, AIC, BIC)) <span class="sc">|&gt;</span></span>
+<span id="cb1-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb1-4"><a></a>  <span class="fu">data_color</span>(</span>
+<span id="cb1-5"><a></a>    <span class="at">columns =</span> <span class="fu">c</span>(r.squared),</span>
+<span id="cb1-6"><a></a>    <span class="at">palette =</span> <span class="st">"red"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -1569,19 +1562,19 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-4"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-4-1"><a href="#annotated-cell-4-1"></a>fitModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
-<span id="annotated-cell-4-2"><a href="#annotated-cell-4-2"></a>                 rumination, </span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-4" data-target-annotation="1">1</button><span id="annotated-cell-4-3" class="code-annotation-target"><a href="#annotated-cell-4-3"></a>               <span class="at">data =</span> generated)</span>
-<span id="annotated-cell-4-4"><a href="#annotated-cell-4-4"></a></span>
-<span id="annotated-cell-4-5"><a href="#annotated-cell-4-5"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitModel),</span>
-<span id="annotated-cell-4-6"><a href="#annotated-cell-4-6"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-4-7"><a href="#annotated-cell-4-7"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-3"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-3-1"><a href="#annotated-cell-3-1"></a>fitModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
+<span id="annotated-cell-3-2"><a href="#annotated-cell-3-2"></a>                 rumination, </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-3" data-target-annotation="1">1</button><span id="annotated-cell-3-3" class="code-annotation-target"><a href="#annotated-cell-3-3"></a>               <span class="at">data =</span> generated)</span>
+<span id="annotated-cell-3-4"><a href="#annotated-cell-3-4"></a></span>
+<span id="annotated-cell-3-5"><a href="#annotated-cell-3-5"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitModel),</span>
+<span id="annotated-cell-3-6"><a href="#annotated-cell-3-6"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-3-7"><a href="#annotated-cell-3-7"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-4" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-3" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-4" data-code-lines="3" data-code-annotation="1">In this example <code>number of candies</code> is omitted.</span>
+<span data-code-cell="annotated-cell-3" data-code-lines="3" data-code-annotation="1">In this example <code>number of candies</code> is omitted.</span>
 </dd>
 </dl>
 </div>
@@ -2073,13 +2066,13 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a><span class="fu">gt</span>(<span class="fu">glance</span>(fitModel) <span class="sc">|&gt;</span></span>
-<span id="cb4-2"><a></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(r.squared, AIC, BIC)) <span class="sc">|&gt;</span></span>
-<span id="cb4-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-4"><a></a>  <span class="fu">data_color</span>(</span>
-<span id="cb4-5"><a></a>    <span class="at">columns =</span> <span class="fu">c</span>(r.squared),</span>
-<span id="cb4-6"><a></a>    <span class="at">palette =</span> <span class="st">"red"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb4-7"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"R-squared after deleting number of candies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a></a><span class="fu">gt</span>(<span class="fu">glance</span>(fitModel) <span class="sc">|&gt;</span></span>
+<span id="cb2-2"><a></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(r.squared, AIC, BIC)) <span class="sc">|&gt;</span></span>
+<span id="cb2-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-4"><a></a>  <span class="fu">data_color</span>(</span>
+<span id="cb2-5"><a></a>    <span class="at">columns =</span> <span class="fu">c</span>(r.squared),</span>
+<span id="cb2-6"><a></a>    <span class="at">palette =</span> <span class="st">"red"</span>) <span class="sc">|&gt;</span></span>
+<span id="cb2-7"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"R-squared after deleting number of candies"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -2553,22 +2546,6 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <li><p>But, if we delete a meaningful variable such as <code>rumination</code> the <span class="math inline">\(R^2\)</span> will decrease:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="annotated-cell-6"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-6-1"><a href="#annotated-cell-6-1"></a>fitModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
-<span id="annotated-cell-6-2"><a href="#annotated-cell-6-2"></a>                 numberCandies, </span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-6" data-target-annotation="1">1</button><span id="annotated-cell-6-3" class="code-annotation-target"><a href="#annotated-cell-6-3"></a>               <span class="at">data =</span> generated)</span>
-<span id="annotated-cell-6-4"><a href="#annotated-cell-6-4"></a></span>
-<span id="annotated-cell-6-5"><a href="#annotated-cell-6-5"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitModel),</span>
-<span id="annotated-cell-6-6"><a href="#annotated-cell-6-6"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-7"><a href="#annotated-cell-6-7"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-6-8"><a href="#annotated-cell-6-8"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Estimated values after deleting rumination"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-annotation">
-<dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-6" data-target-annotation="1">1</dt>
-<dd>
-<span data-code-cell="annotated-cell-6" data-code-lines="3" data-code-annotation="1">Rumination was deleted in this model.</span>
-</dd>
-</dl>
-</div>
 <div class="cell-output-display">
 <div>
 <div id="bcsleagghe" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -3054,20 +3031,13 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 </div>
 </div>
 </div>
+<ol type="1">
+<li>Rumination was deleted in this model.</li>
+</ol>
 <ul>
 <li>We can check again the <span class="math inline">\(R^2\)</span> after deleting rumination:</li>
 </ul>
 <div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">gt</span>(<span class="fu">glance</span>(fitModel) <span class="sc">|&gt;</span></span>
-<span id="cb5-2"><a></a>     dplyr<span class="sc">::</span><span class="fu">select</span>(r.squared, AIC, BIC)) <span class="sc">|&gt;</span></span>
-<span id="cb5-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-4"><a></a>  <span class="fu">data_color</span>(</span>
-<span id="cb5-5"><a></a>    <span class="at">columns =</span> <span class="fu">c</span>(r.squared),</span>
-<span id="cb5-6"><a></a>    <span class="at">palette =</span> <span class="st">"red"</span>) <span class="sc">|&gt;</span></span>
-<span id="cb5-7"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"R-squared after deleting rumination"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <div id="qocecdxovp" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -3546,21 +3516,10 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 <div class="tab-content">
 <div id="tabset-1-1">
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>fitModelHigh <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> rumination <span class="sc">+</span></span>
-<span id="cb6-2"><a></a>                     numberCandies, </span>
-<span id="cb6-3"><a></a>                   <span class="at">data =</span> generated)</span>
-<span id="cb6-4"><a></a></span>
-<span id="cb6-5"><a></a></span>
-<span id="cb6-6"><a></a><span class="fu">plot</span>(<span class="at">x=</span><span class="fu">predict</span>(fitModelHigh), <span class="at">y=</span>generated<span class="sc">$</span>depression,</span>
-<span id="cb6-7"><a></a>     <span class="at">xlab=</span><span class="st">'Predicted Values'</span>,</span>
-<span id="cb6-8"><a></a>     <span class="at">ylab=</span><span class="st">'Actual Values'</span>,</span>
-<span id="cb6-9"><a></a>     <span class="at">main=</span><span class="st">'Predicted vs. Actual Values with high R-Squared'</span>)</span>
-<span id="cb6-10"><a></a></span>
-<span id="cb6-11"><a></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>, <span class="at">b=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><a href="ModelComparasion_files/figure-html/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="ModelComparasion_files/figure-html/unnamed-chunk-8-1.png" width="672"></a></p>
+<p><a href="ModelComparasion_files/figure-revealjs/unnamed-chunk-8-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-3"><img data-src="ModelComparasion_files/figure-revealjs/unnamed-chunk-8-1.png" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -3568,24 +3527,10 @@ lavaan is FREE software! Please report any bugs.</code></pre>
 </div>
 <div id="tabset-1-2">
 <div class="cell">
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>fitModelLow <span class="ot">&lt;-</span> <span class="fu">lm</span>(depression <span class="sc">~</span> selfSteem <span class="sc">+</span> </span>
-<span id="cb7-2"><a></a>                    numberCandies, </span>
-<span id="cb7-3"><a></a>                  <span class="at">data =</span> generated)</span>
-<span id="cb7-4"><a></a></span>
-<span id="cb7-5"><a></a></span>
-<span id="cb7-6"><a></a><span class="fu">plot</span>(<span class="at">x=</span><span class="fu">predict</span>(fitModelLow), <span class="at">y=</span>generated<span class="sc">$</span>depression,</span>
-<span id="cb7-7"><a></a>     <span class="at">xlab=</span><span class="st">'Predicted Values'</span>,</span>
-<span id="cb7-8"><a></a>     <span class="at">ylab=</span><span class="st">'Actual Values'</span>,</span>
-<span id="cb7-9"><a></a>     <span class="at">main=</span><span class="st">'Predicted vs. Actual Values with low R-Squared'</span>)</span>
-<span id="cb7-10"><a></a></span>
-<span id="cb7-11"><a></a><span class="fu">abline</span>(<span class="at">a=</span><span class="dv">0</span>, <span class="at">b=</span><span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><a href="ModelComparasion_files/figure-html/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="ModelComparasion_files/figure-html/unnamed-chunk-9-1.png" width="672"></a></p>
+<p><a href="ModelComparasion_files/figure-revealjs/unnamed-chunk-9-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-4"><img data-src="ModelComparasion_files/figure-revealjs/unnamed-chunk-9-1.png" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -3675,32 +3620,32 @@ R^2_{adj} = 1 - \frac{(1-R^2)(n-1)}{n-p-1}
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-8"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-8-1"><a href="#annotated-cell-8-1"></a>ruminData <span class="ot">&lt;-</span> </span>
-<span id="annotated-cell-8-2"><a href="#annotated-cell-8-2"></a>  <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/blackhill86/mm2/main/dataSets/ruminationComplete.csv"</span>, </span>
-<span id="annotated-cell-8-3"><a href="#annotated-cell-8-3"></a>                       <span class="at">na.strings =</span> <span class="st">"99"</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-8-4"><a href="#annotated-cell-8-4"></a>  <span class="fu">mutate</span>(<span class="at">ruminTotal =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(CRQS1<span class="sc">:</span>CRSQ13)),</span>
-<span id="annotated-cell-8-5"><a href="#annotated-cell-8-5"></a>         <span class="at">depreTotal =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(CDI1<span class="sc">:</span>CDI26), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
-<span id="annotated-cell-8-6"><a href="#annotated-cell-8-6"></a>         <span class="at">anxTotal =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(DASS1<span class="sc">:</span>DASS7)),</span>
-<span id="annotated-cell-8-7"><a href="#annotated-cell-8-7"></a>         <span class="at">negativeBeliefs =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(NBRSdv1<span class="sc">:</span>NBRSdv13)),</span>
-<span id="annotated-cell-8-8"><a href="#annotated-cell-8-8"></a>         <span class="at">positiveBeliefs =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(PBRSdv1<span class="sc">:</span>PBRSdv9)),</span>
-<span id="annotated-cell-8-9"><a href="#annotated-cell-8-9"></a>         <span class="at">attention =</span> ATENCION,</span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-8" data-target-annotation="1">1</button><span id="annotated-cell-8-10" class="code-annotation-target"><a href="#annotated-cell-8-10"></a>         <span class="at">activation =</span> ACTIVACION)</span>
-<span id="annotated-cell-8-11"><a href="#annotated-cell-8-11"></a></span>
-<span id="annotated-cell-8-12"><a href="#annotated-cell-8-12"></a><span class="do">#### We could estimate the most simple model.</span></span>
-<span id="annotated-cell-8-13"><a href="#annotated-cell-8-13"></a><span class="do">#### This is a model that estimates only the intercept.</span></span>
-<span id="annotated-cell-8-14"><a href="#annotated-cell-8-14"></a></span>
-<span id="annotated-cell-8-15"><a href="#annotated-cell-8-15"></a>interceptOnly <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> ruminData)</span>
-<span id="annotated-cell-8-16"><a href="#annotated-cell-8-16"></a></span>
-<span id="annotated-cell-8-17"><a href="#annotated-cell-8-17"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(interceptOnly),</span>
-<span id="annotated-cell-8-18"><a href="#annotated-cell-8-18"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-8-19"><a href="#annotated-cell-8-19"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="annotated-cell-8-20"><a href="#annotated-cell-8-20"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Intercept-only model for the Depression score"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-5"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-5-1"><a href="#annotated-cell-5-1"></a>ruminData <span class="ot">&lt;-</span> </span>
+<span id="annotated-cell-5-2"><a href="#annotated-cell-5-2"></a>  <span class="fu">read.csv</span>(<span class="st">"https://raw.githubusercontent.com/blackhill86/mm2/main/dataSets/ruminationComplete.csv"</span>, </span>
+<span id="annotated-cell-5-3"><a href="#annotated-cell-5-3"></a>                       <span class="at">na.strings =</span> <span class="st">"99"</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-4"><a href="#annotated-cell-5-4"></a>  <span class="fu">mutate</span>(<span class="at">ruminTotal =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(CRQS1<span class="sc">:</span>CRSQ13)),</span>
+<span id="annotated-cell-5-5"><a href="#annotated-cell-5-5"></a>         <span class="at">depreTotal =</span> <span class="fu">rowSums</span>(<span class="fu">across</span>(CDI1<span class="sc">:</span>CDI26), <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="annotated-cell-5-6"><a href="#annotated-cell-5-6"></a>         <span class="at">anxTotal =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(DASS1<span class="sc">:</span>DASS7)),</span>
+<span id="annotated-cell-5-7"><a href="#annotated-cell-5-7"></a>         <span class="at">negativeBeliefs =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(NBRSdv1<span class="sc">:</span>NBRSdv13)),</span>
+<span id="annotated-cell-5-8"><a href="#annotated-cell-5-8"></a>         <span class="at">positiveBeliefs =</span> <span class="fu">rowMeans</span>(<span class="fu">across</span>(PBRSdv1<span class="sc">:</span>PBRSdv9)),</span>
+<span id="annotated-cell-5-9"><a href="#annotated-cell-5-9"></a>         <span class="at">attention =</span> ATENCION,</span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-5" data-target-annotation="1">1</button><span id="annotated-cell-5-10" class="code-annotation-target"><a href="#annotated-cell-5-10"></a>         <span class="at">activation =</span> ACTIVACION)</span>
+<span id="annotated-cell-5-11"><a href="#annotated-cell-5-11"></a></span>
+<span id="annotated-cell-5-12"><a href="#annotated-cell-5-12"></a><span class="do">#### We could estimate the most simple model.</span></span>
+<span id="annotated-cell-5-13"><a href="#annotated-cell-5-13"></a><span class="do">#### This is a model that estimates only the intercept.</span></span>
+<span id="annotated-cell-5-14"><a href="#annotated-cell-5-14"></a></span>
+<span id="annotated-cell-5-15"><a href="#annotated-cell-5-15"></a>interceptOnly <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> <span class="dv">1</span>, <span class="at">data =</span> ruminData)</span>
+<span id="annotated-cell-5-16"><a href="#annotated-cell-5-16"></a></span>
+<span id="annotated-cell-5-17"><a href="#annotated-cell-5-17"></a><span class="fu">gt</span>(<span class="fu">tidy</span>(interceptOnly),</span>
+<span id="annotated-cell-5-18"><a href="#annotated-cell-5-18"></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-19"><a href="#annotated-cell-5-19"></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="annotated-cell-5-20"><a href="#annotated-cell-5-20"></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Intercept-only model for the Depression score"</span>)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-8" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-5" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-8" data-code-lines="10" data-code-annotation="1">I’m reading in the data, then I’m computing the total score with <code>mutate()</code> function.</span>
+<span data-code-cell="annotated-cell-5" data-code-lines="10" data-code-annotation="1">I’m reading in the data, then I’m computing the total score with <code>mutate()</code> function.</span>
 </dd>
 </dl>
 </div>
@@ -4188,14 +4133,14 @@ R^2_{adj} = 1 - \frac{(1-R^2)(n-1)}{n-p-1}
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a></a><span class="do">### Let's add rumination as a predictor.</span></span>
-<span id="cb8-2"><a></a></span>
-<span id="cb8-3"><a></a>fitWithRumination <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> ruminTotal, <span class="at">data =</span> ruminData)</span>
-<span id="cb8-4"><a></a></span>
-<span id="cb8-5"><a></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitWithRumination),</span>
-<span id="cb8-6"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-7"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb8-8"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Rumination as predictor of the Depression score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a><span class="do">### Let's add rumination as a predictor.</span></span>
+<span id="cb3-2"><a></a></span>
+<span id="cb3-3"><a></a>fitWithRumination <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> ruminTotal, <span class="at">data =</span> ruminData)</span>
+<span id="cb3-4"><a></a></span>
+<span id="cb3-5"><a></a><span class="fu">gt</span>(<span class="fu">tidy</span>(fitWithRumination),</span>
+<span id="cb3-6"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-7"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb3-8"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Rumination as predictor of the Depression score"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -4681,15 +4626,15 @@ R^2_{adj} = 1 - \frac{(1-R^2)(n-1)}{n-p-1}
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a>compareAIC <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Intercept Model"</span>, </span>
-<span id="cb9-2"><a></a>                                   <span class="st">"Model adding Rumination"</span>),</span>
-<span id="cb9-3"><a></a>                         <span class="at">AICvalue =</span> <span class="fu">c</span>(<span class="fu">AIC</span>(interceptOnly)[<span class="dv">1</span>], </span>
-<span id="cb9-4"><a></a>                                      <span class="fu">AIC</span>(fitWithRumination)[<span class="dv">1</span>]))</span>
-<span id="cb9-5"><a></a></span>
-<span id="cb9-6"><a></a><span class="fu">gt</span>(compareAIC,</span>
-<span id="cb9-7"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-8"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb9-9"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"AIC values for the Intercept Model and the model with Rumination as predictor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a></a>compareAIC <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Model =</span> <span class="fu">c</span>(<span class="st">"Intercept Model"</span>, </span>
+<span id="cb4-2"><a></a>                                   <span class="st">"Model adding Rumination"</span>),</span>
+<span id="cb4-3"><a></a>                         <span class="at">AICvalue =</span> <span class="fu">c</span>(<span class="fu">AIC</span>(interceptOnly)[<span class="dv">1</span>], </span>
+<span id="cb4-4"><a></a>                                      <span class="fu">AIC</span>(fitWithRumination)[<span class="dv">1</span>]))</span>
+<span id="cb4-5"><a></a></span>
+<span id="cb4-6"><a></a><span class="fu">gt</span>(compareAIC,</span>
+<span id="cb4-7"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-8"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb4-9"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"AIC values for the Intercept Model and the model with Rumination as predictor"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5192,45 +5137,35 @@ R^2_{adj} = 1 - \frac{(1-R^2)(n-1)}{n-p-1}
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</details>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'MASS'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:dplyr':
-
-    select</code></pre>
-</div>
-<details class="code-fold">
-<summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a></a><span class="do">### Omit missing values</span></span>
-<span id="cb13-2"><a></a></span>
-<span id="cb13-3"><a></a>ruminDataNoMissing <span class="ot">&lt;-</span> ruminData <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(depreTotal, </span>
-<span id="cb13-5"><a></a>         ruminTotal,</span>
-<span id="cb13-6"><a></a>         anxTotal,</span>
-<span id="cb13-7"><a></a>         negativeBeliefs,</span>
-<span id="cb13-8"><a></a>         positiveBeliefs,</span>
-<span id="cb13-9"><a></a>         attention,</span>
-<span id="cb13-10"><a></a>         activation) <span class="sc">|&gt;</span></span>
-<span id="cb13-11"><a></a> <span class="fu">drop_na</span>()</span>
-<span id="cb13-12"><a></a></span>
-<span id="cb13-13"><a></a>interceptModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> <span class="dv">1</span>, </span>
-<span id="cb13-14"><a></a>                     <span class="at">data =</span> ruminDataNoMissing )</span>
-<span id="cb13-15"><a></a></span>
-<span id="cb13-16"><a></a>modelSelection <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(interceptModel,</span>
-<span id="cb13-17"><a></a>                          <span class="at">scope =</span> <span class="fu">list</span>(<span class="at">upper =</span> <span class="sc">~</span>ruminTotal<span class="sc">+</span>anxTotal<span class="sc">+</span>negativeBeliefs<span class="sc">+</span>positiveBeliefs<span class="sc">+</span>attention<span class="sc">+</span>activation, </span>
-<span id="cb13-18"><a></a>                                       <span class="at">lower =</span> <span class="sc">~</span><span class="dv">1</span>), </span>
-<span id="cb13-19"><a></a>                          <span class="at">direction =</span> <span class="st">"forward"</span>,</span>
-<span id="cb13-20"><a></a>                          <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
-<span id="cb13-21"><a></a></span>
-<span id="cb13-22"><a></a></span>
-<span id="cb13-23"><a></a><span class="fu">gt</span>(<span class="fu">tidy</span>(modelSelection),</span>
-<span id="cb13-24"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-25"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb13-26"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Final model selected by stepAIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a><span class="fu">library</span>(MASS)</span>
+<span id="cb5-2"><a></a></span>
+<span id="cb5-3"><a></a></span>
+<span id="cb5-4"><a></a><span class="do">### Omit missing values</span></span>
+<span id="cb5-5"><a></a></span>
+<span id="cb5-6"><a></a>ruminDataNoMissing <span class="ot">&lt;-</span> ruminData <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a></a>  dplyr<span class="sc">::</span><span class="fu">select</span>(depreTotal, </span>
+<span id="cb5-8"><a></a>         ruminTotal,</span>
+<span id="cb5-9"><a></a>         anxTotal,</span>
+<span id="cb5-10"><a></a>         negativeBeliefs,</span>
+<span id="cb5-11"><a></a>         positiveBeliefs,</span>
+<span id="cb5-12"><a></a>         attention,</span>
+<span id="cb5-13"><a></a>         activation) <span class="sc">|&gt;</span></span>
+<span id="cb5-14"><a></a> <span class="fu">drop_na</span>()</span>
+<span id="cb5-15"><a></a></span>
+<span id="cb5-16"><a></a>interceptModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> <span class="dv">1</span>, </span>
+<span id="cb5-17"><a></a>                     <span class="at">data =</span> ruminDataNoMissing )</span>
+<span id="cb5-18"><a></a></span>
+<span id="cb5-19"><a></a>modelSelection <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(interceptModel,</span>
+<span id="cb5-20"><a></a>                          <span class="at">scope =</span> <span class="fu">list</span>(<span class="at">upper =</span> <span class="sc">~</span>ruminTotal<span class="sc">+</span>anxTotal<span class="sc">+</span>negativeBeliefs<span class="sc">+</span>positiveBeliefs<span class="sc">+</span>attention<span class="sc">+</span>activation, </span>
+<span id="cb5-21"><a></a>                                       <span class="at">lower =</span> <span class="sc">~</span><span class="dv">1</span>), </span>
+<span id="cb5-22"><a></a>                          <span class="at">direction =</span> <span class="st">"forward"</span>,</span>
+<span id="cb5-23"><a></a>                          <span class="at">trace =</span> <span class="cn">FALSE</span>)</span>
+<span id="cb5-24"><a></a></span>
+<span id="cb5-25"><a></a></span>
+<span id="cb5-26"><a></a><span class="fu">gt</span>(<span class="fu">tidy</span>(modelSelection),</span>
+<span id="cb5-27"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-28"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
+<span id="cb5-29"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Final model selected by stepAIC"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
 <div>
@@ -5742,11 +5677,6 @@ Attaching package: 'MASS'</code></pre>
 <li>The final model selected by the <code>stepAIC</code> function was a model where <code>positiveBeliefs</code> is omitted. If we drop this variable we obtain the best set of variables to predict depression.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">gt</span>(modelSelection<span class="sc">$</span>anova,</span>
-<span id="cb14-2"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb14-4"><a></a>   <span class="fu">cols_hide</span>(<span class="at">columns =</span> <span class="fu">c</span>(Df, Deviance, <span class="st">"Resid. Df"</span>, <span class="st">"Resid. Dev"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb14-5"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"AIC values for all models forward method"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <div id="yidpcsysej" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -6240,50 +6170,10 @@ Attaching package: 'MASS'</code></pre>
 <li>A plot or multiple plots are always useful to interpret the results of the final best model:</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a></a><span class="fu">library</span>(marginaleffects)</span>
-<span id="cb15-2"><a></a><span class="fu">library</span>(patchwork)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'patchwork'</code></pre>
-</div>
-<div class="cell-output cell-output-stderr">
-<pre><code>The following object is masked from 'package:MASS':
-
-    area</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a>finalModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> ruminTotal<span class="sc">+</span></span>
-<span id="cb18-2"><a></a>                   anxTotal<span class="sc">+</span></span>
-<span id="cb18-3"><a></a>                   negativeBeliefs<span class="sc">+</span></span>
-<span id="cb18-4"><a></a>                   attention<span class="sc">+</span></span>
-<span id="cb18-5"><a></a>                   activation, </span>
-<span id="cb18-6"><a></a>                 <span class="at">data =</span> ruminDataNoMissing)</span>
-<span id="cb18-7"><a></a></span>
-<span id="cb18-8"><a></a></span>
-<span id="cb18-9"><a></a>rumPlot <span class="ot">&lt;-</span> <span class="fu">plot_predictions</span>(finalModel, </span>
-<span id="cb18-10"><a></a>                       <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">"ruminTotal"</span>),</span>
-<span id="cb18-11"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-12"><a></a></span>
-<span id="cb18-13"><a></a>anxPlot <span class="ot">&lt;-</span> <span class="fu">plot_predictions</span>(finalModel, </span>
-<span id="cb18-14"><a></a>                       <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">"anxTotal"</span>),</span>
-<span id="cb18-15"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-16"><a></a></span>
-<span id="cb18-17"><a></a>negativePlot <span class="ot">&lt;-</span> <span class="fu">plot_predictions</span>(finalModel, </span>
-<span id="cb18-18"><a></a>                       <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">"negativeBeliefs"</span>),</span>
-<span id="cb18-19"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-20"><a></a></span>
-<span id="cb18-21"><a></a>attentionPlot <span class="ot">&lt;-</span> <span class="fu">plot_predictions</span>(finalModel, </span>
-<span id="cb18-22"><a></a>                       <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">"attention"</span>),</span>
-<span id="cb18-23"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-24"><a></a></span>
-<span id="cb18-25"><a></a>activationPlot <span class="ot">&lt;-</span> <span class="fu">plot_predictions</span>(finalModel, </span>
-<span id="cb18-26"><a></a>                       <span class="at">condition =</span> <span class="fu">c</span>(<span class="st">"activation"</span>),</span>
-<span id="cb18-27"><a></a>                 <span class="at">points =</span> <span class="fl">0.5</span>)</span>
-<span id="cb18-28"><a></a></span>
-<span id="cb18-29"><a></a>(rumPlot <span class="sc">+</span> anxPlot <span class="sc">+</span> negativePlot <span class="sc">+</span> attentionPlot)  <span class="sc">+</span> activationPlot</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure>
-<p><a href="ModelComparasion_files/figure-html/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="ModelComparasion_files/figure-html/unnamed-chunk-15-1.png" width="672"></a></p>
+<p><a href="ModelComparasion_files/figure-revealjs/unnamed-chunk-15-1.png" class="lightbox" data-gallery="quarto-lightbox-gallery-9"><img data-src="ModelComparasion_files/figure-revealjs/unnamed-chunk-15-1.png" width="960"></a></p>
 </figure>
 </div>
 </div>
@@ -6298,19 +6188,19 @@ Attaching package: 'patchwork'</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="annotated-cell-16"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-16-1"><a href="#annotated-cell-16-1"></a>fullModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> ruminTotal<span class="sc">+</span></span>
-<span id="annotated-cell-16-2"><a href="#annotated-cell-16-2"></a>                   anxTotal<span class="sc">+</span></span>
-<span id="annotated-cell-16-3"><a href="#annotated-cell-16-3"></a>                   negativeBeliefs<span class="sc">+</span></span>
-<span id="annotated-cell-16-4"><a href="#annotated-cell-16-4"></a>                   positiveBeliefs<span class="sc">+</span></span>
-<span id="annotated-cell-16-5"><a href="#annotated-cell-16-5"></a>                   attention<span class="sc">+</span></span>
-<span id="annotated-cell-16-6"><a href="#annotated-cell-16-6"></a>                   activation, </span>
-<button class="code-annotation-anchor" data-target-cell="annotated-cell-16" data-target-annotation="1">1</button><span id="annotated-cell-16-7" class="code-annotation-target"><a href="#annotated-cell-16-7"></a>                 <span class="at">data =</span> ruminDataNoMissing)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="annotated-cell-9"><pre class="sourceCode numberSource r code-annotation-code number-lines code-with-copy code-annotated"><code class="sourceCode r"><span id="annotated-cell-9-1"><a href="#annotated-cell-9-1"></a>fullModel <span class="ot">&lt;-</span> <span class="fu">lm</span>(depreTotal <span class="sc">~</span> ruminTotal<span class="sc">+</span></span>
+<span id="annotated-cell-9-2"><a href="#annotated-cell-9-2"></a>                   anxTotal<span class="sc">+</span></span>
+<span id="annotated-cell-9-3"><a href="#annotated-cell-9-3"></a>                   negativeBeliefs<span class="sc">+</span></span>
+<span id="annotated-cell-9-4"><a href="#annotated-cell-9-4"></a>                   positiveBeliefs<span class="sc">+</span></span>
+<span id="annotated-cell-9-5"><a href="#annotated-cell-9-5"></a>                   attention<span class="sc">+</span></span>
+<span id="annotated-cell-9-6"><a href="#annotated-cell-9-6"></a>                   activation, </span>
+<button class="code-annotation-anchor" data-target-cell="annotated-cell-9" data-target-annotation="1">1</button><span id="annotated-cell-9-7" class="code-annotation-target"><a href="#annotated-cell-9-7"></a>                 <span class="at">data =</span> ruminDataNoMissing)</span><div class="code-annotation-gutter-bg"></div><div class="code-annotation-gutter"></div></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-annotation">
 <dl class="code-annotation-container-hidden code-annotation-container-grid">
-<dt data-target-cell="annotated-cell-16" data-target-annotation="1">1</dt>
+<dt data-target-cell="annotated-cell-9" data-target-annotation="1">1</dt>
 <dd>
-<span data-code-cell="annotated-cell-16" data-code-lines="7" data-code-annotation="1">The full model has all the predictors related to <code>depression</code>. The model will be reduced later.</span>
+<span data-code-cell="annotated-cell-9" data-code-lines="7" data-code-annotation="1">The full model has all the predictors related to <code>depression</code>. The model will be reduced later.</span>
 </dd>
 </dl>
 </div>
@@ -6321,18 +6211,14 @@ Attaching package: 'patchwork'</code></pre>
 <div class="cell">
 <details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a></a>backwardsSelection <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(fullModel,</span>
-<span id="cb19-2"><a></a>                          <span class="at">scope =</span> <span class="fu">list</span>(<span class="at">upper =</span> <span class="sc">~</span>ruminTotal<span class="sc">+</span>anxTotal<span class="sc">+</span>negativeBeliefs<span class="sc">+</span>positiveBeliefs<span class="sc">+</span>attention<span class="sc">+</span>activation, </span>
-<span id="cb19-3"><a></a>                                       <span class="at">lower =</span> <span class="sc">~</span><span class="dv">1</span>), </span>
-<span id="cb19-4"><a></a>                          <span class="at">direction =</span> <span class="st">"backward"</span>,</span>
-<span id="cb19-5"><a></a>                          <span class="at">trace =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a></a>backwardsSelection <span class="ot">&lt;-</span> <span class="fu">stepAIC</span>(fullModel,</span>
+<span id="cb6-2"><a></a>                          <span class="at">scope =</span> <span class="fu">list</span>(<span class="at">upper =</span> <span class="sc">~</span>ruminTotal<span class="sc">+</span>anxTotal<span class="sc">+</span>negativeBeliefs<span class="sc">+</span>positiveBeliefs<span class="sc">+</span>attention<span class="sc">+</span>activation, </span>
+<span id="cb6-3"><a></a>                                       <span class="at">lower =</span> <span class="sc">~</span><span class="dv">1</span>), </span>
+<span id="cb6-4"><a></a>                          <span class="at">direction =</span> <span class="st">"backward"</span>,</span>
+<span id="cb6-5"><a></a>                          <span class="at">trace =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="fu">gt</span>(<span class="fu">tidy</span>(backwardsSelection),</span>
-<span id="cb20-2"><a></a>   <span class="at">rownames_to_stub=</span> <span class="cn">FALSE</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-3"><a></a>  <span class="fu">fmt_number</span>(<span class="at">decimals =</span> <span class="dv">2</span>) <span class="sc">|&gt;</span></span>
-<span id="cb20-4"><a></a>  <span class="fu">tab_header</span>(<span class="at">title =</span> <span class="st">"Final model selected by stepAIC backwards method"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <div id="rhycdotfmw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
@@ -7083,6 +6969,82 @@ Box, G. E. (1976). Science and statistics. <em>Journal of the American Statistic
         ]
       });
     </script>
+    
+
+    <script>
+
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+
+      // slide changes (different for each slide format).
+
+      (function () {
+
+        // dispatch for htmlwidgets
+
+        function fireSlideEnter() {
+
+          const event = window.document.createEvent("Event");
+
+          event.initEvent("slideenter", true, true);
+
+          window.document.dispatchEvent(event);
+
+        }
+
+    
+
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          fireSlideEnter();
+
+    
+
+          // dispatch for shiny
+
+          if (window.jQuery) {
+
+            if (previousSlide) {
+
+              window.jQuery(previousSlide).trigger("hidden");
+
+            }
+
+            if (currentSlide) {
+
+              window.jQuery(currentSlide).trigger("shown");
+
+            }
+
+          }
+
+        }
+
+    
+
+        // hookup for slidy
+
+        if (window.w3c_slidy) {
+
+          window.w3c_slidy.add_observer(function (slide_num) {
+
+            // slide_num starts at position 1
+
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+
+          });
+
+        }
+
+    
+
+      })();
+
+    </script>
+
+    
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const toggleBodyColorMode = (bsSheetEl) => {
@@ -7411,7 +7373,7 @@ Box, G. E. (1976). Science and statistics. <em>Journal of the American Statistic
       }
     });
     </script>
-    <script>var lightboxQuarto = GLightbox({"closeEffect":"zoom","loop":false,"descPosition":"bottom","selector":".lightbox","openEffect":"zoom"});
+    <script>var lightboxQuarto = GLightbox({"loop":false,"openEffect":"zoom","descPosition":"bottom","closeEffect":"zoom","selector":".lightbox"});
     window.onload = () => {
       lightboxQuarto.on('slide_before_load', (data) => {
         const { slideIndex, slideNode, slideConfig, player, trigger } = data;

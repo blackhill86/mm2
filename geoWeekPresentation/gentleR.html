@@ -1,5 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><head>
+<script src="../site_libs/cookie-consent/cookie-consent.js"></script>
+<link href="../site_libs/cookie-consent/cookie-consent.css" rel="stylesheet">
 <script src="../site_libs/clipboard/clipboard.min.js"></script>
 <script src="../site_libs/quarto-html/tabby.min.js"></script>
 <script src="../site_libs/quarto-html/popper.min.js"></script>
@@ -13,10 +15,10 @@
 <link href="../site_libs/quarto-contrib/grid-no-htext-1.0.0/grid_no_htext.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/all.css" rel="stylesheet">
 <link href="../site_libs/quarto-contrib/fontawesome6-0.1.0/latex-fontsize.css" rel="stylesheet"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.3.353">
+  <meta name="generator" content="quarto-1.5.56">
 
   <meta name="author" content="Esteban Montenegro-Montenegro, PhD">
-  <title>{HASO} - Gentle introduction to R</title>
+  <title>{HASO} – Gentle introduction to R</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -36,7 +38,7 @@
     }
     /* CSS for syntax highlighting */
     pre > code.sourceCode { white-space: pre; position: relative; }
-    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span { line-height: 1.25; }
     pre > code.sourceCode > span:empty { height: 1.2em; }
     .sourceCode { overflow: visible; }
     code.sourceCode > span { color: inherit; text-decoration: inherit; }
@@ -47,7 +49,7 @@
     }
     @media print {
     pre > code.sourceCode { white-space: pre-wrap; }
-    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
     }
     pre.numberSource code
       { counter-reset: source-line 0; }
@@ -101,6 +103,33 @@
     code span.wa { color: #ff5555; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css">
+  <script async="" src="https://www.googletagmanager.com/gtag/js?id=UG-RWF2RC4JVK"></script>
+
+  <script type="text/plain" cookie-consent="tracking">
+
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'UG-RWF2RC4JVK', { 'anonymize_ip': true});
+  </script>
+  
+  <script type="text/javascript" charset="UTF-8">
+  document.addEventListener('DOMContentLoaded', function () {
+  cookieconsent.run({
+    "notice_banner_type":"headline",
+    "consent_type":"express",
+    "palette":"light",
+    "language":"en",
+    "page_load_consent_levels":["strictly-necessary"],
+    "notice_banner_reject_button_hide":false,
+    "preferences_center_close_button_hide":false,
+    "website_name":""
+    ,
+  "language":"en"
+    });
+  });
+  </script> 
+    
   <link href="../site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
   <link href="../site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
@@ -228,7 +257,8 @@
   }
 
   .callout.callout-titled .callout-body > .callout-content > :last-child {
-    margin-bottom: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 0;
   }
 
   .callout.callout-titled .callout-icon::before {
@@ -391,16 +421,16 @@
       margin-right: 0; 
     }
   </style>
-  
-  <script src="../site_libs/htmlwidgets-1.6.2/htmlwidgets.js"></script>
+  <link href="../site_libs/htmltools-fill-0.5.8.1/fill.css" rel="stylesheet">
+  <script src="../site_libs/htmlwidgets-1.6.4/htmlwidgets.js"></script>
   <link href="../site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet">
-  <script src="../site_libs/datatables-binding-0.27/datatables.js"></script>
+  <script src="../site_libs/datatables-binding-0.33/datatables.js"></script>
   <script src="../site_libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
-  <link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.min.css" rel="stylesheet">
-  <link href="../site_libs/dt-core-1.12.1/css/jquery.dataTables.extra.css" rel="stylesheet">
-  <script src="../site_libs/dt-core-1.12.1/js/jquery.dataTables.min.js"></script>
-  <link href="../site_libs/crosstalk-1.2.0/css/crosstalk.min.css" rel="stylesheet">
-  <script src="../site_libs/crosstalk-1.2.0/js/crosstalk.min.js"></script>
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.min.css" rel="stylesheet">
+  <link href="../site_libs/dt-core-1.13.6/css/jquery.dataTables.extra.css" rel="stylesheet">
+  <script src="../site_libs/dt-core-1.13.6/js/jquery.dataTables.min.js"></script>
+  <link href="../site_libs/crosstalk-1.2.1/css/crosstalk.min.css" rel="stylesheet">
+  <script src="../site_libs/crosstalk-1.2.1/js/crosstalk.min.js"></script>
 </head>
 <body class="quarto-light">
   <div class="reveal">
@@ -443,8 +473,13 @@ Esteban Montenegro-Montenegro, PhD
 </section>
 <section id="why-should-we-use-r-1" class="slide level2 smaller scrollable" data-background-opacity="0.5">
 <h2>Why should we use <code>R</code>?</h2>
-
-<img data-src="rtiobe2.png" class="r-stretch quarto-figure-center"><p class="caption">TIOBE index of R overtime</p></section>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><a href="https://www.tiobe.com/tiobe-index/r/"><img data-src="rtiobe2.png" alt="TIOBE index of R overtime"></a></p>
+<figcaption>TIOBE index of R overtime</figcaption>
+</figure>
+</div>
+</section>
 <section id="why-should-we-use-r-2" class="slide level2 smaller scrollable" data-background-opacity="0.5">
 <h2>Why should we use <code>R</code>?</h2>
 <div class="columns">
@@ -491,6 +526,7 @@ Esteban Montenegro-Montenegro, PhD
 <li>You’ll have access to cutting-edge quantitative methods and models.</li>
 </ul>
 </div>
+<div title="More info">
 <div class="callout callout-important callout-titled callout-style-simple">
 <div class="callout-body">
 <div class="callout-title">
@@ -505,7 +541,7 @@ Esteban Montenegro-Montenegro, PhD
 </div>
 </div>
 </div>
-</div>
+</div></div>
 </section>
 <section>
 <section id="how-r-works" class="title-slide slide level1 center sectionhead">
@@ -519,7 +555,7 @@ Esteban Montenegro-Montenegro, PhD
 <li><p>It is an <a href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank">object-oriented</a> programming language. It represents the information using virtual objects.</p></li>
 </ul>
 
-<img data-src="fancy.jpg" width="300" class="r-stretch quarto-figure-right"></section>
+<img data-src="fancy.jpg" class="quarto-figure quarto-figure-right r-stretch" width="300"></section>
 <section id="packages-are-the-key" class="slide level2 smaller scrollable" data-background-opacity="0.5">
 <h2>Packages are the key</h2>
 <ul>
@@ -575,19 +611,19 @@ Esteban Montenegro-Montenegro, PhD
 <li><p>In human language, they look like lists of elements. But, when mixed different type of data (letters mixed with numbers) things get messy:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="do">### Let's create a vector with names:</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>randomNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Randall"</span>, <span class="st">"Pablo"</span>, <span class="st">"Emma"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="fu">print</span>(randomNames) <span class="co">#You don't need to type print. This is for teaching purposes. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a></a><span class="do">### Let's create a vector with names:</span></span>
+<span id="cb1-2"><a></a></span>
+<span id="cb1-3"><a></a>randomNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Randall"</span>, <span class="st">"Pablo"</span>, <span class="st">"Emma"</span>)</span>
+<span id="cb1-4"><a></a></span>
+<span id="cb1-5"><a></a><span class="fu">print</span>(randomNames) <span class="co">#You don't need to type print. This is for teaching purposes. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Randall" "Pablo"   "Emma"   </code></pre>
 </div>
 </div>
 <p>Let’s see what happen’s when I mix numbers and letters:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>numbersNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"one"</span>,<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">"two"</span>, <span class="dv">3</span>, <span class="st">"three"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="fu">print</span>(numbersNames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a></a>numbersNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"one"</span>,<span class="dv">1</span>, <span class="dv">2</span>, <span class="st">"two"</span>, <span class="dv">3</span>, <span class="st">"three"</span>)</span>
+<span id="cb3-2"><a></a><span class="fu">print</span>(numbersNames)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "one"   "1"     "2"     "two"   "3"     "three"</code></pre>
 </div>
@@ -597,7 +633,7 @@ Esteban Montenegro-Montenegro, PhD
 <li>You may also subset a vector by using <code>[]</code> as an index indicator</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>numbersNames[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a></a>numbersNames[<span class="dv">4</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "two"</code></pre>
 </div>
@@ -610,9 +646,9 @@ Esteban Montenegro-Montenegro, PhD
 <li><p>A data frame is several lists combined together, and it looks pretty much like a matrix or a spreadsheet:</p></li>
 </ul>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a></a>mtcars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>                     mpg cyl  disp  hp drat    wt  qsec vs am gear carb
@@ -655,16 +691,15 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <h2></h2>
 <p>Let’s beautify the data frame output:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="fu">library</span>(DT)</span>
-<span id="cb9-2"><a href="#cb9-2"></a><span class="fu">datatable</span>(mtcars,</span>
-<span id="cb9-3"><a href="#cb9-3"></a>          <span class="at">rownames =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a></a><span class="fu">library</span>(DT)</span>
+<span id="cb9-2"><a></a><span class="fu">datatable</span>(mtcars,</span>
+<span id="cb9-3"><a></a>          <span class="at">rownames =</span> <span class="cn">TRUE</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output-display">
-
-<div class="datatables html-widget html-fill-item-overflow-hidden html-fill-item" id="htmlwidget-977b4dd27389aded525d" style="width:100%;height:auto;"></div>
-<script type="application/json" data-for="htmlwidget-977b4dd27389aded525d">{"x":{"filter":"none","vertical":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.1,120.1,318,304,350,400,79,120.3,95.1,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
+<div class="datatables html-widget html-fill-item" id="htmlwidget-59b573a2475856a86bd4" style="width:100%;height:auto;"></div>
+<script type="application/json" data-for="htmlwidget-59b573a2475856a86bd4">{"x":{"filter":"none","vertical":false,"data":[["Mazda RX4","Mazda RX4 Wag","Datsun 710","Hornet 4 Drive","Hornet Sportabout","Valiant","Duster 360","Merc 240D","Merc 230","Merc 280","Merc 280C","Merc 450SE","Merc 450SL","Merc 450SLC","Cadillac Fleetwood","Lincoln Continental","Chrysler Imperial","Fiat 128","Honda Civic","Toyota Corolla","Toyota Corona","Dodge Challenger","AMC Javelin","Camaro Z28","Pontiac Firebird","Fiat X1-9","Porsche 914-2","Lotus Europa","Ford Pantera L","Ferrari Dino","Maserati Bora","Volvo 142E"],[21,21,22.8,21.4,18.7,18.1,14.3,24.4,22.8,19.2,17.8,16.4,17.3,15.2,10.4,10.4,14.7,32.4,30.4,33.9,21.5,15.5,15.2,13.3,19.2,27.3,26,30.4,15.8,19.7,15,21.4],[6,6,4,6,8,6,8,4,4,6,6,8,8,8,8,8,8,4,4,4,4,8,8,8,8,4,4,4,8,6,8,4],[160,160,108,258,360,225,360,146.7,140.8,167.6,167.6,275.8,275.8,275.8,472,460,440,78.7,75.7,71.09999999999999,120.1,318,304,350,400,79,120.3,95.09999999999999,351,145,301,121],[110,110,93,110,175,105,245,62,95,123,123,180,180,180,205,215,230,66,52,65,97,150,150,245,175,66,91,113,264,175,335,109],[3.9,3.9,3.85,3.08,3.15,2.76,3.21,3.69,3.92,3.92,3.92,3.07,3.07,3.07,2.93,3,3.23,4.08,4.93,4.22,3.7,2.76,3.15,3.73,3.08,4.08,4.43,3.77,4.22,3.62,3.54,4.11],[2.62,2.875,2.32,3.215,3.44,3.46,3.57,3.19,3.15,3.44,3.44,4.07,3.73,3.78,5.25,5.424,5.345,2.2,1.615,1.835,2.465,3.52,3.435,3.84,3.845,1.935,2.14,1.513,3.17,2.77,3.57,2.78],[16.46,17.02,18.61,19.44,17.02,20.22,15.84,20,22.9,18.3,18.9,17.4,17.6,18,17.98,17.82,17.42,19.47,18.52,19.9,20.01,16.87,17.3,15.41,17.05,18.9,16.7,16.9,14.5,15.5,14.6,18.6],[0,0,1,1,0,1,0,1,1,1,1,0,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,0,0,0,1],[1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,0,0,0,0,0,1,1,1,1,1,1,1],[4,4,4,3,3,3,3,4,4,4,4,3,3,3,3,3,3,4,4,4,3,3,3,3,3,4,5,5,5,5,5,4],[4,4,1,1,2,1,4,2,2,4,4,3,3,3,4,4,4,1,2,1,1,2,2,4,2,1,2,2,4,6,8,2]],"container":"<table class=\"display\">\n  <thead>\n    <tr>\n      <th> <\/th>\n      <th>mpg<\/th>\n      <th>cyl<\/th>\n      <th>disp<\/th>\n      <th>hp<\/th>\n      <th>drat<\/th>\n      <th>wt<\/th>\n      <th>qsec<\/th>\n      <th>vs<\/th>\n      <th>am<\/th>\n      <th>gear<\/th>\n      <th>carb<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7,8,9,10,11]},{"orderable":false,"targets":0},{"name":" ","targets":0},{"name":"mpg","targets":1},{"name":"cyl","targets":2},{"name":"disp","targets":3},{"name":"hp","targets":4},{"name":"drat","targets":5},{"name":"wt","targets":6},{"name":"qsec","targets":7},{"name":"vs","targets":8},{"name":"am","targets":9},{"name":"gear","targets":10},{"name":"carb","targets":11}],"order":[],"autoWidth":false,"orderClasses":false}},"evals":[],"jsHooks":[]}</script>
 </div>
 </div>
 </section>
@@ -674,42 +709,42 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <li>Lists are flexible and easy to manipulate in <code>R</code>. You can combine different types of objects in a single list:</li>
 </ul>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="do">### Let's create different types of objects</span></span>
-<span id="cb10-2"><a href="#cb10-2"></a></span>
-<span id="cb10-3"><a href="#cb10-3"></a><span class="do">### Data frame</span></span>
-<span id="cb10-4"><a href="#cb10-4"></a></span>
-<span id="cb10-5"><a href="#cb10-5"></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">v1=</span> <span class="fu">rnorm</span>(<span class="dv">8</span>),</span>
-<span id="cb10-6"><a href="#cb10-6"></a>                     <span class="at">v2 =</span> <span class="fu">rnorm</span>(<span class="dv">8</span>),</span>
-<span id="cb10-7"><a href="#cb10-7"></a>                     <span class="at">v3 =</span> <span class="fu">rnorm</span>(<span class="dv">8</span>))</span>
-<span id="cb10-8"><a href="#cb10-8"></a></span>
-<span id="cb10-9"><a href="#cb10-9"></a><span class="do">### Vector</span></span>
-<span id="cb10-10"><a href="#cb10-10"></a></span>
-<span id="cb10-11"><a href="#cb10-11"></a>moreNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Bob"</span>, <span class="st">"Paris"</span>, <span class="st">"Ana"</span>)</span>
-<span id="cb10-12"><a href="#cb10-12"></a></span>
-<span id="cb10-13"><a href="#cb10-13"></a><span class="do">### Numeric vector</span></span>
-<span id="cb10-14"><a href="#cb10-14"></a></span>
-<span id="cb10-15"><a href="#cb10-15"></a>numericVector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">78</span>,<span class="dv">90</span>)</span>
-<span id="cb10-16"><a href="#cb10-16"></a></span>
-<span id="cb10-17"><a href="#cb10-17"></a><span class="do">### We can group all these objects in a list</span></span>
-<span id="cb10-18"><a href="#cb10-18"></a></span>
-<span id="cb10-19"><a href="#cb10-19"></a>listOfObjects <span class="ot">&lt;-</span> <span class="fu">list</span>(data_1,</span>
-<span id="cb10-20"><a href="#cb10-20"></a>                      moreNames,</span>
-<span id="cb10-21"><a href="#cb10-21"></a>                      numericVector)</span>
-<span id="cb10-22"><a href="#cb10-22"></a><span class="fu">print</span>(listOfObjects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a></a><span class="do">### Let's create different types of objects</span></span>
+<span id="cb10-2"><a></a></span>
+<span id="cb10-3"><a></a><span class="do">### Data frame</span></span>
+<span id="cb10-4"><a></a></span>
+<span id="cb10-5"><a></a>data_1 <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">v1=</span> <span class="fu">rnorm</span>(<span class="dv">8</span>),</span>
+<span id="cb10-6"><a></a>                     <span class="at">v2 =</span> <span class="fu">rnorm</span>(<span class="dv">8</span>),</span>
+<span id="cb10-7"><a></a>                     <span class="at">v3 =</span> <span class="fu">rnorm</span>(<span class="dv">8</span>))</span>
+<span id="cb10-8"><a></a></span>
+<span id="cb10-9"><a></a><span class="do">### Vector</span></span>
+<span id="cb10-10"><a></a></span>
+<span id="cb10-11"><a></a>moreNames <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Bob"</span>, <span class="st">"Paris"</span>, <span class="st">"Ana"</span>)</span>
+<span id="cb10-12"><a></a></span>
+<span id="cb10-13"><a></a><span class="do">### Numeric vector</span></span>
+<span id="cb10-14"><a></a></span>
+<span id="cb10-15"><a></a>numericVector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">3</span>,<span class="dv">78</span>,<span class="dv">90</span>)</span>
+<span id="cb10-16"><a></a></span>
+<span id="cb10-17"><a></a><span class="do">### We can group all these objects in a list</span></span>
+<span id="cb10-18"><a></a></span>
+<span id="cb10-19"><a></a>listOfObjects <span class="ot">&lt;-</span> <span class="fu">list</span>(data_1,</span>
+<span id="cb10-20"><a></a>                      moreNames,</span>
+<span id="cb10-21"><a></a>                      numericVector)</span>
+<span id="cb10-22"><a></a><span class="fu">print</span>(listOfObjects)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[[1]]
-          v1         v2           v3
-1 -1.3846711  1.1342249  0.005603773
-2 -0.6052452  1.7357052  0.157493762
-3  1.1978363 -0.7972630  0.926481685
-4  0.6755754  0.6163520  0.439208389
-5 -1.0040656 -0.7112245 -0.668112481
-6 -1.0667921 -0.4581647  0.228805642
-7  2.1765713  0.7218299 -0.503185122
-8  0.7557314  1.5541713 -0.714680298
+          v1          v2          v3
+1  1.8902223  0.27470521 -0.09773574
+2 -0.1646468 -1.33127203  0.73335452
+3 -0.2726281  1.41410826  0.07736676
+4  0.4064117  0.64348853  0.33315138
+5  0.8207293  0.81350766  0.50652629
+6 -0.2590162 -0.08945012  0.59977365
+7 -1.0536551 -0.34730255  0.08671224
+8  0.2535251 -1.31268018 -0.86488363
 
 [[2]]
 [1] "Bob"   "Paris" "Ana"  
@@ -720,9 +755,9 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 </div>
 <p>If you need to access one object in the list you may use its location plus <code>[[]]</code>:</p>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a>listOfObjects[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a></a>listOfObjects[[<span class="dv">2</span>]]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] "Bob"   "Paris" "Ana"  </code></pre>
@@ -737,7 +772,7 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <li><p>It is similar to a multi-layer object.</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">array</span>(<span class="fu">c</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a></a><span class="fu">array</span>(<span class="fu">c</span>(<span class="fu">matrix</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">4</span>,<span class="dv">2</span>,<span class="dv">2</span>)), <span class="at">dim=</span><span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">2</span>,<span class="dv">3</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>, , 1
 
@@ -767,61 +802,61 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <li><p>Functions will always follow the following structure:</p></li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a>myFunction <span class="ot">&lt;-</span> <span class="cf">function</span>(argument1, argument2, ...){ </span>
-<span id="cb16-2"><a href="#cb16-2"></a>  </span>
-<span id="cb16-3"><a href="#cb16-3"></a>  operation</span>
-<span id="cb16-4"><a href="#cb16-4"></a>  </span>
-<span id="cb16-5"><a href="#cb16-5"></a>  <span class="fu">return</span>()</span>
-<span id="cb16-6"><a href="#cb16-6"></a>  </span>
-<span id="cb16-7"><a href="#cb16-7"></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a></a>myFunction <span class="ot">&lt;-</span> <span class="cf">function</span>(argument1, argument2, ...){ </span>
+<span id="cb16-2"><a></a>  </span>
+<span id="cb16-3"><a></a>  operation</span>
+<span id="cb16-4"><a></a>  </span>
+<span id="cb16-5"><a></a>  <span class="fu">return</span>()</span>
+<span id="cb16-6"><a></a>  </span>
+<span id="cb16-7"><a></a>  }</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <ul>
 <li>We can study the following case, where I created a function to estimate your age:</li>
 </ul>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1"></a>estimateAge <span class="ot">&lt;-</span> <span class="cf">function</span>(myBirthday) {</span>
-<span id="cb17-2"><a href="#cb17-2"></a>  <span class="do">### Function to check if year is a</span></span>
-<span id="cb17-3"><a href="#cb17-3"></a>  <span class="do">### leap year.</span></span>
-<span id="cb17-4"><a href="#cb17-4"></a>  </span>
-<span id="cb17-5"><a href="#cb17-5"></a>  leapyear <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
-<span id="cb17-6"><a href="#cb17-6"></a>    <span class="fu">return</span>(((year <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (year <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>)) <span class="sc">|</span> (year <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>))</span>
-<span id="cb17-7"><a href="#cb17-7"></a>  }</span>
-<span id="cb17-8"><a href="#cb17-8"></a>  </span>
-<span id="cb17-9"><a href="#cb17-9"></a>  <span class="do">### Information necessary to compute age</span></span>
-<span id="cb17-10"><a href="#cb17-10"></a>  myBirthday2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(myBirthday)</span>
-<span id="cb17-11"><a href="#cb17-11"></a>  today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
-<span id="cb17-12"><a href="#cb17-12"></a>  year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(myBirthday2, <span class="st">"%Y"</span>))</span>
-<span id="cb17-13"><a href="#cb17-13"></a>  leapCheck <span class="ot">&lt;-</span> <span class="fu">leapyear</span>(year)</span>
-<span id="cb17-14"><a href="#cb17-14"></a>  </span>
-<span id="cb17-15"><a href="#cb17-15"></a>  </span>
-<span id="cb17-16"><a href="#cb17-16"></a>  <span class="cf">if</span> (leapCheck <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
-<span id="cb17-17"><a href="#cb17-17"></a>    <span class="do">## leap year</span></span>
-<span id="cb17-18"><a href="#cb17-18"></a>    age <span class="ot">&lt;-</span> <span class="fu">difftime</span>(today,</span>
-<span id="cb17-19"><a href="#cb17-19"></a>                    myBirthday2 ,</span>
-<span id="cb17-20"><a href="#cb17-20"></a>                    <span class="at">units =</span> <span class="st">"days"</span>) <span class="sc">/</span> (<span class="dv">365</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
-<span id="cb17-21"><a href="#cb17-21"></a>    </span>
-<span id="cb17-22"><a href="#cb17-22"></a>  } <span class="cf">else</span> {</span>
-<span id="cb17-23"><a href="#cb17-23"></a>    <span class="do">## No leap year</span></span>
-<span id="cb17-24"><a href="#cb17-24"></a>    age <span class="ot">&lt;-</span> <span class="fu">difftime</span>(today,</span>
-<span id="cb17-25"><a href="#cb17-25"></a>                    myBirthday2,</span>
-<span id="cb17-26"><a href="#cb17-26"></a>                    <span class="at">units =</span> <span class="st">"days"</span>) <span class="sc">/</span> <span class="dv">365</span></span>
-<span id="cb17-27"><a href="#cb17-27"></a>    </span>
-<span id="cb17-28"><a href="#cb17-28"></a>  }</span>
-<span id="cb17-29"><a href="#cb17-29"></a>  </span>
-<span id="cb17-30"><a href="#cb17-30"></a>  <span class="fu">message</span>(<span class="st">"Your age is"</span>,<span class="st">" "</span>, age)</span>
-<span id="cb17-31"><a href="#cb17-31"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a></a>estimateAge <span class="ot">&lt;-</span> <span class="cf">function</span>(myBirthday) {</span>
+<span id="cb17-2"><a></a>  <span class="do">### Function to check if year is a</span></span>
+<span id="cb17-3"><a></a>  <span class="do">### leap year.</span></span>
+<span id="cb17-4"><a></a>  </span>
+<span id="cb17-5"><a></a>  leapyear <span class="ot">&lt;-</span> <span class="cf">function</span>(year) {</span>
+<span id="cb17-6"><a></a>    <span class="fu">return</span>(((year <span class="sc">%%</span> <span class="dv">4</span> <span class="sc">==</span> <span class="dv">0</span>) <span class="sc">&amp;</span> (year <span class="sc">%%</span> <span class="dv">100</span> <span class="sc">!=</span> <span class="dv">0</span>)) <span class="sc">|</span> (year <span class="sc">%%</span> <span class="dv">400</span> <span class="sc">==</span> <span class="dv">0</span>))</span>
+<span id="cb17-7"><a></a>  }</span>
+<span id="cb17-8"><a></a>  </span>
+<span id="cb17-9"><a></a>  <span class="do">### Information necessary to compute age</span></span>
+<span id="cb17-10"><a></a>  myBirthday2 <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(myBirthday)</span>
+<span id="cb17-11"><a></a>  today <span class="ot">&lt;-</span> <span class="fu">Sys.Date</span>()</span>
+<span id="cb17-12"><a></a>  year <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">format</span>(myBirthday2, <span class="st">"%Y"</span>))</span>
+<span id="cb17-13"><a></a>  leapCheck <span class="ot">&lt;-</span> <span class="fu">leapyear</span>(year)</span>
+<span id="cb17-14"><a></a>  </span>
+<span id="cb17-15"><a></a>  </span>
+<span id="cb17-16"><a></a>  <span class="cf">if</span> (leapCheck <span class="sc">==</span> <span class="cn">TRUE</span>) {</span>
+<span id="cb17-17"><a></a>    <span class="do">## leap year</span></span>
+<span id="cb17-18"><a></a>    age <span class="ot">&lt;-</span> <span class="fu">difftime</span>(today,</span>
+<span id="cb17-19"><a></a>                    myBirthday2 ,</span>
+<span id="cb17-20"><a></a>                    <span class="at">units =</span> <span class="st">"days"</span>) <span class="sc">/</span> (<span class="dv">365</span> <span class="sc">+</span> <span class="dv">1</span>)</span>
+<span id="cb17-21"><a></a>    </span>
+<span id="cb17-22"><a></a>  } <span class="cf">else</span> {</span>
+<span id="cb17-23"><a></a>    <span class="do">## No leap year</span></span>
+<span id="cb17-24"><a></a>    age <span class="ot">&lt;-</span> <span class="fu">difftime</span>(today,</span>
+<span id="cb17-25"><a></a>                    myBirthday2,</span>
+<span id="cb17-26"><a></a>                    <span class="at">units =</span> <span class="st">"days"</span>) <span class="sc">/</span> <span class="dv">365</span></span>
+<span id="cb17-27"><a></a>    </span>
+<span id="cb17-28"><a></a>  }</span>
+<span id="cb17-29"><a></a>  </span>
+<span id="cb17-30"><a></a>  <span class="fu">message</span>(<span class="st">"Your age is"</span>,<span class="st">" "</span>, age)</span>
+<span id="cb17-31"><a></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 </div>
 <ul>
 <li>My function <code>estimateAge()</code> requires only one argument <code>myBirthday</code>, that argument is passed to the computation inside the function to estimate the age.</li>
 </ul>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="do">## Let's enter my date of birth</span></span>
-<span id="cb18-2"><a href="#cb18-2"></a><span class="fu">estimateAge</span>(<span class="st">"1986-01-28"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a></a><span class="do">## Let's enter my date of birth</span></span>
+<span id="cb18-2"><a></a><span class="fu">estimateAge</span>(<span class="st">"1986-01-28"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
-<pre><code>Your age is 37.8027397260274</code></pre>
+<pre><code>Your age is 38.6109589041096</code></pre>
 </div>
 </div>
 <ul>
@@ -864,37 +899,37 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <section id="we-can-paint-happy-plots-in-r" class="title-slide slide level1 center sectionhead">
 <h1>We can paint happy plots in <code>R</code></h1>
 
-<img data-src="bobross.jpg" width="350" class="r-stretch quarto-figure-center"></section>
+<img data-src="bobross.jpg" class="quarto-figure quarto-figure-center r-stretch" width="350"></section>
 <section id="happy-penguins" class="slide level2 smaller scrollable" data-background-opacity="0.5">
 <h2>Happy penguins</h2>
 <div class="cell">
-<details>
+<details class="code-fold">
 <summary>Show the code</summary>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="do">### The rule is to write the packages required by your code at the beginning</span></span>
-<span id="cb20-2"><a href="#cb20-2"></a><span class="do">## Packages loaded or called</span></span>
-<span id="cb20-3"><a href="#cb20-3"></a><span class="fu">library</span>(jpeg)             <span class="do">## reads pictures into R</span></span>
-<span id="cb20-4"><a href="#cb20-4"></a><span class="fu">library</span>(patchwork)         <span class="do">## more tools to add features in a plot</span></span>
-<span id="cb20-5"><a href="#cb20-5"></a><span class="fu">library</span>(ggplot2)          <span class="do">## creates plots</span></span>
-<span id="cb20-6"><a href="#cb20-6"></a><span class="fu">library</span>(palmerpenguins)  <span class="do">## This package has the penguin data</span></span>
-<span id="cb20-7"><a href="#cb20-7"></a></span>
-<span id="cb20-8"><a href="#cb20-8"></a>picture <span class="ot">&lt;-</span> <span class="st">"penguins.jpg"</span></span>
-<span id="cb20-9"><a href="#cb20-9"></a>img <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(picture, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb20-10"><a href="#cb20-10"></a></span>
-<span id="cb20-11"><a href="#cb20-11"></a><span class="do">### Plotting the data using ggplot2</span></span>
-<span id="cb20-12"><a href="#cb20-12"></a></span>
-<span id="cb20-13"><a href="#cb20-13"></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, </span>
-<span id="cb20-14"><a href="#cb20-14"></a>                     <span class="at">y=</span> body_mass_g,</span>
-<span id="cb20-15"><a href="#cb20-15"></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
-<span id="cb20-16"><a href="#cb20-16"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb20-17"><a href="#cb20-17"></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span> ) <span class="sc">+</span> </span>
-<span id="cb20-18"><a href="#cb20-18"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span>  </span>
-<span id="cb20-19"><a href="#cb20-19"></a>  <span class="fu">xlab</span>(<span class="st">"Flipper Length in milimeters"</span>)<span class="sc">+</span></span>
-<span id="cb20-20"><a href="#cb20-20"></a>  <span class="fu">ylab</span>(<span class="st">"Body Mass in grams"</span>)<span class="sc">+</span></span>
-<span id="cb20-21"><a href="#cb20-21"></a>  <span class="fu">inset_element</span>(<span class="at">p =</span> img,</span>
-<span id="cb20-22"><a href="#cb20-22"></a>                <span class="at">left =</span> <span class="fl">0.05</span>,</span>
-<span id="cb20-23"><a href="#cb20-23"></a>                <span class="at">bottom =</span> <span class="fl">0.65</span>,</span>
-<span id="cb20-24"><a href="#cb20-24"></a>                <span class="at">right =</span> <span class="fl">0.5</span>,</span>
-<span id="cb20-25"><a href="#cb20-25"></a>                <span class="at">top =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a></a><span class="do">### The rule is to write the packages required by your code at the beginning</span></span>
+<span id="cb20-2"><a></a><span class="do">## Packages loaded or called</span></span>
+<span id="cb20-3"><a></a><span class="fu">library</span>(jpeg)             <span class="do">## reads pictures into R</span></span>
+<span id="cb20-4"><a></a><span class="fu">library</span>(patchwork)         <span class="do">## more tools to add features in a plot</span></span>
+<span id="cb20-5"><a></a><span class="fu">library</span>(ggplot2)          <span class="do">## creates plots</span></span>
+<span id="cb20-6"><a></a><span class="fu">library</span>(palmerpenguins)  <span class="do">## This package has the penguin data</span></span>
+<span id="cb20-7"><a></a></span>
+<span id="cb20-8"><a></a>picture <span class="ot">&lt;-</span> <span class="st">"penguins.jpg"</span></span>
+<span id="cb20-9"><a></a>img <span class="ot">&lt;-</span> <span class="fu">readJPEG</span>(picture, <span class="at">native =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb20-10"><a></a></span>
+<span id="cb20-11"><a></a><span class="do">### Plotting the data using ggplot2</span></span>
+<span id="cb20-12"><a></a></span>
+<span id="cb20-13"><a></a><span class="fu">ggplot</span>(penguins, <span class="fu">aes</span>(<span class="at">x =</span> flipper_length_mm, </span>
+<span id="cb20-14"><a></a>                     <span class="at">y=</span> body_mass_g,</span>
+<span id="cb20-15"><a></a>                     <span class="at">color =</span> species)) <span class="sc">+</span></span>
+<span id="cb20-16"><a></a>  <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
+<span id="cb20-17"><a></a>  <span class="fu">geom_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">method =</span> <span class="st">"lm"</span> ) <span class="sc">+</span> </span>
+<span id="cb20-18"><a></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span>  </span>
+<span id="cb20-19"><a></a>  <span class="fu">xlab</span>(<span class="st">"Flipper Length in milimeters"</span>)<span class="sc">+</span></span>
+<span id="cb20-20"><a></a>  <span class="fu">ylab</span>(<span class="st">"Body Mass in grams"</span>)<span class="sc">+</span></span>
+<span id="cb20-21"><a></a>  <span class="fu">inset_element</span>(<span class="at">p =</span> img,</span>
+<span id="cb20-22"><a></a>                <span class="at">left =</span> <span class="fl">0.05</span>,</span>
+<span id="cb20-23"><a></a>                <span class="at">bottom =</span> <span class="fl">0.65</span>,</span>
+<span id="cb20-24"><a></a>                <span class="at">right =</span> <span class="fl">0.5</span>,</span>
+<span id="cb20-25"><a></a>                <span class="at">top =</span> <span class="fl">0.95</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </details>
 
 </div>
@@ -906,14 +941,13 @@ Volvo 142E          21.4   4 121.0 109 4.11 2.780 18.60  1  1    4    2</code></
 <p><a href="https://blog.djnavarro.net/posts/2023-03-31_generative-art-with-grid/" target="_blank">Danielle Navarro’s blog</a></p>
 </div><div class="column" style="width:60%;">
 <p><a href="https://blog.djnavarro.net/posts/2021-10-19_rtistry-posts/" target="_blank">Basics on generative art</a></p>
-</div>
-</div>
+</div></div>
 
 <!--# Add model summary: https://modelsummary.com/. Also add  https://blog.djnavarro.net/posts/2023-03-31_generative-art-with-grid/
 And generative art
 Add anput packages and CRAN
 -->
-<img data-src="flametree.png" class="r-stretch quarto-figure-center"></section>
+<img data-src="flametree.png" class="quarto-figure quarto-figure-center r-stretch"></section>
 <section id="gis-and-spatial-data" class="slide level2 smaller scrollable" data-background-opacity="0.5">
 <h2>GIS and spatial data</h2>
 <p><img data-src="https://www.andrewheiss.com/blog/2023/04/26/middle-earth-mapping-sf-r-gis/index_files/figure-html/numenor-map-correct-1.png" class="absolute" style="top: 200px; left: 10f; width: 500px; height: 500px; "></p>
@@ -922,17 +956,19 @@ Add anput packages and CRAN
 </section></section>
 <section id="remember" class="title-slide slide level1 center">
 <h1>Remember…</h1>
-
-<img data-src="programmers-credo.jpg" class="r-stretch quarto-figure-center"></section>
+<p><a href="https://www.globalnerdy.com/2021/06/07/the-programmers-credo/"><img data-src="programmers-credo.jpg"></a></p>
+</section>
 
 <section id="thank-you-for-you-attention" class="title-slide slide level1 center sectionhead">
 <h1>Thank you for you attention!</h1>
 <p><span class="blue"><a href="https://fediscience.org/@montenegro"><i class="fa-brands fa-mastodon" aria-label="mastodon"></i></a></span> Follow me on Mastodon.</p>
 <p><i class="fa-solid fa-envelope" aria-label="envelope"></i> <a href="mailto:emontenegro1@csustan.edu">emontenegro1@csustan.edu</a></p>
 
+<div class="quarto-auto-generated-content">
 <p><img src="stan-state-logo_nickname-full-color.png" class="slide-logo"></p>
 <div class="footer footer-default">
 <p><a href="https://blackhill86.github.io/mm2/"><strong>Visit my website</strong></a></p>
+</div>
 </div>
 <div class="reveal-header">
 <div class="header-logo">
@@ -976,7 +1012,6 @@ Add anput packages and CRAN
       Reveal.initialize({
 'controlsAuto': true,
 'previewLinksAuto': false,
-'smaller': false,
 'pdfSeparateFragments': false,
 'autoAnimateEasing': "ease",
 'autoAnimateDuration': 1,
@@ -1232,18 +1267,7 @@ Add anput packages and CRAN
         }
         return false;
       }
-      const clipboard = new window.ClipboardJS('.code-copy-button', {
-        text: function(trigger) {
-          const codeEl = trigger.previousElementSibling.cloneNode(true);
-          for (const childEl of codeEl.children) {
-            if (isCodeAnnotation(childEl)) {
-              childEl.remove();
-            }
-          }
-          return codeEl.innerText;
-        }
-      });
-      clipboard.on('success', function(e) {
+      const onCopySuccess = function(e) {
         // button target
         const button = e.trigger;
         // don't keep focus
@@ -1275,11 +1299,50 @@ Add anput packages and CRAN
         }, 1000);
         // clear code selection
         e.clearSelection();
+      }
+      const getTextToCopy = function(trigger) {
+          const codeEl = trigger.previousElementSibling.cloneNode(true);
+          for (const childEl of codeEl.children) {
+            if (isCodeAnnotation(childEl)) {
+              childEl.remove();
+            }
+          }
+          return codeEl.innerText;
+      }
+      const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+        text: getTextToCopy
       });
-      function tippyHover(el, contentFn) {
+      clipboard.on('success', onCopySuccess);
+      if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+        // For code content inside modals, clipBoardJS needs to be initialized with a container option
+        // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+        const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+          text: getTextToCopy,
+          container: window.document.getElementById('quarto-embedded-source-code-modal')
+        });
+        clipboardModal.on('success', onCopySuccess);
+      }
+        var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+        var mailtoRegex = new RegExp(/^mailto:/);
+          var filterRegex = new RegExp('/' + window.location.host + '/');
+        var isInternal = (href) => {
+            return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+        }
+        // Inspect non-navigation links and adorn them if external
+     	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+        for (var i=0; i<links.length; i++) {
+          const link = links[i];
+          if (!isInternal(link.href)) {
+            // undo the damage that might have been done by quarto-nav.js in the case of
+            // links that we want to consider external
+            if (link.dataset.originalHref !== undefined) {
+              link.href = link.dataset.originalHref;
+            }
+          }
+        }
+      function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
         const config = {
           allowHTML: true,
-          content: contentFn,
           maxWidth: 500,
           delay: 100,
           arrow: false,
@@ -1289,8 +1352,17 @@ Add anput packages and CRAN
           interactive: true,
           interactiveBorder: 10,
           theme: 'light-border',
-          placement: 'bottom-start'
+          placement: 'bottom-start',
         };
+        if (contentFn) {
+          config.content = contentFn;
+        }
+        if (onTriggerFn) {
+          config.onTrigger = onTriggerFn;
+        }
+        if (onUntriggerFn) {
+          config.onUntrigger = onUntriggerFn;
+        }
           config['offset'] = [0,0];
           config['maxWidth'] = 700;
         window.tippy(el, config); 
@@ -1304,7 +1376,11 @@ Add anput packages and CRAN
           try { href = new URL(href).hash; } catch {}
           const id = href.replace(/^#\/?/, "");
           const note = window.document.getElementById(id);
-          return note.innerHTML;
+          if (note) {
+            return note.innerHTML;
+          } else {
+            return "";
+          }
         });
       }
       const findCites = (el) => {

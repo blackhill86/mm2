@@ -16,7 +16,12 @@
     "href": "about.html",
     "title": "Esteban Montenegro",
     "section": "",
-    "text": "I’m an Assistant Professor at the Psychology and Child Development Department. I focus my research ideas in problems related to quantitative psychology. I’m always doing research on latent variable modeling. I applied my passion for statistics in topics related to healthy aging and dementia.\nWhen I’m not doing something dorky, I enjoy hiking with my lovely wife and my dog. I used to play guitar and bass guitar, but academia is a place of many projects."
+    "text": "I’m an Assistant Professor at the Psychology and Child Development Department. I focus my research ideas in problems related to quantitative psychology. I’m always doing research on latent variable modeling. I applied my passion for statistics in topics related to healthy aging and dementia.\nWhen I’m not doing something dorky, I enjoy hiking with my lovely wife and my dog. I used to play guitar and bass guitar, but academia is a place of many projects.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "About"
+    ]
   },
   {
     "objectID": "assigment4.html",
@@ -146,7 +151,7 @@
     "crumbs": [
       "Home",
       "Content",
-      "PSYC3000"
+      "Experimental Methods and Designs"
     ]
   },
   {
@@ -1323,7 +1328,12 @@
     "href": "about.html#education",
     "title": "Esteban Montenegro",
     "section": "Education",
-    "text": "Education\nTexas Tech University| Lubbock, TX| PhD in Educational Psychology | May 2020\nUniversity of Costa Rica | San Jose, Costa Rica| B.S. in Psychology | March 2012"
+    "text": "Education\nTexas Tech University| Lubbock, TX| PhD in Educational Psychology | May 2020\nUniversity of Costa Rica | San Jose, Costa Rica| B.S. in Psychology | March 2012",
+    "crumbs": [
+      "Home",
+      "Content",
+      "About"
+    ]
   },
   {
     "objectID": "lecture2/Sampling.html#why-do-we-care-about-sampling",
@@ -2223,7 +2233,7 @@
     "crumbs": [
       "Home",
       "Content",
-      "PSYC3000"
+      "Experimental Methods and Designs"
     ]
   },
   {
@@ -2802,7 +2812,7 @@
     "crumbs": [
       "Home",
       "Content",
-      "PSYC3000"
+      "Experimental Methods and Designs"
     ]
   },
   {
@@ -2838,14 +2848,14 @@
     "href": "geoWeekPresentation/gentleR.html#why-should-we-use-r-1",
     "title": "Gentle introduction to R",
     "section": "Why should we use R?",
-    "text": "Why should we use R?\n\nTIOBE index of R overtime"
+    "text": "Why should we use R?\n\n\n\nTIOBE index of R overtime"
   },
   {
     "objectID": "geoWeekPresentation/gentleR.html#why-should-we-use-r-2",
     "href": "geoWeekPresentation/gentleR.html#why-should-we-use-r-2",
     "title": "Gentle introduction to R",
     "section": "Why should we use R?",
-    "text": "Why should we use R?\n\n\n\n\nR is free and open-source software. R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License.\n\n\n\n\nThe amount of users grow every second.\n\n\n\n\nIt is friendly with non-programmers (You don’t believe me I know…).\n\n\n\n\nThe amount of packages is growing (19985 packages as today).\n\n\n\n\nYou don’t depend on buying a license.\n\n\n\n\nYou can see what is under the hood.\n\n\n\n\nThere are many jobs where R skills are needed.\n\n\n\n\n\n\nYou’ll have access to cutting-edge quantitative methods and models.\n\n\n\n\n\n\n\n\nMore info\n\n\nSee datacamp.com opinion."
+    "text": "Why should we use R?\n\n\n\n\nR is free and open-source software. R is available as Free Software under the terms of the Free Software Foundation’s GNU General Public License.\n\n\n\n\nThe amount of users grow every second.\n\n\n\n\nIt is friendly with non-programmers (You don’t believe me I know…).\n\n\n\n\nThe amount of packages is growing (19985 packages as today).\n\n\n\n\nYou don’t depend on buying a license.\n\n\n\n\nYou can see what is under the hood.\n\n\n\n\nThere are many jobs where R skills are needed.\n\n\n\n\n\n\nYou’ll have access to cutting-edge quantitative methods and models.\n\n\n\n\n\n\n\n\n\nMore info\n\n\nSee datacamp.com opinion."
   },
   {
     "objectID": "geoWeekPresentation/gentleR.html#section",
@@ -2901,7 +2911,7 @@
     "href": "geoWeekPresentation/gentleR.html#lists",
     "title": "Gentle introduction to R",
     "section": "Lists",
-    "text": "Lists\n\nLists are flexible and easy to manipulate in R. You can combine different types of objects in a single list:\n\n\n\nShow the code\n### Let's create different types of objects\n\n### Data frame\n\ndata_1 &lt;- data.frame(v1= rnorm(8),\n                     v2 = rnorm(8),\n                     v3 = rnorm(8))\n\n### Vector\n\nmoreNames &lt;- c(\"Bob\", \"Paris\", \"Ana\")\n\n### Numeric vector\n\nnumericVector &lt;- c(1,3,78,90)\n\n### We can group all these objects in a list\n\nlistOfObjects &lt;- list(data_1,\n                      moreNames,\n                      numericVector)\nprint(listOfObjects)\n\n\n[[1]]\n          v1         v2           v3\n1 -1.3846711  1.1342249  0.005603773\n2 -0.6052452  1.7357052  0.157493762\n3  1.1978363 -0.7972630  0.926481685\n4  0.6755754  0.6163520  0.439208389\n5 -1.0040656 -0.7112245 -0.668112481\n6 -1.0667921 -0.4581647  0.228805642\n7  2.1765713  0.7218299 -0.503185122\n8  0.7557314  1.5541713 -0.714680298\n\n[[2]]\n[1] \"Bob\"   \"Paris\" \"Ana\"  \n\n[[3]]\n[1]  1  3 78 90\n\n\nIf you need to access one object in the list you may use its location plus [[]]:\n\n\nShow the code\nlistOfObjects[[2]]\n\n\n[1] \"Bob\"   \"Paris\" \"Ana\""
+    "text": "Lists\n\nLists are flexible and easy to manipulate in R. You can combine different types of objects in a single list:\n\n\n\nShow the code\n### Let's create different types of objects\n\n### Data frame\n\ndata_1 &lt;- data.frame(v1= rnorm(8),\n                     v2 = rnorm(8),\n                     v3 = rnorm(8))\n\n### Vector\n\nmoreNames &lt;- c(\"Bob\", \"Paris\", \"Ana\")\n\n### Numeric vector\n\nnumericVector &lt;- c(1,3,78,90)\n\n### We can group all these objects in a list\n\nlistOfObjects &lt;- list(data_1,\n                      moreNames,\n                      numericVector)\nprint(listOfObjects)\n\n\n[[1]]\n          v1          v2          v3\n1  1.8902223  0.27470521 -0.09773574\n2 -0.1646468 -1.33127203  0.73335452\n3 -0.2726281  1.41410826  0.07736676\n4  0.4064117  0.64348853  0.33315138\n5  0.8207293  0.81350766  0.50652629\n6 -0.2590162 -0.08945012  0.59977365\n7 -1.0536551 -0.34730255  0.08671224\n8  0.2535251 -1.31268018 -0.86488363\n\n[[2]]\n[1] \"Bob\"   \"Paris\" \"Ana\"  \n\n[[3]]\n[1]  1  3 78 90\n\n\nIf you need to access one object in the list you may use its location plus [[]]:\n\n\nShow the code\nlistOfObjects[[2]]\n\n\n[1] \"Bob\"   \"Paris\" \"Ana\""
   },
   {
     "objectID": "geoWeekPresentation/gentleR.html#arrays",
@@ -2915,7 +2925,7 @@
     "href": "geoWeekPresentation/gentleR.html#functions",
     "title": "Gentle introduction to R",
     "section": "Functions",
-    "text": "Functions\n\nA function is a data object that requires input information, in return; it will give an output.\nI have already used several functions (e.g. data.frame(), rnorm()).\nFunctions will always follow the following structure:\n\n\nmyFunction &lt;- function(argument1, argument2, ...){ \n  \n  operation\n  \n  return()\n  \n  }\n\n\nWe can study the following case, where I created a function to estimate your age:\n\n\n\nShow the code\nestimateAge &lt;- function(myBirthday) {\n  ### Function to check if year is a\n  ### leap year.\n  \n  leapyear &lt;- function(year) {\n    return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))\n  }\n  \n  ### Information necessary to compute age\n  myBirthday2 &lt;- as.Date(myBirthday)\n  today &lt;- Sys.Date()\n  year &lt;- as.numeric(format(myBirthday2, \"%Y\"))\n  leapCheck &lt;- leapyear(year)\n  \n  \n  if (leapCheck == TRUE) {\n    ## leap year\n    age &lt;- difftime(today,\n                    myBirthday2 ,\n                    units = \"days\") / (365 + 1)\n    \n  } else {\n    ## No leap year\n    age &lt;- difftime(today,\n                    myBirthday2,\n                    units = \"days\") / 365\n    \n  }\n  \n  message(\"Your age is\",\" \", age)\n}\n\n\n\nMy function estimateAge() requires only one argument myBirthday, that argument is passed to the computation inside the function to estimate the age.\n\n\n## Let's enter my date of birth\nestimateAge(\"1986-01-28\") \n\nYour age is 37.8027397260274\n\n\n\nBut don’t worry, you don’t have to compute age like I did. There is already a package that has all the tools to manipulate dates. It is the package lubridate."
+    "text": "Functions\n\nA function is a data object that requires input information, in return; it will give an output.\nI have already used several functions (e.g. data.frame(), rnorm()).\nFunctions will always follow the following structure:\n\n\nmyFunction &lt;- function(argument1, argument2, ...){ \n  \n  operation\n  \n  return()\n  \n  }\n\n\nWe can study the following case, where I created a function to estimate your age:\n\n\n\nShow the code\nestimateAge &lt;- function(myBirthday) {\n  ### Function to check if year is a\n  ### leap year.\n  \n  leapyear &lt;- function(year) {\n    return(((year %% 4 == 0) & (year %% 100 != 0)) | (year %% 400 == 0))\n  }\n  \n  ### Information necessary to compute age\n  myBirthday2 &lt;- as.Date(myBirthday)\n  today &lt;- Sys.Date()\n  year &lt;- as.numeric(format(myBirthday2, \"%Y\"))\n  leapCheck &lt;- leapyear(year)\n  \n  \n  if (leapCheck == TRUE) {\n    ## leap year\n    age &lt;- difftime(today,\n                    myBirthday2 ,\n                    units = \"days\") / (365 + 1)\n    \n  } else {\n    ## No leap year\n    age &lt;- difftime(today,\n                    myBirthday2,\n                    units = \"days\") / 365\n    \n  }\n  \n  message(\"Your age is\",\" \", age)\n}\n\n\n\nMy function estimateAge() requires only one argument myBirthday, that argument is passed to the computation inside the function to estimate the age.\n\n\n## Let's enter my date of birth\nestimateAge(\"1986-01-28\") \n\nYour age is 38.6109589041096\n\n\n\nBut don’t worry, you don’t have to compute age like I did. There is already a package that has all the tools to manipulate dates. It is the package lubridate."
   },
   {
     "objectID": "geoWeekPresentation/gentleR.html#shinyapps",
@@ -4390,21 +4400,21 @@
     "href": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-1",
     "title": "Compare multiple models",
     "section": "\\(R^2\\) R-Square is not so boring",
-    "text": "\\(R^2\\) R-Square is not so boring\n\nYou can see that \\(R^2\\) is a proportion of variance explained by the model. Why? Because, we divide the variability of the model by the total variability in the data. The result is an estimate that quantifies the percentage of variance explained by the model. As always, we can study an example:\n\n\\[depression \\sim \\beta_{0} + \\beta_{1}selfEsteem_{1} + \\beta_{2}numberCandies_{2} + \\beta_{3}rumination_{3} + \\epsilon\\]\n\n\nShow the code\n### Simulation time!!\nlibrary(lavaan) ## &lt;--- package to generate the values.\n\n\n\n1\n\nI’m specifying the “population model”.\n\n2\n\nThis line creates the simulated values. I’m generating 100 random values.\n\n3\n\nEstimating the model using function lm().\n\n\n\n\nThis is lavaan 0.6-16\nlavaan is FREE software! Please report any bugs.\n\n\nShow the code\nlibrary(broom)\n\n1mod1 &lt;- 'depression ~ 0.5*selfSteem + 0.8*rumination + 0*numberCandies'\n\n\n\ngenerated &lt;- simulateData(mod1,\n                          meanstructure = TRUE, \n                          sample.nobs = 100,\n2                          seed = 12)\n\n\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination + \n                 numberCandies, \n3               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.37\n0.10\n3.80\n0.00\n\n\nrumination\n0.75\n0.10\n7.81\n0.00\n\n\nnumberCandies\n0.03\n0.09\n0.28\n0.78\n\n\n\n\n\n\n\n\n\nNow let’s check the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\")\n\n\n\n\n\n\n\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n272.60\n285.63\n\n\n\n\n\n\n\n\n\nThe \\(R^2\\) is 0.42, this can be read as: the linear model explains 42 % of the total variance."
+    "text": "\\(R^2\\) R-Square is not so boring\n\nYou can see that \\(R^2\\) is a proportion of variance explained by the model. Why? Because, we divide the variability of the model by the total variability in the data. The result is an estimate that quantifies the percentage of variance explained by the model. As always, we can study an example:\n\n\\[depression \\sim \\beta_{0} + \\beta_{1}selfEsteem_{1} + \\beta_{2}numberCandies_{2} + \\beta_{3}rumination_{3} + \\epsilon\\]\n\n\nShow the code\n### Simulation time!!\nlibrary(lavaan) ## &lt;--- package to generate the values.\nlibrary(broom)\n\n1mod1 &lt;- 'depression ~ 0.5*selfSteem + 0.8*rumination + 0*numberCandies'\n\n\n\ngenerated &lt;- simulateData(mod1,\n                          meanstructure = TRUE, \n                          sample.nobs = 100,\n2                          seed = 12)\n\n\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination + \n                 numberCandies, \n3               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n1\n\nI’m specifying the “population model”.\n\n2\n\nThis line creates the simulated values. I’m generating 100 random values.\n\n3\n\nEstimating the model using function lm().\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.37\n0.10\n3.80\n0.00\n\n\nrumination\n0.75\n0.10\n7.81\n0.00\n\n\nnumberCandies\n0.03\n0.09\n0.28\n0.78\n\n\n\n\n\n\n\n\n\nNow let’s check the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\")\n\n\n\n\n\n\n\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n272.60\n285.63\n\n\n\n\n\n\n\n\n\nThe \\(R^2\\) is 0.42, this can be read as: the linear model explains 42 % of the total variance."
   },
   {
     "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-2",
     "href": "advancedMethods/lecture6/ModelComparasion.html#r2-r-square-is-not-so-boring-2",
     "title": "Compare multiple models",
     "section": "\\(R^2\\) R-Square is not so boring",
-    "text": "\\(R^2\\) R-Square is not so boring\n\nBut, let’s see what happens when I delete the independent variable number of candies from the model:\n\n\n\nShow the code\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination, \n1               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n1\n\nIn this example number of candies is omitted.\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.38\n0.10\n3.84\n0.00\n\n\nrumination\n0.75\n0.10\n7.84\n0.00\n\n\n\n\n\n\n\n\n\nWe can see again the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\") |&gt;\n  tab_header(title = \"R-squared after deleting number of candies\")\n\n\n\n\n\n\n\n\n\nR-squared after deleting number of candies\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n270.68\n281.10\n\n\n\n\n\n\n\n\n\nSo far, the \\(R^2\\) remained the same. It is an expected result, because number of candies was not explaining a portion of variance beyond chance.\nBut, if we delete a meaningful variable such as rumination the \\(R^2\\) will decrease:\n\n\nfitModel &lt;- lm(depression ~ selfSteem + \n                 numberCandies, \n1               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Estimated values after deleting rumination\")\n\n\n1\n\nRumination was deleted in this model.\n\n\n\n\n\n\n\n\n\n\n\nEstimated values after deleting rumination\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.06\n0.12\n−0.48\n0.63\n\n\nselfSteem\n0.28\n0.12\n2.22\n0.03\n\n\nnumberCandies\n0.00\n0.12\n0.04\n0.97\n\n\n\n\n\n\n\n\n\nWe can check again the \\(R^2\\) after deleting rumination:\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\") |&gt;\n  tab_header(title = \"R-squared after deleting rumination\")\n\n\n\n\n\n\n\n\n\nR-squared after deleting rumination\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.05\n319.76\n330.18\n\n\n\n\n\n\n\n\n\nYou will see that the \\(R^2\\) value decreased after removing rumination. Why? Rumination is an important variable related to depression, by omitting rumination, your model explains less variance and therefore it affects the model fit."
+    "text": "\\(R^2\\) R-Square is not so boring\n\nBut, let’s see what happens when I delete the independent variable number of candies from the model:\n\n\n\nShow the code\nfitModel &lt;- lm(depression ~ selfSteem + \n                 rumination, \n1               data = generated)\n\ngt(tidy(fitModel),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2)\n\n\n\n1\n\nIn this example number of candies is omitted.\n\n\n\n\n\n\n\n\n\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.04\n0.09\n−0.41\n0.68\n\n\nselfSteem\n0.38\n0.10\n3.84\n0.00\n\n\nrumination\n0.75\n0.10\n7.84\n0.00\n\n\n\n\n\n\n\n\n\nWe can see again the \\(R^2\\):\n\n\n\nShow the code\ngt(glance(fitModel) |&gt;\n     dplyr::select(r.squared, AIC, BIC)) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  data_color(\n    columns = c(r.squared),\n    palette = \"red\") |&gt;\n  tab_header(title = \"R-squared after deleting number of candies\")\n\n\n\n\n\n\n\n\n\nR-squared after deleting number of candies\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.42\n270.68\n281.10\n\n\n\n\n\n\n\n\n\nSo far, the \\(R^2\\) remained the same. It is an expected result, because number of candies was not explaining a portion of variance beyond chance.\nBut, if we delete a meaningful variable such as rumination the \\(R^2\\) will decrease:\n\n\n\n\n\n\n\n\n\n\nEstimated values after deleting rumination\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.06\n0.12\n−0.48\n0.63\n\n\nselfSteem\n0.28\n0.12\n2.22\n0.03\n\n\nnumberCandies\n0.00\n0.12\n0.04\n0.97\n\n\n\n\n\n\n\n\n\nRumination was deleted in this model.\n\n\nWe can check again the \\(R^2\\) after deleting rumination:\n\n\n\n\n\n\n\n\n\n\nR-squared after deleting rumination\n\n\nr.squared\nAIC\nBIC\n\n\n\n\n0.05\n319.76\n330.18\n\n\n\n\n\n\n\n\n\nYou will see that the \\(R^2\\) value decreased after removing rumination. Why? Rumination is an important variable related to depression, by omitting rumination, your model explains less variance and therefore it affects the model fit."
   },
   {
     "objectID": "advancedMethods/lecture6/ModelComparasion.html#low-vs.-high-r2",
     "href": "advancedMethods/lecture6/ModelComparasion.html#low-vs.-high-r2",
     "title": "Compare multiple models",
     "section": "Low vs. High \\(R^2\\)",
-    "text": "Low vs. High \\(R^2\\)\n\nHigh R-squaredLow R-squared\n\n\n\nfitModelHigh &lt;- lm(depression ~ selfSteem + rumination +\n                     numberCandies, \n                   data = generated)\n\n\nplot(x=predict(fitModelHigh), y=generated$depression,\n     xlab='Predicted Values',\n     ylab='Actual Values',\n     main='Predicted vs. Actual Values with high R-Squared')\n\nabline(a=0, b=1)\n\n\n\n\n\n\n\n\n\n\n\n\nShow the code\nfitModelLow &lt;- lm(depression ~ selfSteem + \n                    numberCandies, \n                  data = generated)\n\n\nplot(x=predict(fitModelLow), y=generated$depression,\n     xlab='Predicted Values',\n     ylab='Actual Values',\n     main='Predicted vs. Actual Values with low R-Squared')\n\nabline(a=0, b=1)"
+    "text": "Low vs. High \\(R^2\\)\n\nHigh R-squaredLow R-squared"
   },
   {
     "objectID": "advancedMethods/lecture6/ModelComparasion.html#r2-can-be-adjusted",
@@ -4453,21 +4463,21 @@
     "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-1",
     "title": "Compare multiple models",
     "section": "Backward, and Forward variable selection: Building models",
-    "text": "Backward, and Forward variable selection: Building models\n\nIn R you can use the function stepAIC() to select the best model with the best set of variables.\nYou can follow a forward selection process or a backwards selection process.\nIn the next example, I’ll start building all models using the forward method. The first model will be a model estimating only the intercept of depression, and at each step, the stepAIC() function will add one variable at the time, while comparing all the possible combination of models.\nI’ll select the best model out of the following predictors:\n\nRumination.\nAnxiety.\nNegative metacognitive beliefs about rumination.\nPositive metacognitive beliefs about rumination.\nActivation.\nAttention.\n\n\n\n\nShow the code\nlibrary(MASS)\n\n\n\nAttaching package: 'MASS'\n\n\nThe following object is masked from 'package:dplyr':\n\n    select\n\n\nShow the code\n### Omit missing values\n\nruminDataNoMissing &lt;- ruminData |&gt;\n  dplyr::select(depreTotal, \n         ruminTotal,\n         anxTotal,\n         negativeBeliefs,\n         positiveBeliefs,\n         attention,\n         activation) |&gt;\n drop_na()\n\ninterceptModel &lt;- lm(depreTotal ~ 1, \n                     data = ruminDataNoMissing )\n\nmodelSelection &lt;- stepAIC(interceptModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"forward\",\n                          trace = FALSE)\n\n\ngt(tidy(modelSelection),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Final model selected by stepAIC\")\n\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\n\n\n\n\n\n\n\nThe final model selected by the stepAIC function was a model where positiveBeliefs is omitted. If we drop this variable we obtain the best set of variables to predict depression.\n\n\ngt(modelSelection$anova,\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n   cols_hide(columns = c(Df, Deviance, \"Resid. Df\", \"Resid. Dev\")) |&gt;\n  tab_header(title = \"AIC values for all models forward method\")\n\n\n\n\n\n\n\n\nAIC values for all models forward method\n\n\nStep\nAIC\n\n\n\n\n\n715.80\n\n\n+ ruminTotal\n646.46\n\n\n+ anxTotal\n626.58\n\n\n+ attention\n624.43\n\n\n+ activation\n620.49\n\n\n+ negativeBeliefs\n619.46\n\n\n\n\n\n\n\n\nIn the table above, you can see all the AIC values estimated after adding one predictor at the time. The first step label is empty because there was not any predictor, it was an intercept-only model."
+    "text": "Backward, and Forward variable selection: Building models\n\nIn R you can use the function stepAIC() to select the best model with the best set of variables.\nYou can follow a forward selection process or a backwards selection process.\nIn the next example, I’ll start building all models using the forward method. The first model will be a model estimating only the intercept of depression, and at each step, the stepAIC() function will add one variable at the time, while comparing all the possible combination of models.\nI’ll select the best model out of the following predictors:\n\nRumination.\nAnxiety.\nNegative metacognitive beliefs about rumination.\nPositive metacognitive beliefs about rumination.\nActivation.\nAttention.\n\n\n\n\nShow the code\nlibrary(MASS)\n\n\n### Omit missing values\n\nruminDataNoMissing &lt;- ruminData |&gt;\n  dplyr::select(depreTotal, \n         ruminTotal,\n         anxTotal,\n         negativeBeliefs,\n         positiveBeliefs,\n         attention,\n         activation) |&gt;\n drop_na()\n\ninterceptModel &lt;- lm(depreTotal ~ 1, \n                     data = ruminDataNoMissing )\n\nmodelSelection &lt;- stepAIC(interceptModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"forward\",\n                          trace = FALSE)\n\n\ngt(tidy(modelSelection),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Final model selected by stepAIC\")\n\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\n\n\n\n\n\n\n\nThe final model selected by the stepAIC function was a model where positiveBeliefs is omitted. If we drop this variable we obtain the best set of variables to predict depression.\n\n\n\n\n\n\n\n\n\n\nAIC values for all models forward method\n\n\nStep\nAIC\n\n\n\n\n\n715.80\n\n\n+ ruminTotal\n646.46\n\n\n+ anxTotal\n626.58\n\n\n+ attention\n624.43\n\n\n+ activation\n620.49\n\n\n+ negativeBeliefs\n619.46\n\n\n\n\n\n\n\n\nIn the table above, you can see all the AIC values estimated after adding one predictor at the time. The first step label is empty because there was not any predictor, it was an intercept-only model."
   },
   {
     "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-2",
     "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-2",
     "title": "Compare multiple models",
     "section": "Backward, and Forward variable selection: Building models",
-    "text": "Backward, and Forward variable selection: Building models\n\nA plot or multiple plots are always useful to interpret the results of the final best model:\n\n\nlibrary(marginaleffects)\nlibrary(patchwork)\n\n\nAttaching package: 'patchwork'\n\n\nThe following object is masked from 'package:MASS':\n\n    area\n\nfinalModel &lt;- lm(depreTotal ~ ruminTotal+\n                   anxTotal+\n                   negativeBeliefs+\n                   attention+\n                   activation, \n                 data = ruminDataNoMissing)\n\n\nrumPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"ruminTotal\"),\n                 points = 0.5)\n\nanxPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"anxTotal\"),\n                 points = 0.5)\n\nnegativePlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"negativeBeliefs\"),\n                 points = 0.5)\n\nattentionPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"attention\"),\n                 points = 0.5)\n\nactivationPlot &lt;- plot_predictions(finalModel, \n                       condition = c(\"activation\"),\n                 points = 0.5)\n\n(rumPlot + anxPlot + negativePlot + attentionPlot)  + activationPlot"
+    "text": "Backward, and Forward variable selection: Building models\n\nA plot or multiple plots are always useful to interpret the results of the final best model:"
   },
   {
     "objectID": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-3",
     "href": "advancedMethods/lecture6/ModelComparasion.html#backward-and-forward-variable-selection-building-models-3",
     "title": "Compare multiple models",
     "section": "Backward, and Forward variable selection: Building models",
-    "text": "Backward, and Forward variable selection: Building models\n\nThe backwards procedure, will start with a full model and then, we can reduce the model based on the AIC measure. In the function stepAIC() you have to change direction = \"forward\" for direction = \"backwards\".\nFollowing the previous example we can start with the full model:\n\n\n\nShow the code\nfullModel &lt;- lm(depreTotal ~ ruminTotal+\n                   anxTotal+\n                   negativeBeliefs+\n                   positiveBeliefs+\n                   attention+\n                   activation, \n1                 data = ruminDataNoMissing)\n\n\n\n1\n\nThe full model has all the predictors related to depression. The model will be reduced later.\n\n\n\n\n\nThen, we can compare all the possible models using the function stepAIC():\n\n\n\nShow the code\nbackwardsSelection &lt;- stepAIC(fullModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"backward\",\n                          trace = FALSE)\n\n\n\ngt(tidy(backwardsSelection),\n   rownames_to_stub= FALSE) |&gt;\n  fmt_number(decimals = 2) |&gt;\n  tab_header(title = \"Final model selected by stepAIC backwards method\")\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC backwards method\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03"
+    "text": "Backward, and Forward variable selection: Building models\n\nThe backwards procedure, will start with a full model and then, we can reduce the model based on the AIC measure. In the function stepAIC() you have to change direction = \"forward\" for direction = \"backwards\".\nFollowing the previous example we can start with the full model:\n\n\n\nShow the code\nfullModel &lt;- lm(depreTotal ~ ruminTotal+\n                   anxTotal+\n                   negativeBeliefs+\n                   positiveBeliefs+\n                   attention+\n                   activation, \n1                 data = ruminDataNoMissing)\n\n\n\n1\n\nThe full model has all the predictors related to depression. The model will be reduced later.\n\n\n\n\n\nThen, we can compare all the possible models using the function stepAIC():\n\n\n\nShow the code\nbackwardsSelection &lt;- stepAIC(fullModel,\n                          scope = list(upper = ~ruminTotal+anxTotal+negativeBeliefs+positiveBeliefs+attention+activation, \n                                       lower = ~1), \n                          direction = \"backward\",\n                          trace = FALSE)\n\n\n\n\n\n\n\n\n\n\n\nFinal model selected by stepAIC backwards method\n\n\nterm\nestimate\nstd.error\nstatistic\np.value\n\n\n\n\n(Intercept)\n−0.59\n1.88\n−0.31\n0.76\n\n\nruminTotal\n3.85\n0.66\n5.84\n0.00\n\n\nanxTotal\n3.12\n0.84\n3.69\n0.00\n\n\nnegativeBeliefs\n1.46\n0.85\n1.72\n0.09\n\n\nattention\n−0.25\n0.08\n−2.98\n0.00\n\n\nactivation\n0.21\n0.09\n2.25\n0.03"
   },
   {
     "objectID": "advancedMethods/lecture5/moderation_polynomials.html",
@@ -4587,5 +4597,209 @@
     "title": "Compare multiple models",
     "section": "References",
     "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBox, G. E. (1976). Science and statistics. Journal of the American Statistical Association, 71(356), 791–799."
+  },
+  {
+    "objectID": "introTesting/introPsychMain.html",
+    "href": "introTesting/introPsychMain.html",
+    "title": "Intro to Psychological Testing",
+    "section": "",
+    "text": "This is a course that I designed to share my humble knowledge in measurement theory and psychometrics. Over the past years I have realized how important is to know about psychometrics, measurement construction, and evaluation in psychology. This is more important if the researcher aims to analyze causal relationships.\n\nThis page will be useful to download presentations, materials, and other documents related to this course. You may see the syllabus on this link CLICK HERE.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction to Psychological Testing"
+    ]
+  },
+  {
+    "objectID": "introTesting/introPsychMain.html#welcome-to-intro-to-psychological-testing",
+    "href": "introTesting/introPsychMain.html#welcome-to-intro-to-psychological-testing",
+    "title": "Intro to Psychological Testing",
+    "section": "",
+    "text": "This is a course that I designed to share my humble knowledge in measurement theory and psychometrics. Over the past years I have realized how important is to know about psychometrics, measurement construction, and evaluation in psychology. This is more important if the researcher aims to analyze causal relationships.\n\nThis page will be useful to download presentations, materials, and other documents related to this course. You may see the syllabus on this link CLICK HERE.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction to Psychological Testing"
+    ]
+  },
+  {
+    "objectID": "introTesting/introPsychMain.html#lectures",
+    "href": "introTesting/introPsychMain.html#lectures",
+    "title": "Intro to Psychological Testing",
+    "section": "Lectures:",
+    "text": "Lectures:\nIntroduction to measurement theory",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction to Psychological Testing"
+    ]
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "",
+    "text": "Important\n\n\n\nCourse time: Fully online.\nProfessor: Esteban Montenegro-Montenegro, PhD.\nOffice hours online: Schedule an appointment on Warrior Connect or send me an email.\nEmail: emontenegro1@csustan.edu\nSchedule an appointment: Warrior Connect"
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#course-description",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#course-description",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Course description",
+    "text": "Course description\nCourse description (from course catalog): Basic, widely applicable principles of psychological testing presented in a nontechnical way, plus descriptions of representative types of psycholgical tests in common use.\nPre-requisites: PSYC 2020 Introduction to Psychological Methods.\nCourse Introduction: This course is designed to give you a basic understanding of the most common topics, problems, and applications of psychological testing. We will study some history facts along with theoretical discussions. This course will borrow information from a field named psychometrics. Math will not be necessary in this course, but I wish I could add some statistical concepts.\nCourse Structure: This course will be fully online (asynchronous) which means we won’t meet in person. But you may request video meetings with me at any time. Students will create discussions online, and will work in groups. I know it is hard to work in groups when the course is online, but I believe it can be beneficial to meet other peers, plus the assignments will be easy to split between group members. Finally, I will be posting a video lecture summarizing important points in each topic. You may watch the video, and/or read the book chapter."
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#course-learning-objectives",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#course-learning-objectives",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Course Learning Objectives",
+    "text": "Course Learning Objectives\n\nUnderstand the fundamental concepts of psychological testing.\nLearn the historical and theoretical foundations of psychological testing.\nDevelop skills in test construction.\nUnderstand the application of psychological tests in various settings."
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#course-materials",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#course-materials",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Course Materials:",
+    "text": "Course Materials:\nThis class will not require any text book, however I will borrow information from several sources, and I’ll add several documents on Canvas. You will see the list of references in the bibliography section. You will also have access to my website where you’ll find all lectures, and additional information. My wepage is always under construction please let me know if something you need is missing.\nMicrosoft Office programs (PowerPoint, Word, Excel): You may use Word or any other text processor to submit your assignments. Google doc will also work for this class."
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#evaluation",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#evaluation",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Evaluation",
+    "text": "Evaluation\nDiscussions (40%): There will be frequent discussions online where you will have to start a discussion and reply to at least two comments. Comments are related to book chapters, or scientific articles. I will indicate what is the document you have to read to create a thread. The comment has to be at least 200 words and the two replies have to be at least 100 words.\nReading summaries (25%): Students will have to submit a two-pages document summarizing the main points of each reading. If there are multiple readings, the student will have to submit multiple documents.\nCreate your own measurement (35%): Students will work in groups of 4 members to create a new instrument to measure a psychological construct. I will create a list of possible psychological constructs, but students are free to propose a construct that is not included in the list. I will create the working groups randomly, but students may propose to create their group. I will publish a list of groups on Canvas along with CSU Stan email account for each student.\nThe document you will submit must have:\n\nIntroduction: This section details the literature review, aims of the new test, scale, observation protocol, interview protocol, or cognitive task. The student should define the construct in this section.\nMethods section: You won’t have time this semester to collect data with your new instrument, but you have to describe how would you collect data, how would you recruit people, and how many latent factors are you measuring. Also, you need to describe how you will evaluate validity and reliability. You may propose to add other constructs to validate your new instrument.\n\nResults: In real life you would have results because you could collect information. But this is not the case in this online class. Results section is not necessary.\nDiscussion: Write a small discussion where you balance the literature review mentioned in the introduction, you should also discuss how your new instrument is better compared to other instruments, you may also describe limitations.\nReferences: You should add a reference list in APA style.\n\nAppendix: Add the items, questions, or tasks you aim to test.\n\nThe document should be maximum 12 pages, you may use fonts such as Arial or Times New Roman size 12.\nI will share more details about this assigment on video in Canvas.\nLate work: Late assignments will be accepted up to 48 hours after the deadline. Points will be deducted as follows: one day later will deduct 15% of your grade, two days late represents 25% less in your grade, three days delayed is 0% of your grade.\nDisputing a score: Students are welcome to dispute a score if they believe they were incorrectly deducted for their work. For this, students must provide a written explanation, specifying why they were incorrectly graded. For non-final assignments or exams, this must be done within seven (7) days from the date the score was posted on Canvas. For final assignments or exams, this must be done before final course grades are submitted; your instructor will post an announcement on Canvas with this date.\nFinal Grades: Grades are based on all weighted evaluation categories (participation activities, graded assignments, and exams) total points. Letter grades will be assigned using the following percentages (rounded to the second decimal point):\n\n\n\n\n\n\n\nGrading Criteria\n\n\n\n\n\nA = 93 - 100\n\\(A^-\\)= 90-93\n\\(B^+\\) = 87-90\nB = 83-87\n\\(B^-\\) = 80-83\nC = 73-77\n\\(C^-\\) = 70-73\nD = 63-67\n\\(D^-\\) = 60 - 63"
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#expectations-and-policies",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#expectations-and-policies",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Expectations and Policies",
+    "text": "Expectations and Policies\nCommunication skills: You are expected to exercise strong academic verbal and writing skills for expressing yourself to complete class assignments. Failing to clearly communicate your ideas on class assignments may result in you losing points on that assignment. You also need strong analytical and critical thinking skills for completing weekly tasks. I will do my best to respond to emails within 1 - 2 business days (Monday through Friday). If you do not hear back from me within this time interval, send me a follow-up email that includes your original email message. Please keep in mind that if your email question is sent at the last minute it may not be possible to send you a response right before the submission of an assignment or exam. Before emailing me, please see if the answer to your question can be found on the course syllabus, schedule, or Canvas webpage.\nCan students use AI software?: AI is a tool that can help you to maximize your learning process but you have to use it wisely. If I notice you are using Chat GPT or any other AI software to write all your work I will ask you to resubmit your work. But many times I will fail to notice it. It is up to you what type of professional you want to be. You can use AI to improve your writting but don’t use it to write all your work, you won’t learn anything if you do.\nDiversity: I will always embrace diversity as the most important human value. It is expected that students understand the importance of creating diverse and safe places free of discrimination by gender, age, race, ethnicity, nationality, sexual orientation, gender identity or disability. I am an ally to the lesbian, gay, bisexual, transgender, queer, intersex, and asexual (LGBTQIA) community, and I am available to listen and support you in an affirming manner. I can assist in connecting you with resources on campus to address problems you may face pertaining to sexual orientation and/or gender identity that could interfere with your success at Stan State.\nAcademic misconduct: Academic dishonesty will not be tolerated. Instances of academic misconduct (e.g., plagiarism, cheating) will result in a grade of zero on the exam/assignment in question. Additionally, you may also receive a lower letter grade or “F” in the class, be reported to Judicial Affairs for academic misconduct activity tracking or disciplinary action, suspended or expelled from the university. It is your responsibility to know the rules. Always paraphrase and cite the source properly according to APA style, avoid copying sentences unless they are necessary, and you cite the author in APA style. Always cite your source! In detail, pay attention to the California Code of Regulations:\n\n\n\n\n\n\nWarning\n\n\n\n“Title 5, California Code of Regulations, Section 41301 notes that students may be”expelled, suspended, placed on probation, or given a lesser sanction for one or more of the following causes which must be campus related: 1. Cheating or plagiarism in connection with an academic program at a campus. . . .” (see “Student Rights & Responsibilities” section of the current Stanislaus State catalog).”\n\n\nAPA Style: Unfortunately, I have to enforce the use of APA style, this is important to generate clean and tidy documentation while you follow scientific formatting. You have to follow the APA style 7th edition, I would recommend to buy the manual or just use this website, it has plenty of information about it, it also provides tools to generate references and citations: https://owl.purdue.edu/owl/research_and_citation/apa_style/apa_style_introduction.html\nStudents with disabilities: If you are a student with a documented disability at Stan State, please see me immediately to discuss appropriate accommodations. You must email me your letter of accommodation from Stan State’s DRS department as soon as possible. For exam accommodations, you must email me your accommodation letter at least seven days (7) before a scheduled exam to receive your accommodation (see schedule for exam dates). Contact me via email if you wish to discuss your accommodation or if you are in the process of registering for DRS services. Note, that accommodations are not provided retroactively."
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#student-resources",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#student-resources",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Student Resources",
+    "text": "Student Resources\nHere are some of the resources available to you here at Stan State. All these services are available to you, as a Stan State student, free of charge (except certain medical appointments and procedures). Please visit their web pages to learn more about the services they provide.\nBasic Need Support: 209-667-3108. Resources are available to help with securing food and emergency finances.\nStudent Health Center: 209-667-3396. Medical care, health education, disease prevention, laboratory testing, physicals, women’s and reproductive health, flu shots, immunizations.\nDisability Resource Services: 209-667-3159. Supports students and arranges accommodations for students with disabilities, including disabilities related to learning, vision, mobility, hearing, autism, or chronic or temporary health factors.\nPsychological Counseling Services: 209-667-3381. Confidential individual personal counseling and group/wellness workshops to help students deal with stress, anxiety, depression, grief, relationships.\nDiversity Resources: Workshops, student space, reading nook, complimentary coffee and tea, social justice library, conference room space.\nUndocumented Student Services: 209-667-3519. Walk-in advising, workshops, legal services, DACA renewal, scholarships, peer support, family and community engagement.\nAcademic Success Center: 209-667-3700. Drop-in advising for general education, university requirements, undeclared majors, academic probation, and California Promise.\nLearning Commons: 209-667-3642, Tutoring (walk-in and regular appointments), supplemental instruction, WPST, writing center.\nCareer and Professional Development: 209-667-3661. Career coaching, workshops, resume building, business attire.\nWarrior Food Pantry: 209-667-3561. Non-perishable food items and toiletries, at no cost. Collect up to 10 items per week.\nStudent Affairs: 209-667-3177. General hub for all student academic and support services on campus."
+  },
+  {
+    "objectID": "introTesting/syllabus/syllabusPSYC3160.html#class-schedule",
+    "href": "introTesting/syllabus/syllabusPSYC3160.html#class-schedule",
+    "title": "Introduction to Psychological Testing, PSYC3160",
+    "section": "Class Schedule",
+    "text": "Class Schedule\nThe following class schedule is always under construction, which might change every week. You will receive a notification if there are changes. If not, you will not be penalized because of any unannounced change.\n\n\n\n\n\n\nWarning\n\n\n\nYou should always check Canvas, I might add additional readings such as scientific articles, press articles or videos.\n\n\n\n\n\n\n\n\n\n\nSchedule Fall 2024\n\n\nThis schedule may change during the semester\n\n\nDate\nTopic\nAssignment\n\n\n\n\n08/21/24\nIntroduction and syllabus\nWatch introduction video\n\n\n08/26/24\nIntroduction to test theory, history and background\nDiscussion & summary\n\n\n09/02/24\nNorms and Standardized Scores\nDiscussion & summary\n\n\n09/16/24\nReliability and Classical Test Theory\nDiscussion & summary\n\n\n09/23/24\nValidity\nDiscussion & summary\n\n\n09/30/24\nTest Development\nDiscussion & summary\n\n\n10/07/24\nWriting cognitive items\nDiscussion & summary\n\n\n10/14/24\nWriting non-cognitive items\nDiscussion & summary\n\n\n10/21/24\nBias, fairness and legal issues\nDiscussion & summary\n\n\n10/28/24\nTest administration\nDiscussion & summary\n\n\n11/04/24\nInterviewing Techniques\nDiscussion & summary\n\n\n11/11/24\nIntelligence measurement\nDiscussion & summary\n\n\n11/18/24\nApplications in clinical and counseling settings\nDiscussion & summary\n\n\n11/25/24\nTesting in health psychology\nDiscussion & summary\n\n\n12/02/24\nTests for infants, disabilities, and special populations.\nDiscussion & summary\n\n\n12/09/24\nPrepare new instrument’s project\nNo assignment\n\n\n\n\n\n\n\n\nBook Chapters\n\n\n\n\n\n\n\n\nReadings’ Schedule Fall 2024\n\n\nThis schedule may change during the semester\n\n\nDate\nAuthors\nBook chapter\n\n\n\n\n08/21/24\nNo reading\nn/A\n\n\n08/26/24\nKaplan & Saccuzzo (2018), Bandalos (2018)\nChapter 1\n\n\n09/02/24\nKaplan & Saccuzzo (2018)\nChapter 2\n\n\n09/16/24\nKaplan & Saccuzzo (2018)\nChapter 4\n\n\n09/23/24\nKaplan & Saccuzzo (2018)\nChapter 5\n\n\n09/30/24\nKaplan & Saccuzzo (2018), Bandalos (2018)\nChapter 6, Chapter 3\n\n\n10/07/24\nBandalos (2018)\nChapter 4\n\n\n10/14/24\nBandalos (2018)\nChapter 5\n\n\n10/21/24\nBandalos (2018)\nChapter 16\n\n\n10/28/24\nKaplan & Saccuzzo (2018)\nChapter 7\n\n\n11/04/24\nKaplan & Saccuzzo (2018)\nChapter 8\n\n\n11/11/24\nKaplan & Saccuzzo (2018)\nChapter 9\n\n\n11/18/24\nKaplan & Saccuzzo (2018)\nChapter 13\n\n\n11/25/24\nKaplan & Saccuzzo (2018)\nChapter 17\n\n\n12/02/24\nKaplan & Saccuzzo (2018)\nChapter 11\n\n\n12/09/24\nNo reading\nn/A\n\n\n\n\n\n\n\n\n\nReferences\n\n\nBandalos, D. L. (2018). Measurement theory and applications for the social sciences. Guilford Publications.\n\n\nKaplan, R. M., & Saccuzzo, D. P. (2018). Psychological testing: Principles, applications, and issues. Pacific grove, CA: brooks. Cole Publishing Company."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html",
+    "href": "introTesting/lecture1/IntroductionToTesting.html",
+    "title": "Introduction to measurement theory",
+    "section": "",
+    "text": "Present relevant historical events.\nDescribe and explain important concepts.\nEnjoy some memes…hopefully funny ones."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#aims-in-this-lecture",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#aims-in-this-lecture",
+    "title": "Introduction to measurement theory",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nPresent relevant historical events.\nDescribe and explain important concepts.\nEnjoy some memes…hopefully funny ones."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology",
+    "title": "Introduction to measurement theory",
+    "section": "What do we measure in psychology?",
+    "text": "What do we measure in psychology?\n\nProbably, your friends have asked you this question: how psychology measure thoughts, emotions, behavior? Perhaps for your friends was easier to understand how we measure behavior, but your friends perhaps struggle to grasp how we measure asbtract variables such as thoughts, attitudes, emotions, and apptitude?\nLikely, you still don’t know how are we sure we really measure what we intent to measure. This is the reason you are taking this class.\nWe will discuss how we measure implicit variables. We will study basics on how we evaluate our measurements. Also, you will learn that this is one of the most important courses in psychology. Everything we do in psychology is supported by measurements and instruments. We are science!"
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-1",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-1",
+    "title": "Introduction to measurement theory",
+    "section": "What do we measure in psychology?",
+    "text": "What do we measure in psychology?\n\n\n\nIn this class you will read the word “construct” many times, you may also read the words “latent variable”.\nConstructs or latent variables are frequently studied in psychology. A latent variable is an entity that you cannot see but you are able to measure, and you can feel it in some cases. This means that there is a phenomenological dimension.\nBut not all variables are latent, we can also study behavior by observing individuals or conduct interviews to collect reports of behavior.\nWe can also use wearables such as a smartwatch to collect information about behavior, and heart rate wich is not latent.\nSome examples of latent variable are: depression, anxiety, academic performance, quality of life, among many others."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-2",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-2",
+    "title": "Introduction to measurement theory",
+    "section": "What do we measure in psychology?",
+    "text": "What do we measure in psychology?\n\nA latent variable is a theoretical variable, we assume that a latent variable explains manifest variables. For example, pay attention to the following example:\n\n\n\nIn this example I’m assuming depression is what explains my questions or items."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-3",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-3",
+    "title": "Introduction to measurement theory",
+    "section": "What do we measure in psychology?",
+    "text": "What do we measure in psychology?\n\nBut wait you may be thinking: are we making up models without knowing if we really measure depression or any other latent variable? The answer is NO! We are not making up models or data. We don’t create fake theory. All models have to be tested using data and after collecting data, we can evaluate our models using statistical models.\n\n\n\n\n\n\nDon’ blame the dog, there are some schools of thought in science that might follow our dog’s opinion.\nIs it possible to be sure that you are really measuring depression or anxiety?\nWe will discuss more about this issue later on."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-4",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#what-do-we-measure-in-psychology-4",
+    "title": "Introduction to measurement theory",
+    "section": "What do we measure in psychology?",
+    "text": "What do we measure in psychology?\n\nSimilar to Bandalos (2018), I’ll define a test as: “…a procedure for obtaining a sample of behavior that can be used to infer a person’s level or status on a construct of interest” (p. 03).\nAlso I’ll be using the terms measure, instrument, and scale as synonyms of test."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#we-work-with-humans-therefore-we-will-be-wrong",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#we-work-with-humans-therefore-we-will-be-wrong",
+    "title": "Introduction to measurement theory",
+    "section": "We work with humans, therefore we will be wrong…",
+    "text": "We work with humans, therefore we will be wrong…\n\nIf you are thinking: wait! you are telling me that we ask questions to people to approximate a latent variable. What happens when people lie? Cab we trust answers from our participants or clients?\nThe answer is: it depends! In the clinical setting we can assume our client is honest becasue the person is looking for help. In research, depending on the topic or setting, people will present thereselfs better that they really are.\nCertainly, there are difficulties and external variables affecting our tests. Bandalos (2018) mentions situations where the participants have extra skills not measured by our instrument, or emotions such as anxiety could bias the results.\nThis problem is what is called in psychometrics “errors of measurement”.\nAs Box said: “All models are wrong, but some are useful”. This means that all measurements will have problems, but some will be closer to the contruct. After making sure that its validity and reliability are appropiate."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#levels-of-measurement",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#levels-of-measurement",
+    "title": "Introduction to measurement theory",
+    "section": "Levels of Measurement",
+    "text": "Levels of Measurement\n\nMany times we ask questions answered in words by participants or clients. These words have to be tranformed into numbers like the following case named Likert item:"
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#levels-of-measurement-1",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#levels-of-measurement-1",
+    "title": "Introduction to measurement theory",
+    "section": "Levels of Measurement",
+    "text": "Levels of Measurement"
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#ancient-times",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#ancient-times",
+    "title": "Introduction to measurement theory",
+    "section": "Ancient times",
+    "text": "Ancient times\n\nChinese civil service examinations back to as early as 2200 B.C.E.\nTesting in Ancient Greece.\nEarly European Testing:\n\nUniversity of Bologna, year 1219."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#modern-times",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#modern-times",
+    "title": "Introduction to measurement theory",
+    "section": "Modern times",
+    "text": "Modern times\n\nPsychophysical measures laboratories and measures were the tendency at the beggining of the 20th century.\nThe idea was to measure mental functioning by observing variables like weight, head size, how people walk, and reaction to stimuli.\nGustav Theodor Fechner (1860) was the first philosopher and physicist to try to link body responses and implicit events such as the mind."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#modern-times-1",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#modern-times-1",
+    "title": "Introduction to measurement theory",
+    "section": "Modern times",
+    "text": "Modern times\n\nYou may read more about eugenics here."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#personality-tests",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#personality-tests",
+    "title": "Introduction to measurement theory",
+    "section": "Personality tests",
+    "text": "Personality tests\n\n\n\nThe World War II boost the research on personality. The idea was to sudy traits which are are “relatively enduring dispositions (tendencies to act, think, or feel in a certain manner in any given circumstance) that distinguish one individual from another” (Kaplan & Saccuzzo, 2018, p. 18).\nFor instance you may have heard about “extroverted” and “introverted” people.\nWoodworth Personal Data Sheet, World War I."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#personality-tests-1",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#personality-tests-1",
+    "title": "Introduction to measurement theory",
+    "section": "Personality tests",
+    "text": "Personality tests\nProjective tests:\n\n\n\nHerman Rorschach of Switzerland, 1921\nThematic Apperception Test (TAT) by Henry Murray and Christina Morgan, 1935.\nThere are more projective tests but they are not the best tests psychometrically speaking. We’ll talk more about it in this course."
+  },
+  {
+    "objectID": "introTesting/lecture1/IntroductionToTesting.html#references",
+    "href": "introTesting/lecture1/IntroductionToTesting.html#references",
+    "title": "Introduction to measurement theory",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBandalos, D. L. (2018). Measurement theory and applications for the social sciences. Guilford Publications.\n\n\nKaplan, R. M., & Saccuzzo, D. P. (2018). Psychological testing: Principles, applications, and issues. Pacific grove, CA: brooks. Cole Publishing Company."
   }
 ]
