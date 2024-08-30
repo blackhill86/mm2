@@ -4801,5 +4801,96 @@
     "title": "Introduction to measurement theory",
     "section": "References",
     "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBandalos, D. L. (2018). Measurement theory and applications for the social sciences. Guilford Publications.\n\n\nKaplan, R. M., & Saccuzzo, D. P. (2018). Psychological testing: Principles, applications, and issues. Pacific grove, CA: brooks. Cole Publishing Company."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html",
+    "href": "quartoPresentation/quartoIntro.html",
+    "title": "Introduction to Quarto documents",
+    "section": "",
+    "text": "Quarto is a multi-language software that will help you to create static or dynamic documents.\nQuarto is a like a toolbox, inside the toolbox you will find Html code, JavaScript code, and Pandoc utilities.\nBut good news! You don’t have to know all these programming tools and languages to use Quarto in R.\nQuarto will do everything for you behind scenes."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#what-is-quarto",
+    "href": "quartoPresentation/quartoIntro.html#what-is-quarto",
+    "title": "Introduction to Quarto documents",
+    "section": "What is Quarto",
+    "text": "What is Quarto\n\nQuarto is a multi-language software that will help you to create static or dynamic documents.\nQuarto is a like a toolbox, inside the toolbox you will find Html code, JavaScript code, and Pandoc utilities.\nBut good news! You don’t have to know all these programming tools and languages to use Quarto in R.\nQuarto will do everything for you behind scenes."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#what-do-you-need-to-know-for-this-class",
+    "href": "quartoPresentation/quartoIntro.html#what-do-you-need-to-know-for-this-class",
+    "title": "Introduction to Quarto documents",
+    "section": "What do you need to know for this class?",
+    "text": "What do you need to know for this class?\n\nYou will only need to learn how to create pdf files via Quarto in R."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#step-1-install-r-and-rstudio",
+    "href": "quartoPresentation/quartoIntro.html#step-1-install-r-and-rstudio",
+    "title": "Introduction to Quarto documents",
+    "section": "Step 1: Install R and Rstudio",
+    "text": "Step 1: Install R and Rstudio\nFollow these instructions to install R and then install RStudio CLICK HERE"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#step-2-install-quarto",
+    "href": "quartoPresentation/quartoIntro.html#step-2-install-quarto",
+    "title": "Introduction to Quarto documents",
+    "section": "Step 2: Install Quarto",
+    "text": "Step 2: Install Quarto\n\nYou will need to go to Quarto's website and download the appropriate installer for you computer CLICK HERE\nIt is likely that you have a Mac computer or a Windows computer, select the correct installer accordingly."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#step-3-install-tinytex",
+    "href": "quartoPresentation/quartoIntro.html#step-3-install-tinytex",
+    "title": "Introduction to Quarto documents",
+    "section": "Step 3: Install tinytex",
+    "text": "Step 3: Install tinytex\n\ntinytex is a package created by the Quarto developers to compile Latex (It is pronounced “Lay-tech”) code.\nLatex is a markup language that was created before the word processors were invented, but it is still use to create pdf’s because it remains very useful.\nYou won’t need to learn how to write Latex code. Quarto does it for you, you only need the engine to process the code, this is where tinytex is important.\nTo install tinytex you will have to type quarto install tinytex in your Windows terminal or Mac terminal, Windows also call it “command prompt”. “command prompt’. Don’t forget to press enter after writing the command on the terminal.\n\n\nMAC terminalWindows terminal"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#basics-in-quarto",
+    "href": "quartoPresentation/quartoIntro.html#basics-in-quarto",
+    "title": "Introduction to Quarto documents",
+    "section": "Basics in Quarto",
+    "text": "Basics in Quarto\n\nQuarto is using markdown to specify what do you want to display in your document. This is something call a “markup language”. This means that you give instructions in a specific format, and the software creates the document in pdf.\nQuarto will need a header. We can study the following example:\n\n---\ntitle: \"Practice #1\"\nauthor: \"Jacinto Paredes\"\ndate: now\ndate-format: long\nformat: pdf\neditor: visual\n---\n\nThe example above is a YAML header, it has meta information such as:\n-Title: Title of the document.\n-author: the author of the document.\n-date: you may specify a date or just use the shortcut “now”.\n-date-format: the format you would like to use to display the date."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#basics-in-quarto-ii",
+    "href": "quartoPresentation/quartoIntro.html#basics-in-quarto-ii",
+    "title": "Introduction to Quarto documents",
+    "section": "Basics in Quarto II",
+    "text": "Basics in Quarto II\n\nAfter you add the header at the beginning of the document, you can start writing the content of the document following these rules:\n\nPound sign (#) will help you to create sections.\n\nOne pound sign is section level 1, two pound signs is a second level section, and three pound signs are third level section.\n\nYou can use asteriks to create *italics*, this is **bold** , and this is ***bold and italics***.\n\nYou can check this link to read more about more options in Markdown rules."
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#the-real-beauty-is-in-the-chunks",
+    "href": "quartoPresentation/quartoIntro.html#the-real-beauty-is-in-the-chunks",
+    "title": "Introduction to Quarto documents",
+    "section": "The real beauty is in the chunks",
+    "text": "The real beauty is in the chunks\n\nQuarto allows to run R code along with text, this makes easy to grade assignments when you report your code.\nQuarto will run the code for you when it is rendering your pdf document.\nWe will call the code “chunks” , because we are adding pieces of code along with regular English text.\nTo add a chunk of code you can type:\n\n```{{r}}\n\n```\n\nAs you can see the “```{r}” instruction creates a new space where you can type your R code.\nFor example, we can run the following code and get the output along with our text:\n\n\nlibrary(gt)\n\ngt(mtcars[c(1:5), c(1:5)], rownames_to_stub = TRUE)|&gt;\n  tab_header(\n    title = md(\"An example of a data table\"),\n    subtitle = md(\"Information about cars\")\n  )\n\n\n\n\n\n\n\nAn example of a data table\n\n\nInformation about cars\n\n\n\nmpg\ncyl\ndisp\nhp\ndrat\n\n\n\n\nMazda RX4\n21.0\n6\n160\n110\n3.90\n\n\nMazda RX4 Wag\n21.0\n6\n160\n110\n3.90\n\n\nDatsun 710\n22.8\n4\n108\n93\n3.85\n\n\nHornet 4 Drive\n21.4\n6\n258\n110\n3.08\n\n\nHornet Sportabout\n18.7\n8\n360\n175\n3.15"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#the-real-beauty-is-in-the-chunks-1",
+    "href": "quartoPresentation/quartoIntro.html#the-real-beauty-is-in-the-chunks-1",
+    "title": "Introduction to Quarto documents",
+    "section": "The real beauty is in the chunks",
+    "text": "The real beauty is in the chunks\n\nYou can also insert a chunk of code by clicking on the green icon in RStudio showed in the picture below:"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#a-good-example",
+    "href": "quartoPresentation/quartoIntro.html#a-good-example",
+    "title": "Introduction to Quarto documents",
+    "section": "A good example",
+    "text": "A good example\nThis is an example of a full Quarto document that will render a pdf document, you can copy the code and render the file in your computer using RStudio:\n---\ntitle: \"Practice #1\"\nauthor: \"Jacinto Paredes\"\ndate: now\ndate-format: long\nformat: pdf\neditor: visual\n---\n\n# How to use this template?\n\nI'm providing this template to complete future practices and assignments. It is not mandatory to complete any assignment using `Quarto`. Delete from this template any unnecessary information. I'm writing some details about `Quarto` for the sake of learning.\n\nYou may ***render*** this `Quarto` file to check how the pdf looks like.  \n\n## Exercise 1\n\n1.  Now is your turn to create your own object. Copy my code an replace the names with names of countries. Then, call the object to print the content in the console. Copy your answer in a Word document or Google document. (8.33 points)\n\n```{r}\n### Write here your R code to answer the question\n```\n\n## Exercise 2\n\n2.  Do the same with your object containing names of countries. Print only the first and the third element of your object. (8.33 points)\n\n```{r}\n### Write here your R code to answer the question\n```\n\n## Exercise 3\n\n3.  Create a numeric vector with the years of Marvel movies corresponding to *The Infinity Saga* reported in this link [CLICK HERE](https://en.wikipedia.org/wiki/List_of_Marvel_Cinematic_Universe_films){target=\"_blank\"}. After that, print only the elements located in positions 5,8, and 9. (8.33 points)\n\n```{r}\n### Write here your R code to answer the question\n```\n\n## Excercise 4\n\n4.  Copy the code above, replace the `+` sign for a `-` (minus) sign. Then run the code, What happened when you did that ? (8.33 points)\n\n```{r}\n### Write here your R code to answer the question\n```\n\n## Excercise 5\n\n5.  Create a data frame object by copying the code below. Change the object’s name, you may named it “expenses”, then change the variable names in the example (e.g. `variable1`). Finally run the code. How many rows does this data frame have? How many columns does this data frame have? Can you tell what happened after running the function `head()` (8.33 points)\n\n```{r}\n### Write here your R code to answer the question\n```\n\n## Excercise 6\n\n6.  You probably went to the link I recommended before, if not go a read it [here.](https://blackhill86.github.io/StatsBook/functionsPack.html){target=\"_blank\"} After reading the explanation about packages install the package `tidyverse` then, call the package. You can copy the following code and paste the code in your RStudio session. Remember to install the package first.\n\n```{r}\n### Write here your R code to answer the question\n```"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#a-good-example-ii",
+    "href": "quartoPresentation/quartoIntro.html#a-good-example-ii",
+    "title": "Introduction to Quarto documents",
+    "section": "A good example II",
+    "text": "A good example II\n\nAfter rendering the Quarto example, the pdf file looks like this one: CLICK HERE"
+  },
+  {
+    "objectID": "quartoPresentation/quartoIntro.html#references",
+    "href": "quartoPresentation/quartoIntro.html#references",
+    "title": "Introduction to Quarto documents",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website"
   }
 ]
