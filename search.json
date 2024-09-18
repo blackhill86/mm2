@@ -4627,7 +4627,7 @@
     "href": "introTesting/introPsychMain.html#lectures",
     "title": "Intro to Psychological Testing",
     "section": "Lectures:",
-    "text": "Lectures:\nIntroduction to measurement theory",
+    "text": "Lectures:\nIntroduction to measurement theory\nNorms and basic statistics for testing",
     "crumbs": [
       "Home",
       "Content",
@@ -4927,5 +4927,131 @@
     "title": "Practice 1",
     "section": "How do I import data sets in R?",
     "text": "How do I import data sets in R?\nYou might probably wondering, how do I use R to analyze real world information? The answer is to import the file in the Global Environment in R. There are several options to open data sets, you can open the file from your computer or you may open a data set saved in a repository online.\nLet’s practice both options:\n\nImporting a file from my local computer.\nYou can download any file type and import the data in R, the extension file could be a Comma Separated Values document (.csv), it could be an Excel file, SPSS file, tsv file, and many more.\nIn this course I prefer to share files in Comma Separated format (.csv), it doesn’t mean that R only opens this type of files. I like this file extension because it can be opened in any software that support columns separated by commas, and it is a lightweight format, which is beneficial when you open files in R.\nIn R there is a specific function to import .csv files. The function is read.csv():\n\ndataImported &lt;- read.csv(\"rumination_data.csv\")\n\nHowever, to make your life easier we can use the function file.choose() inside the function read.csv(), when adding file.choose() you will be able to select the file you want to open in R. A new window will pop-up asking you to select a file, you may navigate to find the folder where you saved the target file, see the following example:\n\ndataImported &lt;- read.csv(file.choose())\n\n\n\n\n\n\n\n\nPop-up window to open a file\n\n\nThe second method to import a file in your R session will be to use an URL link . You can add a link that helps to streams data from a webpage. In this course you will see URL links from my personal repository of data like this:\n\nlibrary(tidyverse) ### Remember to call \"tidyverse\"\n\n\nURL &lt;- \"https://raw.githubusercontent.com/blackhill86/mm2/main/dataSets/BigFiveWealth.csv\"\n\ndataImportedURL &lt;- read.csv(URL, na.string = \"-999\")\n\ndataImportedURL |&gt;\n    select(starts_with(\"age\")) |&gt;\n    summarise_all(~ mean(., na.rm = TRUE)) \n\n     age08    age12    age16\n1 65.77553 65.39115 66.76927\n\n\n\n\n\n\n\n\nImportant\n\n\n\nArgument na.string\nMissing data in R is handled as a particular data format. In R “NA” represents missing information.\n\n\n\n\n\nWhen you read in data you need to specify what is the label for msising data, in this exmaple the label is a number not oberved in the data set which is -999.\n\n\n\n\n\n\n\n\nExcercise 7\n\n\n\n\nCopy the code showed before but replace the variable “age” for the variable “pa”. Paste your code and the output in your answer. (19.28 points)\n\n\n\nCheck Practice 2 very soon for more R exercises!"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html",
+    "href": "introTesting/lecture2/NormsAndStats.html",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "",
+    "text": "Explain relevant statistical concepts.\nDescribe and explain what is “norms”.\nPerhaps more memes…"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#aims-in-this-lecture",
+    "href": "introTesting/lecture2/NormsAndStats.html#aims-in-this-lecture",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nExplain relevant statistical concepts.\nDescribe and explain what is “norms”.\nPerhaps more memes…"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#why-do-we-need-stats-when-creating-measurements",
+    "href": "introTesting/lecture2/NormsAndStats.html#why-do-we-need-stats-when-creating-measurements",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Why do we need stats when creating measurements ?",
+    "text": "Why do we need stats when creating measurements ?\n\n\n\nThere are many reasons to implement statistical models in measurement theory.\n\nWe need to create statistical models that help to understand Nature.\nIn order to understand Nature we need to create instruments and measurements.\nThe best way to create measurements is to create a model where observation and theory are linked together. In this step, statistics will help us to evaluate a model or multiple measurement models.\nStatistics will help to make inferences based on our observed data.\nYou can describe the performance of groups, or describe traits with aggregated data.\nYou can compare individuals and groups based on scores."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#wait-what-is-a-statiscal-model",
+    "href": "introTesting/lecture2/NormsAndStats.html#wait-what-is-a-statiscal-model",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Wait… what is a statiscal model ?",
+    "text": "Wait… what is a statiscal model ?\n\n\n\nTo study and understand Nature we must construct a model for how Nature works.\nA model helps you to understand Nature and also allows you to make predictions about Nature. There is no right or wrong model; they are all wrong! But some are better than others."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#models-have-parameters",
+    "href": "introTesting/lecture2/NormsAndStats.html#models-have-parameters",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Models have Parameters",
+    "text": "Models have Parameters\n\nA parameter is a numerical characteristic of the data-generating process, one that is usually unknown but often can be estimated using data.\n\n\\[\\begin{equation}\nY \\sim \\beta_{0} + \\beta_{1}X\n\\end{equation}\\]\nFor instance, in the model showed above, we have two unknown parameters, this model produces data \\(Y\\). The unknown parameters are represented with greek letters, for instance the letter beta in the example above.\n\n\n\n\n\n\n\nMantra\n\n\nModel produces data.\nModel has unknown parameters.\nData reduce the uncertainty about the unknown parameters."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#types-of-scales",
+    "href": "introTesting/lecture2/NormsAndStats.html#types-of-scales",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Types of Scales",
+    "text": "Types of Scales\n\n\n\nNominal: numerical values representing labels or groups. For example: marital status, job position, gender.\nOrdinal: This scale allows you to rank individuals or objects but not to say anything about the meaning of the differences between the ranks. Likert scales are a good example.\nRatio: it is a scale with a meaningful zero. For example the Kelvin scale to measure temperature."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#descriptives-a-probability-distributions",
+    "href": "introTesting/lecture2/NormsAndStats.html#descriptives-a-probability-distributions",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Descriptives a probability distributions",
+    "text": "Descriptives a probability distributions\n\nYou are probably familiar with frequencies. When reporting frequencies, we count how many times a value is repeated in your observed data.\nIn the next example I’ll show descriptive information related to a validation I did in Costa Rica.\nMy aim was to know how people felt when reading different adjectives and nouns. I asked to my participants to rate the perceived “arousal” and perceived “valance” of each word.\nI utilized mannequins to evaluate valance:\n\n\n\n\n\n\n\nI used the following scale to measure arousal:\n\n\n\n\n\n\n\nI didn’t create these scales, the original authors are Bradley & Lang (1994), an it was called The Self-Assessment Manikin. I thought it could be a good option to measure words’ positive and negative valence along with the “arousal”.\nEach little individual scale had a number in my data set, the first little guy in each scale was coded as “9” and the last little individual was coded as “1”.\nThis means I utilized an ordinal scale where 9 represents “very positive word”, and 1 represents “very negative word”. Likewise, in the arousal scale 9 represents “strongly activated” whereas 1 represents “calm or not activated”."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#sam-instrument",
+    "href": "introTesting/lecture2/NormsAndStats.html#sam-instrument",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "SAM instrument",
+    "text": "SAM instrument\n\nIn this example a person marked rated “Anxious” “1” in valance and “9” in activation."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#lets-see-some-distibutions-and-frequencies",
+    "href": "introTesting/lecture2/NormsAndStats.html#lets-see-some-distibutions-and-frequencies",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Let’s see some distibutions and frequencies",
+    "text": "Let’s see some distibutions and frequencies"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#we-can-check-a-table",
+    "href": "introTesting/lecture2/NormsAndStats.html#we-can-check-a-table",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "We can check a table",
+    "text": "We can check a table\n\n\n\n\n\n\n\n\nFrequencies of arousal and valance\n\n\nRating of Anxiuos\n\n\nResponse Options\nArousal\nValance\n\n\n\n\n1\n41\n29\n\n\n2\n4\n7\n\n\n3\n13\n13\n\n\n4\n10\n8\n\n\n5\n11\n23\n\n\n6\n2\n3\n\n\n7\n3\n6\n\n\n8\n1\n3\n\n\n9\n8\n4\n\n\nNA\n7\n4\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nQuestion\n\n\n\nDid the participants understand what is “anxiety”?\nIs it trivial to ask this question to ourselves?"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#percentiles",
+    "href": "introTesting/lecture2/NormsAndStats.html#percentiles",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Percentiles",
+    "text": "Percentiles\n\nYou can describe a distribution in terms of percentiles.\nLet’s imagine the folllowing numbers represent households income:\n\n\n\n\n$25,500| $32,456| $37,668| $54,365| $135,456\n\n\n\n\n\n\nNow, we can follow this formula to estimate our percentiles (Westfall & Henning, 2013):\n\n\\[\\begin{equation}\n\\hat{y}_{(i-0.5)/n} = y_{(i)}\n\\end{equation}\\]\n\nThe little hat \\(\\hat{}\\) on top of \\(y\\) means “estimate of”, this is used in statistics to comunicate that you are estimating a value from “data” (lowercase). This means you are estimating a value from your observed fixed data. The right-hand side is the \\(ith\\) ordered value of the data, all together we can read the formula as:\n\nThe \\((i − 0.5)/n\\) quantile of the distribution is estimated by the \\(ith\\) ordered value of the data\n\nWe can see an example:\n\n\nQuantile example\n\n\n\\(i\\)\n\\(y(i)\\)\n(\\(i\\)-0.5)/\\(n\\)\n\\[\\hat{y}_{(i-0.5)/n} = y(i)\\]\n\n\n\n\n1\n25500\n(1-0.5)/5 =0.10\n25500\n\n\n2\n32456\n(2-0.5)/5 =0.30\n32456\n\n\n3\n37668\n(3-0.5)/5 =0.50\n37668\n\n\n4\n54365\n(4-0.5)/5 =0.70\n54365\n\n\n5\n135456\n(5-0.5)/5 =0.90\n135456\n\n\n\n\nThen, we can say in plain English: “The 70th percentile of the distribution is measured by $54,365”.\nNow notice something, why we don’t have data representing the 75th percentile?\nGiven that these are estimates , these numbers are approximations to the true value, If you collect more data you’ll have data in different percentiles, also more precision to capture the real value."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#percentiles-1",
+    "href": "introTesting/lecture2/NormsAndStats.html#percentiles-1",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Percentiles",
+    "text": "Percentiles\n\n\n\n\n\n\n\n\n\nSource: CLICK HERE"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#mean-and-standard-deviation",
+    "href": "introTesting/lecture2/NormsAndStats.html#mean-and-standard-deviation",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Mean and Standard deviation",
+    "text": "Mean and Standard deviation\n\nThe mean or average is the most frequent estimate in testing and statistics, along with the standard deviation.\nLet’s see their anatomy\n\nMean estimation:\n\\[\\begin{align}\n\\bar{X} &= \\frac{\\sum X}{n}\\\\\n&= \\frac{18+21+24+23+22+24+25}{7}\\\\\n&= \\frac{157}{7}\\\\\n&= 22.43\\\\\n\\end{align}\\]\nVariance:\n\\[\\begin{equation}\ns^2 = \\frac{\\sum (X_{i} - \\bar{X})^2}{n-1}\n\\end{equation}\\]\nStandard Deviation:\n\\[\\begin{equation}\ns = \\sqrt{\\frac{\\sum (X_{i} - \\bar{X})^2}{n-1}}\n\\end{equation}\\]\n\n\n\n\n\n\n\nVariance and SD\n\n\nThe standard deviation and variance are similar, they both measure the distance from the mean, but the standard deviation is a standardized measure, instead variance is scale dependent."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#mean-and-standard-deviation-1",
+    "href": "introTesting/lecture2/NormsAndStats.html#mean-and-standard-deviation-1",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Mean and Standard deviation",
+    "text": "Mean and Standard deviation"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#z-scores",
+    "href": "introTesting/lecture2/NormsAndStats.html#z-scores",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Z-Scores",
+    "text": "Z-Scores\n\nZ Scores are used to compare observed scores versus a normative score, or to compare scores from different scales with different metric.\nLet’s see an example where we need to compare two scores, but the scores have different range of values:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nN = 175\n\n\n\n\ndepressionTotal\n\n\n\n\n    Mean (SD)\n10 (6)\n\n\n    Min, Max\n0, 34\n\n\nanxietyTotal\n\n\n\n\n    Mean (SD)\n4.1 (3.3)\n\n\n    Min, Max\n0.0, 17.0\n\n\nruminationTotal\n\n\n\n\n    Mean (SD)\n30 (8)\n\n\n    Min, Max\n14, 52\n\n\n\n\n\n\n\n\nWe’ll need to compute Z scores in these cases using the following transformation:\n\\[Z = \\frac{X_{i}-\\bar{X}}{SD}\\]\n\n\n\n\n\n\n\n\n\n\n\nIn this transformation we estimate the distance from the mean (\\(\\bar{X}\\)) for each observed value \\(X_{i}\\), and then we divide it by the score’s standard deviation (\\(SD\\))."
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#z-scores-1",
+    "href": "introTesting/lecture2/NormsAndStats.html#z-scores-1",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Z-Scores",
+    "text": "Z-Scores\n\nAfter tranforming the observed values, we can now compare distributions:\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nVariable\nN = 175\n\n\n\n\ndepreZ\n\n\n\n\n    Mean (SD)\n-0.01 (1.00)\n\n\n    Min, Max\n-1.65, 3.72\n\n\nanxietyZ\n\n\n\n\n    Mean (SD)\n0.00 (1.02)\n\n\n    Min, Max\n-1.26, 3.97\n\n\nrumiZ\n\n\n\n\n    Mean (SD)\n0.00 (1.00)\n\n\n    Min, Max\n-1.93, 2.59"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#norms-and-norming",
+    "href": "introTesting/lecture2/NormsAndStats.html#norms-and-norming",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "Norms and Norming",
+    "text": "Norms and Norming"
+  },
+  {
+    "objectID": "introTesting/lecture2/NormsAndStats.html#references",
+    "href": "introTesting/lecture2/NormsAndStats.html#references",
+    "title": "Norms and Basic Statistics for Testing",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBradley, M. M., & Lang, P. J. (1994). Measuring emotion: The self-assessment manikin and the semantic differential. Journal of Behavior Therapy and Experimental Psychiatry, 25(1), 49–59.\n\n\nWestfall, P. H., & Henning, K. S. (2013). Understanding advanced statistical methods. CRC Press Boca Raton, FL, USA:"
   }
 ]
