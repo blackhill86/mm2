@@ -4627,7 +4627,7 @@
     "href": "introTesting/introPsychMain.html#lectures",
     "title": "Intro to Psychological Testing",
     "section": "Lectures:",
-    "text": "Lectures:\nIntroduction to measurement theory\nNorms and basic statistics for testing",
+    "text": "Lectures:\nIntroduction to measurement theory\nNorms and basic statistics for testing\nTest Development",
     "crumbs": [
       "Home",
       "Content",
@@ -5116,5 +5116,110 @@
     "title": "Assignment #1",
     "section": "Second Part: More to do in R!",
     "text": "Second Part: More to do in R!\nIn this section, the aim is to practice what we have learned by estimating some models in R. If you’d like to use R, you are free to do it.\n\nImagine you need to evaluate the mean difference in wage. In this analysis you ask to yourself: are there differences in wage by insurance status? Estimate a model that helps you to understand the mean difference in wage when people have insurance versus people without insurance. What model will you pick?\n\nTo answer this question open the data set named wageData.csv in R. Then, conduct the appropriate statistical model. Remember that the variable wage represents the amount of dollars earn per hour. The variable health_ins is the group, factor or independent variable.\n\n\n\n\n\n\nTip\n\n\n\nPay attention to Lecture 7: Introduction to Hypothesis Testing\n\n\n\n\n\n\n\n\nWarning\n\n\n\nYou can copy this R code to open the data set:\n\nurl &lt;- \"https://raw.githubusercontent.com/blackhill86/mm2/refs/heads/main/dataSets/wageData.csv\"\n\nwageData &lt;- read.csv(url)\n\n\n\n1.1 Was the value of the mean different? Are people with insurance earning more money? (5 point)\n1.2 Is the mean difference explained by chance alone? How do you know? (5 points)\n1.3 Create a bar plot showing the mean of wage by group (insurance vs. no insurance ). You may follow the example code below. (7 points)\n\n\nShow the code\nlibrary(ggplot2)\nlibrary(dplyr)\n\n### Estimates standard error to plot error bars\n\nStandError &lt;- function(x) {\n sd(x)/sqrt(length(x))\n}\n### Now we can estimate the mean, and SE by group,\n### then we can save the information in a data frame.\nsummaries &lt;- wageData |&gt; \n  group_by(race) |&gt;\n  summarise_at(\"wage\", list(mean= mean,\n                          SE = StandError))\nggplot(summaries , aes(x=race,y = mean, fill = race)) + \n  geom_bar(position=position_dodge(), stat=\"identity\") +\n  geom_errorbar(aes(ymin=mean-SE, ymax=mean+SE), width=.1)+\n  xlab(\"Race\")+\n  ylab(\"Estimated mean\")+\n  ggtitle(\"Example of a bar plot in R\")+\n  theme_classic()\n\n\n\n\n\n\n\n\n\n\nIn this class, I have extensively mentioned the data set rumination. We will use this data set to complete the following set of tasks.\n\nTo complete the following questions, open the data set named ruminationExam.csv in R.\n\n\n\n\n\n\nWarning\n\n\n\nYou can open the dataset ruminationExam.csv in R by copying the following code:\n\nurlRumi &lt;- \"https://raw.githubusercontent.com/blackhill86/mm2/refs/heads/main/dataSets/ruminationExam.csv\"\n\ndataRumi &lt;- read.csv(urlRumi, na.strings = \"99\")\n\n\n\n2.1. The first step is to compute a composite score for rumination and a composite score for depression. This is a very common step in psychology. You will have to add all the columns corresponding to the rumination scale and divide the total by the number of columns. The same step has to be done for the depression scale.\nIn the data set ruminationExam.csv the rumination scale has 13 items, the corresponding columns range from CRQS1 to CRQS13.\nThe depression scale has 26 items, the corresponding columns range from CDI1 to CDI26. You may follow the code below:\n\n\nShow the code\nlibrary(dplyr)\n\ndataRumi &lt;- dataRumi|&gt;\n  mutate(depressionScore = rowMeans(pick(starts_with(\"CDI\"))),\n         rumScore = rowMeans(pick(starts_with(\"CR\"))))\n\n\n2.2. Create a scatter plot of depression by rumination. Include the figure in your answer. What do you see in the figure? Can you tell if there is a positive or negative correlation? It is a positive or negative correlation? (10 points)\n2.3. Estimate a Pearson correlation between rumination and depression. Report the estimated correlation. Is this correlation explained by chance alone? (5 points)\n\nThe previous question gave you a simple example to estimate a single Pearson correlation. But, that is not realistic; many times we need to create several pairs of correlations into a matrix that we call in statistics “correlation matrix”.\n\nIn this exercise, you will need to open the data set pos_neg.csv in R. The data set pos_neg has scores that range from 1 to 5, if the person answered 5 in the great variable that means the person felt great, but if the person answered 1.8, that means that the person felt less great. You can see the data pos_neg.csv in the table below:\n\n\n\n\n\n\nWarning\n\n\n\nYou can open the data set pos_neg.csv by copying this code:\n\nurlposNeg &lt;- \"https://raw.githubusercontent.com/blackhill86/mm2/refs/heads/main/dataSets/pos_neg.csv\"\n\npos_neg &lt;- read.csv(urlposNeg)\n\n\n\n\n\n\n\n\n\n3.1. Estimate a correlation matrix in R between all the emotions: great, cheerful, happy, sad, down, unhappy. Report the correlation matrix. Remember to estimate the \\(p\\)-value for all the correlations. (5 point)\n\n\n\n\n\n\nNote\n\n\n\nYou may need to install the package Hmisc, then you can use the function rcorr()by running a code similar to this: rcorr(as.matrix(data), type=\"pearson\").\n\n\n3.2. Interpret your results, for example you can write something like this (10 points):\n\n\n\n\n\n\nTip\n\n\n\nThe correlation between variable 1 and variable 2 was \\(r = .30\\) with a \\(p\\)-value \\(&lt; .05\\). This means that when variable 1 increases, variable 2 also increases. Whereas the correlation between variable 3 and variable 4 was negative \\(r = -0.38\\) which means that a high score in varaible 3 is related to a low score in variable 4. Both correlations are not explained by chance alone because the \\(p\\)-value is lower than 0.05"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#aims-in-this-lecture",
+    "href": "introTesting/Lecture6/testDevelopment.html#aims-in-this-lecture",
+    "title": "Test Development",
+    "section": "Aims in this lecture",
+    "text": "Aims in this lecture\n\nDescribe different type of items.\nIntroduce basic notions of Classical Test Theory\nIntroduce basic notions of Item Response Theory (IRT)"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#how-do-we-create-items",
+    "href": "introTesting/Lecture6/testDevelopment.html#how-do-we-create-items",
+    "title": "Test Development",
+    "section": "How do we create items",
+    "text": "How do we create items\n\nItems are questions included in a survey, personality test, job evaluation, performance evaluation, educational evaluation, or in a program evaluation process.\nBefore creating new items, you need to ask to yourself?\n\nWhat are you aiming to measure? Is it a latent construct or behavior?\nWhat is your target population?\nDo I need to create my instrument from scratch? Or can I borrow ideas or items from previuos published articles?\nDo I need to create an interview? Is the target latent construct better measured when my instrument is a self-report instrument?\nShould I use likert scales or any other type of item?\nHow will you evaluate your items once you collected the data?"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#the-dichotomous-format",
+    "href": "introTesting/Lecture6/testDevelopment.html#the-dichotomous-format",
+    "title": "Test Development",
+    "section": "The Dichotomous Format",
+    "text": "The Dichotomous Format\n\nYou can also called it a “binary item”.\nThese are items where the participant has only two options.\nIt could be YES or NO.\nIt could be TRUE or FALSE.\n\nThese are examples extracted from the Minnesota Multiphasic Personality Inventory (MMPI) Test:\n\n\n\nSource: link"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#the-polytomous-format",
+    "href": "introTesting/Lecture6/testDevelopment.html#the-polytomous-format",
+    "title": "Test Development",
+    "section": "The Polytomous Format",
+    "text": "The Polytomous Format\n\nIt is the most common item in educational evaluation.\nThis is an example:\n\n\n\n\n\n\n\n\nNote\n\n\nIsabel conducted a study to evaluate if there was an effect of baby formula on total fat in 1 year old babies. In this study, she had two groups, one group were babies fed with baby formula only, the other group were breast fed babies. Which option corresponds to the best model or the best models to analyze the data? (2 points)\n Classical Regression Model.\n t-test for paired samples.\n t-test for independent samples.\n Options 1 and 3 would be the best choices.\n\n\n\n\n\nMultiple choice items in education have to transform into “Correct”\nor “Incorrect”, at the end we analyze the items as a binary item. Commonly, we code the answers as “1” when the participant answered the questions correctly, otherwise “0” when the answer is wrong. You can see an example here CLICK HERE"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#likert-items",
+    "href": "introTesting/Lecture6/testDevelopment.html#likert-items",
+    "title": "Test Development",
+    "section": "Likert Items",
+    "text": "Likert Items\n\nI explained a little bit about it in this slide: CLICK HERE\nThe main point of Likert scales is to assign ordered numeric values to ratings of opinions, thoughts, beliefs, and attitudes.\nThis is also a peculiar use of a Likert scale:\n\n\nYou may read more about this item in this presentation, CLICK HERE"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#likert-items-more-examples",
+    "href": "introTesting/Lecture6/testDevelopment.html#likert-items-more-examples",
+    "title": "Test Development",
+    "section": "Likert Items: More examples",
+    "text": "Likert Items: More examples"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#likert-items-how-many-options",
+    "href": "introTesting/Lecture6/testDevelopment.html#likert-items-how-many-options",
+    "title": "Test Development",
+    "section": "Likert Items: How many options?",
+    "text": "Likert Items: How many options?\n\nYou will find several recommendations online regarding the number of response options in a Likert scale, in my experience if you add too many options, participants report problems selecting an option. However, this might depend on academic level.\n\n\n\n\n\n\n\n\n\n\n\n\n(a) 7-options Likert\n\n\n\n\n\n\n\n\n\n\n\n(b) 5-options Likert\n\n\n\n\n\n\n\nFigure 1: Number of response options"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#visual-analog-scale-vas",
+    "href": "introTesting/Lecture6/testDevelopment.html#visual-analog-scale-vas",
+    "title": "Test Development",
+    "section": "Visual Analog Scale (VAS)",
+    "text": "Visual Analog Scale (VAS)"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#semantic-differential",
+    "href": "introTesting/Lecture6/testDevelopment.html#semantic-differential",
+    "title": "Test Development",
+    "section": "Semantic Differential",
+    "text": "Semantic Differential"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#item-difficulty",
+    "href": "introTesting/Lecture6/testDevelopment.html#item-difficulty",
+    "title": "Test Development",
+    "section": "Item Difficulty",
+    "text": "Item Difficulty\n\nItem difficulty is an estimate that is part of the Classical Test Theory (CTT).\nThe idea is to evaluate how difficult is an item.\nWe can estimate the proportion of correct/incorrect answers."
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#item-discrimination",
+    "href": "introTesting/Lecture6/testDevelopment.html#item-discrimination",
+    "title": "Test Development",
+    "section": "Item Discrimination",
+    "text": "Item Discrimination\n\nDid people who answered an item right have a good overall performance in the test?\nWe can estimate the correlation between the total score and each item:"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#irt-basics",
+    "href": "introTesting/Lecture6/testDevelopment.html#irt-basics",
+    "title": "Test Development",
+    "section": "IRT Basics",
+    "text": "IRT Basics\n\nItem Response Theory (IRT) is a paradigm that answers some questions generated by the Classical Test Theory (CTT). It also helps to create more realistic and useful statistical models.\nIRT will assume that there is a “latent trait” behind your items, then your items are goind to be explained by this latent trait.\n\n\n\n\n\n\nScale in IRT:"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#irt-basics-2-parameters-model",
+    "href": "introTesting/Lecture6/testDevelopment.html#irt-basics-2-parameters-model",
+    "title": "Test Development",
+    "section": "IRT Basics: 2-parameters model",
+    "text": "IRT Basics: 2-parameters model"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#irt-basics-item-characteristic-curve-icc",
+    "href": "introTesting/Lecture6/testDevelopment.html#irt-basics-item-characteristic-curve-icc",
+    "title": "Test Development",
+    "section": "IRT Basics: Item Characteristic Curve (ICC)",
+    "text": "IRT Basics: Item Characteristic Curve (ICC)"
+  },
+  {
+    "objectID": "introTesting/Lecture6/testDevelopment.html#references",
+    "href": "introTesting/Lecture6/testDevelopment.html#references",
+    "title": "Test Development",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website"
   }
 ]
