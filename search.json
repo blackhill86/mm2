@@ -5690,5 +5690,213 @@
     "title": "Advanced Statistical Analysis of Psychological Data, PSYC5020",
     "section": "Class Schedule",
     "text": "Class Schedule\nThe following class schedule is always under construction, which might change every week. You will receive a notification if there are changes. If not, you will not be penalized because of any unannounced change.\n\n\n\n\n\n\nWarning\n\n\n\nYou should always check Canvas, I might add additional readings such as scientific articles, press articles or videos.\n\n\n\n\n\n\n\n\n\n\nSchedule Spring 2024\n\n\nThis schedule may change during the semester\n\n\nDate\nTopic\nAssignment\n\n\n\n\n01/26/24\nStatistical models, mantras, and connections with research designs\n\n\n\n02/02/24\nRandom variables and probability distributions\nPractice 1\n\n\n02/09/24\nHypothesis Testing: differences in means\n\n\n\n02/16/24\nCorrelation\nPractice 2\n\n\n02/23/24\nLinear Regression I: Introduction\nAssignment 1\n\n\n03/01/24\nLinear Regression II: Introduction\n\n\n\n03/08/24\nLinear Regression II: moderation and polynomials\n\n\n\n03/15/24\nAnalysis of Variance: one way, and factorial analysis\nAssignment 2\n\n\n03/22/24\nLongitudinal analysis: random effects models, and ANOVA\n\n\n\n03/29/24\nLongitudinal analysis: random effects models, and ANOVA\nPractice 3\n\n\n04/05/24\nSpring Break: no class1\n\n\n\n04/12/24\nMeta-science: Power, effect size, and more simulations1\nAssignment 3\n\n\n04/19/24\nCategorical analysis: probabilities and odds1\n\n\n\n04/26/24\nCategorical analysis: logistic, probit, and poisson regression1\n\n\n\n05/03/24\nCategorical analysis: logistic, probit, and poisson regression1\nAssignment 4\n\n\n05/10/24\nIntroduction to Structural Equation Modeling: Path analysis 1\n\n\n\n05/17/24\nMediation models\nThesis plan due\n\n\n05/24/24\nFinal Exam\nFinal exam\n\n\n\n1 These sessions might be asynchronous\n\n\n\n\n\n\n\n\n\nReferences\n\n\nCohen, J. (2013). Statistical Power Analysis for the Behavioral Sciences. Academic Press.\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using R. Sage publications.\n\n\nGelman, A., Hill, J., & Vehtari, A. (2020). Regression and other stories. Cambridge University Press.\n\n\nSalkind, N. J., & Shaw, L. A. (2020). Statistics for people who (think they) hate statistics: Using R. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "ttuCourse/presentation/mainCourseTTU.html",
+    "href": "ttuCourse/presentation/mainCourseTTU.html",
+    "title": "Introduction to SEM",
+    "section": "",
+    "text": "You may see the slides here:\nSlides\nDownload materials here:\nR script\nRData file",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Introduction to BSEM"
+    ]
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#aims-in-these-two-hours",
+    "href": "ttuCourse/presentation/presentation.html#aims-in-these-two-hours",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Aims in these two hours",
+    "text": "Aims in these two hours\n\nProvide a short introduction to Structural Equation Modeling.\nIntroduce basic notions of Bayesian inference.\nJump into examples using the package blavaan in R."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#what-is-sem",
+    "href": "ttuCourse/presentation/presentation.html#what-is-sem",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "What is SEM ?",
+    "text": "What is SEM ?\n\n\n\nSEM is in reality a family of different possible models.\nThe roots of SEM are grounded in the notion of correlation and regression models."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#sem-and-latent-variables",
+    "href": "ttuCourse/presentation/presentation.html#sem-and-latent-variables",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "SEM and latent variables",
+    "text": "SEM and latent variables\n\nSEM is mostly used to estimate latent variables.\nThere are several definitions:\n\n\n\nBollen & Hoyle (2012):\n\nHypothetical variables.\nTraits.\nData reduction strategy?\nClassification strategy?\nA variable in regression analysis which is, in principle\nunmeasurable.\n\n\n\nHave you thought how to measure intelligence?\nWhat about the concept of “good performance”?\nWhat does good health look like ? Is it a concept?"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-see-the-graphics-convention",
+    "href": "ttuCourse/presentation/presentation.html#lets-see-the-graphics-convention",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s see the graphics convention",
+    "text": "Let’s see the graphics convention"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-see-the-graphics-convention-1",
+    "href": "ttuCourse/presentation/presentation.html#lets-see-the-graphics-convention-1",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s see the graphics convention",
+    "text": "Let’s see the graphics convention"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#sem-relates-to-theories-and-ideas",
+    "href": "ttuCourse/presentation/presentation.html#sem-relates-to-theories-and-ideas",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "SEM relates to theories and ideas",
+    "text": "SEM relates to theories and ideas\nHenseler (2020):"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#reflective-factors-formative-factors",
+    "href": "ttuCourse/presentation/presentation.html#reflective-factors-formative-factors",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Reflective factors // Formative factors",
+    "text": "Reflective factors // Formative factors"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#assumptions",
+    "href": "ttuCourse/presentation/presentation.html#assumptions",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Assumptions",
+    "text": "Assumptions\n\nDepends on how we estimate the model.\nMultivariate normal data generating process.\nLocal independence: only the latent factor explains the indicators.\nSample size should be large enough to estimate the model.\nMulticollinearity can be a problem."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-formally-define-the-sem-model",
+    "href": "ttuCourse/presentation/presentation.html#lets-formally-define-the-sem-model",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s formally define the SEM model",
+    "text": "Let’s formally define the SEM model\n\\[\\begin{equation}\n\\Sigma = \\Lambda \\Psi \\Lambda' + \\Theta\n\\end{equation}\\]\nWhere:\n\n\\(\\Sigma\\) = The estimated covariance matrix.\n\\(\\Psi\\) = Matrix with covariance between latent factors.\n\\(\\Lambda\\) = Matrix with factor loadings.\n\\(\\Theta\\) = Matrix with unique observed variances.\nIn SEM we also have another model for the implied means:\n\n\\[\\begin{equation}\ny = \\tau + \\Lambda\\eta + \\epsilon\n\\end{equation}\\]\n\nDoes it look familiar to you?"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-formally-define-the-sem-model-ii",
+    "href": "ttuCourse/presentation/presentation.html#lets-formally-define-the-sem-model-ii",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s formally define the SEM model II",
+    "text": "Let’s formally define the SEM model II"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#most-common-fit-measures",
+    "href": "ttuCourse/presentation/presentation.html#most-common-fit-measures",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Most common fit measures",
+    "text": "Most common fit measures\n\nRoot Mean Square Error of Approximation.\n\n\\[\\begin{equation*} \\label{eq:rmsea}\n\\hat{\\epsilon} = \\sqrt{max \\left[0, \\frac{\\chi^2_{ML} - df}{df(N)}\\right]} = \\sqrt{max \\left[0, \\frac{\\chi^2_{ML} }{df} - \\frac{1}{N}\\right]}\n\\end{equation*}\\]\n\nTucker-Lewis Index (TLI)\n\n\\[\\begin{equation*}\\label{eq:tli}\nTLI = NNFI = \\frac{\\frac{\\chi^2_{0}}{df_{0}}-\\frac{\\chi^2_{H}}{df_{H}}}{\\frac{\\chi^2_{0}}{df_{0}} -1}\n\\end{equation*}\\]\n\nComparative Fit Index (CFI)\n\n\\[\\begin{equation}\nCFI = \\frac{max(0, \\hat{\\lambda}_0) - max(0, \\hat{\\lambda}_H)}{max(0, \\hat{\\lambda}_0)} = 1 - \\frac{max(0, \\hat{\\lambda}_H)}{max(0, \\hat{\\lambda}_0)}\n\\end{equation}\\]"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#why-should-we-use-sem",
+    "href": "ttuCourse/presentation/presentation.html#why-should-we-use-sem",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Why should we use SEM ?",
+    "text": "Why should we use SEM ?\n\nSEM has good properties:\n\nIt helps to model several hypothesis at the same time.\nIt has flexibility to estimate multigroup models.\nYou have several estimators to choose.\nThe model accounts for the error variance in your items.\nYou can model non-linearity (we didn’t talk about it).\nYou can estimate multilevel models.\nIt is fun!"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#bayesian-rule",
+    "href": "ttuCourse/presentation/presentation.html#bayesian-rule",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Bayesian Rule",
+    "text": "Bayesian Rule\n\nBayesian inference helps to add uncertainty to your model.\nMany researchers believe that Bayesian inference is only a strategy to add prior beliefs, but in reality the aim is to reflect in your model the level of uncertainty in your parameter estimation.\n\n\n\n\n\n\n\n\n\nThomas Bayes (1702-1761)\n\n\n\n\n\n\n\nPierre-Simon Laplace (1749-1827)\n\n\n\n\n\n\nFigure 1: Bayes’ probability theorists"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#bayesian-rule-1",
+    "href": "ttuCourse/presentation/presentation.html#bayesian-rule-1",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Bayesian Rule",
+    "text": "Bayesian Rule\n\\[\\begin{equation*}\np(\\theta|y) = \\frac{p(\\theta,y)}{p(y)} = \\frac{p(\\theta)p(y|\\theta)}{p(y)}\n\\end{equation*}\\] \nWhere:\nprior distribution = \\(p(\\theta)\\), and the sampling distribution = \\(p(y|\\theta)\\) also called the likelihood of the data."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#bayesian-rule-example",
+    "href": "ttuCourse/presentation/presentation.html#bayesian-rule-example",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Bayesian Rule Example",
+    "text": "Bayesian Rule Example\n\n\n\n\n\n\n\n\nNot-so-strong belief\n\n\n\n\n\n\n\nStrong belief\n\n\n\n\n\n\nFigure 2"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#frequentists-vs.-bayesians",
+    "href": "ttuCourse/presentation/presentation.html#frequentists-vs.-bayesians",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Frequentists vs. Bayesians",
+    "text": "Frequentists vs. Bayesians\n\n\nFrequentist: - “What is the likelihood of observing these data, given the parameter(s) of the model?”\n\nMaximum likelihood methods basically work by iteratively finding values for q that maximize this function.\n\nBayesian:\n\n“What is the distribution of the parameters, given the data?” A Bayesian is interested in how the parameters can be inferred from the data, not how the data would have been inferred from the parameters.\n\n\n\\[p(y|\\theta)\\]"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#in-simple-words",
+    "href": "ttuCourse/presentation/presentation.html#in-simple-words",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "In simple words …",
+    "text": "In simple words …\n\nBayesian inference will help you to get a distribution for your parameters. This distribution is what we call the posterior distribution.\nSee the linear regression model:\n\n\\[\\begin{equation*}\n    Y = b_{0} + b_{1}X\n\\end{equation*}\\]\n\\[\\begin{align*}\n     Y &\\sim Normal(\\mu, \\sigma) \\hspace{10.2em}  [\\text{likelihood}]\\\\\n     \\mu &= b_{0} + b_{1}X \\hspace{12.5em} [\\text{equation}]\\\\\n     b_{0} & \\sim normal(0,100) \\hspace{10em} [\\text{prior}]\\\\\n     b_{1} & \\sim normal(0,100) \\hspace{10em} [\\text{prior}]\\\\\n     \\sigma & \\sim uniform(0,100) \\hspace{9.4em} [\\text{prior}]\\\\\n\\end{align*}\\]"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#bayesian-is-about-probability-distributions",
+    "href": "ttuCourse/presentation/presentation.html#bayesian-is-about-probability-distributions",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Bayesian is about probability distributions",
+    "text": "Bayesian is about probability distributions\n\nStatistics in general is about probability distributions, however in Bayesian probability this is more explicit because each parameter will have a distribution.\nThis means, Bayesian assumes that there is a distribution for each parameter similar to the frequentist approach, but also Bayesian is able to generate a distribution for the parameters in your model. This is not feasible from the frequentist point of view."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#multiple-probability-density-functions-in-the-universe",
+    "href": "ttuCourse/presentation/presentation.html#multiple-probability-density-functions-in-the-universe",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Multiple probability density functions in the universe",
+    "text": "Multiple probability density functions in the universe\nThere is a multiverse of probability density functions"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#estimation-in-bayesian",
+    "href": "ttuCourse/presentation/presentation.html#estimation-in-bayesian",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Estimation in Bayesian",
+    "text": "Estimation in Bayesian\n\nThis example is simple but in reality the estimation of Bayesian probability can be more complicated.\nThat’s why we need numerical algorithms.\nMarkov chain Monte Carlo (MCMC) is a group of algorithms\nGiven that we need to sample random values from the posterior distribution we need algorithms to make sure we don’t sample the same values too many times. We need to keep as many different values as possible.\nThere are different methods to estimate models in Bayesian inferences.\nThe most used method is Markov Chain Monte Carlo (MCMC) simulation.\nIn MCMC there are several samplers, the most used currently are:\n\nJAGS: Just Another Gibbs Sampler.\nStan: No U-turn sampler (NUTS). Adaptive Hamiltonian Monte Carlo.\n\nIn the examples provided we are going to estimate models using the No U-turn sampler (NUTS) which is the default in Stan.\nYou may read more about samplers in Richard McElreath’s blog."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#why-multiple-chains",
+    "href": "ttuCourse/presentation/presentation.html#why-multiple-chains",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Why multiple chains?",
+    "text": "Why multiple chains?\n\nWhen drawing possible values, we are also taking into account conditional relationships between parameters, and there are different states in the sampling process. Using multiple chains help to assess that no matter where the sampling starts in a conditional state, the generated values will remain very similar.\n\nI’ll introduce an example using the package brms in R:\n\nlibrary(brms)\n\nurl &lt;- \"https://raw.githubusercontent.com/blackhill86/mm2/refs/heads/main/dataSets/ruminationClean.csv\"\n\nrumData &lt;- read.csv(url)\n\nmodelRum&lt;- brm(\n  bf(depreZ ~ worryZ + rumZ),\n  data = rumData ,\n  family = gaussian(),\n  chains = 3, \n  iter = 5000, \n  warmup = 2000,\n  cores = 3, \n  seed = 1234,\n)"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#see-the-results-in-plots",
+    "href": "ttuCourse/presentation/presentation.html#see-the-results-in-plots",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "See the results in plots",
+    "text": "See the results in plots\n\nplot(modelRum)[1]\n\n[[1]]"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-check-further",
+    "href": "ttuCourse/presentation/presentation.html#lets-check-further",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s check further",
+    "text": "Let’s check further\n\nsummary(modelRum )\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: depreZ ~ worryZ + rumZ \n   Data: rumData (Number of observations: 186) \n  Draws: 3 chains, each with iter = 5000; warmup = 2000; thin = 1;\n         total post-warmup draws = 9000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept    -0.01      0.06    -0.12     0.11 1.00     8661     6344\nworryZ        0.20      0.07     0.06     0.33 1.00     8010     7292\nrumZ          0.48      0.07     0.35     0.62 1.00     8076     6674\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma     0.82      0.04     0.74     0.91 1.00     8387     6664\n\nDraws were sampled using sampling(NUTS). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-add-a-strong-prior-for-fun",
+    "href": "ttuCourse/presentation/presentation.html#lets-add-a-strong-prior-for-fun",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s add a strong prior for fun",
+    "text": "Let’s add a strong prior for fun\nWe can add a extremely dogmatic prior. We could believe that the distribution of our beta (\\(\\beta\\)) parameters is \\(\\beta \\sim N(0, 0.0001)\\). Which means we believe the prior looks like this:\n\nset.seed(123656)\nplot(density(rnorm(n= 15000, mean = 0, sd = 0.0001)))\n\n\n\n\n\n\n\n\n\nWe can estimate this crazy idea:\n\n\nmodelRumStrong &lt;- brm(\n  bf(depreZ ~ worryZ + rumZ),\n  data = rumData ,\n  family = gaussian(),\n  prior = set_prior(\"normal(0,0.001)\", class = \"b\"),\n  chains = 3, \n  iter = 5000, \n  warmup = 2000,\n  cores = 3, \n  seed = 1234,\n)"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#lets-evaluate-the-result-with-plots",
+    "href": "ttuCourse/presentation/presentation.html#lets-evaluate-the-result-with-plots",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "Let’s evaluate the result with plots",
+    "text": "Let’s evaluate the result with plots\n\nplot(modelRumStrong)"
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#we-can-check-it-in-a-summary-table",
+    "href": "ttuCourse/presentation/presentation.html#we-can-check-it-in-a-summary-table",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "We can check it in a summary table",
+    "text": "We can check it in a summary table\n\nsummary(modelRumStrong\n        )\n\n Family: gaussian \n  Links: mu = identity; sigma = identity \nFormula: depreZ ~ worryZ + rumZ \n   Data: rumData (Number of observations: 186) \n  Draws: 3 chains, each with iter = 5000; warmup = 2000; thin = 1;\n         total post-warmup draws = 9000\n\nRegression Coefficients:\n          Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nIntercept    -0.01      0.07    -0.16     0.14 1.00     5062     4505\nworryZ        0.00      0.00    -0.00     0.00 1.00    11332     6676\nrumZ          0.00      0.00    -0.00     0.00 1.00    10949     6630\n\nFurther Distributional Parameters:\n      Estimate Est.Error l-95% CI u-95% CI Rhat Bulk_ESS Tail_ESS\nsigma     1.00      0.05     0.90     1.11 1.00     4903     4801\n\nDraws were sampled using sampling(NUTS). For each parameter, Bulk_ESS\nand Tail_ESS are effective sample size measures, and Rhat is the potential\nscale reduction factor on split chains (at convergence, Rhat = 1)."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#what-happens-in-the-case-of-sem",
+    "href": "ttuCourse/presentation/presentation.html#what-happens-in-the-case-of-sem",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "What happens in the case of SEM ?",
+    "text": "What happens in the case of SEM ?\n\nSEM has many parameters compare to a regression model. You will see a distribution for each parameter, and depending on the complexity of the model it might take several minutes or hours to run. Also, if the model is not identified , you will see that the chains for some parameters will not converge.\nHowever, BSEM is very useful when Maximum Likelihood has convergence problems and your model is identified. Complicated models will likely converge in SEM models.\nModels with small sample sizes also will converge if the model is properly identified.\nAlso, it is easier in BSEM to regularize parameters, or try different approaches to test invariance such as approximate invariance."
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html#references",
+    "href": "ttuCourse/presentation/presentation.html#references",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "References",
+    "text": "References\n\n\n\nVisit my website\n\n\n\n\nBollen, K. A., & Hoyle, R. H. (2012). Latent variables in structural equation modeling. In Handbook of structural equation modeling (pp. 56–67). The Guilford Press.\n\n\nHenseler, J. (2020). Composite-based structural equation modeling: Analyzing latent and emergent variables. Guilford Publications."
   }
 ]
