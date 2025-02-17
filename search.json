@@ -5707,8 +5707,8 @@
     "objectID": "ttuCourse/presentation/presentation.html#aims-in-these-two-hours",
     "href": "ttuCourse/presentation/presentation.html#aims-in-these-two-hours",
     "title": "Brief introduction to Bayesian Structural Equation Modeling",
-    "section": "Aims in these two hours",
-    "text": "Aims in these two hours\n\nProvide a short introduction to Structural Equation Modeling.\nIntroduce basic notions of Bayesian inference.\nJump into examples using the package blavaan in R."
+    "section": "",
+    "text": "Provide a short introduction to Structural Equation Modeling.\nIntroduce basic notions of Bayesian inference.\nJump into examples using the package blavaan in R."
   },
   {
     "objectID": "ttuCourse/presentation/presentation.html#what-is-sem",
@@ -6059,5 +6059,101 @@
     "title": "Introduction to important concepts in Statistics",
     "section": "Simulation time: Results",
     "text": "Simulation time: Results\n\n\n\n\n\n\n\nTaken from Richard McElreath (2024)"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/humanDevelopmentMain.html#lectures",
+    "href": "humanDevelopmentSP2025/humanDevelopmentMain.html#lectures",
+    "title": "Human Development Seminar",
+    "section": "Lectures",
+    "text": "Lectures\nLecture 1",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Human Development Seminar"
+    ]
+  },
+  {
+    "objectID": "ttuCourse/presentation/presentation.html",
+    "href": "ttuCourse/presentation/presentation.html",
+    "title": "Brief introduction to Bayesian Structural Equation Modeling",
+    "section": "",
+    "text": "Provide a short introduction to Structural Equation Modeling.\nIntroduce basic notions of Bayesian inference.\nJump into examples using the package blavaan in R."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html",
+    "title": "Crafting a new topic",
+    "section": "",
+    "text": "You may be right asking yourself: why do I need to select a research topic? Well, because you are taking a scientific writing course.\nIt is likely that you don’t like the idea of conducting research, and you are less motivated whe you think about working in groups. This is normal, specially if you have a personality that is goal oriented, and you are highly competitive. However, these traits will need to be moderated by the new learning process that this course will offer.\nAnd I hope you enjoy this new experience!"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic",
+    "title": "Crafting a new topic",
+    "section": "How to start a new topic?",
+    "text": "How to start a new topic?\n\nYou may be right asking yourself: why do I need to select a research topic? Well, because you are taking a scientific writing course.\nIt is likely that you don’t like the idea of conducting research, and you are less motivated whe you think about working in groups. This is normal, specially if you have a personality that is goal oriented, and you are highly competitive. However, these traits will need to be moderated by the new learning process that this course will offer.\nAnd I hope you enjoy this new experience!"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic-1",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic-1",
+    "title": "Crafting a new topic",
+    "section": "How to start a new topic?",
+    "text": "How to start a new topic?\n\nFrequently, the search for a new topic will start with general ideas, and perhaps personal experience will guide your senses on what topic is more appealing.\nSometimes a problem that is frequent in your enviroment will also drive your ideas. For example, social inequality, or discrimination.\nNowadays, I have found a lot of students interested in social media use, social media consequences, and social media impact in daily life. This is not random, social media is for example a technological advancement that has shaped how people interact and interpret the world. It has impacted, for instance the result of elections in USA and other countries."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic-2",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#how-to-start-a-new-topic-2",
+    "title": "Crafting a new topic",
+    "section": "How to start a new topic?",
+    "text": "How to start a new topic?\n\nLet’s try an example. We can imagine a scenario where you have a vague idea:\n\n“I’m interested on the effects of social media”\n\nThis is a good start, but should we add an additional claim?\n\n\n\n\n\n\nflowchart LR\n  A[Effects of social media] --&gt; B(Claim) --&gt; C[on emotion regulation]   \n\n\n\n\n\n\n\nWe just added a new “claim” that states a possible impact of social media on emotion regulation. This is at the same time a little bit more specific. But there is more work to do."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#start-asking-questions",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#start-asking-questions",
+    "title": "Crafting a new topic",
+    "section": "Start asking questions…",
+    "text": "Start asking questions…\n\nQuestions are the most important part of any scientific\n\nYou may start with questions starting with:\n\nWho?\nWhat?\nWhen?\nWhere?\nWhy?\n\n\nYou can generate as many questions as you need in early stages of your design:\n\n\n\n\n\n\n\nTip\n\n\n\nHow is the process of social media and emotion regulation?\nWhy social media is related to emotion regulation?\nWhen social media and emotion regulation are related?\nWhat is the relationship between social media and emotion regulation?\nWhere is social media related to emotion regulation?"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#time-to-play-a-game",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#time-to-play-a-game",
+    "title": "Crafting a new topic",
+    "section": "Time to play a game…",
+    "text": "Time to play a game…\nYou may participate by clicking here."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#evaluate-your-questions",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#evaluate-your-questions",
+    "title": "Crafting a new topic",
+    "section": "Evaluate your questions",
+    "text": "Evaluate your questions\n\nIt is good to create as many questions as possible in early stages of your study design but not all questions are feasible to the answered in this course or in your master thesis.\n\nFor example, how does mother-child interaction affect the attachment style in the context of life goals at 15 years of age and 50 years of age?\n\nWe need evaluate what questions are possible to answer with the time and resources you have at hand. Additionally you need to think what variables are you adding to your question."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#adding-inderect-questions",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#adding-inderect-questions",
+    "title": "Crafting a new topic",
+    "section": "Adding inderect questions",
+    "text": "Adding inderect questions\nBooth et al. (2009):\n\nI am studying social media and emotion regulation…\n\n\nbecause I want to find why people engage for many hours on social media,\nin order to help my audience understand the negative and positive effects of social media on emotion regulation and mental health.\n\nAs Booth et al. (2009) mentioned in their book, this type of sub-question helps to focus on a specific message, for a precise audience. This might also help you to shape the tone and the words you select."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#all-this-will-lead-you-to-write-your-main-aim",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#all-this-will-lead-you-to-write-your-main-aim",
+    "title": "Crafting a new topic",
+    "section": "All this will lead you to write your main aim",
+    "text": "All this will lead you to write your main aim\n\nWhat you are studying -I am working on the topic of …\n\nwhat you don’t know about it -because I want to find out …\n\nwhy you want your audience to know and care about it -in order to help my audience understand better"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#references",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#references",
+    "title": "Crafting a new topic",
+    "section": "References",
+    "text": "References\n\n\n\n\nVisit my website\n\n\n\n\n\n\n\n \n\n\n \n\n\n \n\n\n\n\nBooth, W. C., Colomb, G. G., & Williams, J. M. (2009). The craft of research. University of Chicago press."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture1/topicSelection.html#so-what-why-your-question-matters",
+    "href": "humanDevelopmentSP2025/lecture1/topicSelection.html#so-what-why-your-question-matters",
+    "title": "Crafting a new topic",
+    "section": "So what? Why your question matters?",
+    "text": "So what? Why your question matters?\nBooth et al. (2009):\n\nAfter selecting your research question or your best set of research questions you will need to ask to yourself:\n\nWhat will be lost if you don’t answer your question?\nHow will not answering it keep us from understanding something else better than we do? Start by asking So what? at first of yourself."
   }
 ]
