@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.56">
+<meta name="generator" content="quarto-1.6.39">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -37,12 +37,12 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-e26003cea8cd680ca0c55a263523d882.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-d166b450ba5a8e9f7a0ab969bf6592c1.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="site_libs/bootstrap/bootstrap-e07a9ffc8860284ea60e2f0955d4a284.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-b990cd4bba191f167e68cea11f14fbde.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -257,10 +257,7 @@ cookieconsent.run({
   <li><a href="#r-excercises" id="toc-r-excercises" class="nav-link" data-scroll-target="#r-excercises"><code>R</code> excercises</a></li>
   <li><a href="#creating-reports-using-quarto" id="toc-creating-reports-using-quarto" class="nav-link" data-scroll-target="#creating-reports-using-quarto">Creating reports using <code>Quarto</code></a></li>
   <li><a href="#data-sets-used-in-this-course" id="toc-data-sets-used-in-this-course" class="nav-link" data-scroll-target="#data-sets-used-in-this-course">Data sets used in this course:</a></li>
-  <li><a href="#advanced-topics-and-talks" id="toc-advanced-topics-and-talks" class="nav-link" data-scroll-target="#advanced-topics-and-talks">Advanced topics and talks</a>
-  <ul class="collapse">
-  <li><a href="#geoweek-2023" id="toc-geoweek-2023" class="nav-link" data-scroll-target="#geoweek-2023">GeoWeek 2023</a></li>
-  </ul></li>
+  <li><a href="#advanced-topics-and-talks" id="toc-advanced-topics-and-talks" class="nav-link" data-scroll-target="#advanced-topics-and-talks">Advanced topics and talks</a></li>
   </ul>
 </nav>
     </div>
@@ -356,12 +353,9 @@ cookieconsent.run({
 <section id="advanced-topics-and-talks" class="level1">
 <h1>Advanced topics and talks</h1>
 <p><a href="./introLongitudinal/introLongitudinalSEM.html#long" target="_blank">A friendly Introduction to Longitudinal Analysis with Latent Variables</a></p>
-<section id="geoweek-2023" class="level2">
-<h2 class="anchored" data-anchor-id="geoweek-2023">GeoWeek 2023</h2>
 <p><a href="./geoWeekPresentation/gentleR.html#gentleR" target="_blank">Gentle Introduction to <code>R</code></a></p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -591,8 +585,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -703,7 +695,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
