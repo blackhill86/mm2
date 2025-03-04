@@ -6249,5 +6249,41 @@
     "title": "Dog person trait vs. Cat person trait",
     "section": "Dog-cat personality scale",
     "text": "Dog-cat personality scale\nBy Esteban Montenegro\nInstructions: Please answer the following questions thinking about how you frequently behave or think in your life. There are not good or bad answers. This scale aims to measure personality traits. This scale doesn’t have any clinical implication. Please, select the option closer to your opinion.\n\nI’m an indepedent person, I work alone.\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nI feel better when I feel like I belong to a group\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nFriends or groups are not necessary for me to have fun.\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nLoyalty is important for me\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nFriends are not relevant I just need my food to be happy\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nI love long walks or hiking with my family or friends\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nPeople tell me that I’m a lonely happy person\n\n \n1. I totally agree\n \n2. I agree\n \n3. I don't agree or disagree\n \n4. I disagree\n \n5. I totally disagree\n\n\nAs you can see in this example, I’m using the Likert-response option, where the participants have to choose one option out of five. You could also use binary questions such as:\n\n\nDo your friends tell you that you are quite like a cat?”\n\n \nYes\n \nNo\n\nLet’s do some science!"
+  },
+  {
+    "objectID": "WorkshopGeo/syllabusWorkshop.html",
+    "href": "WorkshopGeo/syllabusWorkshop.html",
+    "title": "First Workshop on Stats, R, and more stories to come",
+    "section": "",
+    "text": "Important\n\n\n\nCourse time: 4:00 p.m. to 5:30 p.m.\nDays: March, 4,11,18,25; and April 8,15   Room: Perhaps CASA?\nProfessor: Esteban Montenegro-Montenegro, PhD.\nOffice hours online: Schedule an appointment cliking here or send me an email.\nEmail: emontenegro1@csustan.edu",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Workshop on Stats, R, and more stories to come"
+    ]
+  },
+  {
+    "objectID": "WorkshopGeo/syllabusWorkshop.html#course-description",
+    "href": "WorkshopGeo/syllabusWorkshop.html#course-description",
+    "title": "First Workshop on Stats, R, and more stories to come",
+    "section": "Course description",
+    "text": "Course description\nCourse description: Short trainning on important statiscal concepts explained using R language. Somes examples will be closer to psychology and sociology but I’ll try to add more interdisciplinary examples.We will meet for six sessions, but we could extend the workshop to more advanced topics the next semester.\nI will assign some work to complete at home,but I’ll explain the applied exmaples in our meetings.\nMy website m-square.net will be the place where you will find all the materials.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Workshop on Stats, R, and more stories to come"
+    ]
+  },
+  {
+    "objectID": "WorkshopGeo/syllabusWorkshop.html#course-materials",
+    "href": "WorkshopGeo/syllabusWorkshop.html#course-materials",
+    "title": "First Workshop on Stats, R, and more stories to come",
+    "section": "Course Materials:",
+    "text": "Course Materials:\nThis workshop will not require any text book, however I will borrow information from several sources. You will see the list of references in the bibliography section. You will also have access to my website where you’ll find all lectures, and additional information. My wepage is always under construction please let me know if something you need is missing.\nIn this workshop we will use R as the main tool to analyze quantitative information:\n\nR is a programming language. It is an open source language, free and very famous around the world. We will learn how we can use it to analyze diverse type of statistical models. You can download the installer and read more about it from: https://www.r-project.org/\nWe will also complement R with the software named RStudio:\n\nRStudio is an Integrated Development Environment (IDE) it works as a friendly interface to use R language. You can read and download RStudio from here: https://www.rstudio.com/products/rstudio/download/\n\n\n\n\n\n\n\n\nSchedule R Workshop 2025\n\n\nDate\nTopic\n\n\n\n\n3/4/2025\nIntroduction to R, RStudio, and Stats introduction\n\n\n3/11/2025\nStats Introduction, let's talk about the infamous p-value\n\n\n3/18/2025\nGeneral Linear Model I: Linear regression and other siblings\n\n\n3/25/2025\nGeneral Linear Model II: Linear regression and other siblings\n\n\n4/8/2025\nGeneralized Linear Model I: odds, hazard ratios,and more.\n\n\n4/15/2025\nGeneralized Linear Model II: logistic regression\n\n\n\n\n\n\n\n\nReferences\n\n\nCohen, J. (2013). Statistical Power Analysis for the Behavioral Sciences. Academic Press.\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using R. Sage publications.\n\n\nGelman, A., Hill, J., & Vehtari, A. (2020). Regression and other stories. Cambridge University Press.\n\n\nSalkind, N. J., & Shaw, L. A. (2020). Statistics for people who (think they) hate statistics: Using R. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC.",
+    "crumbs": [
+      "Home",
+      "Content",
+      "Workshop on Stats, R, and more stories to come"
+    ]
   }
 ]

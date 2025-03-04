@@ -1,0 +1,70 @@
+---
+title: "First Workshop on Stats, R, and more stories to come"
+subtitle: "Spring Semester 2025"
+author: "Esteban Montenegro-Montenegro, PhD."
+#header-includes:
+#   - \usepackage{tabularx}
+#   - \usepackage{longtable}
+#   - \usepackage{booktabs} 
+format: html
+fontfamily: libertinus
+colorlinks: true
+bibliography: references.bib
+csl: apa.csl
+editor: visual
+nocite: |
+  @cohen_statistical_2013, @salkind2021statistics, @westfall2020regre, @field2012discovering, westfall2013understanding, @gelman2020regression
+---
+
+::: callout-important
+**Course time:** 4:00 p.m. to 5:30 p.m.\
+**Days:** March, 4,11,18,25; and April 8,15   **Room:** Perhaps CASA?\
+**Professor:** Esteban Montenegro-Montenegro, PhD.\
+**Office hours online:** Schedule an appointment [cliking here](https://calendly.com/meet-esteban/30min) or send me an email.\
+**Email:** [emontenegro1\@csustan.edu](mailto:emontenegro1@csustan.edu)
+:::
+
+## Course description
+
+***Course description:*** Short trainning on important statiscal concepts explained using R language. Somes examples will be closer to psychology and sociology but I'll try to add more interdisciplinary examples.We will meet for six sessions, but we could extend the workshop to more advanced topics the next semester.
+
+I will assign some work to complete at home,but I'll explain the applied exmaples in our meetings.
+
+My website [m-square.net](www.m-square.net) will be the place where you will find all the materials.
+
+## Course Materials:
+
+This workshop ***will not*** require any text book, however I will borrow information from several sources. You will see the list of references in the bibliography section. You will also have access to my [website](https://blackhill86.github.io/mm2/) where you'll find all lectures, and additional information. My wepage is always under construction please let me know if something you need is missing.
+
+In this workshop we will use `R` as the main tool to analyze quantitative information:
+
+![](Rlogo.png){width="8%"}
+
+`R` is a programming language. It is an open source language, free and very famous around the world. We will learn how we can use it to analyze diverse type of statistical models. You can download the installer and read more about it from: <https://www.r-project.org/>
+
+We will also complement `R` with the software named `RStudio`:
+
+![](rstudio.png){width="15%"}
+
+`RStudio` is an Integrated Development Environment (IDE) it works as a friendly interface to use `R` language. You can read and download RStudio from here: <https://www.rstudio.com/products/rstudio/download/>
+
+```{r, include=TRUE, echo=FALSE, eval=TRUE, warning=FALSE,message=FALSE}
+
+library(gt)
+
+cal <- read.csv("calendar.csv") 
+  
+cal |> gt() |>
+   cols_label(
+    Date = "Date",
+    Topic.Activity = "Topic"
+      ) |>
+   tab_header(
+    title = md("Schedule R Workshop 2025")
+    )
+```
+
+### References
+
+::: {#refs}
+:::
