@@ -6065,7 +6065,7 @@
     "href": "humanDevelopmentSP2025/humanDevelopmentMain.html#lectures",
     "title": "Human Development Seminar",
     "section": "Lectures",
-    "text": "Lectures\nLecture 1",
+    "text": "Lectures\nLecture 1\nLecture 2\nLecture 3",
     "crumbs": [
       "Home",
       "Content",
@@ -6285,5 +6285,173 @@
       "Content",
       "Workshop on Stats, R, and more stories to come"
     ]
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html",
+    "title": "The journey to the begining",
+    "section": "",
+    "text": "To give an overview of the next steps.\nHighlight the importance of finding reliable scientific resources.\nKeywords to start searching for articles.\nLiterature review and how to make it work."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#aims-in-this-lecture",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#aims-in-this-lecture",
+    "title": "The journey to the begining",
+    "section": "",
+    "text": "To give an overview of the next steps.\nHighlight the importance of finding reliable scientific resources.\nKeywords to start searching for articles.\nLiterature review and how to make it work."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#lets-start-with-a-big-picture",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#lets-start-with-a-big-picture",
+    "title": "The journey to the begining",
+    "section": "Let’s start with a big picture",
+    "text": "Let’s start with a big picture\n\n\n\n\nPSYC4310researchProject"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-do-we-start-searching-research-ideas",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-do-we-start-searching-research-ideas",
+    "title": "The journey to the begining",
+    "section": "How do we start searching research ideas ?",
+    "text": "How do we start searching research ideas ?\n\nWhere should I start to get better research ideas?\n\nThe answer is always to read more and more!\nWhere are we going to read and find information?\n\nWe will read always SCIENTIFIC articles, keep reading this lecture to know more!\n\n\n\n\n\n\n\nTip\n\n\n\nSomebody once said: Good ideas are many times the product of the lack of reading."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#where-are-the-scientific-articles-located",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#where-are-the-scientific-articles-located",
+    "title": "The journey to the begining",
+    "section": "Where are the scientific articles located?",
+    "text": "Where are the scientific articles located?\n\n\n\nMany sources on Internet will claim that they provide scientific content. However, not all the content is a good fit for this course.\nFor instance, we can check the website Psychology Today. This website has many articles related to diverse topics in psychology, and many times the authors review scientific articles and translate them into a more digestible narrative. For example, in the article titled “Why It’s Hard to Break Up with a Bad Boyfriend or Girlfriend” the author presents scientific terms such as variable ratio reinforcement schedule.\n\n\n\nIs this article a scientific article? How can we know? Let me dissect this creature in the next slide."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#non-scientific-articles-anatomy",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#non-scientific-articles-anatomy",
+    "title": "The journey to the begining",
+    "section": "Non-scientific article’s anatomy",
+    "text": "Non-scientific article’s anatomy\n\n\n\n\n\nDon’t use this type of source in this course\n\n\n\n\nThe title is written to be a “click-bait”. This means, it was meant to be catchy and easy to click on.\nThere is not an abstract.\nThe article does not have a methods section, results, and discussion.\nThe review process is not double-blinded (I’ll explain later)\nThe pictures are just decorative, they don’t provide information.\nThe narrative in this article tries to be fun to read.\nIt is too brief and takes information from many sources without citations."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#lets-revise-a-scientific-article",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#lets-revise-a-scientific-article",
+    "title": "The journey to the begining",
+    "section": "Let’s revise a scientific article",
+    "text": "Let’s revise a scientific article\n\n\n\nWe can check the article: “Long-term effects of COVID-19 on mental health: A systematic review” as a good example of scientific article.\nThis article shows the following elements:\nThe name of the scientific journal (Journal of Effective Disorders).\nThe layout has Introduction, Methods, Results, and Discussion.\nThe journal was published by a scientific publisher, in this case; Elsevier.\n\n\n\n\n\n\n\n\nNot, all scientific journals are published by a publisher. The journal might be published by private or public universities.\nThe authors included citations, references, and abstract.\nThe figures and tables are meaningful to understand the information.\nThe title is not a click-bait."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-a-scientific-article-is-born",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-a-scientific-article-is-born",
+    "title": "The journey to the begining",
+    "section": "How a scientific article is born?",
+    "text": "How a scientific article is born?\n\n\n\n\nUntitled Diagram"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-a-scientific-article-is-born-2",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#how-a-scientific-article-is-born-2",
+    "title": "The journey to the begining",
+    "section": "How a scientific article is born? (2)",
+    "text": "How a scientific article is born? (2)\n\nThe key element in scientific publishing is the peer review step.\nIn scientific journals, the scientist who submits an article for publication MUST not know who is the reviewer or reviewers. At the same time, the reviewers MUST not know who is or who are the authors of the article under review.\nWe call this a double-blinded review system. But, as you might imagine this system has been criticized, see this publication, and more in this article."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#where-can-i-download-scientific-articles",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#where-can-i-download-scientific-articles",
+    "title": "The journey to the begining",
+    "section": "Where can I download scientific articles?",
+    "text": "Where can I download scientific articles?\n\nYou could use Google scholar. But not all the articles are free to download. But, at least you could get the reference from there and after that, you can go to the CSU Stan library website.\nOn the CSU Stan library website you’ll find a search bar where you can fetch scientific articles, and download the articles in pdf format."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#generate-keywords",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#generate-keywords",
+    "title": "The journey to the begining",
+    "section": "Generate Keywords",
+    "text": "Generate Keywords\n\nIt is common that at the beginning of a research project you don’t know specific keywords. That’s OK.\nYou can start with a broad idea. For instance, if you are interested in romantic relationships. You can say to yourself:\n\nMy first keywords are: “romantic relationships”\nBut, when? When people are teenagers, adults, or aging adults? heterosexual or gay relationships?\nYou may pick teenagers, now you have an additional keyword.\nYou may also pick heterosexual relationships.\nYou can try: romantic relationships, teenagers, adolescence, heterosexual.\n\nIn your first wide search you may find other possible words such as: sexual roles, stereotypes, aggression. or misconceptions in romantic relationships. These words can also be added to your search.\n\n\n\n\n\n\n\nTip\n\n\n\nWhen you are looking for keywords you are in an early exploration stage. You need to read and write down the keywords that are more frequent in your search."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#generate-keywords-2",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#generate-keywords-2",
+    "title": "The journey to the begining",
+    "section": "Generate Keywords (2)",
+    "text": "Generate Keywords (2)\n\nYour keywords will be more specific once you define what is your research question.\nIn my example, thanks to my keywords I could formulate the question: What is the influence of sexual stereotypes in romantic relationships in teenagers?\nIt is still a very big question, but it will get refine when you read more. You may find a specific theory that addresses this issue, then you’ll start using the theory’s name as your main keyword or set of keywords.\nFor example, if you study romantic relationship you may come across attachment theory. Then, attachment theory will become a more specific set of keywords.\n\n\n\n\n\n\n\nImportant\n\n\n\nThe main objective is to find more specific keywords. If after a while you cannot find more specific keywords you are not reading enough or you are looking at the wrong information."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#literature-review-what-is-it",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#literature-review-what-is-it",
+    "title": "The journey to the begining",
+    "section": "Literature review, what is it?",
+    "text": "Literature review, what is it?\n\n\n\nLiterature reviews sound boring, I know. But, this stage is crucial to select a topic you liked.\nResearch is not boring if you select something you enjoy reading. The literature review will help you to find a fun topic for you.\nAfter knowing your keywords, you can start reviewing articles.\nYou may create small summaries for each article where you extract the information that you need to prepare a narrative related to the state of art in your topic."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#literature-review-what-is-it-2",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#literature-review-what-is-it-2",
+    "title": "The journey to the begining",
+    "section": "Literature review, what is it? (2)",
+    "text": "Literature review, what is it? (2)\n\nIn the literature review phase, you will find different types of research articles:\n\n\n\n\n\n\nflowchart LR\n    338574[\"Articles\"] --- 497165[\"Empirical\"]\n    338574 --- 407950[\"Reviews\"]\n    497165 --- 525687[\"Experiments\"]\n    497165 --- 226158[\"Non-experiments\"]\n    497165 --- 362031[\"Psychometrics/Methods\"]\n    226158 --- 275202[\"Qualitative \"]\n    226158 --- 586082[\"Quantitative \"]\n    275202 --- 359947[\"Interviews\"]\n    275202 --- 648543[\"Focus groups\"]\n    275202 --- 929715[\"Case Studies\"]\n    275202 --- 727734[\"Ethnographies\"]\n    275202 --- 730820[\"Content Analysis\"]\n    275202 --- 229817[\"Observations\"]"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture3/researchJourney.html#references",
+    "href": "humanDevelopmentSP2025/lecture3/researchJourney.html#references",
+    "title": "The journey to the begining",
+    "section": "References",
+    "text": "References"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html",
+    "title": "Selecting your problem",
+    "section": "",
+    "text": "Commonly people avoid problems, and I don’t blame them; problems can cause a lot of stress.\nBut in science WE LOVE problems. And you will have to find at least one problem to answer."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#problems-are-good",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#problems-are-good",
+    "title": "Selecting your problem",
+    "section": "",
+    "text": "Commonly people avoid problems, and I don’t blame them; problems can cause a lot of stress.\nBut in science WE LOVE problems. And you will have to find at least one problem to answer."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#types-of-problems",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#types-of-problems",
+    "title": "Selecting your problem",
+    "section": "Types of problems",
+    "text": "Types of problems\nBooth et al. (2009):\n\nPractical problems: what should we do?\nConceptual problems: what should we think?"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#you-have-a-problem-so-what",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#you-have-a-problem-so-what",
+    "title": "Selecting your problem",
+    "section": "You have a problem … so what?",
+    "text": "You have a problem … so what?\n\nA practical problem will have two parts: a condition and costs:\n\nCondition: Social media have algorithms to increase engagement. Cost: People with eating disorders will be exposed and engaged to body disatisfaction content.\n\nIf the first cost does not answer the first so what? then you mentioned other costs: Cost: Users will not have the ability to stop watching body disatisfaction content. So what? Cost: People with eating disorders could starve to death or commit suicide."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#you-have-a-problem-then-try-to-understand-it",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#you-have-a-problem-then-try-to-understand-it",
+    "title": "Selecting your problem",
+    "section": "You have a problem … then try to understand it",
+    "text": "You have a problem … then try to understand it\n\n“Conceptual problem arises when we do not understand something about the world as well as we would like. We solve a conceptual problem not by doing something to change the world but by answering a question that helps us understand it better” (Booth et al., 2009).\n\nExample:\n\nI’m studying how people with eating disorders are affected by algorithms in social media because I want to understand how I can propose a more ethical use of algorithms."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#communalities-and-differences-in-practical-and-conceptual-problems",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#communalities-and-differences-in-practical-and-conceptual-problems",
+    "title": "Selecting your problem",
+    "section": "Communalities and differences in practical and conceptual problems",
+    "text": "Communalities and differences in practical and conceptual problems\n\nBoth types of problems will have a condition however a practical problem will have a cost while a conceptual problem will have a consequence. The consenquece is if don’t answer one question, we won’t be able to answer other related questions.\n\n\n\n\n\n\n\nConceptual question example\n\n\n\nAnswering the question of how romantic movies have changed in the last fifty years (condition/first question) helps us answer a more important question: How have our cultural depictions of romantic love changed? (consequence/larger, more important second question)"
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples",
+    "title": "Selecting your problem",
+    "section": "Let’s see some examples",
+    "text": "Let’s see some examples\nIs the following example a conceptual or practical problem?\nStudy the effect of being bullied on the devolopment of social skills. People who were victims will be prone to depression and lack of social skills in adulthood."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples-1",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples-1",
+    "title": "Selecting your problem",
+    "section": "Let’s see some examples",
+    "text": "Let’s see some examples\nIs the following example a conceptual or practical problem?\nStudy the effect of emotional videos on event reconstruction. Memories are impacted by emotional content, therefore this study helps to understand the influence of emotional visual content on the codification and recovery of events."
+  },
+  {
+    "objectID": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples-2",
+    "href": "humanDevelopmentSP2025/lecture2/researchProblem.html#lets-see-some-examples-2",
+    "title": "Selecting your problem",
+    "section": "Let’s see some examples",
+    "text": "Let’s see some examples\nIs the following example a conceptual or practical problem?\nThe study will focus on the relationship between parenting styles and response styles to depression. We want to understand how parenting styles might shape coping styles when people are depressed."
   }
 ]
