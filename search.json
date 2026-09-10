@@ -7319,5 +7319,208 @@
     "title": "Experimental Methods and Design, PSYC3000",
     "section": "Class Schedule",
     "text": "Class Schedule\nThe following class schedule is always under construction, which might change every week. You will receive a notification if there are changes. If not, you will not be penalized because of any unannounced change.\n\n\n\n\n\n\nWarning\n\n\n\nYou should always check Canvas, I might add additional readings such as scientific articles, press articles or videos.\n\n\n\n\n\n\n\n\n\n\nSchedule Summer 2026\n\n\nThis schedule may change during the Summer\n\n\nDate\nTopic\n\n\n\n\n6/3/2026\nIntroduction video and syllabus. Introduction to probability models\n\n\n6/8/2025\nProbability Distributions and Random Variables. Central Tendency Measures\n\n\n6/15/2025\nData visualization. Hypothesis testing\n\n\n6/22/2025\nCorrelation and Regression Models\n\n\n6/29/2025\nCorrelation and Regression Models II\n\n\n7/6/2025\nFinal exam and submit pending work\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAssignments Summer 2026\n\n\nThis schedule may change during the Summer\n\n\nDue date\nHomework\n\n\n\n\n6/08/2026\nPractice 1\n\n\n6/15/2026\nPractice 2\n\n\n06/22/2026\nAssignment 1\n\n\n06/29/26\nAssignment 2\n\n\n07/08/26\nFinal Exam\n\n\n\n\n\n\n\n\nReferences\n\n\nCohen, J. (2013). Statistical Power Analysis for the Behavioral Sciences. Academic Press.\n\n\nField, A., Miles, J., & Field, Z. (2012). Discovering statistics using R. Sage publications.\n\n\nGelman, A., Hill, J., & Vehtari, A. (2020). Regression and other stories. Cambridge University Press.\n\n\nSalkind, N. J., & Shaw, L. A. (2020). Statistics for people who (think they) hate statistics: Using R. Sage publications.\n\n\nWestfall, P. H., & Arias, A. L. (2020). Understanding regression analysis: A conditional distribution approach. Chapman; Hall/CRC."
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html",
+    "href": "chromeTutorial/tutorialChromebook.html",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "",
+    "text": "This is a guide to install \\(R\\), Rstudio, and JAMOVI in your Chromebook. At this point you probably never thought it was possible to install any software outside the Google ecosystem. Butu, it is possible and useful to make your Chromebook to work more like local laptop instead of a cloud computer. However, this tutorial will requiere to know a little bit about the operated system named Linux. I hope you have heard about it in your life, but most likely you don’t know anything about it, and that’s acceptable in this course. We are here to learn new things!\nLinux is an open-source and free operated system, in fact, Linux is the name of the core of the operated system called “kernel”. Thanks to this kernel created by Linus Torvalds, there are multiple different operated systems that have been developed using the Linux kernel. Commonly, all these multiple versions are called “Linux distros”. In your Chromebook you will run \\(R\\) and JAMOVI in a virtualization of Linux inside your Chromebook. It is similar to have a computer inside another computer, but the guest computer runs on the same hardware as the host.\nIn the case of your Chromebook you will activate the developer mode, this mode will help you to install and run Linux in your computer. Google has made this process very easy for Chromebook users.\nLet’s start this tutorial"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 1",
+    "text": "Step 1\nThe very first step is always update your Chrome OS installation. Make sure you have updated your operated system to the last version so far. I trust you know how to update the operated system in your Chromebook."
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-2",
+    "href": "chromeTutorial/tutorialChromebook.html#step-2",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 2",
+    "text": "Step 2\nYou will need to find the option called “Set up Linux development environment”, you can type “development” in the menu search bar, and you will see it most likely as your first option. See Figure 1.\n\n\n\n\n\n\nFigure 1: Type “developer” in the search bar"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-3",
+    "href": "chromeTutorial/tutorialChromebook.html#step-3",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 3",
+    "text": "Step 3\nClick on the option “Set up” as shown in Figure 2. This will start the process of activating your Linux environment.\n\n\n\n\n\n\nFigure 2: Click on set up environment"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-4",
+    "href": "chromeTutorial/tutorialChromebook.html#step-4",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 4",
+    "text": "Step 4\nYou will see another window where you will click “Next”. See Figure 3.\n\n\n\n\n\n\nFigure 3: Click on “Next”"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-5",
+    "href": "chromeTutorial/tutorialChromebook.html#step-5",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 5",
+    "text": "Step 5\nIn this step you can select an username, I usually keep the user name suggested by default, but you could change it if you will, this won’t affect any installation in the future.\n\n\n\n\n\n\nFigure 4: Username and disk space\n\n\n\nThe most important part in this step is the “Disk size”. Remember that I mentioned that you will be running a computer inside your computer, this means the guest computer needs actual space in your computer to be able to run. I advise you to click on “Custom”, then as shown in Figure 5, you will see a slide bar where you can select the size of your virtual machine, I advise to move it up to 16 GB, because we will need to install a lot of new Linux libraries and Jamovi is a big software.\nOnce you are ready to continue, click “Install”.\n\n\n\n\n\n\nFigure 5: Disk Space set up"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-6",
+    "href": "chromeTutorial/tutorialChromebook.html#step-6",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 6",
+    "text": "Step 6\nYou will see now a new window with a status bar that says “Installing Linux” don’t press any key, just wait until the installation is done.\n\n\n\n\n\n\nFigure 6: Installing Linux"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-7",
+    "href": "chromeTutorial/tutorialChromebook.html#step-7",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 7",
+    "text": "Step 7\nAfter the installation is done, a new window will pop up. It is something called terminal. It is the place where you will type your commands to install new software that does not belong to Google’s environment. You will see a prompt with an username@penguin, penguin is Linux, and the user name is the name you typed or kept in Step 5.\nIf the terminal does not appear automatically, you can search “terminal” in the apps menu as we did in Step 2, and then click on “terminal”. See Figure 7.\n\n\n\n\n\n\nFigure 7: Installing Linux"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-8",
+    "href": "chromeTutorial/tutorialChromebook.html#step-8",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 8",
+    "text": "Step 8\nLinux is already installed, but we need to update the operated system. But, I haven’t mentioned the name of the operated system. Google by default offers now Debian 13 which is named “Trixie”. If your Chrome OS is not updated, you will get Debian 12 “Bookworm”. If this happens, some of the commands I will show in this tutorial will not work in Debian 12.\nWe will type in the terminal:\nsudo apt update\nThis command will help you to update the communication with the repositories. See Figure 8.\n\n\n\n\n\n\nFigure 8: sudo apt update\n\n\n\nAfter typing the command PRESS ENTER. Then, you will see something similar to this screenshot:\n\n\n\n\n\n\nFigure 9: List of updates"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-9",
+    "href": "chromeTutorial/tutorialChromebook.html#step-9",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 9",
+    "text": "Step 9\nIn this step you will type in the terminal:\nsudo apt upgrade\nThen PRESS ENTER, you will see next a list of packages or libraries in Linux Debian that will be updated. See Figure 10\nThis command will upgrade all the Debian libraries that are not updated.\n\n\n\n\n\n\nFigure 10: sudo apt upgrade\n\n\n\nWhen the actualization is over you will see something similar to this:\n\n\n\n\n\n\nFigure 11: Succesfull upgrade"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-10",
+    "href": "chromeTutorial/tutorialChromebook.html#step-10",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 10",
+    "text": "Step 10\nNow we are able to install new Linux libraries that are requiered to install \\(R\\) and Jamovi. You will need to type in the console the following code and then PRESS ENTER:\nsudo apt install ca-certificates curl gpg -y\n\n\n\n\n\n\nIMPORTANT!!!\n\n\n\nYou can copy the code shown in this tutorial by pressing CTRL + C, and then go to the terminal and press CTRL + SHIFT + V.\n\n\n\n\n\n\n\n\nFigure 12: Starting to install libraries in Linux"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-11",
+    "href": "chromeTutorial/tutorialChromebook.html#step-11",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 11",
+    "text": "Step 11\nIt is fine if after installing the new libraries you see something like this:\n\n\n\n\n\n\nFigure 13: Everything ok\n\n\n\nThis means that your Debian installation already have those libraries updated which is good."
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-12",
+    "href": "chromeTutorial/tutorialChromebook.html#step-12",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 12",
+    "text": "Step 12\nIn this step you will need to copy the following code, and paste the code in the terminal, then PRESS ENTER:\ncurl -fsSL 'https://keyserver.ubuntu.com/pks/lookup?op=get&search=0x95C0FAF38DB3CCAD0C080A7BDC78B2DDEABC47B7' | sudo gpg --dearmor --yes -o /usr/share/keyrings/cran.gpg\n\n\n\n\n\n\nFigure 14: Adding keyring"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-13",
+    "href": "chromeTutorial/tutorialChromebook.html#step-13",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 13",
+    "text": "Step 13\nIn this step, I borrowed some code from this guy, he did a good job providing the following code that you will have to copy , then paste in the terminal, and then PRESS ENTER:\n. /etc/os-release\narch=\"$(dpkg --print-architecture)\"\n\ncase \"${VERSION_CODENAME}:${arch}\" in\n    trixie:amd64|trixie:arm64) cran_suite=\"trixie-cran46/\" ;;\n    bookworm:amd64|bookworm:arm64) cran_suite=\"bookworm-cran46/\" ;;\n    bullseye:amd64|bullseye:arm64|bullseye:i386) cran_suite=\"bullseye-cran40/\" ;;\n    *)\n        printf 'This CRAN Debian repository method supports Debian 13 and 12 on amd64 or arm64, and Debian 11 on amd64, arm64, or i386.\\n' &gt;&2\n        cran_suite=\"\"\n        ;;\nesac\n\nif [ -n \"$cran_suite\" ]; then\n    printf '%s\\n' \\\n    \"Types: deb\" \\\n    \"URIs: https://cloud.r-project.org/bin/linux/debian/\" \\\n    \"Suites: ${cran_suite}\" \\\n    \"Components:\" \\\n    \"Architectures: ${arch}\" \\\n    \"Signed-By: /usr/share/keyrings/cran.gpg\" | sudo tee /etc/apt/sources.list.d/cran.sources &gt; /dev/null\nelse\n    false\nfi\n\n\n\n\n\n\nFigure 15: Adding repositories"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-14",
+    "href": "chromeTutorial/tutorialChromebook.html#step-14",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 14",
+    "text": "Step 14\nIn this step we need to update again our reporsitories and the communication with the repositories, type or copy the code below and then press enter in the terminal:\nsudo apt update\nAfter pressing enter, the terminal should display something similar to this picture:\n\n\n\n\n\n\nFigure 16: Check if cloud R is there"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-15",
+    "href": "chromeTutorial/tutorialChromebook.html#step-15",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 15",
+    "text": "Step 15\nIn this step we are now ready to install R in your Linux Debian virtual computer, type or paste this code in the terminal:\nsudo apt install r-base r-base-dev\n\n\n\n\n\n\nFigure 17: Installing R\n\n\n\nAfter pressing enter, you will see a list of packages and a question to approve the installation, PRESS ENTER when you see this:\n\n\n\n\n\n\nFigure 18: Installing R"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-16",
+    "href": "chromeTutorial/tutorialChromebook.html#step-16",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 16",
+    "text": "Step 16\nAt this point R should be installed and working fine, let’s check if this is true. Type the uppercase letter “R” in the terminal, this should open R in your terminal:\nR\n\n\n\n\n\n\nFigure 19: Opening R in terminal\n\n\n\nIf R is running fine in your Linux enviorenment, you should see something like this:\n\n\n\n\n\n\nFigure 20: R in terminal"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-1-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-1-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 1",
+    "text": "Step 1\nTo install RStudio you’ll need to click HERE, once you are in the webpage download the file corresponding to Ubuntu 22 / 24, Debian 12 / 13, you will click where it says: rstudio-2026.05.0-218-amd64.deb, the version numbers might change by the time you try to install it, but the process is the same.\n\n\n\n\n\n\nFigure 21: RStudio for Debian\n\n\n\nSave the file in the folder named “Linux files” as shown in the picture below, if you save it in another folder you will be able to drag the RStudio installer to the “Linux files” folder.\n\n\n\n\n\n\nFigure 22: Saving the installer in Linux files"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-2-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-2-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 2",
+    "text": "Step 2\nGo to the Linux terminal and then type:\nsudo apt install ./rstudio-2026.05.0-218-amd64.deb\nThis code will install the RStudio, however if you get any error skip this step and go to the next step."
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-3-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-3-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 3",
+    "text": "Step 3\nIn the Linux terminal type:\nsudo apt install libnspr4\n\n\n\n\n\n\nFigure 23: Installing Linux libraries"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-4-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-4-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 4",
+    "text": "Step 4\nIn the Linux terminal type:\nsudo apt install libssl-dev libclang-dev libnspr4 libnss3 libuv1-dev\nThese are necessary libraries to install packages in R.\n\n\n\n\n\n\nFigure 24: Installing more Linux libraries"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-5-1",
+    "href": "chromeTutorial/tutorialChromebook.html#step-5-1",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 5",
+    "text": "Step 5\nNow you should have an icon on your menu to get access to RStudio, this is the icon you will click to start working on your assingments:\n\n\n\n\n\n\nFigure 25: Access to Rstudio\n\n\n\nAfter clicking on the Rstudio icon you should see RStudio opened:\n\n\n\n\n\n\nFigure 26: Rstudio succesfully open\n\n\n\n\n\n\n\n\n\nPay attention to this!\n\n\n\nThere are computer in the market that are provided with an ARM processor. This type of processor requieres a different installer for RStudio, however Posit does not provide an installer for this type of processor.\nYour computer might have this ARM processor, therefore this course will transition to use the IDE called Positron which provides an installer for ARM processors.\nStep 1:\nGo to this link and download the Positron installer for Linux ARM4 –&gt; .deb (Ubuntu,Debian).\n\n\n\n\n\n\nFigure 27: Download Positron installer\n\n\n\nRemember to save the file in your Linux folder.\nStep 2:\nGo to the Linux terminal and type:\nsudo apt install ./Positron-2026.09.1-2-arm64.deb\nPress enter or “Y” when you are prompt to answer.\nStep 3:\nIf everything looks fine you should find the following icon in your main menu:\n\n\n\n\n\n\nFigure 28: Positron icon\n\n\n\nClick on that icon, then you will see a programm that looks like this:\n\n\n\n\n\n\nFigure 29: Positron layout"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-1-2",
+    "href": "chromeTutorial/tutorialChromebook.html#step-1-2",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 1",
+    "text": "Step 1\nGo to quarto.org and then click on “Get Started”:\n\n\n\n\n\n\nFigure 30: Quarto main page"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-2-2",
+    "href": "chromeTutorial/tutorialChromebook.html#step-2-2",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 2",
+    "text": "Step 2\nClick on the installer for Debian 10+, typically the name of the file will be similar to: quarto-1.9.38-linux-amd64.deb. See the picture below:\n\n\n\n\n\n\nFigure 31: Quarto installer for Linux\n\n\n\nThen save the Quarto installer in the “Linux files” folder:\n\n\n\n\n\n\nFigure 32: Quarto installer for Linux: saving on Linux files folder"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-3-2",
+    "href": "chromeTutorial/tutorialChromebook.html#step-3-2",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 3",
+    "text": "Step 3\nOpen the Linux terminal and then type:\nsudo apt install ./quarto-1.9.38-linux-amd64.deb\nThe name of the Quarto installer might be different from the name displayed in this tutorial, double check that you are typing the file name correctly.\n\n\n\n\n\n\nFigure 33: Installing Quarto from terminal"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-1-3",
+    "href": "chromeTutorial/tutorialChromebook.html#step-1-3",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 1",
+    "text": "Step 1\nGo to the Linux terminal and then type:\nsudo apt install flatpak\n\n\n\n\n\n\nFigure 34: Installing flatpak"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-2-3",
+    "href": "chromeTutorial/tutorialChromebook.html#step-2-3",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 2",
+    "text": "Step 2\nIn the Linux terminal type:\nsudo flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo\n\n\n\n\n\n\nFigure 35: Adding flatpak’s repository\n\n\n\nThis command will add the repository where you will download JAMOVI."
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-3-3",
+    "href": "chromeTutorial/tutorialChromebook.html#step-3-3",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 3",
+    "text": "Step 3\nAgain, in the Linux terminal type:\nflatpak install flathub org.jamovi.jamovi\nThis command will install JAMOVI in your computer.\n\n\n\n\n\n\nFigure 36: Installing JAMOVI\n\n\n\nCLICK enter or press “Y” to continue:\n\n\n\n\n\n\nFigure 37: Installing JAMOVI approval\n\n\n\nThen type “Y” of press enter in the next question:\n\n\n\n\n\n\nFigure 38: Installing JAMOVI second approval\n\n\n\nAfter approving the changes you will see something like this:\n\n\n\n\n\n\nFigure 39: Installing JAMOVI after approval"
+  },
+  {
+    "objectID": "chromeTutorial/tutorialChromebook.html#step-4-2",
+    "href": "chromeTutorial/tutorialChromebook.html#step-4-2",
+    "title": "Installing R, Rstudio, and JAMOVI in Chrome OS",
+    "section": "Step 4",
+    "text": "Step 4\nYou should now have an icon on your main menu where you can click and open JAMOVI:\n\n\n\n\n\n\nFigure 40: JAMOVI succesfully opened!\n\n\n\n\n\n\n\n\n\n\nFigure 41: Fun ha!"
   }
 ]
